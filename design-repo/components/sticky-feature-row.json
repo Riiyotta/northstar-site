@@ -1,0 +1,27 @@
+{
+  "id": "sticky-feature-row",
+  "kind": "component",
+  "purpose": "Text column pinned by a scroll-linked transform/opacity (>=640.02 and no-preference only) beside an inside-control VideoSlot.",
+  "implementedBy": [
+    {
+      "path": "src/components/go/StickyFeatureRow.jsx",
+      "lines": "70-94",
+      "expect": "export default function StickyFeatureRow"
+    }
+  ],
+  "props": {
+    "title": "string",
+    "body": "string",
+    "media": "VideoSlot props"
+  },
+  "tokens": [
+    "easing.linear",
+    "layout.headerHeight"
+  ],
+  "accessibility": [
+    "Text stays in DOM and readable when static."
+  ],
+  "usedBy": [
+    "feature.sticky-row"
+  ]
+}

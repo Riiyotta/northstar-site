@@ -1,0 +1,221 @@
+{
+  "version": "1.0.0",
+  "description": "Rhythm, position and composition rules. Every rule id here is implemented in schema/semantic_validate.py with the same severity; verify_all.py (GRAPH_VALIDATOR_AGREEMENT) fails if the two sets diverge. 'warn' rules are reported but never fail validation.",
+  "enforcedBy": "schema/semantic_validate.py",
+  "rules": [
+    {
+      "id": "SCHEMA",
+      "severity": "error",
+      "description": "The PageSpec validates against schema/pagespec.schema.json (Draft-07)."
+    },
+    {
+      "id": "TEMPLATE_KNOWN",
+      "severity": "error",
+      "description": "`template` names a template in templates/templates.json."
+    },
+    {
+      "id": "TEMPLATE_SEQUENCE",
+      "severity": "error",
+      "description": "The PageSpec's node sequence matches its declared template's real node list in order, keyed on (section, variant), honouring required/repeatable/min/max."
+    },
+    {
+      "id": "ROUTE_TEMPLATE_BINDING",
+      "severity": "error",
+      "description": "If `route` is one of the 7 snapshot routes, `template` must be the template routes.json binds to it."
+    },
+    {
+      "id": "OUT_OF_SCOPE_ROUTE",
+      "severity": "warn",
+      "description": "Route falls in a future-wave family (team, use-case, store, company) with no template evidence in this snapshot."
+    },
+    {
+      "id": "HEADER_FIRST",
+      "severity": "error",
+      "description": "The first node is shell.header."
+    },
+    {
+      "id": "FOOTER_LAST",
+      "severity": "error",
+      "description": "The last node is shell.footer."
+    },
+    {
+      "id": "ONE_PER_PAGE",
+      "severity": "error",
+      "description": "Sections whose contract sets constraints.onePerPage appear at most once."
+    },
+    {
+      "id": "HOME_ROUTE_ONLY",
+      "severity": "error",
+      "description": "Sections with constraints.homeRouteOnly (shell.banner, hero.carousel) only appear when route is '/'; shell.banner must directly follow the header."
+    },
+    {
+      "id": "ONE_HERO",
+      "severity": "error",
+      "description": "Exactly one hero.* node.",
+      "exceptions": [
+        {
+          "template": "pricing",
+          "reason": "The pricing page has no hero; pricing.suite-intro owns the page h1 (src/components/plans/SuiteIntro.jsx). The rule then requires exactly one pricing.suite-intro and zero hero.* nodes."
+        }
+      ]
+    },
+    {
+      "id": "HERO_POSITION",
+      "severity": "error",
+      "description": "The hero (or pricing.suite-intro) is the first node after the header and optional banner."
+    },
+    {
+      "id": "NO_ADJACENT_SAME_SECTION",
+      "severity": "warn",
+      "description": "Two consecutive nodes do not use the same section id.",
+      "exceptions": [
+        {
+          "section": "split.feature",
+          "reason": "Real runs of 5 (/mail), 4 (/enterprise) and 2 (/docs, /agents) consecutive rows."
+        },
+        {
+          "section": "feature.sticky-row",
+          "reason": "Real runs of 4 and 5 rows on /go."
+        },
+        {
+          "section": "grid.helper-cards",
+          "reason": "/go renders a 4-card row then a 2-card row."
+        }
+      ]
+    },
+    {
+      "id": "GROUP_CONTIGUOUS",
+      "severity": "error",
+      "description": "Nodes sharing a `group` id are consecutive."
+    },
+    {
+      "id": "GROUP_SHARED_SURFACE",
+      "severity": "error",
+      "description": "Nodes in one group share one background.",
+      "exceptions": [
+        {
+          "section": "stat.band",
+          "reason": "paintsOwnBackground: /mail M3 paints #281647 inside the #f2f0eb group A (src/pages/Mail.jsx)."
+        }
+      ]
+    },
+    {
+      "id": "CONTEXT_MATCHES_SURFACE",
+      "severity": "error",
+      "description": "`context` equals the context of the node's background surface (tokens/10-semantic/surface.json)."
+    },
+    {
+      "id": "BACKGROUND_ALLOWED",
+      "severity": "error",
+      "description": "`background` is one of the section contract's allowedBackgrounds (surfaces observed for that section)."
+    },
+    {
+      "id": "VARIANT_FIELDS",
+      "severity": "error",
+      "description": "Content fields marked onlyForVariants/requiredForVariants appear only with (and are present for) those variants."
+    },
+    {
+      "id": "VARIANT_ITEM_COUNTS",
+      "severity": "error",
+      "description": "Per-variant item counts from the contract (proof.logo-strip: rotating 9-11 logos, static exactly 6)."
+    },
+    {
+      "id": "EXACTLY_ONE_FLAG",
+      "severity": "error",
+      "description": "Exactly one plan in pricing.plan-cards has highlight: true."
+    },
+    {
+      "id": "HEADER_FOOTER_PAIRING",
+      "severity": "warn",
+      "description": "The light footer tone appears only with the neutral-5 header (the /go pairing); the dark footer with a white header."
+    },
+    {
+      "id": "CTA_BEFORE_FOOTER",
+      "severity": "warn",
+      "description": "The node before the footer is a conversion section (cta.*).",
+      "exceptions": [
+        {
+          "template": "pricing",
+          "reason": "/plans ends with pricing.comparison (src/pages/Plans.jsx)."
+        }
+      ]
+    },
+    {
+      "id": "FAQ_TAIL_POSITION",
+      "severity": "warn",
+      "description": "faq.accordion is followed only by cta.* nodes and the footer."
+    },
+    {
+      "id": "PRICING_ORDER",
+      "severity": "error",
+      "description": "pricing.suite-intro precedes pricing.plan-cards, which precedes pricing.comparison."
+    },
+    {
+      "id": "STICKY_ROWS_NEED_CHAPTER",
+      "severity": "error",
+      "description": "Every run of feature.sticky-row is directly preceded by chapter.intro."
+    },
+    {
+      "id": "MOTION_PATTERN_ALLOWED",
+      "severity": "error",
+      "description": "motion.pattern (and each additional pattern) is allowed by the section contract; byVariant patterns must match the node variant."
+    },
+    {
+      "id": "REDUCED_MOTION_FALLBACK",
+      "severity": "error",
+      "description": "Every motion object carries the reducedMotionFallback locked to its pattern (compatibility/motion-patterns.json)."
+    },
+    {
+      "id": "MOTION_BUDGET",
+      "severity": "error",
+      "description": "At most one carousel-crossfade and at most one logo-rotate per page."
+    },
+    {
+      "id": "MAX_WORDS",
+      "severity": "error",
+      "description": "Every text field is within its contract's maxWords."
+    },
+    {
+      "id": "MAX_CHARS",
+      "severity": "error",
+      "description": "Every text field (and rich-text total) is within its contract's maxChars / maxTotalChars."
+    },
+    {
+      "id": "ASSET_ROLE_ALLOWED",
+      "severity": "error",
+      "description": "Each media field's assetRole is listed for that field in the section contract and exists in assets/asset-roles.json."
+    },
+    {
+      "id": "FORBIDDEN_CONTENT",
+      "severity": "error",
+      "description": "No PageSpec text contains the original company's brand name or a reference to the excluded original-site material."
+    }
+  ],
+  "recommendedAfter": {
+    "hero.product-video": [
+      "proof.logo-strip",
+      "chapter.intro"
+    ],
+    "hero.split": [
+      "proof.logo-strip"
+    ],
+    "hero.centered": [
+      "media.demo-video"
+    ],
+    "chapter.intro": [
+      "feature.sticky-row",
+      "grid.helper-cards",
+      "media.strip"
+    ],
+    "intro.section": [
+      "grid.icon-features",
+      "split.feature",
+      "grid.helper-cards",
+      "bento.cards"
+    ],
+    "faq.accordion": [
+      "cta.band"
+    ]
+  },
+  "evidence": "recommendedAfter pairs are adjacencies that occur in at least one real template node list (templates/templates.json)."
+}

@@ -1,0 +1,59 @@
+{
+  "$description": "Shadows copied from tailwind boxShadow (CLONE_SPEC.md 0.7, plans.md new tokens). Base shadow colour #474543, ring colour #dedbd5.",
+  "elevation": {
+    "xsmall": {
+      "$type": "shadow",
+      "$value": "0 0 0 1px rgb(71 69 67 / 4%), 0 4px 8px -2px rgb(71 69 67 / 6%), 0 2px 4px 0 rgb(71 69 67 / 4%), 0 1px 2px 0 rgb(71 69 67 / 4%), 0 0 0 1px rgb(222 219 213 / 20%)",
+      "$description": "Tab cards."
+    },
+    "medium": {
+      "$type": "shadow",
+      "$value": "0 0 0 1px rgb(71 69 67 / 4%), 0 1px 1px .5px rgb(71 69 67 / 4%), 0 3px 3px -1.5px rgb(71 69 67 / 2%), 0 6px 6px -3px rgb(71 69 67 / 4%), 0 12px 12px -6px rgb(71 69 67 / 4%), 0 24px 24px -12px rgb(71 69 67 / 4%), 0 48px 48px -24px rgb(71 69 67 / 4%), 0 0 0 1px rgb(222 219 213 / 20%)",
+      "$description": "Dropdowns, sign-in menu, floating plan header."
+    },
+    "large": {
+      "$type": "shadow",
+      "$value": "0 0 0 1px rgb(71 69 67 / 4%), 0 1px 1px .5px rgb(71 69 67 / 4%), 0 3px 3px -1.5px rgb(71 69 67 / 2%), 0 6px 6px -3px rgb(71 69 67 / 4%), 0 12px 12px -6px rgb(71 69 67 / 4%), 0 24px 24px -12px rgb(71 69 67 / 4%), 0 48px 48px -24px rgb(71 69 67 / 4%), 0 96px 96px -32px rgb(71 69 67 / 6%), 0 0 0 1px rgb(222 219 213 / 20%)",
+      "$description": "Highlighted plan card."
+    },
+    "small": {
+      "$type": "shadow",
+      "$value": "0 0 0 1px rgb(71 69 67 / 4%), 0 16px 8px -8px rgb(71 69 67 / 1%), 0 12px 6px -6px rgb(71 69 67 / 2%), 0 5px 5px -2.5px rgb(71 69 67 / 8%), 0 1px 3px -1.5px rgb(71 69 67 / 16%), 0 0 0 1px rgb(222 219 213 / 20%)",
+      "$description": "Tooltip."
+    },
+    "drawer": {
+      "$type": "shadow",
+      "$value": "0 -4px 8px .5px rgb(71 69 67 / 16%)",
+      "$description": "Mobile drawer footer."
+    },
+    "ring-1": {
+      "$type": "shadow",
+      "$value": "inset 0 0 0 1px currentColor",
+      "$description": "Outline button rest."
+    },
+    "ring-2": {
+      "$type": "shadow",
+      "$value": "inset 0 0 0 2px currentColor",
+      "$description": "Outline button hover."
+    },
+    "ring-sub-1": {
+      "$type": "shadow",
+      "$value": "inset 0 0 0 1px var(--line-sub)",
+      "$description": "Sign-in button rest."
+    },
+    "ring-sub-2": {
+      "$type": "shadow",
+      "$value": "inset 0 0 0 2px var(--line-sub)",
+      "$description": "Sign-in button hover."
+    }
+  },
+  "$extensions": {
+    "measuredFrom": [
+      {
+        "path": "tailwind.config.js",
+        "lines": "179-193",
+        "expect": "'elevation-large'"
+      }
+    ]
+  }
+}

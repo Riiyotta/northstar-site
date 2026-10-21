@@ -1,0 +1,26 @@
+{
+  "id": "product-hero",
+  "kind": "component",
+  "purpose": "Centred product hero (lockup line in the h1, lede, one CTA, VideoSlot).",
+  "implementedBy": [
+    {
+      "path": "src/components/ui/ProductHero.jsx",
+      "lines": "15-43",
+      "expect": "export default function ProductHero"
+    }
+  ],
+  "props": {
+    "lines": "string[]",
+    "video": "VideoSlot props + wrapClass"
+  },
+  "tokens": [
+    "fontSize.display-sm",
+    "fontSize.large"
+  ],
+  "accessibility": [
+    "Single h1 per page."
+  ],
+  "usedBy": [
+    "hero.product-video"
+  ]
+}

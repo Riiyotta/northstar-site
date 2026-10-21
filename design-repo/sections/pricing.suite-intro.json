@@ -1,0 +1,98 @@
+{
+  "id": "pricing.suite-intro",
+  "category": "pricing",
+  "purpose": "Pricing page opener: the page h1 and a 4-cell product overview grid.",
+  "implementedBy": [
+    {
+      "path": "src/components/plans/SuiteIntro.jsx",
+      "lines": "5-22",
+      "expect": "export default function SuiteIntro"
+    }
+  ],
+  "usedOn": [
+    "/plans"
+  ],
+  "variants": {},
+  "content": {
+    "title": {
+      "kind": "text",
+      "required": true,
+      "maxChars": 24,
+      "maxWords": 6,
+      "budgetSource": "specs/plans.md §1a h1 (orig 21 ch)"
+    },
+    "products": {
+      "kind": "items",
+      "required": true,
+      "minItems": 4,
+      "maxItems": 4,
+      "fields": {
+        "product": {
+          "kind": "enum",
+          "required": true,
+          "values": [
+            "inbox",
+            "agents",
+            "pages",
+            "assistant"
+          ]
+        },
+        "name": {
+          "kind": "text",
+          "required": true,
+          "maxChars": 10,
+          "maxWords": 3,
+          "budgetSource": "specs/plans.md §1a product names (brand names; Northstar up to 9 ch)"
+        },
+        "body": {
+          "kind": "text",
+          "required": true,
+          "maxChars": 53,
+          "maxWords": 12,
+          "budgetSource": "specs/plans.md §1a cell descriptions (orig 35-48 ch)"
+        },
+        "glyph": {
+          "kind": "media",
+          "required": true,
+          "assetRoles": [
+            "brand.product-glyph"
+          ]
+        }
+      }
+    }
+  },
+  "allowedBackgrounds": [
+    "plans-gradient"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "default": "none"
+  },
+  "responsive": [
+    {
+      "minWidth": "base",
+      "change": "Product grid 2x2."
+    },
+    {
+      "minWidth": "640.02px",
+      "change": "Product grid 4 columns.",
+      "measuredFrom": {
+        "path": "src/components/plans/SuiteIntro.jsx",
+        "lines": "9-9",
+        "expect": "sm:grid-cols-4"
+      }
+    }
+  ],
+  "measuredFrom": [
+    {
+      "path": "specs/plans.md",
+      "lines": "54-62",
+      "expect": "### 1a. Title + product intro"
+    }
+  ]
+}

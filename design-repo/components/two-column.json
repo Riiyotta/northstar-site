@@ -1,0 +1,37 @@
+{
+  "id": "two-column",
+  "kind": "component",
+  "purpose": "Two equal flex columns; row from 640.02 (sm) or 1080.02 (lg); gaps M / L / vp.",
+  "implementedBy": [
+    {
+      "path": "src/components/ui/TwoColumn.jsx",
+      "lines": "14-16",
+      "expect": "export default function TwoColumn"
+    },
+    {
+      "path": "src/components/ui/TwoColumn.jsx",
+      "lines": "18-20",
+      "expect": "export function Column"
+    }
+  ],
+  "props": {
+    "from": [
+      "sm",
+      "lg"
+    ],
+    "gap": [
+      "M",
+      "L",
+      "vp"
+    ]
+  },
+  "tokens": [
+    "layout.twoColumnGap"
+  ],
+  "accessibility": [],
+  "usedBy": [
+    "split.feature",
+    "hero.split",
+    "quotes.pair"
+  ]
+}

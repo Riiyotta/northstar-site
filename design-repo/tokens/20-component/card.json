@@ -1,0 +1,142 @@
+{
+  "$description": "Card/aside/accordion mechanics shared by several components (cited per value).",
+  "card": {
+    "aside": {
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.12}"
+      },
+      "padding": {
+        "$type": "dimension",
+        "$value": "{space.32}"
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{space.12}"
+      }
+    },
+    "helper": {
+      "padding": {
+        "$type": "dimension",
+        "$value": "{space.32}"
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{space.16}"
+      },
+      "radiusWhite": {
+        "$type": "dimension",
+        "$value": "{radius.12}"
+      },
+      "radiusBordered": {
+        "$type": "dimension",
+        "$value": "{radius.none}"
+      }
+    },
+    "bento": {
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.12}"
+      },
+      "padding": {
+        "$type": "dimension",
+        "$value": "{space.32}"
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{space.16}"
+      }
+    },
+    "tab": {
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.12}"
+      },
+      "padding": {
+        "$type": "dimension",
+        "$value": "{space.32}"
+      },
+      "shadow": {
+        "$type": "shadow",
+        "$value": "{elevation.xsmall}"
+      },
+      "iconTile": {
+        "$type": "dimension",
+        "$value": "70px"
+      }
+    },
+    "planCard": {
+      "radiusSeam": {
+        "$type": "dimension",
+        "$value": "{radius.8}"
+      },
+      "highlightShadow": {
+        "$type": "shadow",
+        "$value": "{elevation.large}"
+      },
+      "highlightSurface": {
+        "$type": "color",
+        "$value": "{color.purple.0}"
+      }
+    }
+  },
+  "accordion": {
+    "faq": {
+      "triggerPaddingBlock": {
+        "$type": "dimension",
+        "$value": "{space.24}"
+      },
+      "rootMaxWidth": {
+        "$type": "dimension",
+        "$value": "818px"
+      },
+      "caret": {
+        "$type": "dimension",
+        "$value": "{iconSize.20}"
+      }
+    },
+    "compare": {
+      "triggerPaddingBlock": {
+        "$type": "dimension",
+        "$value": "{space.12}"
+      },
+      "openUnderline": {
+        "$type": "color",
+        "$value": "{color.neutral.40}"
+      }
+    },
+    "transition": {
+      "$type": "transition",
+      "$value": "grid-template-rows, opacity 200ms ease (motion-safe only)"
+    }
+  },
+  "$extensions": {
+    "measuredFrom": [
+      {
+        "path": "src/components/ui/Aside.jsx",
+        "lines": "9-16",
+        "expect": "rounded-12"
+      },
+      {
+        "path": "src/components/ui/HelperCard.jsx",
+        "lines": "26-26",
+        "expect": "p-8"
+      },
+      {
+        "path": "src/components/ui/Bento.jsx",
+        "lines": "9-15",
+        "expect": "rounded-12 p-8"
+      },
+      {
+        "path": "src/components/ui/Accordion.jsx",
+        "lines": "9-26",
+        "expect": "py-6"
+      },
+      {
+        "path": "src/components/plans/PlanCards.jsx",
+        "lines": "13-13",
+        "expect": "shadow-elevation-large"
+      }
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "id": "media.demo-video",
+  "category": "media",
+  "purpose": "Full-width looping product demo (illustrated animation) with an outside play/pause control.",
+  "implementedBy": [
+    {
+      "path": "src/components/ui/VideoSlot.jsx",
+      "lines": "32-93",
+      "expect": "export default function VideoSlot"
+    },
+    {
+      "path": "src/pages/Docs.jsx",
+      "lines": "53-53",
+      "expect": "<VideoSlot"
+    }
+  ],
+  "usedOn": [
+    "/docs"
+  ],
+  "variants": {},
+  "content": {
+    "video": {
+      "kind": "media",
+      "required": true,
+      "assetRoles": [
+        "product.demo-animation"
+      ]
+    },
+    "backgroundArt": {
+      "kind": "media",
+      "required": false,
+      "assetRoles": [
+        "decor.background-art"
+      ]
+    }
+  },
+  "allowedBackgrounds": [
+    "white"
+  ],
+  "constraints": {},
+  "motion": {
+    "allowedPatterns": [
+      "video-viewport-gated"
+    ],
+    "default": "video-viewport-gated"
+  },
+  "responsive": [
+    {
+      "minWidth": "base",
+      "change": "Full content width (max 1280), 16:9; control 10px below, left."
+    }
+  ],
+  "measuredFrom": [
+    {
+      "path": "specs/docs.md",
+      "lines": "75-89",
+      "expect": "## 3. D2 Video + proof + logos"
+    }
+  ],
+  "notes": [
+    "On /docs it shares one PageSection with the following proof.logo-strip (padding-top 0)."
+  ]
+}

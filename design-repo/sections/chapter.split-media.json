@@ -1,0 +1,81 @@
+{
+  "id": "chapter.split-media",
+  "category": "intro",
+  "purpose": "Closing chapter: chapter stack (eyebrow, h2, long lede) beside an illustration, 6/6.",
+  "implementedBy": [
+    {
+      "path": "src/pages/Go.jsx",
+      "lines": "109-121",
+      "expect": "{/* 9 chapter 05: trust */}"
+    }
+  ],
+  "usedOn": [
+    "/go"
+  ],
+  "variants": {},
+  "content": {
+    "eyebrow": {
+      "kind": "text",
+      "required": true,
+      "maxChars": 29,
+      "maxWords": 7,
+      "budgetSource": "specs/go.md §15 ch5.eyebrow (orig 26 ch)",
+      "pattern": "^[0-9]{2} / [0-9]{2} · [A-Z0-9 &]+$"
+    },
+    "title": {
+      "kind": "text",
+      "required": true,
+      "maxChars": 20,
+      "maxWords": 5,
+      "budgetSource": "specs/go.md §15 ch5.h2 (orig 18 ch)"
+    },
+    "lede": {
+      "kind": "text",
+      "required": true,
+      "maxChars": 365,
+      "maxWords": 82,
+      "budgetSource": "specs/go.md §15 ch5.lede (orig 331 ch)"
+    },
+    "media": {
+      "kind": "media",
+      "required": true,
+      "assetRoles": [
+        "product.ui-illustration"
+      ]
+    }
+  },
+  "allowedBackgrounds": [
+    "neutral-5"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "default": "none"
+  },
+  "responsive": [
+    {
+      "minWidth": "base",
+      "change": "Stacked."
+    },
+    {
+      "minWidth": "640.02px",
+      "change": "Row 6/6, gap vp.",
+      "measuredFrom": {
+        "path": "src/pages/Go.jsx",
+        "lines": "112-112",
+        "expect": "sm:flex-row"
+      }
+    }
+  ],
+  "measuredFrom": [
+    {
+      "path": "specs/go.md",
+      "lines": "139-144",
+      "expect": "## 9. Chapter 05: trust"
+    }
+  ]
+}

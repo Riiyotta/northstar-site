@@ -1,0 +1,196 @@
+{
+  "id": "pricing.plan-cards",
+  "category": "pricing",
+  "purpose": "Four joined plan cards (one highlighted) with price, cadence, CTA, product rows and feature checklist, plus a compare button.",
+  "implementedBy": [
+    {
+      "path": "src/components/plans/PlanCards.jsx",
+      "lines": "77-90",
+      "expect": "export default function PlanCards"
+    },
+    {
+      "path": "src/components/plans/PlanCards.jsx",
+      "lines": "18-75",
+      "expect": "function PlanCard"
+    },
+    {
+      "path": "src/pages/Plans.jsx",
+      "lines": "18-20",
+      "expect": "const scrollToCompare"
+    }
+  ],
+  "usedOn": [
+    "/plans"
+  ],
+  "variants": {},
+  "content": {
+    "highlightLabel": {
+      "kind": "text",
+      "required": true,
+      "maxChars": 11,
+      "maxWords": 3,
+      "budgetSource": "specs/plans.md §1b highlight box (orig 10 ch)"
+    },
+    "compareLabel": {
+      "kind": "text",
+      "required": true,
+      "maxChars": 38,
+      "maxWords": 9,
+      "budgetSource": "specs/plans.md §1b compare button (orig 34 ch)"
+    },
+    "plans": {
+      "kind": "items",
+      "required": true,
+      "minItems": 2,
+      "maxItems": 4,
+      "fields": {
+        "name": {
+          "kind": "text",
+          "required": true,
+          "maxChars": 11,
+          "maxWords": 3,
+          "budgetSource": "specs/plans.md §1b plan names (orig 3-10 ch)"
+        },
+        "tier": {
+          "kind": "enum",
+          "required": true,
+          "values": [
+            "free",
+            "paid",
+            "custom"
+          ]
+        },
+        "highlight": {
+          "kind": "boolean",
+          "required": true
+        },
+        "description": {
+          "kind": "text",
+          "required": true,
+          "maxChars": 69,
+          "maxWords": 16,
+          "budgetSource": "specs/plans.md §1b descriptions (orig 51-62 ch)"
+        },
+        "price": {
+          "kind": "text",
+          "required": true,
+          "maxChars": 7,
+          "maxWords": 2,
+          "budgetSource": "specs/plans.md §1b prices (orig 3-6 ch)"
+        },
+        "cadence": {
+          "kind": "text",
+          "required": false,
+          "maxChars": 39,
+          "maxWords": 9,
+          "budgetSource": "specs/plans.md §1b cadence (orig 35 ch)"
+        },
+        "monthly": {
+          "kind": "text",
+          "required": false,
+          "maxChars": 7,
+          "maxWords": 2,
+          "budgetSource": "specs/plans.md §1b monthly line (orig 6 ch)"
+        },
+        "cta": {
+          "kind": "text",
+          "required": true,
+          "maxChars": 26,
+          "maxWords": 6,
+          "budgetSource": "specs/plans.md §1b CTAs (orig 13-23 ch)"
+        },
+        "floatCta": {
+          "kind": "text",
+          "required": true,
+          "maxChars": 15,
+          "maxWords": 4,
+          "budgetSource": "specs/plans.md §3.6 floating CTAs (orig 7-13 ch)"
+        },
+        "products": {
+          "kind": "enum",
+          "required": true,
+          "values": [
+            "inbox",
+            "agents",
+            "pages",
+            "assistant"
+          ]
+        },
+        "includes": {
+          "kind": "text",
+          "required": true,
+          "maxChars": 42,
+          "maxWords": 10,
+          "budgetSource": "specs/plans.md §1b includes header (orig 14-38 ch)"
+        },
+        "features": {
+          "kind": "paragraphs",
+          "required": true,
+          "minItems": 3,
+          "maxItems": 7,
+          "maxChars": 80,
+          "maxWords": 18,
+          "budgetSource": "specs/plans.md §1b feature bullets (orig 15-72 ch)"
+        }
+      }
+    }
+  },
+  "allowedBackgrounds": [
+    "plans-gradient"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "smooth-scroll-anchor"
+    ],
+    "default": "smooth-scroll-anchor"
+  },
+  "responsive": [
+    {
+      "minWidth": "base",
+      "change": "Cards stack (highlighted first, free last), separate rounded cards."
+    },
+    {
+      "minWidth": "640.02px",
+      "change": "Cards joined as one table with seams; prices 18px.",
+      "measuredFrom": {
+        "path": "src/components/plans/PlanCards.jsx",
+        "lines": "7-12",
+        "expect": "const SEAMS = ["
+      }
+    },
+    {
+      "minWidth": "1080.02px",
+      "change": "Compare button shown; names/prices back to 36/32px.",
+      "measuredFrom": {
+        "path": "src/components/plans/PlanCards.jsx",
+        "lines": "85-85",
+        "expect": "mb-6 hidden lg:inline-flex"
+      }
+    },
+    {
+      "minWidth": "1280.02px",
+      "change": "Top block min-height 108; description 18px.",
+      "measuredFrom": {
+        "path": "src/components/plans/PlanCards.jsx",
+        "lines": "34-34",
+        "expect": "xl:min-h-[108px]"
+      }
+    }
+  ],
+  "measuredFrom": [
+    {
+      "path": "specs/plans.md",
+      "lines": "63-102",
+      "expect": "### 1b. Plan cards (`PlanCards`)"
+    }
+  ],
+  "exactlyOneTrue": {
+    "plans": "highlight"
+  },
+  "notes": [
+    "`products` is a list in the source; here it is an enum per item for the schema. Exactly one plan has highlight: true (rule ONE_HIGHLIGHTED_PLAN)."
+  ]
+}

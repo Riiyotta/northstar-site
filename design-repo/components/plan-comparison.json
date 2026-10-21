@@ -1,0 +1,26 @@
+{
+  "id": "plan-comparison",
+  "kind": "component",
+  "purpose": "Desktop comparison: header row table + accordion of section tables with a tinted highlighted column.",
+  "implementedBy": [
+    {
+      "path": "src/components/plans/PlanComparison.jsx",
+      "lines": "127-142",
+      "expect": "export default function PlanComparison"
+    }
+  ],
+  "props": {
+    "id": "anchor id"
+  },
+  "tokens": [
+    "fontSize.micro",
+    "fontSize.group-title",
+    "color.neutral.10"
+  ],
+  "accessibility": [
+    "Real <table>s with th scope."
+  ],
+  "usedBy": [
+    "pricing.comparison"
+  ]
+}

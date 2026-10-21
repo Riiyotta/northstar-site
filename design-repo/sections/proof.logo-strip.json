@@ -1,0 +1,130 @@
+{
+  "id": "proof.logo-strip",
+  "category": "proof",
+  "purpose": "Social proof: a one-line intro and a hairline grid of invented customer wordmarks.",
+  "implementedBy": [
+    {
+      "path": "src/components/LogoStrip.jsx",
+      "lines": "163-174",
+      "expect": "export default function LogoStrip"
+    },
+    {
+      "path": "src/components/LogoStrip.jsx",
+      "lines": "99-160",
+      "expect": "const VARIANTS = {"
+    },
+    {
+      "path": "src/components/LogoStrip.jsx",
+      "lines": "20-33",
+      "expect": "function useLogoRotation"
+    }
+  ],
+  "usedOn": [
+    "/",
+    "/mail",
+    "/docs",
+    "/agents",
+    "/plans",
+    "/enterprise"
+  ],
+  "variants": {
+    "rotating": "11-logo pool cycles through 6 cells (home, /mail, /plans).",
+    "static": "Exactly the 6 logos shown, fade in once (/docs, /agents, /enterprise)."
+  },
+  "content": {
+    "intro": {
+      "kind": "text",
+      "required": true,
+      "maxChars": 63,
+      "maxWords": 14,
+      "budgetSource": "CLONE_SPEC.md §4 intro (orig 57); plans.md §1c / agents.md §14 / enterprise.md §2 (orig 53)"
+    },
+    "logos": {
+      "kind": "mediaList",
+      "required": true,
+      "assetRoles": [
+        "logo.customer-wordmark"
+      ],
+      "minItems": 6,
+      "maxItems": 11
+    }
+  },
+  "allowedBackgrounds": [
+    "neutral-5",
+    "neutral-10",
+    "white",
+    "purple-0",
+    "purple-100",
+    "plans-gradient"
+  ],
+  "constraints": {},
+  "motion": {
+    "allowedPatterns": [
+      "logo-fade-in",
+      "logo-rotate"
+    ],
+    "byVariant": {
+      "static": "logo-fade-in",
+      "rotating": "logo-rotate"
+    }
+  },
+  "responsive": [
+    {
+      "minWidth": "base",
+      "change": "3 columns x 2 rows, grid margin-top 36."
+    },
+    {
+      "minWidth": "1080.02px",
+      "change": "6 columns x 1 row, margin-top 40.",
+      "measuredFrom": {
+        "path": "src/components/LogoStrip.jsx",
+        "lines": "72-72",
+        "expect": "lg:grid-cols-6"
+      }
+    },
+    {
+      "minWidth": "1440.02px",
+      "change": "Content wrapper max width grows from 1280 to 1440 (--content-max); layout otherwise unchanged. Viewports above 1440 were not measured (CLONE_SPEC.md 14).",
+      "measuredFrom": {
+        "path": "src/index.css",
+        "lines": "44-48",
+        "expect": "--content-max: 1440px;"
+      }
+    }
+  ],
+  "measuredFrom": [
+    {
+      "path": "CLONE_SPEC.md",
+      "lines": "228-238",
+      "expect": "## 4. Customer logo strip"
+    },
+    {
+      "path": "specs/mail.md",
+      "lines": "130-144",
+      "expect": "## 3. M2 Logo strip"
+    },
+    {
+      "path": "specs/plans.md",
+      "lines": "117-122",
+      "expect": "### 1c. Trusted-by logo grid"
+    }
+  ],
+  "variantItemCounts": {
+    "rotating": {
+      "logos": [
+        9,
+        11
+      ]
+    },
+    "static": {
+      "logos": [
+        6,
+        6
+      ]
+    }
+  },
+  "notes": [
+    "rotating requires 9-11 logos (a pool larger than the 6 cells); static requires exactly 6. Enforced by rule LOGO_COUNT_BY_VARIANT.",
+    "Groundwork conflict: CLONE_SPEC.md §4/§13.2 says the homepage strip does not rotate; current src (LogoStrip.jsx VARIANTS.home rotate: true) and the later mail/plans measurements say it does. This contract follows current src."
+  ]
+}

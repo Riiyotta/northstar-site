@@ -1,0 +1,39 @@
+{
+  "$description": "Min-width breakpoints exactly as measured (the .02 offsets are real). There is no md tier: 640.02-1080.02 is one layout family.",
+  "breakpoint": {
+    "sm": {
+      "$type": "dimension",
+      "$value": "640.02px",
+      "$description": "Two-column layouts start; vp 24; section padding 96."
+    },
+    "lg": {
+      "$type": "dimension",
+      "$value": "1080.02px",
+      "$description": "Desktop nav, desktop hero carousel, 6-col logo grid, vp 32."
+    },
+    "xl": {
+      "$type": "dimension",
+      "$value": "1280.02px",
+      "$description": "Two-column gaps widen (M 64 / L 128); plan-card min-heights and description size change."
+    },
+    "2xl": {
+      "$type": "dimension",
+      "$value": "1440.02px",
+      "$description": "--content-max becomes 1440px."
+    }
+  },
+  "$extensions": {
+    "measuredFrom": [
+      {
+        "path": "tailwind.config.js",
+        "lines": "12-17",
+        "expect": "sm: '640.02px'"
+      },
+      {
+        "path": "CLONE_SPEC.md",
+        "lines": "13-20",
+        "expect": "640.02px"
+      }
+    ]
+  }
+}

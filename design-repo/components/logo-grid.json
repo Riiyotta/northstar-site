@@ -1,0 +1,40 @@
+{
+  "id": "logo-grid",
+  "kind": "component",
+  "purpose": "Hairline logo grid (3 / 6 columns) with mount fade-in and optional rotation; LogoStrip wraps it with an intro.",
+  "implementedBy": [
+    {
+      "path": "src/components/LogoStrip.jsx",
+      "lines": "69-91",
+      "expect": "export function LogoGrid"
+    },
+    {
+      "path": "src/components/LogoStrip.jsx",
+      "lines": "163-174",
+      "expect": "export default function LogoStrip"
+    }
+  ],
+  "props": {
+    "variant": [
+      "home",
+      "plans",
+      "enterprise",
+      "mail",
+      "docs",
+      "agents"
+    ],
+    "rotate": "boolean"
+  },
+  "tokens": [
+    "layout.logoGrid",
+    "duration.crossfade",
+    "easing.in-out"
+  ],
+  "accessibility": [
+    "Cells are aria-hidden art; the intro line is real text."
+  ],
+  "usedBy": [
+    "proof.logo-strip",
+    "proof.badge-grid"
+  ]
+}

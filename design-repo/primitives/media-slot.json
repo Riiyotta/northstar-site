@@ -1,0 +1,35 @@
+{
+  "id": "media-slot",
+  "kind": "primitive",
+  "purpose": "Sized box that renders the registered illustration for a slot id (falling back to an `art` id) over a flat fill. The single entry point for all imagery.",
+  "implementedBy": [
+    {
+      "path": "src/components/ui/Media.jsx",
+      "lines": "8-21",
+      "expect": "export function MediaSlot"
+    },
+    {
+      "path": "src/components/ui/slotArt.jsx",
+      "lines": "5-8",
+      "expect": "export function slotArt"
+    }
+  ],
+  "props": {
+    "id": "slot id (data-asset)",
+    "art": "fallback illustration id",
+    "bg": "fill colour",
+    "className": "aspect/size/radius"
+  },
+  "tokens": [
+    "assets/asset-roles.json"
+  ],
+  "accessibility": [
+    "aria-hidden (decorative); meaning is carried by adjacent text."
+  ],
+  "usedBy": [
+    "every section with media"
+  ],
+  "notes": [
+    "MediaSlot renders `illustrations[id] ?? illustrations[art]` (src/illustrations/index.js)."
+  ]
+}

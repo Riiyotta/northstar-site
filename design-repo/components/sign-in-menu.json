@@ -1,0 +1,26 @@
+{
+  "id": "sign-in-menu",
+  "kind": "component",
+  "purpose": "Header 'Sign in' product menu: 300ms out-expo reveal, rows staggered 50/100/150ms.",
+  "implementedBy": [
+    {
+      "path": "src/components/SignInMenu.jsx",
+      "lines": "8-46",
+      "expect": "export default function SignInMenu"
+    }
+  ],
+  "props": {
+    "id": "string"
+  },
+  "tokens": [
+    "easing.out-expo",
+    "duration.slow",
+    "elevation.medium"
+  ],
+  "accessibility": [
+    "Opened by a button with aria-expanded/aria-controls; Esc and outside click close."
+  ],
+  "usedBy": [
+    "shell.header"
+  ]
+}

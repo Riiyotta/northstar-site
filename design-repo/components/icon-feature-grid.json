@@ -1,0 +1,30 @@
+{
+  "id": "icon-feature-grid",
+  "kind": "component",
+  "purpose": "Container-query multi-column grid of icon + title + body items.",
+  "implementedBy": [
+    {
+      "path": "src/components/ui/IconFeatureGrid.jsx",
+      "lines": "13-39",
+      "expect": "export default function IconFeatureGrid"
+    }
+  ],
+  "props": {
+    "columns": [
+      2,
+      3,
+      4
+    ],
+    "variant": [
+      "default",
+      "centered"
+    ]
+  },
+  "tokens": [
+    "layout.multiColumn"
+  ],
+  "accessibility": [],
+  "usedBy": [
+    "grid.icon-features"
+  ]
+}

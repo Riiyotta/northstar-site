@@ -1,0 +1,121 @@
+{
+  "id": "faq.accordion",
+  "category": "support",
+  "purpose": "FAQ: centred h2 over an accordion of questions with paragraph / link / list / bold-lead answers.",
+  "implementedBy": [
+    {
+      "path": "src/components/ui/Faq.jsx",
+      "lines": "46-77",
+      "expect": "export default function Faq"
+    },
+    {
+      "path": "src/components/ui/Accordion.jsx",
+      "lines": "29-83",
+      "expect": "export default function Accordion"
+    }
+  ],
+  "usedOn": [
+    "/go",
+    "/agents",
+    "/enterprise"
+  ],
+  "variants": {},
+  "content": {
+    "title": {
+      "kind": "text",
+      "required": true,
+      "maxChars": 29,
+      "maxWords": 7,
+      "budgetSource": "specs/go.md §15 faq.h2 / enterprise.md §17 (orig 26 ch)"
+    },
+    "mode": {
+      "kind": "enum",
+      "required": true,
+      "values": [
+        "single",
+        "multi"
+      ]
+    },
+    "items": {
+      "kind": "items",
+      "required": true,
+      "minItems": 3,
+      "maxItems": 14,
+      "fields": {
+        "question": {
+          "kind": "text",
+          "required": true,
+          "maxChars": 90,
+          "maxWords": 20,
+          "budgetSource": "specs/go.md §15 faq.q11 (orig 81 ch)"
+        },
+        "answer": {
+          "kind": "faqAnswer",
+          "required": true,
+          "minItems": 1,
+          "maxItems": 8,
+          "maxChars": 576,
+          "maxWords": 128,
+          "budgetSource": "specs/go.md §10 Q7 answer paragraph (orig 523 ch)",
+          "listItem": {
+            "maxChars": 257,
+            "maxWords": 58,
+            "budgetSource": "specs/go.md §10 Q7 answer paragraph (orig 523 ch)"
+          }
+        }
+      }
+    }
+  },
+  "allowedBackgrounds": [
+    "neutral-5",
+    "white"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "accordion-expand"
+    ],
+    "default": "accordion-expand"
+  },
+  "responsive": [
+    {
+      "minWidth": "base",
+      "change": "Accordion full width (358 at 390); questions wrap."
+    },
+    {
+      "minWidth": "640.02px",
+      "change": "Padding 96; accordion max 818px centred.",
+      "measuredFrom": {
+        "path": "src/components/ui/Faq.jsx",
+        "lines": "53-53",
+        "expect": "rootClass = 'w-full max-w-[818px]'"
+      }
+    },
+    {
+      "minWidth": "1440.02px",
+      "change": "Content wrapper max width grows from 1280 to 1440 (--content-max); layout otherwise unchanged. Viewports above 1440 were not measured (CLONE_SPEC.md 14).",
+      "measuredFrom": {
+        "path": "src/index.css",
+        "lines": "44-48",
+        "expect": "--content-max: 1440px;"
+      }
+    }
+  ],
+  "measuredFrom": [
+    {
+      "path": "specs/go.md",
+      "lines": "145-157",
+      "expect": "## 10. FAQ"
+    },
+    {
+      "path": "specs/enterprise.md",
+      "lines": "151-162",
+      "expect": "## 17. FAQ"
+    }
+  ],
+  "notes": [
+    "mode 'single' = opening one closes the others (/go, /agents); 'multi' = independent items (/enterprise)."
+  ]
+}

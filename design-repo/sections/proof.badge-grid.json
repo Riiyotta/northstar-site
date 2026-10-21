@@ -1,0 +1,73 @@
+{
+  "id": "proof.badge-grid",
+  "category": "proof",
+  "purpose": "Two 6-cell compliance-badge grids plus a link to security details. Badges are neutral placeholders, never real certification marks.",
+  "implementedBy": [
+    {
+      "path": "src/pages/Enterprise.jsx",
+      "lines": "87-93",
+      "expect": "<LogoGrid ids={BADGES_A}"
+    },
+    {
+      "path": "src/components/enterprise/BadgePlaceholder.jsx",
+      "lines": "5-13",
+      "expect": "export default function BadgePlaceholder"
+    }
+  ],
+  "usedOn": [
+    "/enterprise"
+  ],
+  "variants": {},
+  "content": {
+    "badges": {
+      "kind": "mediaList",
+      "required": true,
+      "assetRoles": [
+        "badge.compliance-placeholder"
+      ],
+      "minItems": 12,
+      "maxItems": 12
+    },
+    "link": {
+      "kind": "text",
+      "required": true,
+      "maxChars": 37,
+      "maxWords": 9,
+      "budgetSource": "specs/enterprise.md §12 link (orig 33 ch)"
+    }
+  },
+  "allowedBackgrounds": [
+    "green-90"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "logo-fade-in"
+    ],
+    "default": "logo-fade-in"
+  },
+  "responsive": [
+    {
+      "minWidth": "base",
+      "change": "Each grid 3 columns (max 649 wide); link full width."
+    },
+    {
+      "minWidth": "1080.02px",
+      "change": "Each grid 6 columns.",
+      "measuredFrom": {
+        "path": "src/components/LogoStrip.jsx",
+        "lines": "72-72",
+        "expect": "lg:grid-cols-6"
+      }
+    }
+  ],
+  "measuredFrom": [
+    {
+      "path": "specs/enterprise.md",
+      "lines": "120-125",
+      "expect": "**12 Compliance badges**"
+    }
+  ]
+}

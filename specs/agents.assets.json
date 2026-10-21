@@ -1,0 +1,122 @@
+{
+  "source": "https://superhuman.com/agents",
+  "measured": "2026-10-21, local Playwright Chrome (desktop UA, reducedMotion no-preference), widths 1440/1024/768/390",
+  "note": "Placeholder slots only. Nothing was downloaded. Draw original artwork per 'depicts'. 'sizes' are rendered CSS px [w,h]; 'natural' is the original 1440-breakpoint file's intrinsic size (aspect reference). 'colors' are dominant colors sampled from the rendered page. Shared slots (logo-header, footer art, social icons) are in ../asset-manifest.json.",
+  "slots": [
+    {
+      "id": "agents-hero-art", "section": "3a SplitHero", "kind": "image (AVIF)",
+      "natural": [720, 587], "aspect": "1.227:1",
+      "sizes": {"1440": [608, 495.7], "1024": [976, 796.2], "768": [720, 586.9], "390": [358, 292]},
+      "radius": "0 (corner rounding baked into art)", "fit": "cover",
+      "position": "right column at ≥1080; below the text (gap 40 / 24) under 1080",
+      "colors": ["#2d2e65", "#565196", "#afafc4", "#ebecf1"],
+      "depicts": "deep indigo panel with a faint grid of blurred app-icon tiles; a central white mail-app card with a highlighted sentence, below it an agent suggestion card (agent glyph, 'mismatch' title, tag chip, explanation, sources line, purple 'Replace' button + 'Dismiss'); two faded side cards (a checker list on the left, a detector card on the right)"
+    },
+    {
+      "id": "logo-a1..a6", "section": "3b LogoStrip", "kind": "customer logo (SVG)",
+      "natural": [[214, 80], [215, 80], [214, 80], [214, 80], [215, 80], [214, 80]],
+      "sizes": {"1440": [212.2, 80], "1024": [214, 80], "768": [214, 80], "390": [118, 80]},
+      "fit": "contain", "radius": 0,
+      "colors": ["#f7f5ff (bg)", "#a3a1a6", "#b6b4ba", "#d1cfd7"],
+      "depicts": "grey monochrome company wordmarks centered in hairline grid cells; use neutral grey wordmark-shaped blocks (#292827 at ~40% opacity, max 120x28), as on the homepage"
+    },
+    {
+      "id": "agents-assist-art", "section": "4 assistant split (dark purple)", "kind": "image (AVIF)",
+      "natural": [720, 720], "aspect": "1:1",
+      "sizes": {"1440": [576, 576], "1024": [456, 456], "768": [328, 328], "390": [358, 358]},
+      "radius": 8, "fit": "cover", "position": "left column (first at all widths)",
+      "colors": ["#fdfcfe", "#454fa3", "#d1cde9", "#f0f0f7"],
+      "depicts": "blue-violet gradient tile with a dashed selection outline; left: mail compose window (greeting, body text with red underline, 'here is my availability' link chip) with stacked integration chips (CRM, tracker, wiki) behind it; right: an assistant chat panel with a time-proposal bubble, a purple 'yes' reply bubble, a calendar event card and an 'Ask a question' input"
+    },
+    {
+      "id": "agent-icon-1..8", "section": "5b agent cards", "kind": "icon tile (SVG)",
+      "natural": [77, 77],
+      "sizes": {"all": [77, 77]},
+      "radius": "baked (rounded square; radius not measurable, part of the SVG) with hairline border",
+      "colors": ["#ffffff", "#fcfcfc", "#a19194", "#d0c9cc"],
+      "depicts": "white rounded-square tile with a thin light border holding one dark mulberry glyph: 1 spell-check ring, 2 check badge, 3 sparkle-in-frame detector, 4 lightning-with-lines rewriter, 5 open book with heart (reader reactions), 6 heart (humanizer), 7 circular arrows (paraphrase), 8 person with badge (resume)"
+    },
+    {
+      "id": "agents-builder-art", "section": "6 builder split (white)", "kind": "image (AVIF)",
+      "natural": [720, 720], "aspect": "1:1",
+      "sizes": {"1440": [576, 576], "1024": [456, 456], "768": [328, 328], "390": [358, 358]},
+      "radius": 0, "fit": "cover",
+      "colors": ["#faf9f8", "#8193cf", "#d6e0ec"],
+      "depicts": "agent-builder form on a blue/purple/pink gradient frame with dashed connector lines: a floating title chip (icon tile + agent name), a purple Save button, 'Description' and 'Instructions' text areas with sample text, and a 'Triggers' row ('As I'm typing...' dropdown, 'show inline suggestions' toggle)"
+    },
+    {
+      "id": "agents-tools-art", "section": "7 tools split (mulberry)", "kind": "image (AVIF)",
+      "natural": [720, 665], "aspect": "1.083:1",
+      "sizes": {"1440": [576, 532], "1024": [456, 421], "768": [328, 302.8], "390": [358, 330.6]},
+      "radius": 0, "fit": "cover", "position": "right column (after text at all widths)",
+      "colors": ["#411c23", "#4b2830", "#f7f5f2", "#b6aeae"],
+      "depicts": "on mulberry: a top bar of ~10 app icon tiles; left column of 5 connector rows (app icon, name, small subtitle, green 'done' status chip) with the first 3 outlined in lilac; right a white assistant panel ('Based on your connected tools, I found:' bullet list + 4 action rows with app icons and chevrons, thumbs up/down, input)"
+    },
+    {
+      "id": "bento-assistant-art", "section": "8b card A (lavender)", "kind": "image (AVIF), bleed top",
+      "natural": [840, 492], "aspect": "1.707:1",
+      "sizes": {"1440": [728, 426.4], "1024": [555.3, 325.5], "768": [406, 237.9], "390": [358, 209.9]},
+      "radius": "card radius 12 (top corners, clipped by card)", "fit": "cover",
+      "colors": ["#e8e2fa", "#e2d8fc", "#d4c7fc", "#f6f4fc"],
+      "depicts": "lavender dotted backdrop; a central assistant chat window (time proposal, calendar card, input) over several faded app windows (inbox list, document, calendar) and small floating action chips"
+    },
+    {
+      "id": "bento-mail-art", "section": "8b card B (dark purple)", "kind": "image (AVIF), bleed top",
+      "natural": [600, 214], "aspect": "2.804:1",
+      "sizes": {"1440": [520, 185.5], "1024": [396.7, 141.3], "768": [290, 103.5], "390": [358, 127.6]},
+      "radius": "card radius 12 (top)", "fit": "cover",
+      "colors": ["#281646", "#332150", "#6d8cd4", "#261343"],
+      "depicts": "dark purple inbox: a row of split-inbox tabs with counts (first tab active, lilac), then three message rows with the middle-top one highlighted in blue"
+    },
+    {
+      "id": "bento-web-art", "section": "8b card C (warm grey)", "kind": "image (AVIF), bleed top",
+      "natural": [600, 214], "aspect": "2.804:1",
+      "sizes": {"1440": [520, 185.5], "1024": [396.7, 141.3], "768": [290, 103.5], "390": [358, 127.6]},
+      "radius": "card radius 12 (top)", "fit": "cover",
+      "colors": ["#dedbd5", "#ebe9e5", "#b4c0d1", "#cde1e6"],
+      "depicts": "two staggered rows of white rounded app/website icon tiles (about 8 per row) on warm grey, cut off at the right edge"
+    },
+    {
+      "id": "aside-pages-art", "section": "8c wide aside (green)", "kind": "image (AVIF)",
+      "natural": [1440, 658], "aspect": "2.188:1",
+      "sizes": {"1440": [768, 350.9], "1024": [488, 222.8], "768": [360, 164.5], "390": [358, 163.7]},
+      "radius": "aside radius 12 (right/bottom corners clipped)", "fit": "cover", "position": "right of body (60cqi ≥1080, 50cqi below); below body at 390",
+      "colors": ["#e8ecea", "#0e4243", "#f6f8f7", "#adbab8"],
+      "depicts": "on deep green with a fine diagonal-line texture: a document editor (breadcrumb, avatars, title 'Q2 ... Brief', Overview text with one highlighted yellow sentence) and a right 'AI' side panel with a user request bubble, a findings list and an input"
+    },
+    {
+      "id": "aside-desktop-art", "section": "8d left aside (mulberry)", "kind": "image (AVIF)",
+      "natural": [720, 471], "aspect": "1.529:1",
+      "sizes": {"1440": [312, 204.1], "1024": [476, 311.2], "768": [348, 227.5], "390": [358, 234.4]},
+      "radius": "aside radius 12 (clipped)", "fit": "cover", "position": "bottom-right of the aside (bottom of aside below 1080)",
+      "colors": ["#5a3b40", "#fcfaf6", "#fffefd", "#efece9"],
+      "depicts": "'Available on' label with two dark pill buttons (Mac, Windows) above a cropped desktop app window: narrow icon sidebar, greeting heading, an 'Ask anything or run an agent' input and a 'connect your apps' row of tiny app icons"
+    },
+    {
+      "id": "aside-ai-tools-art", "section": "8d right aside (white)", "kind": "image (AVIF)",
+      "natural": [720, 639], "aspect": "1.127:1",
+      "sizes": {"1440": [312, 276.9], "1024": [476, 422.7], "768": [348, 309], "390": [358, 317.7]},
+      "radius": "aside radius 12 (clipped)", "fit": "cover",
+      "colors": ["#e6f2fd", "#f2e7f4", "#f0f6fe", "#d5c3d4"],
+      "depicts": "hub diagram on a pastel blue-to-pink gradient: product glyph tile in the center joined by dashed lines to 6 white rounded tiles holding generic AI-tool marks (3 left, 3 right)"
+    },
+    {
+      "id": "trust-icon-1..3", "section": "10 trust columns", "kind": "icon tile (SVG)",
+      "natural": [69, 71],
+      "sizes": {"all": [69, 71]},
+      "radius": "baked (rounded square; radius not measurable, part of the SVG), thin lilac-grey border + subtle bottom shadow",
+      "colors": ["#ffffff", "#f6f4fd", "#bfbec4"],
+      "depicts": "white rounded tile with a dark line glyph: 1 sliders (control), 2 shield with check (security), 3 person in a rounded badge (ownership)"
+    },
+    {
+      "id": "icon-chevron-right-20", "section": "links in 4, 5b, 7", "kind": "inline SVG icon",
+      "sizes": {"all": [20, 20]}, "colors": ["#714cb6 (light)", "#d4c7ff (dark)"],
+      "depicts": "chevron pointing right (lucide ChevronRight)"
+    },
+    {
+      "id": "icon-caret-down-20", "section": "11 FAQ", "kind": "inline SVG icon",
+      "sizes": {"all": [20, 20]}, "colors": ["#000000"],
+      "depicts": "caret pointing down; rotates -180deg when open"
+    }
+  ]
+}

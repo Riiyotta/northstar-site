@@ -1,0 +1,123 @@
+{
+  "id": "grid.helper-cards",
+  "category": "feature",
+  "purpose": "Grid of helper/agent cards: icon tile, h3, short body, optional caret link.",
+  "implementedBy": [
+    {
+      "path": "src/components/ui/HelperCard.jsx",
+      "lines": "12-49",
+      "expect": "export default function HelperCard"
+    },
+    {
+      "path": "src/pages/Go.jsx",
+      "lines": "65-65",
+      "expect": "{ch2.row1.map"
+    },
+    {
+      "path": "src/pages/Agents.jsx",
+      "lines": "85-85",
+      "expect": "<HelperCard"
+    }
+  ],
+  "usedOn": [
+    "/go",
+    "/agents"
+  ],
+  "variants": {
+    "bordered": "#f2f0eb card, 1px border-sub, radius 0, content top (/go).",
+    "white": "#fff card, radius 12, content pinned to the bottom (/agents)."
+  },
+  "content": {
+    "items": {
+      "kind": "items",
+      "required": true,
+      "minItems": 2,
+      "maxItems": 8,
+      "fields": {
+        "title": {
+          "kind": "text",
+          "required": true,
+          "maxChars": 19,
+          "maxWords": 5,
+          "budgetSource": "specs/go.md §15 card*.h3 (orig 9-17); agents.md §14 a*.h3 (9-17)"
+        },
+        "body": {
+          "kind": "text",
+          "required": true,
+          "maxChars": 201,
+          "maxWords": 45,
+          "budgetSource": "specs/go.md §15 card5.p (orig 182 ch)"
+        },
+        "link": {
+          "kind": "text",
+          "required": false,
+          "maxChars": 16,
+          "maxWords": 4,
+          "budgetSource": "specs/go.md §15 card*.link (orig 14 ch)"
+        },
+        "icon": {
+          "kind": "media",
+          "required": true,
+          "assetRoles": [
+            "icon.feature-tile"
+          ]
+        }
+      }
+    },
+    "columns": {
+      "kind": "enum",
+      "required": true,
+      "values": [
+        2,
+        4
+      ]
+    }
+  },
+  "allowedBackgrounds": [
+    "neutral-5",
+    "neutral-10"
+  ],
+  "constraints": {},
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "default": "none"
+  },
+  "responsive": [
+    {
+      "minWidth": "base",
+      "change": "1 column, gap 16."
+    },
+    {
+      "minWidth": "640.02px",
+      "change": "2 columns, gap 24.",
+      "measuredFrom": {
+        "path": "src/pages/Go.jsx",
+        "lines": "64-64",
+        "expect": "sm:grid-cols-2"
+      }
+    },
+    {
+      "minWidth": "1080.02px",
+      "change": "4-column rows use 4 columns, gap 32.",
+      "measuredFrom": {
+        "path": "src/pages/Go.jsx",
+        "lines": "64-64",
+        "expect": "lg:grid-cols-4"
+      }
+    }
+  ],
+  "measuredFrom": [
+    {
+      "path": "specs/go.md",
+      "lines": "112-122",
+      "expect": "### 5b. Card row 1"
+    },
+    {
+      "path": "specs/agents.md",
+      "lines": "86-92",
+      "expect": "### 5b. 8 agent cards"
+    }
+  ]
+}

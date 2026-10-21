@@ -1,0 +1,32 @@
+{
+  "id": "icon-glyphs",
+  "kind": "primitive",
+  "purpose": "Small inline UI glyphs: caret-small-down, check, info.",
+  "implementedBy": [
+    {
+      "path": "src/components/ui/Icons.jsx",
+      "lines": "6-24",
+      "expect": "export function CaretSmallDown"
+    }
+  ],
+  "props": {
+    "glyph": [
+      "caret-small-down",
+      "check",
+      "info"
+    ]
+  },
+  "tokens": [
+    "iconSize.14",
+    "iconSize.20",
+    "color.alpha.graphite-50"
+  ],
+  "accessibility": [
+    "All aria-hidden."
+  ],
+  "usedBy": [
+    "accordion",
+    "pricing.comparison",
+    "tooltip"
+  ]
+}

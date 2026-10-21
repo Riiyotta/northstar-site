@@ -1,0 +1,91 @@
+{
+  "id": "split.promo",
+  "category": "feature",
+  "purpose": "Homepage enterprise promo: eyebrow, h2, body, primary CTA + 'Learn more' beside a wide console illustration (5:7 columns).",
+  "implementedBy": [
+    {
+      "path": "src/components/Enterprise.jsx",
+      "lines": "6-29",
+      "expect": "export default function Enterprise"
+    }
+  ],
+  "usedOn": [
+    "/"
+  ],
+  "variants": {},
+  "content": {
+    "eyebrow": {
+      "kind": "text",
+      "required": true,
+      "maxChars": 28,
+      "maxWords": 7,
+      "budgetSource": "CLONE_SPEC.md §9 eyebrow (orig 25 ch)"
+    },
+    "title": {
+      "kind": "text",
+      "required": true,
+      "maxChars": 46,
+      "maxWords": 11,
+      "budgetSource": "CLONE_SPEC.md §9 h2 (orig 41 ch)"
+    },
+    "body": {
+      "kind": "text",
+      "required": true,
+      "maxChars": 124,
+      "maxWords": 28,
+      "budgetSource": "CLONE_SPEC.md §9 p (orig 112 ch)"
+    },
+    "ctaLabel": {
+      "kind": "text",
+      "required": true,
+      "maxChars": 16,
+      "maxWords": 4,
+      "budgetSource": "CLONE_SPEC.md §9 CTA (orig 14 ch)"
+    },
+    "media": {
+      "kind": "media",
+      "required": true,
+      "assetRoles": [
+        "product.ui-illustration"
+      ]
+    }
+  },
+  "allowedBackgrounds": [
+    "purple-100"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "default": "none"
+  },
+  "responsive": [
+    {
+      "minWidth": "base",
+      "change": "Stacked, gap 32."
+    },
+    {
+      "minWidth": "640.02px",
+      "change": "Row 5:7, gap 64.",
+      "measuredFrom": {
+        "path": "src/components/Enterprise.jsx",
+        "lines": "9-9",
+        "expect": "sm:flex-row sm:gap-16 lg:gap-32"
+      }
+    },
+    {
+      "minWidth": "1080.02px",
+      "change": "Gap 128."
+    }
+  ],
+  "measuredFrom": [
+    {
+      "path": "CLONE_SPEC.md",
+      "lines": "329-337",
+      "expect": "## 9. Enterprise"
+    }
+  ]
+}

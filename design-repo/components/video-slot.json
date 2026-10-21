@@ -1,0 +1,35 @@
+{
+  "id": "video-slot",
+  "kind": "component",
+  "purpose": "Illustrated 'video': MediaSlot whose CSS animation is the playback, viewport-gated by IntersectionObserver [0, 0.2], with a 32px play/pause button.",
+  "implementedBy": [
+    {
+      "path": "src/components/ui/VideoSlot.jsx",
+      "lines": "32-93",
+      "expect": "export default function VideoSlot"
+    }
+  ],
+  "props": {
+    "control": [
+      "outside",
+      "inside"
+    ],
+    "stroke": [
+      1.5,
+      2
+    ],
+    "caption": "sr-only string"
+  },
+  "tokens": [
+    "iconSize.32"
+  ],
+  "accessibility": [
+    "Button aria-label toggles 'Pause animation' / 'Play animation'.",
+    "Optional visually hidden caption."
+  ],
+  "usedBy": [
+    "hero.product-video",
+    "media.demo-video",
+    "feature.sticky-row"
+  ]
+}

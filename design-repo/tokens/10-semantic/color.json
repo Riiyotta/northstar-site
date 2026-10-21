@@ -1,0 +1,89 @@
+{
+  "$description": "Context-aware semantic colours. Each resolves differently inside .ctx-light vs .ctx-dark; see tokens/themes/. Generators reference these names, never hex.",
+  "semantic": {
+    "fg": {
+      "$type": "color",
+      "$description": "Primary text.",
+      "$value": "{theme}.fg"
+    },
+    "fg-sub": {
+      "$type": "color",
+      "$description": "Secondary text.",
+      "$value": "{theme}.fg-sub"
+    },
+    "fg-soft": {
+      "$type": "color",
+      "$description": "Soft text (hero tagline).",
+      "$value": "{theme}.fg-soft"
+    },
+    "line-sub": {
+      "$type": "color",
+      "$description": "Hairlines, card borders, logo grid.",
+      "$value": "{theme}.line-sub"
+    },
+    "line-soft": {
+      "$type": "color",
+      "$description": "Very soft hairline (hero nav rows).",
+      "$value": "{theme}.line-soft"
+    },
+    "hover-tint": {
+      "$type": "color",
+      "$description": "Hover background for ghost items.",
+      "$value": "{theme}.hover-tint"
+    },
+    "action": {
+      "$type": "color",
+      "$description": "Primary action / brand emphasis span.",
+      "$value": "{theme}.action"
+    },
+    "action-hover": {
+      "$type": "color",
+      "$description": "Primary action hover.",
+      "$value": "{theme}.action-hover"
+    },
+    "action-active": {
+      "$type": "color",
+      "$description": "Primary action active.",
+      "$value": "{theme}.action-active"
+    },
+    "action-secondary": {
+      "$type": "color",
+      "$description": "Secondary action.",
+      "$value": "{theme}.action-secondary"
+    },
+    "action-secondary-hover": {
+      "$type": "color",
+      "$description": "Secondary action hover.",
+      "$value": "{theme}.action-secondary-hover"
+    },
+    "on-action": {
+      "$type": "color",
+      "$description": "Text on filled primary/secondary buttons.",
+      "$value": "{theme}.on-action"
+    },
+    "highlight": {
+      "$type": "color",
+      "$description": "Stat highlight span (/mail).",
+      "$value": "{theme}.highlight"
+    }
+  },
+  "focusRing": {
+    "$type": "color",
+    "$value": "{color.focus}",
+    "$description": "2px solid outline, offset 2px, every context."
+  },
+  "$extensions": {
+    "measuredFrom": [
+      {
+        "path": "src/index.css",
+        "lines": "50-67",
+        "expect": "/* Semantic colours: light context (default) */"
+      },
+      {
+        "path": "src/index.css",
+        "lines": "72-89",
+        "expect": "/* Semantic colours: dark context */"
+      }
+    ]
+  }
+}

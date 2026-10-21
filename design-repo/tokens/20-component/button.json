@@ -1,0 +1,370 @@
+{
+  "$description": "Button variants exactly as implemented in Button.jsx (CLONE_SPEC.md 0.9 + page-spec additions). Colours are semantic, so each variant renders correctly in light and dark contexts.",
+  "button": {
+    "primary": {
+      "minHeight": {
+        "$type": "dimension",
+        "$value": "52px"
+      },
+      "paddingInline": {
+        "$type": "dimension",
+        "$value": "20px"
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.12}"
+      },
+      "type": {
+        "$type": "typography",
+        "$value": "{fontSize.button}"
+      },
+      "color": {
+        "$type": "string",
+        "$value": "action / on-action fill"
+      },
+      "transition": {
+        "$type": "transition",
+        "$value": "background 200ms in-out"
+      }
+    },
+    "primaryCompact": {
+      "minHeight": {
+        "$type": "dimension",
+        "$value": "36px"
+      },
+      "paddingInline": {
+        "$type": "dimension",
+        "$value": "16px"
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.8}"
+      },
+      "type": {
+        "$type": "typography",
+        "$value": "{fontSize.button-compact}"
+      },
+      "color": {
+        "$type": "string",
+        "$value": "action / on-action fill"
+      },
+      "transition": {
+        "$type": "transition",
+        "$value": "background 200ms in-out"
+      }
+    },
+    "primaryMid": {
+      "minHeight": {
+        "$type": "dimension",
+        "$value": "48px"
+      },
+      "paddingInline": {
+        "$type": "dimension",
+        "$value": "20px"
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.12}"
+      },
+      "type": {
+        "$type": "typography",
+        "$value": "{fontSize.button}"
+      },
+      "color": {
+        "$type": "string",
+        "$value": "action / on-action fill"
+      },
+      "transition": {
+        "$type": "transition",
+        "$value": "background 200ms in-out"
+      }
+    },
+    "primaryOutline": {
+      "minHeight": {
+        "$type": "dimension",
+        "$value": "52px"
+      },
+      "paddingInline": {
+        "$type": "dimension",
+        "$value": "20px"
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.12}"
+      },
+      "type": {
+        "$type": "typography",
+        "$value": "{fontSize.button}"
+      },
+      "color": {
+        "$type": "string",
+        "$value": "action text + ring-1, ring-2 on hover"
+      },
+      "transition": {
+        "$type": "transition",
+        "$value": "box-shadow 200ms in-out"
+      }
+    },
+    "primaryOutlineMid": {
+      "minHeight": {
+        "$type": "dimension",
+        "$value": "48px"
+      },
+      "paddingInline": {
+        "$type": "dimension",
+        "$value": "20px"
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.12}"
+      },
+      "type": {
+        "$type": "typography",
+        "$value": "{fontSize.button}"
+      },
+      "color": {
+        "$type": "string",
+        "$value": "action text + ring-1"
+      },
+      "transition": {
+        "$type": "transition",
+        "$value": "box-shadow 200ms in-out"
+      }
+    },
+    "primaryGhost": {
+      "minHeight": {
+        "$type": "dimension",
+        "$value": "52px"
+      },
+      "paddingInline": {
+        "$type": "dimension",
+        "$value": "20px"
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.12}"
+      },
+      "type": {
+        "$type": "typography",
+        "$value": "{fontSize.button}"
+      },
+      "color": {
+        "$type": "string",
+        "$value": "action text, hover-tint bg"
+      },
+      "transition": {
+        "$type": "transition",
+        "$value": "background 200ms in-out"
+      }
+    },
+    "secondaryFilled": {
+      "minHeight": {
+        "$type": "dimension",
+        "$value": "52px"
+      },
+      "paddingInline": {
+        "$type": "dimension",
+        "$value": "20px"
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.12}"
+      },
+      "type": {
+        "$type": "typography",
+        "$value": "{fontSize.button}"
+      },
+      "color": {
+        "$type": "string",
+        "$value": "action-secondary fill, on-action text"
+      },
+      "transition": {
+        "$type": "transition",
+        "$value": "background 200ms in-out"
+      }
+    },
+    "secondaryOutline": {
+      "minHeight": {
+        "$type": "dimension",
+        "$value": "52px"
+      },
+      "paddingInline": {
+        "$type": "dimension",
+        "$value": "20px"
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.12}"
+      },
+      "type": {
+        "$type": "typography",
+        "$value": "{fontSize.button}"
+      },
+      "color": {
+        "$type": "string",
+        "$value": "action-secondary text + ring-1"
+      },
+      "transition": {
+        "$type": "transition",
+        "$value": "box-shadow 200ms in-out"
+      }
+    },
+    "secondaryOutlineCompact": {
+      "minHeight": {
+        "$type": "dimension",
+        "$value": "36px"
+      },
+      "paddingInline": {
+        "$type": "dimension",
+        "$value": "16px"
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.8}"
+      },
+      "type": {
+        "$type": "typography",
+        "$value": "{fontSize.button-compact}"
+      },
+      "color": {
+        "$type": "string",
+        "$value": "action-secondary text + ring-1"
+      },
+      "transition": {
+        "$type": "transition",
+        "$value": "box-shadow 200ms in-out"
+      }
+    },
+    "signIn": {
+      "minHeight": {
+        "$type": "dimension",
+        "$value": "36px"
+      },
+      "paddingInline": {
+        "$type": "dimension",
+        "$value": "16px"
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.8}"
+      },
+      "type": {
+        "$type": "typography",
+        "$value": "{fontSize.button-compact}"
+      },
+      "color": {
+        "$type": "string",
+        "$value": "action-secondary text + ring-sub-1"
+      },
+      "transition": {
+        "$type": "transition",
+        "$value": "box-shadow 200ms in-out"
+      }
+    },
+    "link": {
+      "minHeight": {
+        "$type": "dimension",
+        "$value": "auto"
+      },
+      "paddingInline": {
+        "$type": "dimension",
+        "$value": "0"
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.8}"
+      },
+      "type": {
+        "$type": "typography",
+        "$value": "{fontSize.button}"
+      },
+      "color": {
+        "$type": "string",
+        "$value": "action text, underline on hover"
+      },
+      "transition": {
+        "$type": "transition",
+        "$value": "color 200ms ease"
+      }
+    },
+    "linkCompact": {
+      "minHeight": {
+        "$type": "dimension",
+        "$value": "auto"
+      },
+      "paddingInline": {
+        "$type": "dimension",
+        "$value": "0"
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.8}"
+      },
+      "type": {
+        "$type": "typography",
+        "$value": "{fontSize.button-compact}"
+      },
+      "color": {
+        "$type": "string",
+        "$value": "action text, underline on hover"
+      },
+      "transition": {
+        "$type": "transition",
+        "$value": "color 200ms ease"
+      }
+    },
+    "ghostIcon": {
+      "minHeight": {
+        "$type": "dimension",
+        "$value": "36px"
+      },
+      "paddingInline": {
+        "$type": "dimension",
+        "$value": "0"
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.full}"
+      },
+      "color": {
+        "$type": "string",
+        "$value": "action-secondary icon, hover-tint bg"
+      },
+      "transition": {
+        "$type": "transition",
+        "$value": "background 200ms in-out"
+      }
+    },
+    "text": {
+      "minHeight": {
+        "$type": "dimension",
+        "$value": "36px"
+      },
+      "paddingInline": {
+        "$type": "dimension",
+        "$value": "0"
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.none}"
+      },
+      "type": {
+        "$type": "typography",
+        "$value": "{fontSize.nav}"
+      },
+      "color": {
+        "$type": "string",
+        "$value": "fg text, underline on hover"
+      }
+    }
+  },
+  "$extensions": {
+    "measuredFrom": [
+      {
+        "path": "src/components/ui/Button.jsx",
+        "lines": "8-41",
+        "expect": "primaryCompact:"
+      }
+    ]
+  }
+}

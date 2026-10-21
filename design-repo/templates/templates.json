@@ -1,0 +1,1473 @@
+{
+  "version": "1.0.0",
+  "matching": "Template nodes are matched in order against PageSpec nodes. A template node matches a PageSpec node when the section ids are equal and the template's `variants` is null or lists the node's variant. Each template node consumes between `min` and `max` consecutive PageSpec nodes (`min` is 0 when `required` is false). The whole PageSpec must be consumed. Enforced by rule TEMPLATE_SEQUENCE in schema/semantic_validate.py.",
+  "groupingDecision": "One template per real page: the 7 built pages have 7 distinct node sequences (verified by verify_all.py check TEMPLATE_SEQUENCES_DISTINCT), so no two routes share a shape in this snapshot. `realCount`/`realBackground`/`realVariant` record the real page so the adversarial suite can rebuild it as a control.",
+  "templates": {
+    "home-carousel": {
+      "description": "Suite homepage: banner, auto-advancing product carousel, per-product intro + aside/bento blocks, testimonial, enterprise promo, animated closing CTA.",
+      "routes": [
+        "/"
+      ],
+      "evidence": [
+        {
+          "path": "src/pages/Home.jsx",
+          "lines": "12-26",
+          "expect": "export default function Home"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": "364-383",
+          "expect": "## 12. Page section order and heights"
+        }
+      ],
+      "sourceOrder": {
+        "path": "src/pages/Home.jsx",
+        "after": "export default function Home",
+        "tokens": [
+          "<Banner",
+          "<Hero",
+          "<LogoStrip",
+          "<AgentSection",
+          "<Testimonial",
+          "<InboxBento",
+          "<PagesSection",
+          "<Enterprise",
+          "<FinalCta"
+        ]
+      },
+      "nodes": [
+        {
+          "section": "shell.header",
+          "variants": [
+            "signin-menu"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "white",
+          "realVariant": "signin-menu"
+        },
+        {
+          "section": "shell.banner",
+          "variants": null,
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "purple-10"
+        },
+        {
+          "section": "hero.carousel",
+          "variants": null,
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "hero-gradient"
+        },
+        {
+          "section": "proof.logo-strip",
+          "variants": [
+            "rotating"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "neutral-5",
+          "realVariant": "rotating"
+        },
+        {
+          "section": "intro.section",
+          "variants": [
+            "product-lockup"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "neutral-5",
+          "realVariant": "product-lockup"
+        },
+        {
+          "section": "aside.wide",
+          "variants": [
+            "default"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "neutral-5",
+          "realVariant": "default"
+        },
+        {
+          "section": "aside.pair",
+          "variants": [
+            "default"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "neutral-5",
+          "realVariant": "default"
+        },
+        {
+          "section": "feature.tabs",
+          "variants": null,
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "neutral-5"
+        },
+        {
+          "section": "testimonial.single",
+          "variants": [
+            "bold-span"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "purple-10",
+          "realVariant": "bold-span"
+        },
+        {
+          "section": "bento.inbox",
+          "variants": null,
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "neutral-5"
+        },
+        {
+          "section": "intro.section",
+          "variants": [
+            "product-lockup"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "neutral-5",
+          "realVariant": "product-lockup"
+        },
+        {
+          "section": "aside.wide",
+          "variants": [
+            "default"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "neutral-5",
+          "realVariant": "default"
+        },
+        {
+          "section": "aside.pair",
+          "variants": [
+            "default"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "neutral-5",
+          "realVariant": "default"
+        },
+        {
+          "section": "split.promo",
+          "variants": null,
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "purple-100"
+        },
+        {
+          "section": "cta.final-art",
+          "variants": null,
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "purple-100"
+        },
+        {
+          "section": "shell.footer",
+          "variants": [
+            "dark"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "mulberry-100",
+          "realVariant": "dark"
+        }
+      ]
+    },
+    "product-feature-rows": {
+      "description": "Product page built around two runs of alternating split feature rows, framed by a video hero, rotating logos, a stat band, intros, a dark media grid, quotes and a closing CTA band.",
+      "routes": [
+        "/mail"
+      ],
+      "evidence": [
+        {
+          "path": "src/pages/Mail.jsx",
+          "lines": "74-88",
+          "expect": "export default function Mail"
+        },
+        {
+          "path": "specs/mail.md",
+          "lines": "53-72",
+          "expect": "## 1. Section order and geometry"
+        }
+      ],
+      "sourceOrder": {
+        "path": "src/pages/Mail.jsx",
+        "after": "export default function Mail",
+        "tokens": [
+          "<ProductHero",
+          "<LogoStrip",
+          "bg-purple-100",
+          "<Intro",
+          "<IconFeatureGrid",
+          "<Intro",
+          "<FeatureRows rows={featuresA}",
+          "<CardGrid",
+          "<FeatureRows rows={featuresB}",
+          "<QuoteGrid",
+          "<CtaBand"
+        ]
+      },
+      "nodes": [
+        {
+          "section": "shell.header",
+          "variants": [
+            "product-ctas"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "white",
+          "realVariant": "product-ctas"
+        },
+        {
+          "section": "hero.product-video",
+          "variants": null,
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "neutral-10"
+        },
+        {
+          "section": "proof.logo-strip",
+          "variants": [
+            "rotating"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "neutral-10",
+          "realVariant": "rotating"
+        },
+        {
+          "section": "stat.band",
+          "variants": null,
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "purple-100"
+        },
+        {
+          "section": "intro.section",
+          "variants": [
+            "plain"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "white",
+          "realVariant": "plain"
+        },
+        {
+          "section": "grid.icon-features",
+          "variants": [
+            "centered"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "white",
+          "realVariant": "centered"
+        },
+        {
+          "section": "intro.section",
+          "variants": [
+            "with-media"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "neutral-5",
+          "realVariant": "with-media"
+        },
+        {
+          "section": "split.feature",
+          "variants": null,
+          "required": true,
+          "repeatable": true,
+          "min": 1,
+          "max": 5,
+          "realCount": 5,
+          "realBackground": "neutral-5"
+        },
+        {
+          "section": "grid.cards",
+          "variants": [
+            "caption"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "purple-100",
+          "realVariant": "caption"
+        },
+        {
+          "section": "split.feature",
+          "variants": null,
+          "required": true,
+          "repeatable": true,
+          "min": 1,
+          "max": 5,
+          "realCount": 5,
+          "realBackground": "neutral-5"
+        },
+        {
+          "section": "quotes.grid",
+          "variants": [
+            "logo-avatar"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "purple-100",
+          "realVariant": "logo-avatar"
+        },
+        {
+          "section": "cta.band",
+          "variants": [
+            "stack"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "mulberry-100",
+          "realVariant": "stack"
+        },
+        {
+          "section": "shell.footer",
+          "variants": [
+            "dark"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "mulberry-100",
+          "realVariant": "dark"
+        }
+      ]
+    },
+    "product-capability-grids": {
+      "description": "Product page that alternates centred intros, icon/card grids and split rows: background-art hero, demo video + static logos, dark AI group, band, surface grid, hubs, quote, integrations, suite grid, closing CTA.",
+      "routes": [
+        "/docs"
+      ],
+      "evidence": [
+        {
+          "path": "src/pages/Docs.jsx",
+          "lines": "28-105",
+          "expect": "export default function Docs"
+        },
+        {
+          "path": "specs/docs.md",
+          "lines": "22-41",
+          "expect": "## 1. Section order and geometry"
+        }
+      ],
+      "sourceOrder": {
+        "path": "src/pages/Docs.jsx",
+        "after": "export default function Docs",
+        "tokens": [
+          "<Intro",
+          "<VideoSlot",
+          "<LogoStrip",
+          "<SplitFeature",
+          "<IconFeatureGrid",
+          "<Intro title={band.title}",
+          "<CardGrid",
+          "<IconFeatureGrid columns={4}",
+          "<Testimonial",
+          "<Intro title={stack.title}",
+          "{...integrations}",
+          "{...connector}",
+          "<IconFeatureGrid columns={2}",
+          "<CtaBand"
+        ]
+      },
+      "nodes": [
+        {
+          "section": "shell.header",
+          "variants": [
+            "product-ctas"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "white",
+          "realVariant": "product-ctas"
+        },
+        {
+          "section": "hero.centered",
+          "variants": null,
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "neutral-10"
+        },
+        {
+          "section": "media.demo-video",
+          "variants": null,
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "white"
+        },
+        {
+          "section": "proof.logo-strip",
+          "variants": [
+            "static"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "white",
+          "realVariant": "static"
+        },
+        {
+          "section": "split.feature",
+          "variants": null,
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "mulberry-100"
+        },
+        {
+          "section": "grid.icon-features",
+          "variants": [
+            "default"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "mulberry-100",
+          "realVariant": "default"
+        },
+        {
+          "section": "intro.section",
+          "variants": [
+            "with-cta"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "neutral-10",
+          "realVariant": "with-cta"
+        },
+        {
+          "section": "grid.cards",
+          "variants": [
+            "detail"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "white",
+          "realVariant": "detail"
+        },
+        {
+          "section": "grid.icon-features",
+          "variants": [
+            "default"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "purple-100",
+          "realVariant": "default"
+        },
+        {
+          "section": "testimonial.single",
+          "variants": [
+            "logo-quote"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "purple-10",
+          "realVariant": "logo-quote"
+        },
+        {
+          "section": "intro.section",
+          "variants": [
+            "plain"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "neutral-5",
+          "realVariant": "plain"
+        },
+        {
+          "section": "split.feature",
+          "variants": null,
+          "required": true,
+          "repeatable": true,
+          "min": 1,
+          "max": 2,
+          "realCount": 2,
+          "realBackground": "neutral-5"
+        },
+        {
+          "section": "grid.icon-features",
+          "variants": [
+            "default"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "white",
+          "realVariant": "default"
+        },
+        {
+          "section": "cta.band",
+          "variants": [
+            "stack"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "mulberry-100",
+          "realVariant": "stack"
+        },
+        {
+          "section": "shell.footer",
+          "variants": [
+            "dark"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "mulberry-100",
+          "realVariant": "dark"
+        }
+      ]
+    },
+    "product-chapters": {
+      "description": "Product page told in five numbered chapters on one warm surface with dashed rails: video hero, chapter intros, scroll-pinned feature rows, helper cards, CTA bands, FAQ, light footer.",
+      "routes": [
+        "/go"
+      ],
+      "evidence": [
+        {
+          "path": "src/pages/Go.jsx",
+          "lines": "25-145",
+          "expect": "export default function Go"
+        },
+        {
+          "path": "specs/go.md",
+          "lines": "61-80",
+          "expect": "## 2. Section order and offsets"
+        }
+      ],
+      "sourceOrder": {
+        "path": "src/pages/Go.jsx",
+        "after": "export default function Go",
+        "tokens": [
+          "<ProductHero",
+          "<ChapterIntro {...ch1}",
+          "<FeatureRows rows={ch1.rows}",
+          "<ChapterIntro {...ch2}",
+          "ch2.row1.map",
+          "ch2.row2.map",
+          "<CtaBand",
+          "<ChapterIntro {...ch3}",
+          "connectors-strip",
+          "<ChapterIntro {...ch4}",
+          "<FeatureRows rows={ch4.rows}",
+          "<ChapterStack {...ch5}",
+          "<Faq",
+          "<CtaBand"
+        ]
+      },
+      "nodes": [
+        {
+          "section": "shell.header",
+          "variants": [
+            "product-ctas"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "neutral-5",
+          "realVariant": "product-ctas"
+        },
+        {
+          "section": "hero.product-video",
+          "variants": null,
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "neutral-5"
+        },
+        {
+          "section": "chapter.intro",
+          "variants": null,
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "neutral-5"
+        },
+        {
+          "section": "feature.sticky-row",
+          "variants": null,
+          "required": true,
+          "repeatable": true,
+          "min": 1,
+          "max": 4,
+          "realCount": 4,
+          "realBackground": "neutral-5"
+        },
+        {
+          "section": "chapter.intro",
+          "variants": null,
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "neutral-5"
+        },
+        {
+          "section": "grid.helper-cards",
+          "variants": [
+            "bordered"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "neutral-5",
+          "realVariant": "bordered"
+        },
+        {
+          "section": "grid.helper-cards",
+          "variants": [
+            "bordered"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "neutral-5",
+          "realVariant": "bordered"
+        },
+        {
+          "section": "cta.band",
+          "variants": [
+            "split"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "purple-10",
+          "realVariant": "split"
+        },
+        {
+          "section": "chapter.intro",
+          "variants": null,
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "neutral-5"
+        },
+        {
+          "section": "media.strip",
+          "variants": null,
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "neutral-5"
+        },
+        {
+          "section": "chapter.intro",
+          "variants": null,
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "neutral-5"
+        },
+        {
+          "section": "feature.sticky-row",
+          "variants": null,
+          "required": true,
+          "repeatable": true,
+          "min": 1,
+          "max": 5,
+          "realCount": 5,
+          "realBackground": "neutral-5"
+        },
+        {
+          "section": "chapter.split-media",
+          "variants": null,
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "neutral-5"
+        },
+        {
+          "section": "faq.accordion",
+          "variants": null,
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "neutral-5"
+        },
+        {
+          "section": "cta.band",
+          "variants": [
+            "split"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "green-90",
+          "realVariant": "split"
+        },
+        {
+          "section": "shell.footer",
+          "variants": [
+            "light"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "neutral-20",
+          "realVariant": "light"
+        }
+      ]
+    },
+    "split-hero-showcase": {
+      "description": "Product page with a split hero and static logos, split rows on alternating surfaces, a card bench with a CTA, a 'where it works' bento + asides, quotes, trust grid, FAQ and closing CTA.",
+      "routes": [
+        "/agents"
+      ],
+      "evidence": [
+        {
+          "path": "src/pages/Agents.jsx",
+          "lines": "50-214",
+          "expect": "export default function Agents"
+        },
+        {
+          "path": "specs/agents.md",
+          "lines": "33-56",
+          "expect": "## 2. Section order and offsets"
+        }
+      ],
+      "sourceOrder": {
+        "path": "src/pages/Agents.jsx",
+        "after": "export default function Agents",
+        "tokens": [
+          "<SplitHero",
+          "<LogoStrip",
+          "{...assist}",
+          "<Intro title={cards.title}",
+          "<HelperCard",
+          "{cards.cta}",
+          "{...build}",
+          "{...tools}",
+          "<Intro title={where.title}",
+          "<Bento",
+          "where.docs.label",
+          "where.desk.label",
+          "<TwoColumn",
+          "trust.title",
+          "<Faq",
+          "<CtaBand"
+        ]
+      },
+      "nodes": [
+        {
+          "section": "shell.header",
+          "variants": [
+            "product-ctas"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "white",
+          "realVariant": "product-ctas"
+        },
+        {
+          "section": "hero.split",
+          "variants": null,
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "purple-0"
+        },
+        {
+          "section": "proof.logo-strip",
+          "variants": [
+            "static"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "purple-0",
+          "realVariant": "static"
+        },
+        {
+          "section": "split.feature",
+          "variants": null,
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "purple-100"
+        },
+        {
+          "section": "intro.section",
+          "variants": [
+            "plain"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "neutral-10",
+          "realVariant": "plain"
+        },
+        {
+          "section": "grid.helper-cards",
+          "variants": [
+            "white"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "neutral-10",
+          "realVariant": "white"
+        },
+        {
+          "section": "cta.button-row",
+          "variants": null,
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "neutral-10"
+        },
+        {
+          "section": "split.feature",
+          "variants": null,
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "white"
+        },
+        {
+          "section": "split.feature",
+          "variants": null,
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "mulberry-100"
+        },
+        {
+          "section": "intro.section",
+          "variants": [
+            "plain"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "neutral-10",
+          "realVariant": "plain"
+        },
+        {
+          "section": "bento.cards",
+          "variants": null,
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "neutral-10"
+        },
+        {
+          "section": "aside.wide",
+          "variants": [
+            "title"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "neutral-10",
+          "realVariant": "title"
+        },
+        {
+          "section": "aside.pair",
+          "variants": [
+            "title"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "neutral-10",
+          "realVariant": "title"
+        },
+        {
+          "section": "quotes.pair",
+          "variants": null,
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "white"
+        },
+        {
+          "section": "grid.icon-features",
+          "variants": [
+            "default"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "purple-0",
+          "realVariant": "default"
+        },
+        {
+          "section": "faq.accordion",
+          "variants": null,
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "white"
+        },
+        {
+          "section": "cta.band",
+          "variants": [
+            "stack"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "mulberry-100",
+          "realVariant": "stack"
+        },
+        {
+          "section": "shell.footer",
+          "variants": [
+            "dark"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "mulberry-100",
+          "realVariant": "dark"
+        }
+      ]
+    },
+    "split-hero-solutions": {
+      "description": "Solutions page: dark split hero + static logos, intro + four split rows, CTA band, builder row, security group with compliance placeholders, resources, quotes, FAQ, closing CTA.",
+      "routes": [
+        "/enterprise"
+      ],
+      "evidence": [
+        {
+          "path": "src/pages/Enterprise.jsx",
+          "lines": "45-125",
+          "expect": "export default function EnterprisePage"
+        },
+        {
+          "path": "specs/enterprise.md",
+          "lines": "17-50",
+          "expect": "## 0. Page structure, groups and spacing rules"
+        }
+      ],
+      "sourceOrder": {
+        "path": "src/pages/Enterprise.jsx",
+        "after": "export default function EnterprisePage",
+        "tokens": [
+          "<SplitHero",
+          "<LogoStrip",
+          "<Intro title={intro.title}",
+          "<SplitFeature {...f}",
+          "<CtaBand title={ctaBand.title}",
+          "<SplitFeature {...builder}",
+          "<Intro title={security.title}",
+          "<IconFeatureGrid",
+          "<LogoGrid ids={BADGES_A}",
+          "<Intro title={resources.title}",
+          "{...resources.report}",
+          "<CardGrid",
+          "<QuoteGrid",
+          "<FaqAccordion",
+          "<CtaBand {...finalCta}"
+        ]
+      },
+      "nodes": [
+        {
+          "section": "shell.header",
+          "variants": [
+            "signin-menu"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "white",
+          "realVariant": "signin-menu"
+        },
+        {
+          "section": "hero.split",
+          "variants": null,
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "purple-100"
+        },
+        {
+          "section": "proof.logo-strip",
+          "variants": [
+            "static"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "purple-100",
+          "realVariant": "static"
+        },
+        {
+          "section": "intro.section",
+          "variants": [
+            "plain"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "white",
+          "realVariant": "plain"
+        },
+        {
+          "section": "split.feature",
+          "variants": null,
+          "required": true,
+          "repeatable": true,
+          "min": 1,
+          "max": 4,
+          "realCount": 4,
+          "realBackground": "white"
+        },
+        {
+          "section": "cta.band",
+          "variants": [
+            "stack"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "neutral-10",
+          "realVariant": "stack"
+        },
+        {
+          "section": "split.feature",
+          "variants": null,
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "white"
+        },
+        {
+          "section": "intro.section",
+          "variants": [
+            "plain"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "green-90",
+          "realVariant": "plain"
+        },
+        {
+          "section": "grid.icon-features",
+          "variants": [
+            "default"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "green-90",
+          "realVariant": "default"
+        },
+        {
+          "section": "proof.badge-grid",
+          "variants": null,
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "green-90"
+        },
+        {
+          "section": "intro.section",
+          "variants": [
+            "plain"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "purple-10",
+          "realVariant": "plain"
+        },
+        {
+          "section": "split.feature",
+          "variants": null,
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "purple-10"
+        },
+        {
+          "section": "grid.cards",
+          "variants": [
+            "media"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "purple-10",
+          "realVariant": "media"
+        },
+        {
+          "section": "quotes.grid",
+          "variants": [
+            "logo"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "purple-100",
+          "realVariant": "logo"
+        },
+        {
+          "section": "faq.accordion",
+          "variants": null,
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "white"
+        },
+        {
+          "section": "cta.band",
+          "variants": [
+            "stack"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "mulberry-100",
+          "realVariant": "stack"
+        },
+        {
+          "section": "shell.footer",
+          "variants": [
+            "dark"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "mulberry-100",
+          "realVariant": "dark"
+        }
+      ]
+    },
+    "pricing": {
+      "description": "Pricing page: h1 + product overview, joined plan cards, rotating logos on a gradient wrapper, testimonial trio, desktop-only comparison.",
+      "routes": [
+        "/plans"
+      ],
+      "evidence": [
+        {
+          "path": "src/pages/Plans.jsx",
+          "lines": "24-36",
+          "expect": "export default function Plans"
+        },
+        {
+          "path": "specs/plans.md",
+          "lines": "31-44",
+          "expect": "## 0. Section order and offsets"
+        }
+      ],
+      "sourceOrder": {
+        "path": "src/pages/Plans.jsx",
+        "after": "export default function Plans",
+        "tokens": [
+          "<SuiteIntro",
+          "<PlanCards",
+          "<LogoStrip",
+          "<TestimonialTrio",
+          "<PlanComparison"
+        ]
+      },
+      "nodes": [
+        {
+          "section": "shell.header",
+          "variants": [
+            "signin-menu"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "white",
+          "realVariant": "signin-menu"
+        },
+        {
+          "section": "pricing.suite-intro",
+          "variants": null,
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "plans-gradient"
+        },
+        {
+          "section": "pricing.plan-cards",
+          "variants": null,
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "plans-gradient"
+        },
+        {
+          "section": "proof.logo-strip",
+          "variants": [
+            "rotating"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "plans-gradient",
+          "realVariant": "rotating"
+        },
+        {
+          "section": "testimonial.trio",
+          "variants": null,
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "blue-90"
+        },
+        {
+          "section": "pricing.comparison",
+          "variants": null,
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "neutral-5"
+        },
+        {
+          "section": "shell.footer",
+          "variants": [
+            "dark"
+          ],
+          "required": true,
+          "repeatable": false,
+          "min": 1,
+          "max": 1,
+          "realCount": 1,
+          "realBackground": "mulberry-100",
+          "realVariant": "dark"
+        }
+      ]
+    }
+  }
+}

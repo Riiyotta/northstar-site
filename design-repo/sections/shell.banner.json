@@ -1,0 +1,76 @@
+{
+  "id": "shell.banner",
+  "category": "shell",
+  "purpose": "Announcement strip that routes homepage visitors to the Inbox product page.",
+  "implementedBy": [
+    {
+      "path": "src/components/Banner.jsx",
+      "lines": "4-24",
+      "expect": "export default function Banner"
+    },
+    {
+      "path": "src/pages/Home.jsx",
+      "lines": "15-15",
+      "expect": "<Banner />"
+    }
+  ],
+  "usedOn": [
+    "/"
+  ],
+  "variants": {},
+  "content": {
+    "message": {
+      "kind": "text",
+      "required": true,
+      "maxChars": 31,
+      "maxWords": 7,
+      "budgetSource": "CLONE_SPEC.md §2 banner text (orig 28 ch)"
+    },
+    "linkLabel": {
+      "kind": "text",
+      "required": true,
+      "maxChars": 11,
+      "maxWords": 3,
+      "budgetSource": "CLONE_SPEC.md §2 'Learn more' (orig 10 ch)"
+    }
+  },
+  "allowedBackgrounds": [
+    "purple-10"
+  ],
+  "constraints": {
+    "onePerPage": true,
+    "homeRouteOnly": true,
+    "mustFollow": "shell.header"
+  },
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "default": "none"
+  },
+  "responsive": [
+    {
+      "minWidth": "base",
+      "change": "14px text (banner-sm), wraps centred."
+    },
+    {
+      "minWidth": "640.02px",
+      "change": "16px text (banner).",
+      "measuredFrom": {
+        "path": "src/components/Banner.jsx",
+        "lines": "7-7",
+        "expect": "text-banner-sm sm:text-banner"
+      }
+    }
+  ],
+  "measuredFrom": [
+    {
+      "path": "CLONE_SPEC.md",
+      "lines": "170-175",
+      "expect": "## 2. Announcement banner"
+    }
+  ],
+  "notes": [
+    "Only the homepage renders it (specs/mail.md, docs.md, go.md, agents.md, plans.md and enterprise.md all record 'no announcement banner')."
+  ]
+}

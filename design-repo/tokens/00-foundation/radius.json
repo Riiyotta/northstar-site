@@ -1,0 +1,58 @@
+{
+  "$description": "Radius scale (tailwind borderRadius; CLONE_SPEC.md 0.6). 12 = cards/asides/large buttons, 16 = dropdown surfaces, 8 = compact buttons and links.",
+  "radius": {
+    "none": {
+      "$type": "dimension",
+      "$value": "0"
+    },
+    "4": {
+      "$type": "dimension",
+      "$value": "4px"
+    },
+    "6": {
+      "$type": "dimension",
+      "$value": "6px"
+    },
+    "8": {
+      "$type": "dimension",
+      "$value": "8px"
+    },
+    "12": {
+      "$type": "dimension",
+      "$value": "12px"
+    },
+    "14": {
+      "$type": "dimension",
+      "$value": "14px"
+    },
+    "16": {
+      "$type": "dimension",
+      "$value": "16px"
+    },
+    "20": {
+      "$type": "dimension",
+      "$value": "20px"
+    },
+    "24": {
+      "$type": "dimension",
+      "$value": "24px"
+    },
+    "32": {
+      "$type": "dimension",
+      "$value": "32px"
+    },
+    "full": {
+      "$type": "dimension",
+      "$value": "999px"
+    }
+  },
+  "$extensions": {
+    "measuredFrom": [
+      {
+        "path": "tailwind.config.js",
+        "lines": "155-167",
+        "expect": "12: '12px'"
+      }
+    ]
+  }
+}

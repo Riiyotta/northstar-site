@@ -1,0 +1,121 @@
+{
+  "$description": "Layout rules (content wrapper, section/group padding, two-column and multi-column grids). Values per breakpoint use the measured min-width keys.",
+  "layout": {
+    "contentWrapper": {
+      "$type": "layout",
+      "$value": {
+        "width": "min(100% - 2 * var(--vp), var(--content-max))",
+        "paddingInline": "var(--vp)",
+        "boxSizing": "content-box"
+      }
+    },
+    "contentMax": {
+      "$type": "dimension",
+      "$value": {
+        "base": "1280px",
+        "1440.02": "1440px"
+      },
+      "$description": "--content-max; /plans sets 1440 on main; TestimonialTrio uses 1208."
+    },
+    "textMax": {
+      "$type": "dimension",
+      "$value": "min(90vw, 900px)",
+      "$description": "Every h1-h6 and p is capped at this width."
+    },
+    "sectionGroup": {
+      "$type": "layout",
+      "$value": {
+        "rule": "One surface per group; every PageSection after the first has padding-top 0 and keeps its padding-bottom."
+      }
+    },
+    "twoColumnGap": {
+      "M": {
+        "$type": "dimension",
+        "$value": {
+          "base": "24px",
+          "640.02": "40px",
+          "1280.02": "64px"
+        }
+      },
+      "L": {
+        "$type": "dimension",
+        "$value": {
+          "base": "32px",
+          "640.02": "64px",
+          "1280.02": "128px"
+        }
+      },
+      "vp": {
+        "$type": "dimension",
+        "$value": "var(--vp)"
+      }
+    },
+    "twoColumnRowFrom": {
+      "$type": "layout",
+      "$value": {
+        "smallSingleCol": "640.02px",
+        "mediumSingleCol": "1080.02px"
+      }
+    },
+    "multiColumn": {
+      "$type": "layout",
+      "$value": {
+        "containerQuery": "min-width: 640px",
+        "gap": "var(--vp)",
+        "columns": [
+          2,
+          3,
+          4
+        ]
+      }
+    },
+    "logoGrid": {
+      "$type": "layout",
+      "$value": {
+        "columns": {
+          "base": 3,
+          "1080.02": 6
+        },
+        "cellHeight": "81px"
+      }
+    },
+    "headerHeight": {
+      "$type": "dimension",
+      "$value": "67px"
+    }
+  },
+  "$extensions": {
+    "measuredFrom": [
+      {
+        "path": "src/index.css",
+        "lines": "115-120",
+        "expect": "var(--content-max)"
+      },
+      {
+        "path": "src/index.css",
+        "lines": "44-48",
+        "expect": "--content-max: 1440px;"
+      },
+      {
+        "path": "src/components/ui/TwoColumn.jsx",
+        "lines": "8-12",
+        "expect": "xl:gap-32"
+      },
+      {
+        "path": "src/index.css",
+        "lines": "170-178",
+        "expect": "container-type: inline-size"
+      },
+      {
+        "path": "src/components/ui/PageSection.jsx",
+        "lines": "4-7",
+        "expect": "[&>section+section]:pt-0"
+      },
+      {
+        "path": "src/components/LogoStrip.jsx",
+        "lines": "69-72",
+        "expect": "lg:grid-cols-6"
+      }
+    ]
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "id": "cta.final-art",
+  "category": "conversion",
+  "purpose": "Homepage closing CTA: one-line h2 and an outline button over an animated gradient background.",
+  "implementedBy": [
+    {
+      "path": "src/components/FinalCta.jsx",
+      "lines": "6-29",
+      "expect": "export default function FinalCta"
+    }
+  ],
+  "usedOn": [
+    "/"
+  ],
+  "variants": {},
+  "content": {
+    "title": {
+      "kind": "text",
+      "required": true,
+      "maxChars": 32,
+      "maxWords": 8,
+      "budgetSource": "CLONE_SPEC.md §10 h2 (orig 29 ch)"
+    },
+    "ctaLabel": {
+      "kind": "text",
+      "required": true,
+      "maxChars": 13,
+      "maxWords": 3,
+      "budgetSource": "CLONE_SPEC.md §10 button (orig 11 ch)"
+    },
+    "backgroundArt": {
+      "kind": "media",
+      "required": true,
+      "assetRoles": [
+        "decor.background-art"
+      ]
+    }
+  },
+  "allowedBackgrounds": [
+    "purple-100"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "cta-art-drift"
+    ],
+    "default": "cta-art-drift"
+  },
+  "responsive": [
+    {
+      "minWidth": "base",
+      "change": "Stacked; full-width button."
+    },
+    {
+      "minWidth": "640.02px",
+      "change": "Two columns, button right.",
+      "measuredFrom": {
+        "path": "src/components/FinalCta.jsx",
+        "lines": "19-19",
+        "expect": "sm:grid-cols-2"
+      }
+    }
+  ],
+  "measuredFrom": [
+    {
+      "path": "CLONE_SPEC.md",
+      "lines": "339-344",
+      "expect": "## 10. Final CTA band"
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "id": "aside.wide",
+  "category": "feature",
+  "purpose": "Full-width rounded card pairing a short label + statement with a wide product illustration.",
+  "implementedBy": [
+    {
+      "path": "src/components/ui/Aside.jsx",
+      "lines": "9-31",
+      "expect": "export default function Aside"
+    },
+    {
+      "path": "src/components/AgentSection.jsx",
+      "lines": "19-31",
+      "expect": "{/* 5.2 Wide media aside */}"
+    },
+    {
+      "path": "src/pages/Agents.jsx",
+      "lines": "128-137",
+      "expect": "variant=\"title\""
+    }
+  ],
+  "usedOn": [
+    "/",
+    "/agents"
+  ],
+  "variants": {
+    "default": "text-xsmall label + heading-xs statement (homepage).",
+    "title": "heading-xs title + text-small body (agents 8c)."
+  },
+  "content": {
+    "label": {
+      "kind": "text",
+      "required": true,
+      "maxChars": 20,
+      "maxWords": 5,
+      "budgetSource": "CLONE_SPEC.md §5.2 label (orig 18 ch)"
+    },
+    "body": {
+      "kind": "text",
+      "required": true,
+      "maxChars": 137,
+      "maxWords": 31,
+      "budgetSource": "CLONE_SPEC.md §8 wide aside body (orig 124); §5.2 (102)"
+    },
+    "tone": {
+      "kind": "enum",
+      "required": true,
+      "values": [
+        "dark",
+        "light"
+      ]
+    },
+    "surface": {
+      "kind": "enum",
+      "required": true,
+      "values": [
+        "green-90",
+        "mulberry-100",
+        "neutral-20",
+        "purple-10",
+        "white"
+      ]
+    },
+    "media": {
+      "kind": "media",
+      "required": true,
+      "assetRoles": [
+        "product.ui-illustration"
+      ]
+    }
+  },
+  "allowedBackgrounds": [
+    "neutral-5",
+    "neutral-10"
+  ],
+  "constraints": {},
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "default": "none"
+  },
+  "responsive": [
+    {
+      "minWidth": "base",
+      "change": "Stacked: body then full-width 3:2 media."
+    },
+    {
+      "minWidth": "640.02px",
+      "change": "Row, items end; media 50cqi.",
+      "measuredFrom": {
+        "path": "src/components/ui/Aside.jsx",
+        "lines": "34-34",
+        "expect": "export const rowFromSm"
+      }
+    },
+    {
+      "minWidth": "1080.02px",
+      "change": "Media 60cqi at the wide aspect (1440:617 / 1440:628).",
+      "measuredFrom": {
+        "path": "src/components/AgentSection.jsx",
+        "lines": "28-28",
+        "expect": "lg:aspect-[1440/617] lg:w-3/5"
+      }
+    }
+  ],
+  "measuredFrom": [
+    {
+      "path": "CLONE_SPEC.md",
+      "lines": "251-261",
+      "expect": "### 5.2 Wide media aside"
+    },
+    {
+      "path": "specs/agents.md",
+      "lines": "118-120",
+      "expect": "### 8c. Wide aside"
+    }
+  ],
+  "notes": [
+    "`surface` is the card fill (inside the section), distinct from the node background."
+  ]
+}

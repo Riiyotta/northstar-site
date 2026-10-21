@@ -1,0 +1,25 @@
+{
+  "id": "bento",
+  "kind": "component",
+  "purpose": "7/5 bento: one tall card + two stacked cards with bleed media.",
+  "implementedBy": [
+    {
+      "path": "src/components/ui/Bento.jsx",
+      "lines": "24-35",
+      "expect": "export default function Bento"
+    }
+  ],
+  "props": {
+    "main": "card",
+    "side": "card[2]"
+  },
+  "tokens": [
+    "tokens/20-component/card.json#card.bento"
+  ],
+  "accessibility": [
+    "<article> cards."
+  ],
+  "usedBy": [
+    "bento.cards"
+  ]
+}

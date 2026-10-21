@@ -1,0 +1,243 @@
+{
+  "$description": "Raw palette. Hex values copied from tailwind.config.js theme.colors (CLONE_SPEC.md 0.4). Alpha values copied from the .ctx-light/.ctx-dark custom properties in src/index.css.",
+  "color": {
+    "white": {
+      "$type": "color",
+      "$value": "#ffffff"
+    },
+    "black": {
+      "$type": "color",
+      "$value": "#000000",
+      "$description": "UA default button colour; only the accordion caret uses it."
+    },
+    "neutral": {
+      "0": {
+        "$type": "color",
+        "$value": "#fcfaf7"
+      },
+      "5": {
+        "$type": "color",
+        "$value": "#f7f5f2"
+      },
+      "10": {
+        "$type": "color",
+        "$value": "#f2f0eb"
+      },
+      "20": {
+        "$type": "color",
+        "$value": "#dedbd5"
+      },
+      "30": {
+        "$type": "color",
+        "$value": "#bfbcb6"
+      },
+      "40": {
+        "$type": "color",
+        "$value": "#8d8a86"
+      },
+      "60": {
+        "$type": "color",
+        "$value": "#73716d"
+      },
+      "80": {
+        "$type": "color",
+        "$value": "#474543"
+      },
+      "90": {
+        "$type": "color",
+        "$value": "#292827"
+      },
+      "95": {
+        "$type": "color",
+        "$value": "#1f1e1d"
+      },
+      "100": {
+        "$type": "color",
+        "$value": "#141413"
+      }
+    },
+    "purple": {
+      "0": {
+        "$type": "color",
+        "$value": "#f7f5ff"
+      },
+      "10": {
+        "$type": "color",
+        "$value": "#e8e0ff"
+      },
+      "20": {
+        "$type": "color",
+        "$value": "#d4c7ff"
+      },
+      "30": {
+        "$type": "color",
+        "$value": "#bea1f5"
+      },
+      "40": {
+        "$type": "color",
+        "$value": "#9e7be0"
+      },
+      "50": {
+        "$type": "color",
+        "$value": "#8861ca"
+      },
+      "60": {
+        "$type": "color",
+        "$value": "#714cb6"
+      },
+      "80": {
+        "$type": "color",
+        "$value": "#533192"
+      },
+      "90": {
+        "$type": "color",
+        "$value": "#3f256f"
+      },
+      "100": {
+        "$type": "color",
+        "$value": "#281647"
+      }
+    },
+    "green": {
+      "0": {
+        "$type": "color",
+        "$value": "#f4fdfa"
+      },
+      "90": {
+        "$type": "color",
+        "$value": "#0c4243"
+      },
+      "100": {
+        "$type": "color",
+        "$value": "#17261f"
+      }
+    },
+    "mulberry": {
+      "100": {
+        "$type": "color",
+        "$value": "#421d24"
+      },
+      "black": {
+        "$type": "color",
+        "$value": "#241013"
+      }
+    },
+    "blue": {
+      "90": {
+        "$type": "color",
+        "$value": "#0a476d",
+        "$description": "/plans testimonials surface (plans.md new tokens)."
+      }
+    },
+    "sky": {
+      "40": {
+        "$type": "color",
+        "$value": "#62abff"
+      },
+      "60": {
+        "$type": "color",
+        "$value": "#3b96ff"
+      }
+    },
+    "focus": {
+      "$type": "color",
+      "$value": "#005fcc"
+    },
+    "alpha": {
+      "ink-65": {
+        "$type": "color",
+        "$value": "rgba(20, 20, 19, 0.65)",
+        "$description": "text-sub, light context"
+      },
+      "ink-60": {
+        "$type": "color",
+        "$value": "rgba(20, 20, 19, 0.6)",
+        "$description": "dialog backdrop (--overlay)"
+      },
+      "stone-20": {
+        "$type": "color",
+        "$value": "rgba(115, 113, 109, 0.2)",
+        "$description": "border-sub, light context"
+      },
+      "stone-5": {
+        "$type": "color",
+        "$value": "rgba(115, 113, 109, 0.05)",
+        "$description": "border-soft, light context"
+      },
+      "black-5": {
+        "$type": "color",
+        "$value": "rgba(0, 0, 0, 0.05)",
+        "$description": "hover tint, light context"
+      },
+      "white-90": {
+        "$type": "color",
+        "$value": "rgba(255, 255, 255, 0.9)",
+        "$description": "action-secondary, dark context"
+      },
+      "white-80": {
+        "$type": "color",
+        "$value": "rgba(255, 255, 255, 0.8)",
+        "$description": "text-sub, dark context"
+      },
+      "white-65": {
+        "$type": "color",
+        "$value": "rgba(255, 255, 255, 0.65)",
+        "$description": "text-soft, dark context"
+      },
+      "white-10": {
+        "$type": "color",
+        "$value": "rgba(255, 255, 255, 0.1)",
+        "$description": "hover tint, dark context"
+      },
+      "white-5": {
+        "$type": "color",
+        "$value": "rgba(255, 255, 255, 0.05)",
+        "$description": "footer watermark, dark tone"
+      },
+      "paper-20": {
+        "$type": "color",
+        "$value": "rgba(252, 250, 247, 0.2)",
+        "$description": "border-sub, dark context; hero progress fill"
+      },
+      "paper-8": {
+        "$type": "color",
+        "$value": "rgba(252, 250, 247, 0.08)",
+        "$description": "border-soft, dark context"
+      },
+      "graphite-80": {
+        "$type": "color",
+        "$value": "rgba(41, 40, 39, 0.8)",
+        "$description": "footer links, light tone"
+      },
+      "graphite-50": {
+        "$type": "color",
+        "$value": "rgba(41, 40, 39, 0.5)",
+        "$description": "info icon (icon-soft)"
+      },
+      "graphite-5": {
+        "$type": "color",
+        "$value": "rgba(41, 40, 39, 0.05)",
+        "$description": "footer watermark, light tone"
+      }
+    }
+  },
+  "$extensions": {
+    "measuredFrom": [
+      {
+        "path": "tailwind.config.js",
+        "lines": "19-35",
+        "expect": "neutral: {"
+      },
+      {
+        "path": "src/index.css",
+        "lines": "51-67",
+        "expect": "--fg-sub: rgba(20, 20, 19, 0.65);"
+      },
+      {
+        "path": "src/index.css",
+        "lines": "73-89",
+        "expect": "--fg-sub: rgba(255, 255, 255, 0.8);"
+      }
+    ]
+  }
+}

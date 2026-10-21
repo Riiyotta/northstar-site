@@ -1,0 +1,118 @@
+{
+  "id": "bento.inbox",
+  "category": "feature",
+  "purpose": "Product intro (lockup, two-tone h2, lede, CTAs) followed by a 3-card bento of product illustrations.",
+  "implementedBy": [
+    {
+      "path": "src/components/InboxBento.jsx",
+      "lines": "15-60",
+      "expect": "export default function InboxBento"
+    }
+  ],
+  "usedOn": [
+    "/"
+  ],
+  "variants": {},
+  "content": {
+    "lockup": {
+      "kind": "media",
+      "required": true,
+      "assetRoles": [
+        "brand.product-lockup"
+      ]
+    },
+    "title": {
+      "kind": "richText",
+      "required": true,
+      "maxChars": 52,
+      "maxWords": 12,
+      "budgetSource": "CLONE_SPEC.md §7 h2 (orig 24 + 23 ch)"
+    },
+    "lede": {
+      "kind": "text",
+      "required": true,
+      "maxChars": 108,
+      "maxWords": 24,
+      "budgetSource": "CLONE_SPEC.md §7 p (orig 98 ch)"
+    },
+    "ctaLabel": {
+      "kind": "text",
+      "required": true,
+      "maxChars": 10,
+      "maxWords": 3,
+      "budgetSource": "CLONE_SPEC.md §7 CTA (placeholder length; original not recorded)"
+    },
+    "cards": {
+      "kind": "items",
+      "required": true,
+      "minItems": 3,
+      "maxItems": 3,
+      "fields": {
+        "label": {
+          "kind": "text",
+          "required": true,
+          "maxChars": 20,
+          "maxWords": 5,
+          "budgetSource": "CLONE_SPEC.md §7 card labels (orig 11-18 ch)"
+        },
+        "body": {
+          "kind": "text",
+          "required": true,
+          "maxChars": 123,
+          "maxWords": 28,
+          "budgetSource": "CLONE_SPEC.md §7 card h3 (orig 79-111 ch)"
+        },
+        "media": {
+          "kind": "media",
+          "required": true,
+          "assetRoles": [
+            "product.ui-illustration"
+          ]
+        }
+      }
+    }
+  },
+  "allowedBackgrounds": [
+    "neutral-5"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "default": "none"
+  },
+  "responsive": [
+    {
+      "minWidth": "base",
+      "change": "Cards stack, gap vp."
+    },
+    {
+      "minWidth": "640.02px",
+      "change": "Card B background art switches to the 1080:478 crop.",
+      "measuredFrom": {
+        "path": "src/components/InboxBento.jsx",
+        "lines": "39-39",
+        "expect": "sm:aspect-[1080/478]"
+      }
+    },
+    {
+      "minWidth": "1080.02px",
+      "change": "Two columns 728fr / 520fr.",
+      "measuredFrom": {
+        "path": "src/components/InboxBento.jsx",
+        "lines": "24-24",
+        "expect": "lg:grid-cols-[728fr_520fr]"
+      }
+    }
+  ],
+  "measuredFrom": [
+    {
+      "path": "CLONE_SPEC.md",
+      "lines": "297-314",
+      "expect": "## 7. \"Inbox\" product section (bento)"
+    }
+  ]
+}

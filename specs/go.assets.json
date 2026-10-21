@@ -1,0 +1,819 @@
+{
+  "source": "https://superhuman.com/go",
+  "measured": "2026-10-21, local Playwright Chrome (desktop UA, reducedMotion no-preference), widths 1440/1024/768/390",
+  "note": "Placeholder slots only. Nothing was downloaded. Draw original artwork per 'depicts'. 'sizes' are rendered CSS px [w,h]; 'natural' is the original file's intrinsic size, given for aspect reference only. 'colors' are dominant colors sampled from the rendered page (videos sampled at ~3s). Shared slots (logo-header, logo-footer, wordmark-footer, social icons) are in ../asset-manifest.json.",
+  "slots": [
+    {
+      "id": "lockup-assistant",
+      "section": "3 hero (inline, first line of h1)",
+      "kind": "product lockup (SVG)",
+      "sizes": {
+        "1440": [
+          195,
+          25
+        ],
+        "1024": [
+          195,
+          25
+        ],
+        "768": [
+          195,
+          25
+        ],
+        "390": [
+          195,
+          25
+        ]
+      },
+      "radius": 0,
+      "position": "centered, first line of the h1, followed by <br>",
+      "colors": [
+        "#292827",
+        "#714cb6"
+      ],
+      "depicts": "small rounded-square product tile (purple tint with a dark figure glyph) followed by the uppercase brand wordmark and the product name; draw 'NORTHSTAR Assistant' with the star glyph tile, like the existing Lockup component",
+      "format_original": "SVG"
+    },
+    {
+      "id": "go-hero-video",
+      "section": "3 hero",
+      "kind": "video (mp4, autoplay muted playsinline, looped by JS, 40.65s)",
+      "natural": [
+        2560,
+        1440
+      ],
+      "aspect": "16:9",
+      "sizes": {
+        "1440": [
+          1280,
+          720
+        ],
+        "1024": [
+          976,
+          549
+        ],
+        "768": [
+          720,
+          405
+        ],
+        "390": [
+          358,
+          201.4
+        ]
+      },
+      "radius": 0,
+      "fit": "contain",
+      "position": "full content width, 40px below the CTA (24 at <640); play/pause control bottom-left inset 4px",
+      "colors": [
+        "#4d3371",
+        "#e2dae9",
+        "#f5f3f8",
+        "#9a91c6"
+      ],
+      "depicts": "abstract swirling deep-purple/red/blue backdrop; centered frosted, translucent browser window with three tabs (mail, chat, docs) in which an email reply is being drafted line by line, with a pointer cursor and a blue Send split-button",
+      "control_icon_color": "#ffffff"
+    },
+    {
+      "id": "go-row-1-video",
+      "section": "4b feature row 1",
+      "kind": "video (mp4, lazy src via IO, 13.97s)",
+      "natural": [
+        1200,
+        800
+      ],
+      "aspect": "3:2",
+      "sizes": {
+        "1440": [
+          624,
+          416
+        ],
+        "1024": [
+          476,
+          317.3
+        ],
+        "768": [
+          348,
+          232
+        ],
+        "390": [
+          358,
+          238.7
+        ]
+      },
+      "radius": 0,
+      "position": "right column (≥640), top of row (<640)",
+      "colors": [
+        "#e3eef5",
+        "#eef5f9",
+        "#2b73a0",
+        "#d6e0e6"
+      ],
+      "depicts": "teal/blue gradient backdrop; white document card titled like an announcement with a paragraph being typed and an inline suggestion underline + popover",
+      "control_icon_color": "#ffffff"
+    },
+    {
+      "id": "go-row-2-video",
+      "section": "4c feature row 2",
+      "kind": "video (12.40s)",
+      "natural": [
+        1200,
+        800
+      ],
+      "aspect": "3:2",
+      "sizes": {
+        "1440": [
+          624,
+          416
+        ],
+        "1024": [
+          476,
+          317.3
+        ],
+        "768": [
+          348,
+          232
+        ],
+        "390": [
+          358,
+          238.7
+        ]
+      },
+      "radius": 0,
+      "colors": [
+        "#e2e7e8",
+        "#e6e9f0",
+        "#365075",
+        "#d6d9dc"
+      ],
+      "depicts": "blue-green blurred backdrop; light mail client panel listing 5 inbox rows (checkbox, star, sender, subject, snippet) being sorted/labelled",
+      "control_icon_color": "#ffffff"
+    },
+    {
+      "id": "go-row-3-video",
+      "section": "4d feature row 3",
+      "kind": "video (10.83s)",
+      "natural": [
+        1200,
+        800
+      ],
+      "aspect": "3:2",
+      "sizes": {
+        "1440": [
+          624,
+          416
+        ],
+        "1024": [
+          476,
+          317.3
+        ],
+        "768": [
+          348,
+          232
+        ],
+        "390": [
+          358,
+          238.7
+        ]
+      },
+      "radius": 0,
+      "colors": [
+        "#f1f5f9",
+        "#f6f7fd",
+        "#e2e6ee",
+        "#5e76b3"
+      ],
+      "depicts": "periwinkle backdrop; team-chat window (narrow icon sidebar) where a bot avatar posts a short agenda with two bullet items, reply field at the bottom",
+      "control_icon_color": "#292827"
+    },
+    {
+      "id": "go-row-4-video",
+      "section": "4e feature row 4",
+      "kind": "video (16.45s)",
+      "natural": [
+        1200,
+        800
+      ],
+      "aspect": "3:2",
+      "sizes": {
+        "1440": [
+          624,
+          416
+        ],
+        "1024": [
+          476,
+          317.3
+        ],
+        "768": [
+          348,
+          232
+        ],
+        "390": [
+          358,
+          238.7
+        ]
+      },
+      "radius": 0,
+      "colors": [
+        "#3f3d3c",
+        "#858ca3"
+      ],
+      "depicts": "pale blue backdrop; dark desktop app window (traffic-light dots, title) with a centered app icon, a 'getting ready' greeting and a rounded prompt input where a request is typed",
+      "control_icon_color": "#292827"
+    },
+    {
+      "id": "go-row-5-video",
+      "section": "8b feature row 5",
+      "kind": "video (12.15s)",
+      "natural": [
+        1200,
+        800
+      ],
+      "aspect": "3:2",
+      "sizes": {
+        "1440": [
+          624,
+          416
+        ],
+        "1024": [
+          476,
+          317.3
+        ],
+        "768": [
+          348,
+          232
+        ],
+        "390": [
+          358,
+          238.7
+        ]
+      },
+      "radius": 0,
+      "colors": [
+        "#e7eaeb",
+        "#fbfaf9",
+        "#39576b",
+        "#b0b7d7"
+      ],
+      "depicts": "document text column with a purple-highlighted phrase, beside a comments card (avatar, @mention chip, question, Reply) over a blue/teal gradient",
+      "control_icon_color": "#292827"
+    },
+    {
+      "id": "go-row-6-video",
+      "section": "8c feature row 6",
+      "kind": "video (11.45s)",
+      "natural": [
+        1200,
+        800
+      ],
+      "aspect": "3:2",
+      "sizes": {
+        "1440": [
+          624,
+          416
+        ],
+        "1024": [
+          476,
+          317.3
+        ],
+        "768": [
+          348,
+          232
+        ],
+        "390": [
+          358,
+          238.7
+        ]
+      },
+      "radius": 0,
+      "colors": [
+        "#fcfaf8",
+        "#ebe4ea",
+        "#f6f1f5",
+        "#a890b6"
+      ],
+      "depicts": "browser with tab strip; proposal document on the left and an assistant side panel on the right showing a user chat bubble request; red/blue gradient edge",
+      "control_icon_color": "#292827"
+    },
+    {
+      "id": "go-row-7-video",
+      "section": "8d feature row 7",
+      "kind": "video (14.75s)",
+      "natural": [
+        1200,
+        800
+      ],
+      "aspect": "3:2",
+      "sizes": {
+        "1440": [
+          624,
+          416
+        ],
+        "1024": [
+          476,
+          317.3
+        ],
+        "768": [
+          348,
+          232
+        ],
+        "390": [
+          358,
+          238.7
+        ]
+      },
+      "radius": 0,
+      "colors": [
+        "#e4f2f4",
+        "#ced8e1",
+        "#d9e8eb",
+        "#4195a0"
+      ],
+      "depicts": "long-form essay text in a light card with an I-beam text cursor where an inline helper pops up; teal/green blurred backdrop",
+      "control_icon_color": "#292827"
+    },
+    {
+      "id": "go-row-8-video",
+      "section": "8e feature row 8",
+      "kind": "video (8.12s)",
+      "natural": [
+        1200,
+        800
+      ],
+      "aspect": "3:2",
+      "sizes": {
+        "1440": [
+          624,
+          416
+        ],
+        "1024": [
+          476,
+          317.3
+        ],
+        "768": [
+          348,
+          232
+        ],
+        "390": [
+          358,
+          238.7
+        ]
+      },
+      "radius": 0,
+      "colors": [
+        "#f3f7fb",
+        "#f0f4f5",
+        "#416683",
+        "#d9e0e4"
+      ],
+      "depicts": "team-chat window: a user message with avatar and an @mention chip asking the assistant for a status; blue/teal backdrop",
+      "control_icon_color": "#ffffff"
+    },
+    {
+      "id": "go-row-9-video",
+      "section": "8f feature row 9",
+      "kind": "video (6.97s)",
+      "natural": [
+        1200,
+        800
+      ],
+      "aspect": "3:2",
+      "sizes": {
+        "1440": [
+          624,
+          416
+        ],
+        "1024": [
+          476,
+          317.3
+        ],
+        "768": [
+          348,
+          232
+        ],
+        "390": [
+          358,
+          238.7
+        ]
+      },
+      "radius": 0,
+      "colors": [
+        "#3f3d3c",
+        "#8b7b9e",
+        "#373634"
+      ],
+      "depicts": "dark desktop app with a left sidebar of saved items, centered app icon and a 'good morning' greeting, an 'Ask anything' input with a purple send button; pink/lilac backdrop",
+      "control_icon_color": "#292827"
+    },
+    {
+      "id": "helper-band-1",
+      "section": "5b card 1 background",
+      "kind": "SVG gradient wash",
+      "natural": [
+        318,
+        106
+      ],
+      "sizes": {
+        "1440": [
+          294,
+          98
+        ],
+        "1024": [
+          474,
+          158
+        ],
+        "768": [
+          346,
+          115.3
+        ],
+        "390": [
+          356,
+          118.7
+        ]
+      },
+      "radius": 0,
+      "position": "absolute top of card inside the 1px border, width = card inner width, height auto",
+      "colors": [
+        "#d0e7de",
+        "#aecdd5",
+        "#e2f0e4",
+        "#f6f5f2"
+      ],
+      "depicts": "soft mint-to-teal horizontal wash that fades downward into the card bg"
+    },
+    {
+      "id": "helper-band-2",
+      "section": "5b card 2 background",
+      "kind": "SVG gradient wash",
+      "natural": [
+        318,
+        103
+      ],
+      "sizes": {
+        "1440": [
+          294,
+          95.2
+        ],
+        "1024": [
+          474,
+          153.5
+        ],
+        "768": [
+          346,
+          112.1
+        ],
+        "390": [
+          356,
+          115.3
+        ]
+      },
+      "radius": 0,
+      "colors": [
+        "#f2d0cf",
+        "#f0e1dd",
+        "#f1ebe6"
+      ],
+      "depicts": "peach/pink wash fading downward"
+    },
+    {
+      "id": "helper-band-3",
+      "section": "5b card 3 background",
+      "kind": "SVG gradient wash",
+      "natural": [
+        318,
+        103
+      ],
+      "sizes": {
+        "1440": [
+          294,
+          95.2
+        ],
+        "1024": [
+          474,
+          153.5
+        ],
+        "768": [
+          346,
+          112.1
+        ],
+        "390": [
+          356,
+          115.3
+        ]
+      },
+      "radius": 0,
+      "colors": [
+        "#e6d5da",
+        "#d2c0c8",
+        "#efe6e5"
+      ],
+      "depicts": "dusty mauve/rose wash fading downward"
+    },
+    {
+      "id": "helper-band-4",
+      "section": "5b card 4 background",
+      "kind": "SVG gradient wash",
+      "natural": [
+        318,
+        103
+      ],
+      "sizes": {
+        "1440": [
+          294,
+          95.2
+        ],
+        "1024": [
+          474,
+          153.5
+        ],
+        "768": [
+          346,
+          112.1
+        ],
+        "390": [
+          356,
+          115.3
+        ]
+      },
+      "radius": 0,
+      "colors": [
+        "#e1cbec",
+        "#e9dbed",
+        "#efe9eb"
+      ],
+      "depicts": "lilac wash fading downward"
+    },
+    {
+      "id": "helper-icon-1..4",
+      "section": "5b cards 1-4",
+      "kind": "icon tile (SVG)",
+      "sizes": {
+        "all": [
+          69,
+          69
+        ]
+      },
+      "radius": "baked (rounded square; radius not measurable, part of the SVG) with soft grey drop shadow",
+      "colors": [
+        "#ffffff",
+        "#c1bfba"
+      ],
+      "glyph_colors": [
+        "card 1: dark circular mark (only edge pixels #c1bfba could be sampled at this size; draw it in #292827)",
+        "card 2: red/pink envelope (sampled tint #eec6ca)",
+        "card 3: dark mauve check-badge (sampled #98858d)",
+        "card 4: lilac cup (sampled #cfbbdb)"
+      ],
+      "depicts": "white rounded-square tile with a single colored glyph: spell-check ring, envelope, verified badge, steaming cup"
+    },
+    {
+      "id": "helper-icon-5..6",
+      "section": "5c cards 5-6",
+      "kind": "icon tile (SVG)",
+      "sizes": {
+        "all": [
+          64,
+          64
+        ]
+      },
+      "radius": "baked (rounded square; radius not measurable, part of the SVG)",
+      "colors": [
+        "#dedbd5",
+        "#aca9a5"
+      ],
+      "depicts": "flat warm-grey tile with a darker grey glyph: sparkle (custom) and a 2x2 grid with a plus (store)"
+    },
+    {
+      "id": "cta-band-bg",
+      "section": "6 lavender CTA band",
+      "kind": "background image (AVIF)",
+      "natural": {
+        "1440": [
+          1440,
+          302
+        ],
+        "1024": [
+          1024,
+          215
+        ],
+        "768": [
+          768,
+          161
+        ],
+        "390": [
+          390,
+          81
+        ]
+      },
+      "sizes": {
+        "1440": [
+          1440,
+          244
+        ],
+        "1024": [
+          1024,
+          244
+        ],
+        "768": [
+          768,
+          263.4
+        ],
+        "390": [
+          390,
+          215.2
+        ]
+      },
+      "radius": 0,
+      "fit": "cover",
+      "position": "absolute inset 0 behind content",
+      "colors": [
+        "#e6e0fe",
+        "#d3d9f6",
+        "#dbdef8",
+        "#c1c2e3"
+      ],
+      "depicts": "very soft lavender/periwinkle blurred light streaks; fallback: linear-gradient(100deg,#e8e0ff 0%,#dfe3fa 55%,#e8e0ff 100%)"
+    },
+    {
+      "id": "connectors-strip",
+      "section": "7b",
+      "kind": "image (AVIF)",
+      "natural": {
+        "1440": [
+          1440,
+          195
+        ],
+        "1024": [
+          1024,
+          138
+        ],
+        "768": [
+          768,
+          104
+        ],
+        "390": [
+          390,
+          198
+        ]
+      },
+      "sizes": {
+        "1440": [
+          1280,
+          173.3
+        ],
+        "1024": [
+          976,
+          131.9
+        ],
+        "768": [
+          720,
+          97.5
+        ],
+        "390": [
+          358,
+          181.8
+        ]
+      },
+      "radius": 0,
+      "fit": "cover",
+      "position": "centered, full content width",
+      "colors": [
+        "#f7f4f1",
+        "#f2f0eb",
+        "#f4f3ef",
+        "#e3e5e4"
+      ],
+      "depicts": "single row of 8 square connector tiles (rounded corners, #f2f0eb fill, hairline border) each with a colorful app icon and a tiny label under it; first and last tiles fade out to transparent. 390 art is taller (likely wraps into two rows)"
+    },
+    {
+      "id": "trust-collage",
+      "section": "9 trust",
+      "kind": "image (AVIF)",
+      "natural": [
+        720,
+        404
+      ],
+      "aspect": "1.78:1",
+      "sizes": {
+        "1440": [
+          624,
+          350.1
+        ],
+        "1024": [
+          476,
+          267.1
+        ],
+        "768": [
+          348,
+          195.3
+        ],
+        "390": [
+          358,
+          200.8
+        ]
+      },
+      "radius": 0,
+      "fit": "cover",
+      "position": "right column (≥640), below text (<640)",
+      "colors": [
+        "#f2e4e5",
+        "#6a5e55",
+        "#f7f2ee",
+        "#bdb9bc"
+      ],
+      "depicts": "peach-to-lavender panel with a dotted grid; two tilted rounded photo cards of people working on laptops (draw abstract figures/shapes instead of photos) and a circular badge with rotating uppercase text around a product glyph"
+    },
+    {
+      "id": "final-cta-bg",
+      "section": "11 final CTA (dark green)",
+      "kind": "background image (AVIF)",
+      "natural": {
+        "1440": [
+          1440,
+          431
+        ],
+        "1024": [
+          1024,
+          306
+        ],
+        "768": [
+          768,
+          230
+        ],
+        "390": [
+          390,
+          116
+        ]
+      },
+      "sizes": {
+        "1440": [
+          1440,
+          244
+        ],
+        "1024": [
+          1024,
+          244
+        ],
+        "768": [
+          768,
+          263.4
+        ],
+        "390": [
+          390,
+          215.2
+        ]
+      },
+      "radius": 0,
+      "fit": "cover",
+      "colors": [
+        "#2e5479",
+        "#683b67",
+        "#477094",
+        "#3b486e"
+      ],
+      "depicts": "dark blurred glow (deep blue, magenta and a warm orange core) over the green-90 bg with faint monospace code text; fallback: radial-gradient(60% 120% at 30% 50%,#683b67 0%,transparent 60%),radial-gradient(50% 100% at 70% 40%,#477094 0%,transparent 60%),#0c4243"
+    },
+    {
+      "id": "icon-play-pause",
+      "section": "3, 4, 8 video controls",
+      "kind": "inline SVG icon",
+      "sizes": {
+        "all": [
+          32,
+          32
+        ]
+      },
+      "depicts": "1.5px stroke circle r=15 with two pause bars / a play triangle; stroke currentColor",
+      "format_original": "inline SVG"
+    },
+    {
+      "id": "icon-chevron-right-20",
+      "section": "links in 5b/5c/7a",
+      "kind": "inline SVG icon",
+      "sizes": {
+        "all": [
+          20,
+          20
+        ]
+      },
+      "colors": [
+        "#714cb6"
+      ],
+      "depicts": "small chevron pointing right (use lucide ChevronRight)"
+    },
+    {
+      "id": "icon-caret-down-20",
+      "section": "10 FAQ",
+      "kind": "inline SVG icon",
+      "sizes": {
+        "all": [
+          20,
+          20
+        ]
+      },
+      "colors": [
+        "#000000"
+      ],
+      "depicts": "small solid/narrow caret pointing down; rotates -180deg when open"
+    }
+  ]
+}

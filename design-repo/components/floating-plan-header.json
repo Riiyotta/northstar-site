@@ -1,0 +1,27 @@
+{
+  "id": "floating-plan-header",
+  "kind": "component",
+  "purpose": "Fixed plan header that slides in (translateY -110% -> 0, .3s ease-in-out) while the comparison is in view.",
+  "implementedBy": [
+    {
+      "path": "src/components/plans/FloatingPlanHeader.jsx",
+      "lines": "12-21",
+      "expect": "export default function FloatingPlanHeader"
+    }
+  ],
+  "props": {
+    "headRef": "ref",
+    "endRef": "ref"
+  },
+  "tokens": [
+    "zIndex.floating-header",
+    "elevation.medium",
+    "duration.slow"
+  ],
+  "accessibility": [
+    "aria-hidden + inert while hidden; buttons removed from tab order."
+  ],
+  "usedBy": [
+    "pricing.comparison"
+  ]
+}

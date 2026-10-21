@@ -1,0 +1,126 @@
+{
+  "id": "aside.pair",
+  "category": "feature",
+  "purpose": "Two side-by-side aside cards (label/title + statement + illustration), one dark and one light.",
+  "implementedBy": [
+    {
+      "path": "src/components/ui/Aside.jsx",
+      "lines": "9-31",
+      "expect": "export default function Aside"
+    },
+    {
+      "path": "src/components/AgentSection.jsx",
+      "lines": "33-55",
+      "expect": "{/* 5.3 Two asides"
+    },
+    {
+      "path": "src/components/PagesSection.jsx",
+      "lines": "29-51",
+      "expect": "{/* Two asides side-by-side"
+    }
+  ],
+  "usedOn": [
+    "/",
+    "/agents"
+  ],
+  "variants": {
+    "default": "Homepage label + statement.",
+    "title": "agents 8d title + body."
+  },
+  "content": {
+    "items": {
+      "kind": "items",
+      "required": true,
+      "minItems": 2,
+      "maxItems": 2,
+      "fields": {
+        "label": {
+          "kind": "text",
+          "required": true,
+          "maxChars": 20,
+          "maxWords": 5,
+          "budgetSource": "CLONE_SPEC.md §5.3 labels (orig 6-18 ch)"
+        },
+        "body": {
+          "kind": "text",
+          "required": true,
+          "maxChars": 85,
+          "maxWords": 19,
+          "budgetSource": "CLONE_SPEC.md §8 right aside body (orig 77); agents.md §14 other.p (69)"
+        },
+        "tone": {
+          "kind": "enum",
+          "required": true,
+          "values": [
+            "dark",
+            "light"
+          ]
+        },
+        "surface": {
+          "kind": "enum",
+          "required": true,
+          "values": [
+            "mulberry-100",
+            "neutral-20",
+            "purple-10",
+            "white"
+          ]
+        },
+        "media": {
+          "kind": "media",
+          "required": true,
+          "assetRoles": [
+            "product.ui-illustration"
+          ]
+        }
+      }
+    }
+  },
+  "allowedBackgrounds": [
+    "neutral-5",
+    "neutral-10"
+  ],
+  "constraints": {},
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "default": "none"
+  },
+  "responsive": [
+    {
+      "minWidth": "base",
+      "change": "Cards stack; each card stacks body over media."
+    },
+    {
+      "minWidth": "640.02px",
+      "change": "Pages pair goes side by side; each card is a row (agent pair).",
+      "measuredFrom": {
+        "path": "src/components/PagesSection.jsx",
+        "lines": "31-31",
+        "expect": "flex flex-col gap-vp sm:flex-row"
+      }
+    },
+    {
+      "minWidth": "1080.02px",
+      "change": "Agent pair goes side by side; Pages cards switch to body-beside-media rows.",
+      "measuredFrom": {
+        "path": "src/components/ui/Aside.jsx",
+        "lines": "35-35",
+        "expect": "export const rowFromLg"
+      }
+    }
+  ],
+  "measuredFrom": [
+    {
+      "path": "CLONE_SPEC.md",
+      "lines": "263-268",
+      "expect": "### 5.3 Two asides side-by-side"
+    },
+    {
+      "path": "specs/agents.md",
+      "lines": "122-125",
+      "expect": "### 8d. Two asides"
+    }
+  ]
+}

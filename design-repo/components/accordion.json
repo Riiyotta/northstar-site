@@ -1,0 +1,32 @@
+{
+  "id": "accordion",
+  "kind": "component",
+  "purpose": "Shared accordion: grid-rows 0fr/1fr + opacity .2s ease and caret -180deg, motion-safe only; single or multi open.",
+  "implementedBy": [
+    {
+      "path": "src/components/ui/Accordion.jsx",
+      "lines": "29-83",
+      "expect": "export default function Accordion"
+    }
+  ],
+  "props": {
+    "variant": [
+      "faq",
+      "compare"
+    ],
+    "single": "boolean",
+    "defaultOpen": "boolean"
+  },
+  "tokens": [
+    "tokens/20-component/card.json#accordion",
+    "duration.base",
+    "easing.ease"
+  ],
+  "accessibility": [
+    "Trigger button in h3 with aria-expanded/aria-controls; panel role=region aria-labelledby."
+  ],
+  "usedBy": [
+    "faq.accordion",
+    "pricing.comparison"
+  ]
+}

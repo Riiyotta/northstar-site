@@ -1,0 +1,240 @@
+/*
+ * Northstar illustrations: motion layer.
+ * All keyframes are prefixed `ns-` so they cannot collide with site CSS.
+ * Hero timelines are 7s one-shots (the slot replaces a 7.03s video that plays
+ * once and holds its last frame): iteration-count 1, fill forwards. Hero.jsx
+ * re-keys the art on each activation, so the timeline restarts per slide.
+ * Elements whose only job is motion (typing covers, carets, cursors) carry
+ * `.ns-motion-only` and are removed under prefers-reduced-motion, so every
+ * illustration falls back to a complete, static "final frame".
+ */
+
+.ns-art {
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-family: 'Hanken Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-kerning: normal;
+  letter-spacing: -0.0035em;
+  user-select: none;
+}
+.ns-art * {
+  transform-box: fill-box;
+}
+
+/* ---------- shared primitives ----------
+ * Carets, typing dots and spinners are static: the original has no perpetual
+ * decorative loops in its product art (only the one-shot hero videos and the
+ * CTA background). The classes stay as styling hooks. */
+.ns-caret { opacity: 1; }
+.ns-pulse { opacity: 0.6; }
+.ns-pulse-d1 { opacity: 0.8; }
+.ns-pulse-d2 { opacity: 1; }
+.ns-spin { transform-origin: center; }
+
+/* ---------- hero 1: inbox ---------- */
+@keyframes ns-hi-done {
+  0%, 60% { opacity: 1; transform: translateX(0); }
+  68%, 100% { opacity: 0; transform: translateX(260px); }
+}
+.ns-hi-done { animation: ns-hi-done 7s cubic-bezier(0.16, 1, 0.3, 1) 1 forwards; }
+
+@keyframes ns-hi-shift {
+  0%, 66% { transform: translateY(0); }
+  74%, 100% { transform: translateY(calc(var(--ns-row-h, 132px) * -1)); }
+}
+.ns-hi-shift { animation: ns-hi-shift 7s cubic-bezier(0.16, 1, 0.3, 1) 1 forwards; }
+
+@keyframes ns-toast {
+  0%, 64% { opacity: 0; transform: translateY(24px); }
+  70%, 92% { opacity: 1; transform: translateY(0); }
+  98%, 100% { opacity: 0; transform: translateY(12px); }
+}
+.ns-toast { animation: ns-toast 7s cubic-bezier(0.16, 1, 0.3, 1) 1 forwards; }
+
+/* ---------- hero 2: agent ---------- */
+@keyframes ns-ha-user {
+  0%, 4% { opacity: 0; transform: translateY(20px); }
+  12%, 100% { opacity: 1; transform: translateY(0); }
+}
+.ns-ha-user { animation: ns-ha-user 7s cubic-bezier(0.16, 1, 0.3, 1) 1 forwards; }
+
+@keyframes ns-ha-typing {
+  0%, 14% { opacity: 0; }
+  18%, 34% { opacity: 1; }
+  38%, 100% { opacity: 0; }
+}
+.ns-ha-typing { animation: ns-ha-typing 7s ease 1 forwards; }
+
+@keyframes ns-ha-reply {
+  0%, 36% { opacity: 0; transform: translateY(16px); }
+  44%, 100% { opacity: 1; transform: translateY(0); }
+}
+.ns-ha-reply { animation: ns-ha-reply 7s cubic-bezier(0.16, 1, 0.3, 1) 1 forwards; }
+
+@keyframes ns-ha-reveal {
+  0%, 40% { transform: translateX(0); }
+  70%, 100% { transform: translateX(var(--ns-reveal, 900px)); }
+}
+.ns-ha-reveal { animation: ns-ha-reveal 7s linear 1 forwards; }
+
+@keyframes ns-ha-chips {
+  0%, 72% { opacity: 0; transform: translateY(12px); }
+  80%, 100% { opacity: 1; transform: translateY(0); }
+}
+.ns-ha-chips { animation: ns-ha-chips 7s cubic-bezier(0.16, 1, 0.3, 1) 1 forwards; }
+
+@keyframes ns-ha-highlight {
+  0%, 74% { opacity: 0; }
+  82%, 100% { opacity: 1; }
+}
+.ns-ha-highlight { animation: ns-ha-highlight 7s ease 1 forwards; }
+
+/* ---------- hero 3: pages ---------- */
+@keyframes ns-hp-type {
+  0%, 8% { transform: translateX(0); }
+  58%, 100% { transform: translateX(var(--ns-reveal, 900px)); }
+}
+.ns-hp-type { animation: ns-hp-type 7s steps(38, end) 1 forwards; }
+
+@keyframes ns-hp-caret {
+  0%, 8% { transform: translateX(0); }
+  58%, 100% { transform: translateX(var(--ns-reveal, 900px)); }
+}
+.ns-hp-caret-track { animation: ns-hp-caret 7s steps(38, end) 1 forwards; }
+
+@keyframes ns-hp-cursor {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-160px, 120px); }
+  50% { transform: translate(-60px, 260px); }
+  75% { transform: translate(120px, 160px); }
+  100% { transform: translate(0, 0); }
+}
+.ns-hp-cursor { animation: ns-hp-cursor 7s ease-in-out 1 forwards; }
+
+@keyframes ns-hp-comment {
+  0%, 62% { opacity: 0; transform: translateX(24px); }
+  70%, 100% { opacity: 1; transform: translateX(0); }
+}
+.ns-hp-comment { animation: ns-hp-comment 7s cubic-bezier(0.16, 1, 0.3, 1) 1 forwards; }
+
+/* ---------- final CTA background ---------- */
+@keyframes ns-blob-a {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(18%, 12%) scale(1.15); }
+}
+@keyframes ns-blob-b {
+  0%, 100% { transform: translate(0, 0) scale(1.1); }
+  50% { transform: translate(-22%, -8%) scale(0.92); }
+}
+@keyframes ns-blob-c {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-10%, 18%) scale(1.2); }
+}
+.ns-blob { position: absolute; border-radius: 9999px; filter: blur(48px); will-change: transform; }
+.ns-blob-a { animation: ns-blob-a 18s ease-in-out infinite; }
+.ns-blob-b { animation: ns-blob-b 22s ease-in-out infinite; }
+.ns-blob-c { animation: ns-blob-c 26s ease-in-out infinite; }
+
+@keyframes ns-sheen {
+  0% { transform: translateX(-60%); }
+  100% { transform: translateX(60%); }
+}
+.ns-sheen { animation: ns-sheen 14s ease-in-out infinite alternate; }
+
+/* sparks are static; only the blob/sheen drift moves (stands in for the
+   original's animated GIF background) */
+.ns-twinkle { opacity: 0.5; }
+
+
+/* ---------- generated: staggered rise (one-shot, 7s timeline) ---------- */
+@keyframes ns-seam {
+  0% { opacity: 0; }
+  2%, 100% { opacity: 1; }
+}
+.ns-seam { animation: ns-seam 7s linear 1 forwards; }
+@keyframes ns-rise-0 {
+  0%, 2% { opacity: 0; transform: translateY(18px); }
+  11%, 100% { opacity: 1; transform: translateY(0); }
+}
+.ns-rise-0 { animation: ns-rise-0 7s cubic-bezier(0.16, 1, 0.3, 1) 1 forwards; }
+@keyframes ns-rise-1 {
+  0%, 5% { opacity: 0; transform: translateY(18px); }
+  14%, 100% { opacity: 1; transform: translateY(0); }
+}
+.ns-rise-1 { animation: ns-rise-1 7s cubic-bezier(0.16, 1, 0.3, 1) 1 forwards; }
+@keyframes ns-rise-2 {
+  0%, 8% { opacity: 0; transform: translateY(18px); }
+  17%, 100% { opacity: 1; transform: translateY(0); }
+}
+.ns-rise-2 { animation: ns-rise-2 7s cubic-bezier(0.16, 1, 0.3, 1) 1 forwards; }
+@keyframes ns-rise-3 {
+  0%, 11% { opacity: 0; transform: translateY(18px); }
+  20%, 100% { opacity: 1; transform: translateY(0); }
+}
+.ns-rise-3 { animation: ns-rise-3 7s cubic-bezier(0.16, 1, 0.3, 1) 1 forwards; }
+@keyframes ns-rise-4 {
+  0%, 14% { opacity: 0; transform: translateY(18px); }
+  23%, 100% { opacity: 1; transform: translateY(0); }
+}
+.ns-rise-4 { animation: ns-rise-4 7s cubic-bezier(0.16, 1, 0.3, 1) 1 forwards; }
+@keyframes ns-rise-5 {
+  0%, 17% { opacity: 0; transform: translateY(18px); }
+  26%, 100% { opacity: 1; transform: translateY(0); }
+}
+.ns-rise-5 { animation: ns-rise-5 7s cubic-bezier(0.16, 1, 0.3, 1) 1 forwards; }
+@keyframes ns-rise-6 {
+  0%, 20% { opacity: 0; transform: translateY(18px); }
+  29%, 100% { opacity: 1; transform: translateY(0); }
+}
+.ns-rise-6 { animation: ns-rise-6 7s cubic-bezier(0.16, 1, 0.3, 1) 1 forwards; }
+@keyframes ns-rise-7 {
+  0%, 23% { opacity: 0; transform: translateY(18px); }
+  32%, 100% { opacity: 1; transform: translateY(0); }
+}
+.ns-rise-7 { animation: ns-rise-7 7s cubic-bezier(0.16, 1, 0.3, 1) 1 forwards; }
+@keyframes ns-rise-8 {
+  0%, 26% { opacity: 0; transform: translateY(18px); }
+  35%, 100% { opacity: 1; transform: translateY(0); }
+}
+.ns-rise-8 { animation: ns-rise-8 7s cubic-bezier(0.16, 1, 0.3, 1) 1 forwards; }
+@keyframes ns-rise-9 {
+  0%, 29% { opacity: 0; transform: translateY(18px); }
+  38%, 100% { opacity: 1; transform: translateY(0); }
+}
+.ns-rise-9 { animation: ns-rise-9 7s cubic-bezier(0.16, 1, 0.3, 1) 1 forwards; }
+/* line-by-line text wipe: a cover rect slides right by --ns-reveal */
+@keyframes ns-wipe-0 {
+  0%, 44% { transform: translateX(0); }
+  53%, 100% { transform: translateX(var(--ns-reveal, 900px)); }
+}
+.ns-wipe-0 { animation: ns-wipe-0 7s linear 1 forwards; }
+@keyframes ns-wipe-1 {
+  0%, 52% { transform: translateX(0); }
+  61%, 100% { transform: translateX(var(--ns-reveal, 900px)); }
+}
+.ns-wipe-1 { animation: ns-wipe-1 7s linear 1 forwards; }
+@keyframes ns-wipe-2 {
+  0%, 60% { transform: translateX(0); }
+  69%, 100% { transform: translateX(var(--ns-reveal, 900px)); }
+}
+.ns-wipe-2 { animation: ns-wipe-2 7s linear 1 forwards; }
+@keyframes ns-wipe-3 {
+  0%, 68% { transform: translateX(0); }
+  76%, 100% { transform: translateX(var(--ns-reveal, 900px)); }
+}
+.ns-wipe-3 { animation: ns-wipe-3 7s linear 1 forwards; }
+
+/* ---------- reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .ns-art,
+  .ns-art *,
+  .ns-cta,
+  .ns-cta * {
+    animation: none !important;
+    transition: none !important;
+  }
+  .ns-motion-only {
+    display: none !important;
+  }
+}

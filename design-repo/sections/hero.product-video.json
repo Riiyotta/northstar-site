@@ -1,0 +1,112 @@
+{
+  "id": "hero.product-video",
+  "category": "hero",
+  "purpose": "Centred product hero: product lockup as the first h1 line, display headline, lede, one primary CTA, and a large looping product demo with a play/pause control.",
+  "implementedBy": [
+    {
+      "path": "src/components/ui/ProductHero.jsx",
+      "lines": "15-43",
+      "expect": "export default function ProductHero"
+    },
+    {
+      "path": "src/pages/Mail.jsx",
+      "lines": "79-85",
+      "expect": "<ProductHero"
+    },
+    {
+      "path": "src/pages/Go.jsx",
+      "lines": "30-47",
+      "expect": "<ProductHero"
+    }
+  ],
+  "usedOn": [
+    "/mail",
+    "/go"
+  ],
+  "variants": {},
+  "content": {
+    "lockup": {
+      "kind": "media",
+      "required": true,
+      "assetRoles": [
+        "brand.product-lockup"
+      ]
+    },
+    "headlineLines": {
+      "kind": "paragraphs",
+      "required": true,
+      "minItems": 1,
+      "maxItems": 2,
+      "maxChars": 69,
+      "maxWords": 16,
+      "budgetSource": "specs/go.md §15 hero.h1 (orig 62 ch); specs/mail.md §14 hero.h1a/h1b (29 + 15)"
+    },
+    "lede": {
+      "kind": "paragraphs",
+      "required": true,
+      "minItems": 1,
+      "maxItems": 2,
+      "maxChars": 180,
+      "maxWords": 40,
+      "budgetSource": "specs/go.md §15 hero.lede (orig 163); specs/mail.md §14 hero.p1+p2 (60 + 58)",
+      "maxTotalChars": 180
+    },
+    "cta": {
+      "kind": "cta",
+      "required": true,
+      "variants": [
+        "primary"
+      ],
+      "maxChars": 13,
+      "maxWords": 3,
+      "budgetSource": "specs/mail.md §14 hero.cta (orig 11 ch)"
+    },
+    "video": {
+      "kind": "media",
+      "required": true,
+      "assetRoles": [
+        "product.demo-animation"
+      ]
+    }
+  },
+  "allowedBackgrounds": [
+    "neutral-10",
+    "neutral-5"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "video-viewport-gated"
+    ],
+    "default": "video-viewport-gated"
+  },
+  "responsive": [
+    {
+      "minWidth": "base",
+      "change": "Header gap 12; CTA becomes a full-width column; video full width."
+    },
+    {
+      "minWidth": "640.02px",
+      "change": "Header gap 24; CTA centred row; title block margin-bottom 40.",
+      "measuredFrom": {
+        "path": "src/components/ui/ProductHero.jsx",
+        "lines": "19-19",
+        "expect": "sm:mb-10"
+      }
+    }
+  ],
+  "measuredFrom": [
+    {
+      "path": "specs/mail.md",
+      "lines": "95-129",
+      "expect": "## 2. M1 Product hero"
+    },
+    {
+      "path": "specs/go.md",
+      "lines": "87-94",
+      "expect": "## 3. Hero (`CenteredVideoHero`"
+    }
+  ]
+}

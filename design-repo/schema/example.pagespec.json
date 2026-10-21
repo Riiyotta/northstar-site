@@ -1,0 +1,760 @@
+{
+  "pageSpecVersion": "1.0.0",
+  "template": "product-feature-rows",
+  "route": "/mail",
+  "title": "Northstar Inbox",
+  "description": "Real, complete PageSpec for the /mail route, built from the implemented Northstar copy in src/data/mail.js (independently written; specs/mail.md §14).",
+  "nodes": [
+    {
+      "section": "shell.header",
+      "variant": "product-ctas",
+      "background": "white",
+      "context": "light",
+      "motion": {
+        "pattern": "header-menus",
+        "reducedMotionFallback": "no-animation"
+      },
+      "content": {
+        "ctaLabel": "Get started"
+      }
+    },
+    {
+      "section": "hero.product-video",
+      "group": "a",
+      "background": "neutral-10",
+      "context": "light",
+      "motion": {
+        "pattern": "video-viewport-gated",
+        "reducedMotionFallback": "static-frame"
+      },
+      "content": {
+        "lockup": {
+          "slotId": "lockup-inbox",
+          "assetRole": "brand.product-lockup"
+        },
+        "headlineLines": [
+          "Mail that moves at your pace",
+          "for every team"
+        ],
+        "lede": [
+          "Northstar Inbox turns a crowded mailbox into a calm daily plan.",
+          "Built for people who reply fast and think in priorities."
+        ],
+        "cta": {
+          "label": "Get started",
+          "variant": "primary"
+        },
+        "video": {
+          "slotId": "mail-hero-video",
+          "assetRole": "product.demo-animation"
+        }
+      }
+    },
+    {
+      "section": "proof.logo-strip",
+      "variant": "rotating",
+      "group": "a",
+      "background": "neutral-10",
+      "context": "light",
+      "motion": {
+        "pattern": "logo-rotate",
+        "reducedMotionFallback": "static-no-rotation"
+      },
+      "content": {
+        "intro": "Teams that run on us",
+        "logos": [
+          {
+            "slotId": "mail-logo-1",
+            "assetRole": "logo.customer-wordmark"
+          },
+          {
+            "slotId": "mail-logo-2",
+            "assetRole": "logo.customer-wordmark"
+          },
+          {
+            "slotId": "mail-logo-3",
+            "assetRole": "logo.customer-wordmark"
+          },
+          {
+            "slotId": "mail-logo-4",
+            "assetRole": "logo.customer-wordmark"
+          },
+          {
+            "slotId": "mail-logo-5",
+            "assetRole": "logo.customer-wordmark"
+          },
+          {
+            "slotId": "mail-logo-6",
+            "assetRole": "logo.customer-wordmark"
+          },
+          {
+            "slotId": "mail-logo-7",
+            "assetRole": "logo.customer-wordmark"
+          },
+          {
+            "slotId": "mail-logo-8",
+            "assetRole": "logo.customer-wordmark"
+          },
+          {
+            "slotId": "mail-logo-9",
+            "assetRole": "logo.customer-wordmark"
+          },
+          {
+            "slotId": "mail-logo-10",
+            "assetRole": "logo.customer-wordmark"
+          },
+          {
+            "slotId": "mail-logo-11",
+            "assetRole": "logo.customer-wordmark"
+          }
+        ]
+      }
+    },
+    {
+      "section": "stat.band",
+      "group": "a",
+      "background": "purple-100",
+      "context": "dark",
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "none"
+      },
+      "content": {
+        "statement": [
+          {
+            "text": "Across our customers, Inbox sorted ",
+            "emphasis": "none"
+          },
+          {
+            "text": "2.4 billion notes",
+            "emphasis": "highlight"
+          },
+          {
+            "text": " without a backlog.",
+            "emphasis": "none"
+          }
+        ],
+        "backgroundArt": {
+          "slotId": "mail-stat-bg",
+          "assetRole": "decor.background-art"
+        }
+      }
+    },
+    {
+      "section": "intro.section",
+      "variant": "plain",
+      "group": "b",
+      "background": "white",
+      "context": "light",
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "none"
+      },
+      "content": {
+        "title": [
+          {
+            "text": "Your inbox is ",
+            "emphasis": "none"
+          },
+          {
+            "text": "a to-do list other people keep editing",
+            "emphasis": "brand"
+          }
+        ],
+        "body": [
+          "Requests, alerts and introductions all arrive in one stream with equal weight. Sorting that stream by hand quietly eats the focus you meant to give the real work.",
+          "Northstar Inbox gives the stream a shape, so the first screen you see each morning is the one that matters."
+        ]
+      }
+    },
+    {
+      "section": "grid.icon-features",
+      "variant": "centered",
+      "group": "b",
+      "background": "white",
+      "context": "light",
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "none"
+      },
+      "content": {
+        "columns": 3,
+        "items": [
+          {
+            "text": [
+              {
+                "text": "Open each morning with ",
+                "emphasis": "none"
+              },
+              {
+                "text": "a short queue",
+                "emphasis": "brand"
+              },
+              {
+                "text": ", not a pile",
+                "emphasis": "none"
+              }
+            ],
+            "icon": {
+              "slotId": "mail-pillar-icon-1",
+              "assetRole": "icon.feature-tile"
+            }
+          },
+          {
+            "text": [
+              {
+                "text": "Hit ",
+                "emphasis": "none"
+              },
+              {
+                "text": "fewer surprises",
+                "emphasis": "brand"
+              },
+              {
+                "text": " hiding in long threads",
+                "emphasis": "none"
+              }
+            ],
+            "icon": {
+              "slotId": "mail-pillar-icon-2",
+              "assetRole": "icon.feature-tile"
+            }
+          },
+          {
+            "text": [
+              {
+                "text": "Hand off cleanly",
+                "emphasis": "brand"
+              },
+              {
+                "text": " at every shift end",
+                "emphasis": "none"
+              }
+            ],
+            "icon": {
+              "slotId": "mail-pillar-icon-3",
+              "assetRole": "icon.feature-tile"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "section": "intro.section",
+      "variant": "with-media",
+      "background": "neutral-5",
+      "context": "light",
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "none"
+      },
+      "content": {
+        "title": [
+          {
+            "text": "Plugs straight",
+            "emphasis": "none"
+          },
+          {
+            "text": " into your ",
+            "emphasis": "none"
+          },
+          {
+            "text": "Wrenmail",
+            "emphasis": "brand"
+          },
+          {
+            "text": " or ",
+            "emphasis": "none"
+          },
+          {
+            "text": "Driftpost",
+            "emphasis": "brand"
+          }
+        ],
+        "media": {
+          "slotId": "mail-compat-icons",
+          "assetRole": "media.integration-strip"
+        }
+      }
+    },
+    {
+      "section": "split.feature",
+      "group": "c",
+      "background": "neutral-5",
+      "context": "light",
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "none"
+      },
+      "content": {
+        "title": [
+          {
+            "text": "Delegate ",
+            "emphasis": "none"
+          },
+          {
+            "text": "to Pilot mode",
+            "emphasis": "brand"
+          }
+        ],
+        "subtitle": "House rules written in plain words",
+        "body": [
+          "Tell Pilot how you like things handled: file every receipt, flag anything from legal, decline cold pitches politely, nudge me if a client goes quiet. Pilot applies those rules the moment mail arrives and keeps a running log of each action, so you can review what happened and undo any step.",
+          "Skim the log once a day and tweak the rules as your role changes."
+        ],
+        "titleSize": "md",
+        "mediaSide": "left",
+        "gap": "L",
+        "media": {
+          "slotId": "mail-feature-ai",
+          "assetRole": "product.ui-illustration"
+        },
+        "link": "See more"
+      }
+    },
+    {
+      "section": "split.feature",
+      "group": "c",
+      "background": "neutral-5",
+      "context": "light",
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "none"
+      },
+      "content": {
+        "title": [
+          {
+            "text": "Morning Brief,",
+            "emphasis": "brand"
+          },
+          {
+            "text": " ready before your coffee",
+            "emphasis": "none"
+          }
+        ],
+        "subtitle": "One page that sums up the night shift",
+        "body": [
+          "Colleagues in other time zones keep working while you sleep. Instead of facing forty unread threads, you get a single page that groups overnight activity by project, notes what was decided, and lists the replies waiting on you.",
+          "Choose which senders and labels feed the brief, pick the hour it lands, and open any line to jump straight into the full conversation. Forward it to a teammate who is covering for you, and they start the day with exactly the same picture of what changed and what is due."
+        ],
+        "titleSize": "md",
+        "mediaSide": "right",
+        "gap": "L",
+        "media": {
+          "slotId": "mail-feature-split",
+          "assetRole": "product.ui-illustration"
+        }
+      }
+    },
+    {
+      "section": "split.feature",
+      "group": "c",
+      "background": "neutral-5",
+      "context": "light",
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "none"
+      },
+      "content": {
+        "title": [
+          {
+            "text": "Pin what ",
+            "emphasis": "none"
+          },
+          {
+            "text": "matters this week",
+            "emphasis": "brand"
+          }
+        ],
+        "subtitle": "A shelf above your inbox",
+        "body": [
+          "Contracts under review, travel plans, a five-person hiring loop: some threads need to stay in sight for days. Pin them to the shelf and they sit above everything else on every device, then quietly unpin themselves once the thread is marked done.",
+          "Drag pins into the order you think in, give each one a colour, and share a whole shelf with the person covering your accounts while you are away. They see the same priorities without a long handover document."
+        ],
+        "titleSize": "md",
+        "mediaSide": "left",
+        "gap": "L",
+        "media": {
+          "slotId": "mail-feature-reminder",
+          "assetRole": "product.ui-illustration"
+        }
+      }
+    },
+    {
+      "section": "split.feature",
+      "group": "c",
+      "background": "neutral-5",
+      "context": "light",
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "none"
+      },
+      "content": {
+        "title": [
+          {
+            "text": "Shared drafts",
+            "emphasis": "brand"
+          },
+          {
+            "text": " for your hardest replies",
+            "emphasis": "none"
+          }
+        ],
+        "subtitle": "Write the sensitive ones as a group",
+        "body": [
+          "A refund dispute, a press question, a note to a board member: some messages are too important to send on one person's judgement.",
+          "Open the draft to colleagues and watch their cursors appear. Suggestions show inline, and nobody has to copy text into a chat.",
+          "Add an approval step for messages that touch legal or finance. The draft stays locked until a named reviewer signs off, and the final version keeps a record of who changed what, which helps when someone asks later."
+        ],
+        "titleSize": "md",
+        "mediaSide": "right",
+        "gap": "L",
+        "media": {
+          "slotId": "mail-feature-comments",
+          "assetRole": "product.ui-illustration"
+        }
+      }
+    },
+    {
+      "section": "split.feature",
+      "group": "c",
+      "background": "neutral-5",
+      "context": "light",
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "none"
+      },
+      "content": {
+        "title": [
+          {
+            "text": "Protect ",
+            "emphasis": "none"
+          },
+          {
+            "text": "all your deep-work hours",
+            "emphasis": "brand"
+          }
+        ],
+        "subtitle": "Your mail waits while you concentrate",
+        "body": [
+          "Deep focus rarely ends with a bang. It ends with one small ping after another.",
+          "Quiet hours hold back anything that is not urgent until your focus block ends, then hand you a tidy summary. A short VIP list can always break through, so nothing critical waits on you.",
+          "Turn on quiet hours for a team during a launch week. Your status shows colleagues you are heads-down, and blocks sync with your calendar, so meetings and mail stop competing for the same time."
+        ],
+        "titleSize": "md",
+        "mediaSide": "left",
+        "gap": "L",
+        "media": {
+          "slotId": "mail-feature-snippets",
+          "assetRole": "product.ui-illustration"
+        }
+      }
+    },
+    {
+      "section": "grid.cards",
+      "variant": "caption",
+      "background": "purple-100",
+      "context": "dark",
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "none"
+      },
+      "content": {
+        "columns": 3,
+        "items": [
+          {
+            "title": "Translate any thread instantly",
+            "media": {
+              "slotId": "mail-grid-send-later",
+              "assetRole": "product.ui-illustration"
+            }
+          },
+          {
+            "title": "Read a long thread as a recap",
+            "media": {
+              "slotId": "mail-grid-quick-reply",
+              "assetRole": "product.ui-illustration"
+            }
+          },
+          {
+            "title": "Archive a whole sender in one go",
+            "media": {
+              "slotId": "mail-grid-snooze",
+              "assetRole": "product.ui-illustration"
+            }
+          },
+          {
+            "title": "Attach files from any cloud drive",
+            "media": {
+              "slotId": "mail-grid-shortcuts",
+              "assetRole": "product.ui-illustration"
+            }
+          },
+          {
+            "title": "Set an away reply in seconds",
+            "media": {
+              "slotId": "mail-grid-profile",
+              "assetRole": "product.ui-illustration"
+            }
+          },
+          {
+            "title": "Search by what you remember",
+            "media": {
+              "slotId": "mail-grid-unsubscribe",
+              "assetRole": "product.ui-illustration"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "section": "split.feature",
+      "group": "d",
+      "background": "neutral-5",
+      "context": "light",
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "none"
+      },
+      "content": {
+        "title": [
+          {
+            "text": "Stay easy to reach",
+            "emphasis": "brand"
+          },
+          {
+            "text": " on the road too",
+            "emphasis": "none"
+          }
+        ],
+        "subtitle": "Light mail for patchy wifi",
+        "body": [
+          "Travel mode trims images and attachments so messages load on the weakest signal.",
+          "Replies queue offline and send in order once you land. Your away note switches on automatically when your calendar shows a flight, and switches off when you check in at the hotel.",
+          "Teammates see a small plane next to your name, so they know a slower answer is expected rather than ignored."
+        ],
+        "titleSize": "md",
+        "mediaSide": "right",
+        "gap": "L",
+        "media": {
+          "slotId": "mail-feature-opens",
+          "assetRole": "product.ui-illustration"
+        }
+      }
+    },
+    {
+      "section": "split.feature",
+      "group": "d",
+      "background": "neutral-5",
+      "context": "light",
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "none"
+      },
+      "content": {
+        "title": [
+          {
+            "text": "Tone check",
+            "emphasis": "brand"
+          },
+          {
+            "text": " pre-send",
+            "emphasis": "none"
+          }
+        ],
+        "subtitle": "Catch any sharp edge in advance",
+        "body": [
+          "Late in the day it is easy to write something that reads colder than you meant. Tone check highlights phrases that may land badly with the reader, explains why in a single line, and offers a warmer alternative you can accept with one click or ignore if the bluntness is on purpose.",
+          "It runs entirely locally on your draft, and nothing is stored once you hit send."
+        ],
+        "titleSize": "md",
+        "mediaSide": "left",
+        "gap": "L",
+        "media": {
+          "slotId": "mail-feature-autocorrect",
+          "assetRole": "product.ui-illustration"
+        }
+      }
+    },
+    {
+      "section": "split.feature",
+      "group": "d",
+      "background": "neutral-5",
+      "context": "light",
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "none"
+      },
+      "content": {
+        "title": [
+          {
+            "text": "Hand off threads",
+            "emphasis": "brand"
+          },
+          {
+            "text": " with context",
+            "emphasis": "none"
+          }
+        ],
+        "subtitle": "Nobody has to start from zero",
+        "body": [
+          "Accounts change hands when people go on leave, switch teams or move on. The new owner usually inherits a stack of threads and no idea which promises were made, which questions are still open, or who on the other side matters most.",
+          "A handoff note travels with every reassigned thread: a short summary, open commitments and key contacts, written by AI and checked by the outgoing owner."
+        ],
+        "titleSize": "md",
+        "mediaSide": "right",
+        "gap": "L",
+        "media": {
+          "slotId": "mail-feature-presence",
+          "assetRole": "product.ui-illustration"
+        }
+      }
+    },
+    {
+      "section": "split.feature",
+      "group": "d",
+      "background": "neutral-5",
+      "context": "light",
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "none"
+      },
+      "content": {
+        "title": [
+          {
+            "text": "Capture receipts",
+            "emphasis": "brand"
+          },
+          {
+            "text": " without any typing",
+            "emphasis": "none"
+          }
+        ],
+        "subtitle": "Totals land right in your expense sheet",
+        "body": [
+          "Receipts arrive by mail, get buried, and resurface at month end.",
+          "Inbox spots receipts and invoices as they come in, reads the vendor, amount and date, and adds a row to the expense sheet you choose. Anything it is unsure about waits in a small review list for you."
+        ],
+        "titleSize": "md",
+        "mediaSide": "left",
+        "gap": "L",
+        "media": {
+          "slotId": "mail-feature-calendar",
+          "assetRole": "product.ui-illustration"
+        },
+        "link": "See more"
+      }
+    },
+    {
+      "section": "split.feature",
+      "group": "d",
+      "background": "neutral-5",
+      "context": "light",
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "none"
+      },
+      "content": {
+        "title": [
+          {
+            "text": "Tame newsletters",
+            "emphasis": "brand"
+          },
+          {
+            "text": " into one calm weekly read",
+            "emphasis": "none"
+          }
+        ],
+        "subtitle": "A single digest instead of forty pings",
+        "body": [
+          "Subscriptions are worth keeping until they bury the rest. Inbox moves them out of the main view and gathers every issue into one weekly digest, with the opening lines of each so you can decide what to read.",
+          "Unsubscribe straight from the weekly digest, or mark a favourite so its new issues still show up the moment they are published."
+        ],
+        "titleSize": "md",
+        "mediaSide": "right",
+        "gap": "L",
+        "media": {
+          "slotId": "mail-feature-event",
+          "assetRole": "product.ui-illustration"
+        }
+      }
+    },
+    {
+      "section": "quotes.grid",
+      "variant": "logo-avatar",
+      "background": "purple-100",
+      "context": "dark",
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "none"
+      },
+      "content": {
+        "title": "Notes from teams who made the switch",
+        "items": [
+          {
+            "quote": "We run a twelve-person studio and every client used to email everyone. Pilot rules sort that out before any of us look, and the Morning Brief means our designers start the day sketching instead of digging through threads.",
+            "name": "Morgan Ashcroft",
+            "role": "CEO of Fieldkit",
+            "logo": {
+              "slotId": "mail-quote-logo-1",
+              "assetRole": "logo.customer-wordmark"
+            },
+            "avatar": {
+              "slotId": "mail-quote-avatar-1",
+              "assetRole": "person.avatar"
+            }
+          },
+          {
+            "quote": "Handoffs used to cost us a week of catch-up after any leave. Now the notes are already waiting on each thread, and our customers barely notice that the person answering them has changed.",
+            "name": "Riley Okafo",
+            "role": "Senior Director of Client Success at Lumena",
+            "logo": {
+              "slotId": "mail-quote-logo-2",
+              "assetRole": "logo.customer-wordmark"
+            },
+            "avatar": {
+              "slotId": "mail-quote-avatar-2",
+              "assetRole": "person.avatar"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "section": "cta.band",
+      "variant": "stack",
+      "background": "mulberry-100",
+      "context": "dark",
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "none"
+      },
+      "content": {
+        "title": "Bring your team to a calmer inbox today",
+        "ctas": [
+          {
+            "label": "Get started",
+            "variant": "primary"
+          },
+          {
+            "label": "Contact sales",
+            "variant": "primaryOutline"
+          }
+        ],
+        "align": "start",
+        "headingSize": "lg"
+      }
+    },
+    {
+      "section": "shell.footer",
+      "variant": "dark",
+      "background": "mulberry-100",
+      "context": "dark",
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "none"
+      },
+      "content": {}
+    }
+  ]
+}

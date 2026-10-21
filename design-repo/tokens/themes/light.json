@@ -1,0 +1,30 @@
+{
+  "$description": "Theme instance for the .ctx-light section context. Resolves every semantic colour to a foundation token.",
+  "theme": "light",
+  "selector": ".ctx-light",
+  "colorScheme": "light",
+  "resolves": {
+    "fg": "{color.neutral.90}",
+    "fg-sub": "{color.alpha.ink-65}",
+    "fg-soft": "{color.neutral.30}",
+    "line-sub": "{color.alpha.stone-20}",
+    "line-soft": "{color.alpha.stone-5}",
+    "hover-tint": "{color.alpha.black-5}",
+    "action": "{color.purple.60}",
+    "action-hover": "{color.purple.80}",
+    "action-active": "{color.purple.90}",
+    "action-secondary": "{color.neutral.90}",
+    "action-secondary-hover": "{color.neutral.100}",
+    "on-action": "{color.white}",
+    "highlight": "{color.sky.60}"
+  },
+  "$extensions": {
+    "measuredFrom": [
+      {
+        "path": "src/index.css",
+        "lines": "50-67",
+        "expect": "/* Semantic colours: light context (default) */"
+      }
+    ]
+  }
+}

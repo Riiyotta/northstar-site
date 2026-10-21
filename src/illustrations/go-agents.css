@@ -1,0 +1,84 @@
+/*
+ * /go + /agents illustrations: looping motion layer (prefix ns-ga-).
+ * The /go feature-row slots stand in for looping demo videos inside
+ * VideoSlot, which pauses them with animation-play-state (.motion-paused).
+ * Every loop's duration comes from --ns-ga-dur on the root <svg>.
+ * The un-animated state of every element is a complete, readable frame, so
+ * prefers-reduced-motion (handled globally in illustrations.css, and again
+ * here by only declaring animations under no-preference) shows a still.
+ * Elements that exist only for motion (typing covers, pointer cursors,
+ * typing dots) carry .ns-motion-only and are hidden under reduce.
+ */
+
+/* responsive art swap (connectors strip: 1 row >= 640, 2 rows below) */
+.ns-art.ns-ga-wide { display: none; }
+@media (min-width: 640px) {
+  .ns-art.ns-ga-wide { display: block; }
+  .ns-art.ns-ga-narrow { display: none; }
+}
+
+@keyframes ns-ga-in-0 { 0%, 3% { opacity: 0; transform: translateY(16px); } 9%, 90% { opacity: 1; transform: none; } 95%, 100% { opacity: 0; transform: none; } }
+@keyframes ns-ga-in-1 { 0%, 11% { opacity: 0; transform: translateY(16px); } 17%, 90% { opacity: 1; transform: none; } 95%, 100% { opacity: 0; transform: none; } }
+@keyframes ns-ga-in-2 { 0%, 19% { opacity: 0; transform: translateY(16px); } 25%, 90% { opacity: 1; transform: none; } 95%, 100% { opacity: 0; transform: none; } }
+@keyframes ns-ga-in-3 { 0%, 27% { opacity: 0; transform: translateY(16px); } 33%, 90% { opacity: 1; transform: none; } 95%, 100% { opacity: 0; transform: none; } }
+@keyframes ns-ga-in-4 { 0%, 35% { opacity: 0; transform: translateY(16px); } 41%, 90% { opacity: 1; transform: none; } 95%, 100% { opacity: 0; transform: none; } }
+@keyframes ns-ga-in-5 { 0%, 50% { opacity: 0; transform: translateY(16px); } 56%, 90% { opacity: 1; transform: none; } 95%, 100% { opacity: 0; transform: none; } }
+@keyframes ns-ga-in-6 { 0%, 62% { opacity: 0; transform: translateY(16px); } 68%, 90% { opacity: 1; transform: none; } 95%, 100% { opacity: 0; transform: none; } }
+
+/* typing dots: shown only before the reply lands */
+@keyframes ns-ga-dots { 0%, 9% { opacity: 0; } 12%, 22% { opacity: 1; } 25%, 100% { opacity: 0; } }
+
+/* inline edit (row 5): highlight, popover, accept, swap */
+@keyframes ns-ga-flag { 0%, 8% { opacity: 0; } 15%, 56% { opacity: 1; } 60%, 100% { opacity: 0; } }
+@keyframes ns-ga-pop { 0%, 20% { opacity: 0; transform: translateY(14px) scale(0.98); } 28%, 54% { opacity: 1; transform: none; } 59%, 100% { opacity: 0; transform: translateY(6px); } }
+@keyframes ns-ga-press { 0%, 46% { transform: none; } 49% { transform: translateY(3px); } 53%, 100% { transform: none; } }
+@keyframes ns-ga-old { 0%, 56% { opacity: 1; } 60%, 94% { opacity: 0; } 98%, 100% { opacity: 1; } }
+@keyframes ns-ga-new { 0%, 58% { opacity: 0; } 62%, 92% { opacity: 1; } 96%, 100% { opacity: 0; } }
+
+/* shortcut (row 7): key press, prompt pop, typed request, inserted line */
+@keyframes ns-ga-keys { 0%, 6% { opacity: 0; transform: translateY(10px); } 10%, 26% { opacity: 1; transform: none; } 14% { transform: translateY(4px); } 30%, 100% { opacity: 0; transform: none; } }
+@keyframes ns-ga-prompt { 0%, 14% { opacity: 0; transform: scale(0.96); } 20%, 60% { opacity: 1; transform: none; } 64%, 100% { opacity: 0; transform: none; } }
+@keyframes ns-ga-wipe-a { 0%, 22% { transform: none; } 44%, 93% { transform: translateX(var(--ns-reveal, 900px)); } 96%, 100% { transform: none; } }
+@keyframes ns-ga-insert { 0%, 62% { opacity: 0; } 68%, 92% { opacity: 1; } 96%, 100% { opacity: 0; } }
+
+/* hero (go-hero-video): line-by-line draft, pointer to Send */
+@keyframes ns-ga-line-0 { 0%, 12% { transform: none; } 28%, 93% { transform: translateX(var(--ns-reveal, 900px)); } 95%, 100% { transform: none; } }
+@keyframes ns-ga-line-1 { 0%, 30% { transform: none; } 46%, 93% { transform: translateX(var(--ns-reveal, 900px)); } 95%, 100% { transform: none; } }
+@keyframes ns-ga-line-2 { 0%, 48% { transform: none; } 62%, 93% { transform: translateX(var(--ns-reveal, 900px)); } 95%, 100% { transform: none; } }
+@keyframes ns-ga-draft { 0%, 90% { opacity: 1; } 93%, 97% { opacity: 0; } 100% { opacity: 1; } }
+@keyframes ns-ga-pointer { 0%, 62% { transform: translate(-260px, -180px); opacity: 0; } 66% { opacity: 1; } 78%, 88% { transform: none; opacity: 1; } 92%, 100% { transform: none; opacity: 0; } }
+@keyframes ns-ga-send { 0%, 80% { opacity: 0; } 82%, 88% { opacity: 1; } 91%, 100% { opacity: 0; } }
+@keyframes ns-ga-swirl { 0%, 100% { transform: rotate(0deg) scale(1); } 50% { transform: rotate(14deg) scale(1.08); } }
+@keyframes ns-ga-swirl-r { 0%, 100% { transform: rotate(0deg) scale(1.05); } 50% { transform: rotate(-12deg) scale(0.96); } }
+
+@media (prefers-reduced-motion: no-preference) {
+  .ns-ga-loop { --ns-ga-ease: cubic-bezier(0.16, 1, 0.3, 1); }
+  .ns-ga-loop .ns-ga-in-0 { animation: ns-ga-in-0 var(--ns-ga-dur, 8s) var(--ns-ga-ease) infinite; }
+  .ns-ga-loop .ns-ga-in-1 { animation: ns-ga-in-1 var(--ns-ga-dur, 8s) var(--ns-ga-ease) infinite; }
+  .ns-ga-loop .ns-ga-in-2 { animation: ns-ga-in-2 var(--ns-ga-dur, 8s) var(--ns-ga-ease) infinite; }
+  .ns-ga-loop .ns-ga-in-3 { animation: ns-ga-in-3 var(--ns-ga-dur, 8s) var(--ns-ga-ease) infinite; }
+  .ns-ga-loop .ns-ga-in-4 { animation: ns-ga-in-4 var(--ns-ga-dur, 8s) var(--ns-ga-ease) infinite; }
+  .ns-ga-loop .ns-ga-in-5 { animation: ns-ga-in-5 var(--ns-ga-dur, 8s) var(--ns-ga-ease) infinite; }
+  .ns-ga-loop .ns-ga-in-6 { animation: ns-ga-in-6 var(--ns-ga-dur, 8s) var(--ns-ga-ease) infinite; }
+  .ns-ga-loop .ns-ga-dots { animation: ns-ga-dots var(--ns-ga-dur, 8s) ease infinite; }
+
+  .ns-ga-loop .ns-ga-flag { animation: ns-ga-flag var(--ns-ga-dur, 8s) ease infinite; }
+  .ns-ga-loop .ns-ga-pop { transform-origin: top left; animation: ns-ga-pop var(--ns-ga-dur, 8s) var(--ns-ga-ease) infinite; }
+  .ns-ga-loop .ns-ga-press { animation: ns-ga-press var(--ns-ga-dur, 8s) ease infinite; }
+  .ns-ga-loop .ns-ga-old { animation: ns-ga-old var(--ns-ga-dur, 8s) ease infinite; }
+  .ns-ga-loop .ns-ga-new { animation: ns-ga-new var(--ns-ga-dur, 8s) ease infinite; }
+
+  .ns-ga-loop .ns-ga-keys { animation: ns-ga-keys var(--ns-ga-dur, 8s) var(--ns-ga-ease) infinite; }
+  .ns-ga-loop .ns-ga-prompt { transform-origin: top left; animation: ns-ga-prompt var(--ns-ga-dur, 8s) var(--ns-ga-ease) infinite; }
+  .ns-ga-loop .ns-ga-wipe-a { animation: ns-ga-wipe-a var(--ns-ga-dur, 8s) steps(30, end) infinite; }
+  .ns-ga-loop .ns-ga-insert { animation: ns-ga-insert var(--ns-ga-dur, 8s) ease infinite; }
+
+  .ns-ga-loop .ns-ga-line-0 { animation: ns-ga-line-0 var(--ns-ga-dur, 8s) linear infinite; }
+  .ns-ga-loop .ns-ga-line-1 { animation: ns-ga-line-1 var(--ns-ga-dur, 8s) linear infinite; }
+  .ns-ga-loop .ns-ga-line-2 { animation: ns-ga-line-2 var(--ns-ga-dur, 8s) linear infinite; }
+  .ns-ga-loop .ns-ga-draft { animation: ns-ga-draft var(--ns-ga-dur, 8s) ease infinite; }
+  .ns-ga-loop .ns-ga-pointer { animation: ns-ga-pointer var(--ns-ga-dur, 8s) cubic-bezier(0.45, 0, 0.2, 1) infinite; }
+  .ns-ga-loop .ns-ga-send { animation: ns-ga-send var(--ns-ga-dur, 8s) ease infinite; }
+  .ns-ga-loop .ns-ga-swirl { transform-origin: center; animation: ns-ga-swirl var(--ns-ga-dur, 8s) ease-in-out infinite; }
+  .ns-ga-loop .ns-ga-swirl-r { transform-origin: center; animation: ns-ga-swirl-r var(--ns-ga-dur, 8s) ease-in-out infinite; }
+}

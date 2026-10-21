@@ -1,0 +1,169 @@
+{
+  "version": "1.0.0",
+  "snapshotTakenAt": "2026-10-21T12:30:14Z",
+  "routes": [
+    {
+      "route": "/",
+      "title": "Home",
+      "page": {
+        "path": "src/pages/Home.jsx",
+        "lines": "12-12",
+        "expect": "export default function Home"
+      },
+      "header": {
+        "variant": "signin-menu",
+        "background": "white"
+      },
+      "footer": "dark",
+      "banner": true,
+      "template": "home-carousel"
+    },
+    {
+      "route": "/mail",
+      "title": "Northstar Inbox",
+      "page": {
+        "path": "src/routes.js",
+        "lines": "16-16",
+        "expect": "{ path: '/mail'"
+      },
+      "header": {
+        "variant": "product-ctas",
+        "ctaLabel": "Get started",
+        "background": "white"
+      },
+      "footer": "dark",
+      "banner": false,
+      "template": "product-feature-rows"
+    },
+    {
+      "route": "/docs",
+      "title": "Northstar Pages",
+      "page": {
+        "path": "src/routes.js",
+        "lines": "17-17",
+        "expect": "{ path: '/docs'"
+      },
+      "header": {
+        "variant": "product-ctas",
+        "ctaLabel": "Start using Pages",
+        "background": "white"
+      },
+      "footer": "dark",
+      "banner": false,
+      "template": "product-capability-grids"
+    },
+    {
+      "route": "/go",
+      "title": "Northstar Assistant",
+      "page": {
+        "path": "src/routes.js",
+        "lines": "18-18",
+        "expect": "{ path: '/go'"
+      },
+      "header": {
+        "variant": "product-ctas",
+        "ctaLabel": "Sign up",
+        "background": "neutral-5"
+      },
+      "footer": "light",
+      "banner": false,
+      "template": "product-chapters"
+    },
+    {
+      "route": "/agents",
+      "title": "Northstar Agents",
+      "page": {
+        "path": "src/routes.js",
+        "lines": "19-19",
+        "expect": "{ path: '/agents'"
+      },
+      "header": {
+        "variant": "product-ctas",
+        "ctaLabel": "Sign up",
+        "background": "white"
+      },
+      "footer": "dark",
+      "banner": false,
+      "template": "split-hero-showcase"
+    },
+    {
+      "route": "/plans",
+      "title": "Pricing",
+      "page": {
+        "path": "src/routes.js",
+        "lines": "20-20",
+        "expect": "{ path: '/plans'"
+      },
+      "header": {
+        "variant": "signin-menu",
+        "background": "white"
+      },
+      "footer": "dark",
+      "banner": false,
+      "template": "pricing"
+    },
+    {
+      "route": "/enterprise",
+      "title": "Northstar for Enterprise",
+      "page": {
+        "path": "src/routes.js",
+        "lines": "21-21",
+        "expect": "{ path: '/enterprise'"
+      },
+      "header": {
+        "variant": "signin-menu",
+        "background": "white"
+      },
+      "footer": "dark",
+      "banner": false,
+      "template": "split-hero-solutions"
+    }
+  ],
+  "catchAll": {
+    "path": "*",
+    "component": {
+      "path": "src/pages/ComingSoon.jsx",
+      "lines": "2-11",
+      "expect": "export default function ComingSoon"
+    },
+    "router": {
+      "path": "src/App.jsx",
+      "lines": "44-44",
+      "expect": "<Route path=\"*\""
+    },
+    "status": "placeholder",
+    "note": "Every path other than the 7 routes renders ComingSoon ('This page is being built.'). It is a deliberate stand-in for unbuilt pages, NOT a page shape: there is no template for it and a PageSpec must never reproduce it."
+  },
+  "outOfScope": {
+    "note": "A future build wave will add these page families. They have no built page, no measured spec and no template in this snapshot. Rule OUT_OF_SCOPE_ROUTE warns when a PageSpec targets one of these prefixes (the prefixes are assumed path conventions, not measured URLs).",
+    "families": [
+      {
+        "family": "team",
+        "pathPrefixes": [
+          "/team"
+        ]
+      },
+      {
+        "family": "use-case",
+        "pathPrefixes": [
+          "/use-case",
+          "/use-cases"
+        ]
+      },
+      {
+        "family": "store",
+        "pathPrefixes": [
+          "/store"
+        ]
+      },
+      {
+        "family": "company",
+        "pathPrefixes": [
+          "/company",
+          "/about",
+          "/careers"
+        ]
+      }
+    ]
+  }
+}

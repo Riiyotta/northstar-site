@@ -1,0 +1,39 @@
+{
+  "id": "lockup",
+  "kind": "primitive",
+  "purpose": "Product lockup (tile + product name) used as the first line of product heroes and homepage product intros.",
+  "implementedBy": [
+    {
+      "path": "src/components/ui/Media.jsx",
+      "lines": "64-71",
+      "expect": "export function LockupSlot"
+    },
+    {
+      "path": "src/components/ui/Media.jsx",
+      "lines": "43-59",
+      "expect": "export function Lockup"
+    }
+  ],
+  "props": {
+    "id": [
+      "lockup-inbox",
+      "lockup-pages",
+      "lockup-agent",
+      "lockup-assistant"
+    ],
+    "product": "Northstar product name",
+    "width": "px"
+  },
+  "tokens": [
+    "fontSize.lockup"
+  ],
+  "accessibility": [
+    "Inline in the h1; product name is real text."
+  ],
+  "usedBy": [
+    "hero.product-video",
+    "hero.centered",
+    "intro.section",
+    "bento.inbox"
+  ]
+}

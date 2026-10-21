@@ -1,0 +1,33 @@
+{
+  "id": "tooltip",
+  "kind": "primitive",
+  "purpose": "Info tooltip: 200ms hover/focus delay, .2s fade in, instant hide, portalled to body, right of trigger.",
+  "implementedBy": [
+    {
+      "path": "src/components/ui/Tooltip.jsx",
+      "lines": "14-31",
+      "expect": "export default function Tooltip"
+    },
+    {
+      "path": "src/components/ui/Tooltip.jsx",
+      "lines": "9-12",
+      "expect": "const DELAY_MS"
+    }
+  ],
+  "props": {
+    "text": "string (40-80 ch)"
+  },
+  "tokens": [
+    "fontSize.tooltip",
+    "elevation.small",
+    "zIndex.tooltip",
+    "duration.base"
+  ],
+  "accessibility": [
+    "Trigger is focusable (tabIndex 0) and opens on focus.",
+    "role=tooltip, linked with aria-describedby while open."
+  ],
+  "usedBy": [
+    "pricing.comparison"
+  ]
+}

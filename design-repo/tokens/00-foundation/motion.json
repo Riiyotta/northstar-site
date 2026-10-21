@@ -1,0 +1,84 @@
+{
+  "$description": "Durations and easings measured from the original's CSS/JS (CLONE_SPEC.md 0.8, 13) and implemented in tailwind transitionDuration/transitionTimingFunction and src/index.css.",
+  "duration": {
+    "fast": {
+      "$type": "duration",
+      "$value": "100ms"
+    },
+    "base": {
+      "$type": "duration",
+      "$value": "200ms",
+      "$description": "Button/link hovers, accordion, tooltip fade."
+    },
+    "slow": {
+      "$type": "duration",
+      "$value": "300ms",
+      "$description": "Sign-in menu reveal, drawer slide, chevron rotate, floating plan header."
+    },
+    "emphasis": {
+      "$type": "duration",
+      "$value": "400ms"
+    },
+    "crossfade": {
+      "$type": "duration",
+      "$value": "500ms",
+      "$description": "Hero dissolve; logo fade in/out."
+    },
+    "slide": {
+      "$type": "duration",
+      "$value": "10000ms",
+      "$description": "Hero carousel slide interval and progress fill."
+    }
+  },
+  "easing": {
+    "in-out": {
+      "$type": "cubicBezier",
+      "$value": "cubic-bezier(0.42, 0, 0.58, 1)",
+      "$description": "The CSS ease-in-out keyword (buttons, menu items, logo fades)."
+    },
+    "ease": {
+      "$type": "cubicBezier",
+      "$value": "ease",
+      "$description": "Links, chevron, accordion, dissolve."
+    },
+    "out-expo": {
+      "$type": "cubicBezier",
+      "$value": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "$description": "Sign-in menu reveal and row stagger."
+    },
+    "progress": {
+      "$type": "cubicBezier",
+      "$value": "cubic-bezier(0.25, 1, 0.5, 1)",
+      "$description": "Hero progress fill."
+    },
+    "ease-out": {
+      "$type": "cubicBezier",
+      "$value": "ease-out",
+      "$description": "Mobile drawer slide and backdrop."
+    },
+    "linear": {
+      "$type": "cubicBezier",
+      "$value": "linear",
+      "$description": "Scroll-linked pinned text on /go."
+    }
+  },
+  "$extensions": {
+    "measuredFrom": [
+      {
+        "path": "tailwind.config.js",
+        "lines": "202-208",
+        "expect": "crossfade: '500ms'"
+      },
+      {
+        "path": "tailwind.config.js",
+        "lines": "210-217",
+        "expect": "'out-expo'"
+      },
+      {
+        "path": "src/index.css",
+        "lines": "15-23",
+        "expect": "--dur-slide: 10000ms;"
+      }
+    ]
+  }
+}

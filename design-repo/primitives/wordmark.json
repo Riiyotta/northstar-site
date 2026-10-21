@@ -1,0 +1,30 @@
+{
+  "id": "wordmark",
+  "kind": "primitive",
+  "purpose": "Northstar wordmark (star glyph + name); header, drawer, footer.",
+  "implementedBy": [
+    {
+      "path": "src/components/ui/Media.jsx",
+      "lines": "33-40",
+      "expect": "export function Wordmark"
+    },
+    {
+      "path": "src/components/ui/Media.jsx",
+      "lines": "24-30",
+      "expect": "export function StarGlyph"
+    }
+  ],
+  "props": {
+    "className": "colour via currentColor"
+  },
+  "tokens": [
+    "fontSize.wordmark"
+  ],
+  "accessibility": [
+    "Wrapped in a home link with aria-label."
+  ],
+  "usedBy": [
+    "shell.header",
+    "shell.footer"
+  ]
+}

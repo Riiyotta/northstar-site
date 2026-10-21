@@ -1,0 +1,115 @@
+{
+  "id": "quotes.grid",
+  "category": "proof",
+  "purpose": "Two customer quote cards under a centred h2: invented customer wordmark, quote, name/role, optional illustrated avatar.",
+  "implementedBy": [
+    {
+      "path": "src/components/ui/QuoteGrid.jsx",
+      "lines": "6-36",
+      "expect": "export default function QuoteGrid"
+    }
+  ],
+  "usedOn": [
+    "/mail",
+    "/enterprise"
+  ],
+  "variants": {
+    "logo": "logo + quote + attribution (enterprise).",
+    "logo-avatar": "adds a 60x60 illustrated avatar below each card (mail)."
+  },
+  "content": {
+    "title": {
+      "kind": "text",
+      "required": true,
+      "maxChars": 41,
+      "maxWords": 10,
+      "budgetSource": "specs/mail.md §14 quotes.h2 (orig 37 ch)"
+    },
+    "items": {
+      "kind": "items",
+      "required": true,
+      "minItems": 2,
+      "maxItems": 2,
+      "fields": {
+        "quote": {
+          "kind": "text",
+          "required": true,
+          "maxChars": 251,
+          "maxWords": 56,
+          "budgetSource": "specs/mail.md §14 quote1.p (orig 228 ch)"
+        },
+        "name": {
+          "kind": "text",
+          "required": true,
+          "maxChars": 18,
+          "maxWords": 4,
+          "budgetSource": "specs/mail.md §14 quote1.name (orig 16 ch)"
+        },
+        "role": {
+          "kind": "text",
+          "required": true,
+          "maxChars": 58,
+          "maxWords": 13,
+          "budgetSource": "specs/enterprise.md §16 role (orig 52 ch)"
+        },
+        "logo": {
+          "kind": "media",
+          "required": true,
+          "assetRoles": [
+            "logo.customer-wordmark"
+          ]
+        },
+        "avatar": {
+          "kind": "media",
+          "required": false,
+          "assetRoles": [
+            "person.avatar"
+          ],
+          "onlyForVariants": [
+            "logo-avatar"
+          ],
+          "requiredForVariants": [
+            "logo-avatar"
+          ]
+        }
+      }
+    }
+  },
+  "allowedBackgrounds": [
+    "purple-100"
+  ],
+  "constraints": {},
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "default": "none"
+  },
+  "responsive": [
+    {
+      "minWidth": "base",
+      "change": "1 column, gap 16."
+    },
+    {
+      "minWidth": "640.02px",
+      "change": "2 columns by container query.",
+      "measuredFrom": {
+        "path": "src/index.css",
+        "lines": "178-181",
+        "expect": "@container (min-width: 640px)"
+      }
+    }
+  ],
+  "measuredFrom": [
+    {
+      "path": "specs/mail.md",
+      "lines": "240-253",
+      "expect": "## 10. M10 Testimonials"
+    },
+    {
+      "path": "specs/enterprise.md",
+      "lines": "140-149",
+      "expect": "## 16. Customer quotes"
+    }
+  ]
+}

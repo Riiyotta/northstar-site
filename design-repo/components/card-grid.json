@@ -1,0 +1,31 @@
+{
+  "id": "card-grid",
+  "kind": "component",
+  "purpose": "Container-query grid of media cards.",
+  "implementedBy": [
+    {
+      "path": "src/components/ui/CardGrid.jsx",
+      "lines": "15-65",
+      "expect": "export default function CardGrid"
+    }
+  ],
+  "props": {
+    "columns": [
+      2,
+      3,
+      4
+    ],
+    "variant": [
+      "media",
+      "caption",
+      "detail"
+    ]
+  },
+  "tokens": [
+    "layout.multiColumn"
+  ],
+  "accessibility": [],
+  "usedBy": [
+    "grid.cards"
+  ]
+}

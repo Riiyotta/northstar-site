@@ -1,0 +1,34 @@
+{
+  "id": "split-feature",
+  "kind": "component",
+  "purpose": "Text block beside a MediaSlot figure inside TwoColumn.",
+  "implementedBy": [
+    {
+      "path": "src/components/ui/SplitFeature.jsx",
+      "lines": "19-72",
+      "expect": "export default function SplitFeature"
+    }
+  ],
+  "props": {
+    "titleSize": [
+      "md",
+      "lg"
+    ],
+    "gap": [
+      "M",
+      "L",
+      "vp"
+    ],
+    "mediaFirst": "boolean",
+    "mediaLeft": "boolean"
+  },
+  "tokens": [
+    "fontSize.heading-md",
+    "fontSize.heading-lg",
+    "fontSize.heading-sm"
+  ],
+  "accessibility": [],
+  "usedBy": [
+    "split.feature"
+  ]
+}

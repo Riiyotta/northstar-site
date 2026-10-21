@@ -1,0 +1,38 @@
+{
+  "id": "cta-band",
+  "kind": "component",
+  "purpose": "Stacked or split CTA band inside its own SectionGroup, optional background art.",
+  "implementedBy": [
+    {
+      "path": "src/components/ui/CtaBand.jsx",
+      "lines": "18-73",
+      "expect": "export default function CtaBand"
+    }
+  ],
+  "props": {
+    "layout": [
+      "stack",
+      "split"
+    ],
+    "split": [
+      "8/4",
+      "6/6"
+    ],
+    "align": [
+      "center",
+      "start"
+    ],
+    "headingSize": [
+      "lg",
+      "md"
+    ]
+  },
+  "tokens": [
+    "fontSize.heading-lg",
+    "fontSize.heading-md"
+  ],
+  "accessibility": [],
+  "usedBy": [
+    "cta.band"
+  ]
+}

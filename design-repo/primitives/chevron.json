@@ -1,0 +1,29 @@
+{
+  "id": "chevron",
+  "kind": "primitive",
+  "purpose": "Nav/drawer disclosure chevron that rotates -180deg when open (.3s ease).",
+  "implementedBy": [
+    {
+      "path": "src/components/ui/Chevron.jsx",
+      "lines": "4-13",
+      "expect": "export default function Chevron"
+    }
+  ],
+  "props": {
+    "open": "boolean",
+    "size": [
+      14,
+      16
+    ]
+  },
+  "tokens": [
+    "duration.slow",
+    "easing.ease"
+  ],
+  "accessibility": [
+    "aria-hidden; the trigger button carries aria-expanded."
+  ],
+  "usedBy": [
+    "shell.header"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "tag",
+  "kind": "primitive",
+  "purpose": "Inline 'Beta' pill in comparison rows.",
+  "implementedBy": [
+    {
+      "path": "src/components/ui/Tag.jsx",
+      "lines": "2-8",
+      "expect": "export default function Tag"
+    }
+  ],
+  "props": {
+    "children": "string (<= 6 ch)"
+  },
+  "tokens": [
+    "fontSize.tag",
+    "color.purple.10",
+    "color.purple.90",
+    "radius.6"
+  ],
+  "accessibility": [
+    "Plain text, no role."
+  ],
+  "usedBy": [
+    "pricing.comparison"
+  ]
+}

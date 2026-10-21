@@ -1,0 +1,334 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---- Tokens (CLONE_SPEC.md section 0) ---- */
+:root {
+  /* 0.2 container */
+  --vp: 16px;
+  --content-max: 1280px;
+  /* 0.3 section padding-block */
+  --section-pad: 40px;
+  /* 0.5 Hanken Grotesk width compensation */
+  --ls-comp: -0.0035em;
+
+  /* 0.8 motion */
+  --dur-fast: 100ms;
+  --dur-base: 200ms;
+  --dur-slow: 300ms;
+  --dur-emphasis: 400ms;
+  --dur-crossfade: 500ms;
+  --dur-slide: 10000ms;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-progress: cubic-bezier(0.25, 1, 0.5, 1);
+
+  /* hero */
+  --hero-start: #141413;
+  --hero-end: #281647;
+
+  /* modal backdrop (--color-bg-overlay) */
+  --overlay: rgba(20, 20, 19, 0.6);
+}
+
+@screen sm {
+  :root {
+    --vp: 24px;
+    --section-pad: 96px;
+  }
+}
+@screen lg {
+  :root {
+    --vp: 32px;
+  }
+}
+@screen 2xl {
+  :root {
+    --content-max: 1440px;
+  }
+}
+
+/* Semantic colours: light context (default) */
+:root,
+.ctx-light {
+  color-scheme: light;
+  --fg: #292827;
+  --fg-sub: rgba(20, 20, 19, 0.65);
+  --fg-soft: #bfbcb6;
+  --line-sub: rgba(115, 113, 109, 0.2);
+  --line-soft: rgba(115, 113, 109, 0.05);
+  --hover-tint: rgba(0, 0, 0, 0.05);
+  --action: #714cb6;
+  --action-hover: #533192;
+  --action-active: #3f256f;
+  --action-secondary: #292827;
+  --action-secondary-hover: #141413;
+  --on-action: #ffffff;
+  --highlight: #3b96ff;
+}
+.ctx-light {
+  color: var(--fg);
+}
+
+/* Semantic colours: dark context */
+.ctx-dark {
+  color-scheme: dark;
+  --fg: #ffffff;
+  --fg-sub: rgba(255, 255, 255, 0.8);
+  --fg-soft: rgba(255, 255, 255, 0.65);
+  --line-sub: rgba(252, 250, 247, 0.2);
+  --line-soft: rgba(252, 250, 247, 0.08);
+  --hover-tint: rgba(255, 255, 255, 0.1);
+  --action: #d4c7ff;
+  --action-hover: #bea1f5;
+  --action-active: #9e7be0;
+  --action-secondary: rgba(255, 255, 255, 0.9);
+  --action-secondary-hover: #ffffff;
+  --on-action: #292827;
+  --highlight: #62abff;
+  color: var(--fg);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-white font-sans text-body text-fg antialiased;
+  }
+  :focus-visible {
+    outline: 2px solid theme('colors.focus');
+    outline-offset: 2px;
+  }
+  /* Original Text component (text_text): every heading / paragraph is capped
+     at min(90vw, 900px). Utilities (max-w-*) still override it. */
+  h1, h2, h3, h4, h5, h6, p {
+    max-width: theme('maxWidth.text');
+  }
+  /* --color-bg-overlay (drawer backdrop) */
+  dialog::backdrop {
+    background: var(--overlay);
+  }
+}
+
+@layer components {
+  /* 0.2 content-wrapper */
+  .content-wrapper {
+    box-sizing: content-box;
+    width: min(100% - 2 * var(--vp), var(--content-max));
+    padding-inline: var(--vp);
+    margin-inline: auto;
+  }
+
+  /* 3. Hero carousel */
+  .hero-bg {
+    background: linear-gradient(var(--hero-start), var(--hero-end));
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: 'copy' 'asset' 'nav';
+    row-gap: 24px;
+  }
+  .hero-copy { grid-area: copy; }
+  .hero-asset { grid-area: asset; }
+  .hero-nav { grid-area: nav; }
+
+  @screen sm {
+    .hero-bg {
+      background: linear-gradient(
+        to right,
+        var(--hero-start) 0,
+        var(--hero-start) 50%,
+        var(--hero-end) 50%,
+        var(--hero-end)
+      );
+    }
+    .hero-grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr max-content;
+      grid-template-areas: 'copy asset' 'nav asset';
+      gap: 0;
+    }
+  }
+  @screen lg {
+    .hero-grid {
+      height: 650px;
+      overflow: hidden;
+      grid-template-rows: auto minmax(0, 1fr);
+      row-gap: 24px;
+      background: linear-gradient(to right, var(--hero-start), var(--hero-end));
+    }
+  }
+
+  /* plans.md 1b: feature list check (21x20 list-style-image) */
+  .check-list {
+    list-style-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='20' viewBox='0 0 21 20' fill='none'%3E%3Cpolyline points='6.49,11.09 9.41,14.01 15.97,7.45' stroke='%23474543' stroke-width='1.458' stroke-linecap='round'/%3E%3C/svg%3E");
+  }
+
+  /* enterprise.md multi-column: container query, --_columns from the
+     container being >=640px wide; gap = viewport padding. */
+  .multi-column {
+    container-type: inline-size;
+  }
+  .multi-column-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--vp);
+  }
+  @container (min-width: 640px) {
+    .multi-column-grid {
+      grid-template-columns: repeat(var(--_columns, 1), minmax(0, 1fr));
+    }
+  }
+
+  /* go.md 0.2 "cutout" rails: 1px dashed border-sub on both inline edges of
+     the content-wrapper box; .cutout-top adds the chapter top line. */
+  .cutout {
+    position: relative;
+  }
+  .cutout::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-inline: 1px dashed var(--line-sub);
+    pointer-events: none;
+  }
+  .cutout-top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-top: 1px dashed var(--line-sub);
+    pointer-events: none;
+  }
+
+  /* 5.4 tablist: hidden scrollbar */
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ---- Motion (values measured from the original's CSS/JS) ---- */
+@layer components {
+  /* 3.3 hero: dissolve-in / dissolve-out, 500ms ease both */
+  @keyframes site-dissolve-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes site-dissolve-out {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+  .dissolve-in {
+    animation: site-dissolve-in var(--dur-crossfade) ease both;
+  }
+  .dissolve-out {
+    animation: site-dissolve-out var(--dur-crossfade) ease both;
+  }
+  /* Slides that are neither active nor fading out: freeze their CSS loops. */
+  .motion-paused,
+  .motion-paused * {
+    animation-play-state: paused !important;
+  }
+
+  /* 3.3 hero progress fill: scaleX 0 -> 1, 10s cubic-bezier(.25,1,.5,1), both */
+  @keyframes site-progress-fill {
+    to { transform: scaleX(1); }
+  }
+  .progress-fill {
+    transform: scaleX(0);
+    transform-origin: left center;
+    animation: site-progress-fill var(--dur-slide) var(--ease-progress) both;
+  }
+
+  /* 1.2 sign-in menu: surface reveal (no fill) only >=640.02px; rows stagger
+     (i + 1) * 50ms with fill both. Both only under no-preference. */
+  @keyframes site-menu-reveal {
+    from { opacity: 0; transform: translateY(-6px) scale(0.95); }
+  }
+  @keyframes site-row-in {
+    from { opacity: 0; transform: translateY(5px); }
+  }
+  @media (prefers-reduced-motion: no-preference) and (min-width: 640.02px) {
+    .menu-reveal {
+      animation: site-menu-reveal var(--dur-slow) var(--ease-out-expo);
+    }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .menu-row-in {
+      animation: site-row-in var(--dur-slow) var(--ease-out-expo) both;
+      animation-delay: calc((var(--row-index, 0) + 1) * 50ms);
+    }
+  }
+
+  /* 1.3 mobile drawer: slide + backdrop fade, .3s ease-out both ways */
+  @keyframes site-slide-in {
+    from { transform: translateX(100%); }
+  }
+  @keyframes site-slide-out {
+    to { transform: translateX(100%); }
+  }
+  @keyframes site-backdrop-in {
+    from { opacity: 0; }
+  }
+  @keyframes site-backdrop-out {
+    to { opacity: 0; }
+  }
+  .drawer[open] {
+    animation: site-slide-in 0.3s ease-out;
+  }
+  .drawer[open]::backdrop {
+    animation: site-backdrop-in 0.3s ease-out;
+  }
+  .drawer[data-closing] {
+    animation: site-slide-out 0.3s ease-out forwards;
+  }
+  .drawer[data-closing]::backdrop {
+    animation: site-backdrop-out 0.3s ease-out forwards;
+  }
+  .drawer::backdrop {
+    background-color: rgb(20 20 19 / 60%);
+  }
+
+  /* 4. logo strip: one-time fade-in .5s ease-in-out */
+  @keyframes site-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  .logo-fade-in {
+    opacity: 1;
+    animation: site-fade-in var(--dur-crossfade) ease-in-out;
+  }
+  /* Logo strip rotation: fade-out .5s ease-in-out, fill none (original).
+     Base opacity 0 so the cell stays blank between animationend and the swap. */
+  @keyframes site-fade-out {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+  .logo-fade-out {
+    opacity: 0;
+    animation: site-fade-out var(--dur-crossfade) ease-in-out;
+  }
+
+  /* plans.md 3.4 tooltip: fade-in .2s ease */
+  .tooltip-in {
+    animation: site-fade-in var(--dur-base) ease;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tooltip-in { animation: none; }
+    .dissolve-in { animation: none; }
+    .dissolve-out { animation: none; visibility: hidden; }
+    .progress-fill { animation: none; transform: scaleX(1); }
+    .drawer[open],
+    .drawer[open]::backdrop,
+    .drawer[data-closing],
+    .drawer[data-closing]::backdrop { animation: none; }
+    .logo-fade-in { animation: none; }
+    .logo-fade-out { animation: none; }
+  }
+}

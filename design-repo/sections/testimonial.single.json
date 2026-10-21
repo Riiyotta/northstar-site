@@ -1,0 +1,95 @@
+{
+  "id": "testimonial.single",
+  "category": "proof",
+  "purpose": "One large centred customer quote with attribution and a link to more stories.",
+  "implementedBy": [
+    {
+      "path": "src/components/Testimonial.jsx",
+      "lines": "8-53",
+      "expect": "export default function Testimonial"
+    }
+  ],
+  "usedOn": [
+    "/",
+    "/docs"
+  ],
+  "variants": {
+    "bold-span": "heading-md quote with one bold span, arrow link (homepage).",
+    "logo-quote": "Customer logo on top, heading-lg quote, caret link (docs D8)."
+  },
+  "content": {
+    "quote": {
+      "kind": "richText",
+      "required": true,
+      "maxChars": 149,
+      "maxWords": 34,
+      "budgetSource": "specs/docs.md §15 quote.h2 (orig 135); CLONE_SPEC.md §6 (112, bold span 22)"
+    },
+    "name": {
+      "kind": "text",
+      "required": true,
+      "maxChars": 20,
+      "maxWords": 5,
+      "budgetSource": "specs/docs.md §15 quote.name (orig 18 ch)"
+    },
+    "role": {
+      "kind": "text",
+      "required": true,
+      "maxChars": 65,
+      "maxWords": 15,
+      "budgetSource": "CLONE_SPEC.md §6 role (orig 59 ch)"
+    },
+    "link": {
+      "kind": "text",
+      "required": true,
+      "maxChars": 28,
+      "maxWords": 7,
+      "budgetSource": "CLONE_SPEC.md §6 / docs.md §15 quote.link (orig 25 ch)"
+    },
+    "logo": {
+      "kind": "media",
+      "required": false,
+      "assetRoles": [
+        "logo.customer-wordmark"
+      ],
+      "onlyForVariants": [
+        "logo-quote"
+      ],
+      "requiredForVariants": [
+        "logo-quote"
+      ]
+    }
+  },
+  "allowedBackgrounds": [
+    "purple-10"
+  ],
+  "constraints": {},
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "default": "none"
+  },
+  "responsive": [
+    {
+      "minWidth": "base",
+      "change": "Padding 40."
+    },
+    {
+      "minWidth": "640.02px",
+      "change": "Padding 96."
+    }
+  ],
+  "measuredFrom": [
+    {
+      "path": "CLONE_SPEC.md",
+      "lines": "289-294",
+      "expect": "## 6. Testimonial"
+    },
+    {
+      "path": "specs/docs.md",
+      "lines": "138-146",
+      "expect": "## 9. D8 Quote"
+    }
+  ]
+}

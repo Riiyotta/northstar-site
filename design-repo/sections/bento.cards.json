@@ -1,0 +1,93 @@
+{
+  "id": "bento.cards",
+  "category": "feature",
+  "purpose": "Three-card bento (one tall, two stacked) naming the surfaces where a product works.",
+  "implementedBy": [
+    {
+      "path": "src/components/ui/Bento.jsx",
+      "lines": "24-35",
+      "expect": "export default function Bento"
+    },
+    {
+      "path": "src/pages/Agents.jsx",
+      "lines": "28-47",
+      "expect": "const bento = {"
+    }
+  ],
+  "usedOn": [
+    "/agents"
+  ],
+  "variants": {},
+  "content": {
+    "cards": {
+      "kind": "items",
+      "required": true,
+      "minItems": 3,
+      "maxItems": 3,
+      "fields": {
+        "title": {
+          "kind": "text",
+          "required": true,
+          "maxChars": 10,
+          "maxWords": 3,
+          "budgetSource": "specs/agents.md §14 bento.*.h3 (product names; orig 2-8, Northstar up to 9 ch)"
+        },
+        "body": {
+          "kind": "text",
+          "required": true,
+          "maxChars": 64,
+          "maxWords": 15,
+          "budgetSource": "specs/agents.md §14 bento.*.p (orig 45-58 ch)"
+        },
+        "surface": {
+          "kind": "enum",
+          "required": true,
+          "values": [
+            "purple-10",
+            "purple-100",
+            "neutral-20"
+          ]
+        },
+        "media": {
+          "kind": "media",
+          "required": true,
+          "assetRoles": [
+            "product.ui-illustration"
+          ]
+        }
+      }
+    }
+  },
+  "allowedBackgrounds": [
+    "neutral-10"
+  ],
+  "constraints": {},
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "default": "none"
+  },
+  "responsive": [
+    {
+      "minWidth": "base",
+      "change": "Stacked."
+    },
+    {
+      "minWidth": "640.02px",
+      "change": "Grid 7fr / 5fr; right cards stretch.",
+      "measuredFrom": {
+        "path": "src/components/ui/Bento.jsx",
+        "lines": "26-26",
+        "expect": "sm:grid-cols-[7fr_5fr]"
+      }
+    }
+  ],
+  "measuredFrom": [
+    {
+      "path": "specs/agents.md",
+      "lines": "109-117",
+      "expect": "### 8b. Bento"
+    }
+  ]
+}

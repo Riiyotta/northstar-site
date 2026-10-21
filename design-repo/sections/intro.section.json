@@ -1,0 +1,137 @@
+{
+  "id": "intro.section",
+  "category": "intro",
+  "purpose": "Centred title-description block that opens a topic: h2 (optional brand-coloured span), up to two paragraphs, optional media or CTA.",
+  "implementedBy": [
+    {
+      "path": "src/components/ui/Intro.jsx",
+      "lines": "13-66",
+      "expect": "export default function Intro"
+    }
+  ],
+  "usedOn": [
+    "/",
+    "/mail",
+    "/docs",
+    "/agents",
+    "/enterprise"
+  ],
+  "variants": {
+    "plain": "h2 + 0-2 paragraphs (mail M4, docs D9, agents 5a/8a, enterprise 3/10/13).",
+    "with-media": "Integration-strip figure above the h2 (mail M6).",
+    "with-cta": "h2 then a centred primary button 80px below (docs D5).",
+    "product-lockup": "Homepage product intro: lockup, h2, lede, primary CTA + 'Learn more' link (CLONE_SPEC 5.1 / 8)."
+  },
+  "content": {
+    "title": {
+      "kind": "richText",
+      "required": true,
+      "maxChars": 71,
+      "maxWords": 16,
+      "budgetSource": "specs/enterprise.md §3 h2 (orig 64); agents.md §14 cards.h2 (61); mail.md §14 problem.h2a+b (50)"
+    },
+    "body": {
+      "kind": "paragraphs",
+      "required": false,
+      "minItems": 0,
+      "maxItems": 2,
+      "maxChars": 282,
+      "maxWords": 63,
+      "budgetSource": "specs/enterprise.md §10 p (orig 256); CLONE_SPEC.md §8 p (176); docs.md §15 stack.p (167)"
+    },
+    "lockup": {
+      "kind": "media",
+      "required": false,
+      "assetRoles": [
+        "brand.product-lockup"
+      ],
+      "onlyForVariants": [
+        "product-lockup"
+      ],
+      "requiredForVariants": [
+        "product-lockup"
+      ]
+    },
+    "media": {
+      "kind": "media",
+      "required": false,
+      "assetRoles": [
+        "media.integration-strip"
+      ],
+      "onlyForVariants": [
+        "with-media"
+      ],
+      "requiredForVariants": [
+        "with-media"
+      ]
+    },
+    "cta": {
+      "kind": "cta",
+      "required": false,
+      "variants": [
+        "primary"
+      ],
+      "maxChars": 19,
+      "maxWords": 5,
+      "budgetSource": "specs/docs.md §15 band.cta (orig 17 ch)",
+      "onlyForVariants": [
+        "with-cta",
+        "product-lockup"
+      ],
+      "requiredForVariants": [
+        "with-cta",
+        "product-lockup"
+      ]
+    }
+  },
+  "allowedBackgrounds": [
+    "white",
+    "neutral-5",
+    "neutral-10",
+    "green-90",
+    "purple-10"
+  ],
+  "constraints": {},
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "default": "none"
+  },
+  "responsive": [
+    {
+      "minWidth": "base",
+      "change": "Padding 40; text capped at min(90vw, 900px)."
+    },
+    {
+      "minWidth": "640.02px",
+      "change": "Padding 96."
+    },
+    {
+      "minWidth": "1440.02px",
+      "change": "Content wrapper max width grows from 1280 to 1440 (--content-max); layout otherwise unchanged. Viewports above 1440 were not measured (CLONE_SPEC.md 14).",
+      "measuredFrom": {
+        "path": "src/index.css",
+        "lines": "44-48",
+        "expect": "--content-max: 1440px;"
+      }
+    }
+  ],
+  "measuredFrom": [
+    {
+      "path": "CLONE_SPEC.md",
+      "lines": "244-249",
+      "expect": "### 5.1 Intro"
+    },
+    {
+      "path": "specs/mail.md",
+      "lines": "156-161",
+      "expect": "## 5. M4 Problem intro"
+    },
+    {
+      "path": "specs/enterprise.md",
+      "lines": "60-61",
+      "expect": "### Shared text block"
+    }
+  ]
+}

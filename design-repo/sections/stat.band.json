@@ -1,0 +1,66 @@
+{
+  "id": "stat.band",
+  "category": "proof",
+  "purpose": "Dark stat statement: a centred h2 with a sky-blue highlighted figure over a faint numeral watermark.",
+  "implementedBy": [
+    {
+      "path": "src/pages/Mail.jsx",
+      "lines": "102-115",
+      "expect": "<section className=\"ctx-dark relative bg-purple-100\">"
+    }
+  ],
+  "usedOn": [
+    "/mail"
+  ],
+  "variants": {},
+  "content": {
+    "statement": {
+      "kind": "richText",
+      "required": true,
+      "maxChars": 75,
+      "maxWords": 17,
+      "budgetSource": "specs/mail.md §14 stat.l1 + stat.hl + stat.l2 (orig 33 + 16 + 19 ch)"
+    },
+    "backgroundArt": {
+      "kind": "media",
+      "required": true,
+      "assetRoles": [
+        "decor.background-art"
+      ]
+    }
+  },
+  "allowedBackgrounds": [
+    "purple-100"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "default": "none"
+  },
+  "responsive": [
+    {
+      "minWidth": "base",
+      "change": "Padding-bottom 40, no top padding; h2 wraps to 4 lines at 390."
+    },
+    {
+      "minWidth": "640.02px",
+      "change": "Padding-bottom 96."
+    }
+  ],
+  "measuredFrom": [
+    {
+      "path": "specs/mail.md",
+      "lines": "145-153",
+      "expect": "## 4. M3 Stat band"
+    }
+  ],
+  "paintsOwnBackground": true,
+  "notes": [
+    "Sits inside group A (#f2f0eb) but paints its own #281647, which is why it is exempt from GROUP_SHARED_SURFACE.",
+    "Highlight emphasis must use the 'highlight' segment (semantic highlight colour)."
+  ]
+}

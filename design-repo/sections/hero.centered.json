@@ -1,0 +1,98 @@
+{
+  "id": "hero.centered",
+  "category": "hero",
+  "purpose": "Centred intro hero over full-bleed background art: product lockup, h1, lede, primary + outline CTA pair.",
+  "implementedBy": [
+    {
+      "path": "src/pages/Docs.jsx",
+      "lines": "31-47",
+      "expect": "{/* Group A: D1 hero"
+    },
+    {
+      "path": "src/components/ui/Intro.jsx",
+      "lines": "13-66",
+      "expect": "export default function Intro"
+    }
+  ],
+  "usedOn": [
+    "/docs"
+  ],
+  "variants": {},
+  "content": {
+    "lockup": {
+      "kind": "media",
+      "required": true,
+      "assetRoles": [
+        "brand.product-lockup"
+      ]
+    },
+    "title": {
+      "kind": "text",
+      "required": true,
+      "maxChars": 52,
+      "maxWords": 12,
+      "budgetSource": "specs/docs.md §15 hero.h1 (orig 47 ch)"
+    },
+    "lede": {
+      "kind": "text",
+      "required": true,
+      "maxChars": 80,
+      "maxWords": 18,
+      "budgetSource": "specs/docs.md §15 hero.p (orig 72 ch)"
+    },
+    "ctas": {
+      "kind": "ctaList",
+      "required": true,
+      "variants": [
+        "primary",
+        "primaryOutline"
+      ],
+      "minItems": 2,
+      "maxItems": 2,
+      "maxChars": 19,
+      "maxWords": 5,
+      "budgetSource": "specs/docs.md §15 hero.cta1/cta2 (orig 17 / 10 ch)"
+    },
+    "backgroundArt": {
+      "kind": "media",
+      "required": true,
+      "assetRoles": [
+        "decor.background-art"
+      ]
+    }
+  },
+  "allowedBackgrounds": [
+    "neutral-10"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "default": "none"
+  },
+  "responsive": [
+    {
+      "minWidth": "base",
+      "change": "Padding 40; stack gap 24."
+    },
+    {
+      "minWidth": "640.02px",
+      "change": "Padding 96.",
+      "measuredFrom": {
+        "path": "src/components/ui/PageSection.jsx",
+        "lines": "10-12",
+        "expect": "py-section"
+      }
+    }
+  ],
+  "measuredFrom": [
+    {
+      "path": "specs/docs.md",
+      "lines": "60-74",
+      "expect": "## 2. D1 Hero"
+    }
+  ]
+}

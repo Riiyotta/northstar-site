@@ -1,0 +1,90 @@
+{
+  "id": "quotes.pair",
+  "category": "proof",
+  "purpose": "Two plain text testimonials side by side under a centred h2 (no logos, no avatars).",
+  "implementedBy": [
+    {
+      "path": "src/pages/Agents.jsx",
+      "lines": "167-186",
+      "expect": "{/* 9 testimonials (QuotePair) */}"
+    }
+  ],
+  "usedOn": [
+    "/agents"
+  ],
+  "variants": {},
+  "content": {
+    "title": {
+      "kind": "text",
+      "required": true,
+      "maxChars": 26,
+      "maxWords": 6,
+      "budgetSource": "specs/agents.md §14 quotes.h2 (orig 23 ch)"
+    },
+    "items": {
+      "kind": "items",
+      "required": true,
+      "minItems": 2,
+      "maxItems": 2,
+      "fields": {
+        "quote": {
+          "kind": "text",
+          "required": true,
+          "maxChars": 322,
+          "maxWords": 72,
+          "budgetSource": "specs/agents.md §14 q1 (orig 292 ch)"
+        },
+        "attributionLine1": {
+          "kind": "text",
+          "required": true,
+          "maxChars": 52,
+          "maxWords": 12,
+          "budgetSource": "specs/agents.md §14 q2.attr name+role line (orig 70 ch incl. company)"
+        },
+        "attributionLine2": {
+          "kind": "text",
+          "required": true,
+          "maxChars": 27,
+          "maxWords": 6,
+          "budgetSource": "specs/agents.md §14 q2.attr company line"
+        }
+      }
+    }
+  },
+  "allowedBackgrounds": [
+    "white"
+  ],
+  "constraints": {},
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "default": "none"
+  },
+  "responsive": [
+    {
+      "minWidth": "base",
+      "change": "Stacked, gap 32."
+    },
+    {
+      "minWidth": "640.02px",
+      "change": "Two columns (gap L 64).",
+      "measuredFrom": {
+        "path": "src/components/ui/TwoColumn.jsx",
+        "lines": "10-10",
+        "expect": "L: 'gap-8 sm:gap-16 xl:gap-32'"
+      }
+    },
+    {
+      "minWidth": "1280.02px",
+      "change": "Gap 128."
+    }
+  ],
+  "measuredFrom": [
+    {
+      "path": "specs/agents.md",
+      "lines": "130-135",
+      "expect": "## 9. Testimonials, white"
+    }
+  ]
+}

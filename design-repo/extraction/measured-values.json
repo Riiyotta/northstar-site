@@ -1,0 +1,248 @@
+{
+  "version": "1.0.0",
+  "snapshotTakenAt": "2026-10-21T12:30:14Z",
+  "sourceRoot": "The site project root, i.e. the parent directory of design-repo/. Every `path` below is relative to it. When that directory (identified by src/routes.js) is absent, verify_all.py prints a warning and skips citation checks instead of failing.",
+  "excludedSources": {
+    "note": "Never used as content, never cited, never packaged.",
+    "paths": [
+      "reference/ (sibling of the site folder: the user's saved copy of the original page)",
+      ".playwright-mcp/ (sibling of the site folder: raw measurement dumps)"
+    ]
+  },
+  "evidenceBase": [
+    {
+      "path": "CLONE_SPEC.md",
+      "lines": "3-5",
+      "expect": "Copy is **not** reproduced"
+    },
+    {
+      "path": "specs/mail.md",
+      "lines": "3-5",
+      "expect": "# Clone spec: `/mail`"
+    },
+    {
+      "path": "specs/docs.md",
+      "lines": "3-5",
+      "expect": "# Clone spec: `/docs`"
+    },
+    {
+      "path": "specs/go.md",
+      "lines": "3-5",
+      "expect": "# Clone spec: assistant product page"
+    },
+    {
+      "path": "specs/agents.md",
+      "lines": "3-5",
+      "expect": "# Clone spec: agents page"
+    },
+    {
+      "path": "specs/plans.md",
+      "lines": "3-5",
+      "expect": "# Clone spec: pricing page"
+    },
+    {
+      "path": "specs/enterprise.md",
+      "lines": "3-5",
+      "expect": "# Clone spec: enterprise page"
+    },
+    {
+      "path": "asset-manifest.json",
+      "lines": "3-3",
+      "expect": "Placeholder slots only"
+    }
+  ],
+  "routeTable": [
+    {
+      "path": "src/routes.js",
+      "lines": "15-22",
+      "expect": "export const routes = ["
+    },
+    {
+      "path": "src/App.jsx",
+      "lines": "40-40",
+      "expect": "<Route index element={<Home />} />"
+    },
+    {
+      "path": "src/App.jsx",
+      "lines": "44-44",
+      "expect": "<Route path=\"*\" element={<ComingSoon title=\"Page not found\" />} />"
+    }
+  ],
+  "spotChecks": [
+    {
+      "id": "logo-strip-rotation",
+      "status": "groundwork-superseded",
+      "finding": "CLONE_SPEC.md §4 and §13.2 say the homepage logo grid only fades in and never rotates. Current src renders the home strip with rotate: true, and the later /mail and /plans measurements record rotation.",
+      "resolution": "Contracts follow current src: home uses the 'rotating' variant. CLONE_SPEC's statement is recorded here as superseded, not copied.",
+      "evidence": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": "238-238",
+          "expect": "No cycling"
+        },
+        {
+          "path": "src/components/LogoStrip.jsx",
+          "lines": "100-107",
+          "expect": "rotate: true"
+        }
+      ]
+    },
+    {
+      "id": "floating-header-label-size",
+      "status": "spec-superseded-by-pixel-audit",
+      "finding": "plans.md §3.6 measures the floating-header CTA label at 14px; src uses primaryMid with the 16px text-button role and a comment saying 16/600 was measured.",
+      "resolution": "Contracts cite src (16px).",
+      "evidence": [
+        {
+          "path": "specs/plans.md",
+          "lines": "397-397",
+          "expect": "label **14px**"
+        },
+        {
+          "path": "src/components/ui/Button.jsx",
+          "lines": "17-19",
+          "expect": "16/600 label (measured)"
+        }
+      ]
+    },
+    {
+      "id": "button-mid-unused",
+      "status": "noted",
+      "finding": "tailwind.config.js declares the 'button-mid' type role but no file under src uses text-button-mid.",
+      "resolution": "Kept in tokens/00-foundation/typography.json (it is a real declared token) and flagged in its description.",
+      "evidence": [
+        {
+          "path": "tailwind.config.js",
+          "lines": "144-144",
+          "expect": "'button-mid':"
+        }
+      ]
+    },
+    {
+      "id": "grouped-padding-bottom",
+      "status": "both-real",
+      "finding": "CLONE_SPEC.md §0.3 says non-last grouped sections use padding-bottom = vp; mail.md §0.4 measures 96. Both exist in src: homepage AgentSection/PagesSection use pb-vp, PageSection always uses py-section.",
+      "resolution": "layout.sectionGroup documents the PageSection rule; the homepage aside rows are their own sections (aside.wide / aside.pair).",
+      "evidence": [
+        {
+          "path": "src/components/AgentSection.jsx",
+          "lines": "20-20",
+          "expect": "<section className=\"ctx-light bg-neutral-5 pb-vp\">"
+        },
+        {
+          "path": "src/components/ui/PageSection.jsx",
+          "lines": "10-12",
+          "expect": "py-section"
+        }
+      ]
+    },
+    {
+      "id": "spec-component-names",
+      "status": "noted",
+      "finding": "Spec component names do not always match src: StatBand, QuotePair, SplitMedia and CtaBlock are inline JSX or other components (Mail.jsx stat section, Agents.jsx TwoColumn quotes, SplitFeature, CtaBand); FeatureColumns is IconFeatureGrid; TestimonialPair is QuoteGrid.",
+      "resolution": "Every contract's implementedBy cites the real src location, not the spec name.",
+      "evidence": [
+        {
+          "path": "src/pages/Agents.jsx",
+          "lines": "167-167",
+          "expect": "{/* 9 testimonials (QuotePair) */}"
+        }
+      ]
+    },
+    {
+      "id": "reduced-motion-video",
+      "status": "noted",
+      "finding": "go.md §13.2 says demo videos should show a static frame under reduced motion; mail.md/docs.md measured the original autoplaying anyway. VideoSlot itself does not read the media query, but illustrations.css stops every illustration animation under reduce.",
+      "resolution": "video-viewport-gated locks reducedMotionFallback to 'static-frame' (what the snapshot renders).",
+      "evidence": [
+        {
+          "path": "specs/go.md",
+          "lines": "214-214",
+          "expect": "- Under reduced motion, show a static frame"
+        },
+        {
+          "path": "src/illustrations/illustrations.css",
+          "lines": "229-235",
+          "expect": "@media (prefers-reduced-motion: reduce)"
+        }
+      ]
+    },
+    {
+      "id": "spec-copy-excluded",
+      "status": "resolved",
+      "finding": "Placeholder strings in CLONE_SPEC.md, specs/enterprise.md and specs/plans.md had been reworded from the original site's copy. In 1.1.0 every such string was replaced by the independently written implementation in src/data (content.js, plans.js, enterprise.js) or src/components/Banner.jsx; each spec carries a copy note saying so.",
+      "resolution": "Copy budgets still use only the measured original lengths, which the specs keep. No spec copy is quoted in this repo; the example uses the implemented /mail copy (independently written per specs/mail.md §14).",
+      "evidence": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": "7-7",
+          "expect": "src/data/content.js"
+        },
+        {
+          "path": "specs/plans.md",
+          "lines": "13-13",
+          "expect": "src/data/plans.js"
+        },
+        {
+          "path": "specs/enterprise.md",
+          "lines": "11-11",
+          "expect": "src/data/enterprise.js"
+        },
+        {
+          "path": "specs/mail.md",
+          "lines": "293-294",
+          "expect": "The copy is original"
+        }
+      ]
+    },
+    {
+      "id": "third-party-names-in-copy",
+      "status": "resolved",
+      "finding": "The /mail compatibility h2 (src/data/mail.js compat.c / compat.e) previously named two mail clients whose names could coincide with real products. They were renamed in src to the invented names Wrenmail and Driftpost.",
+      "resolution": "The example PageSpec uses the renamed, implemented copy. Generation guidance still forbids naming real third-party products.",
+      "evidence": [
+        {
+          "path": "src/data/mail.js",
+          "lines": "34-40",
+          "expect": "Wrenmail"
+        }
+      ]
+    },
+    {
+      "id": "ia-cross-check",
+      "status": "verified",
+      "finding": "site/ia.json (built by a separate IA pass after this snapshot started) also defines 7 one-route templates with the same section order. It is coarser: it folds homepage intro+aside rows into product groups, treats the /docs video and logos as one 'video-showcase', and does not list the /agents centred button row as its own section.",
+      "resolution": "Used as corroborating evidence only; templates here derive from the page components directly.",
+      "evidence": [
+        {
+          "path": "ia.json",
+          "lines": "295-295",
+          "expect": "template.product-mail"
+        }
+      ]
+    },
+    {
+      "id": "spot-check-pass",
+      "status": "verified",
+      "finding": "Sampled spec values match current src: breakpoints 640.02/1080.02/1280.02/1440.02, palette hexes (neutral-5, purple-60, green-90, mulberry-100), heading-lg clamp, elevation shadows, hero 10000ms/500ms, logo 2000ms/500ms, accordion 200ms ease, sticky-row 200px fade and 67px header offset, floating header 71/170px triggers.",
+      "resolution": "Used as cited.",
+      "evidence": [
+        {
+          "path": "tailwind.config.js",
+          "lines": "12-17",
+          "expect": "'2xl': '1440.02px'"
+        },
+        {
+          "path": "src/components/go/StickyFeatureRow.jsx",
+          "lines": "4-4",
+          "expect": "const HEADER_H = 67"
+        },
+        {
+          "path": "src/components/plans/FloatingPlanHeader.jsx",
+          "lines": "9-9",
+          "expect": "const SHOW_AT = 71"
+        }
+      ]
+    }
+  ]
+}

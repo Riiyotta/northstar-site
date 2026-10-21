@@ -1,0 +1,111 @@
+{
+  "id": "testimonial.trio",
+  "category": "proof",
+  "purpose": "Three serif testimonials with illustrated portraits and invented company wordmarks on a deep blue surface.",
+  "implementedBy": [
+    {
+      "path": "src/components/plans/TestimonialTrio.jsx",
+      "lines": "9-44",
+      "expect": "export default function TestimonialTrio"
+    }
+  ],
+  "usedOn": [
+    "/plans"
+  ],
+  "variants": {},
+  "content": {
+    "title": {
+      "kind": "text",
+      "required": true,
+      "maxChars": 56,
+      "maxWords": 13,
+      "budgetSource": "specs/plans.md §2 h3 (orig 50 ch)"
+    },
+    "items": {
+      "kind": "items",
+      "required": true,
+      "minItems": 3,
+      "maxItems": 3,
+      "fields": {
+        "quote": {
+          "kind": "text",
+          "required": true,
+          "maxChars": 221,
+          "maxWords": 50,
+          "budgetSource": "specs/plans.md §2 quote 3 (orig 200 ch)"
+        },
+        "name": {
+          "kind": "text",
+          "required": true,
+          "maxChars": 16,
+          "maxWords": 4,
+          "budgetSource": "specs/plans.md §2 names (orig 11-14 ch)"
+        },
+        "role": {
+          "kind": "text",
+          "required": true,
+          "maxChars": 47,
+          "maxWords": 11,
+          "budgetSource": "specs/plans.md §2 role 3 (orig 42 ch)"
+        },
+        "portrait": {
+          "kind": "media",
+          "required": true,
+          "assetRoles": [
+            "person.avatar"
+          ]
+        },
+        "companyLogo": {
+          "kind": "media",
+          "required": true,
+          "assetRoles": [
+            "logo.customer-wordmark"
+          ]
+        }
+      }
+    }
+  },
+  "allowedBackgrounds": [
+    "blue-90"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "default": "none"
+  },
+  "responsive": [
+    {
+      "minWidth": "base",
+      "change": "Column, gap 48."
+    },
+    {
+      "minWidth": "640.02px",
+      "change": "Row, gap 72; section gap 80.",
+      "measuredFrom": {
+        "path": "src/components/plans/TestimonialTrio.jsx",
+        "lines": "14-14",
+        "expect": "sm:flex-row sm:gap-[72px]"
+      }
+    },
+    {
+      "minWidth": "1080.02px",
+      "change": "Portrait and wordmark sit in one row.",
+      "measuredFrom": {
+        "path": "src/components/plans/TestimonialTrio.jsx",
+        "lines": "19-19",
+        "expect": "lg:flex-row lg:items-center"
+      }
+    }
+  ],
+  "measuredFrom": [
+    {
+      "path": "specs/plans.md",
+      "lines": "126-137",
+      "expect": "## 2. Testimonials (`TestimonialTrio`, new)"
+    }
+  ]
+}

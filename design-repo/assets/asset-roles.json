@@ -1,0 +1,165 @@
+{
+  "version": "1.0.0",
+  "provenance": "The source project is a layout/motion clone of a real, live commercial site rebuilt under the FICTIONAL brand 'Northstar'. Every logo, mockup, avatar and badge in the source is an original invented SVG illustration (src/illustrations); none reproduce the real company's assets. This file is the closed `assetRole` vocabulary used by schema, allowlist and example.",
+  "generationPolicies": {
+    "must-reuse-exact": "Render the registered Northstar component for this slot unchanged. Never redraw, restyle or generate a variant.",
+    "reuse-registry-or-placeholder": "Reuse an existing invented registry entry, or render the neutral placeholder. Never generate a new mark, and never draw anything that resembles a real organisation's logo or name.",
+    "placeholder-only": "Render the neutral placeholder only. Never generate realistic marks of any kind.",
+    "illustrated-person-only": "Use an invented, clearly illustrated person (flat SVG). Never a photograph, never a real or identifiable person's likeness.",
+    "invented-marks-only": "Generate original generic app tiles (abstract glyphs, Northstar palette). Never real third-party app icons or logos.",
+    "may-generate-new-original": "Generate new original SVG/CSS artwork in the Northstar palette depicting invented Northstar UI or abstract shapes. Never trace or recreate screenshots, video frames or artwork of the original site or any real product."
+  },
+  "globalProhibitions": [
+    "Do not reproduce the original company's (superhuman.com) logos, wordmarks, product names, product screenshots, video frames, illustrations or marketing copy, in whole or paraphrased.",
+    "Do not use the original site's proprietary fonts; use only Hanken Grotesk, Source Serif 4 and JetBrains Mono (OFL) as declared in tokens/00-foundation/typography.json.",
+    "Do not include any real third-party company logo, wordmark or app icon (customers, integrations, partners, app stores, social networks).",
+    "Do not include real certification or compliance marks (SOC, ISO, GDPR, HIPAA seals or similar); use badge.compliance-placeholder.",
+    "Do not use photographs of real people or any identifiable real person's likeness; use person.avatar illustrations.",
+    "Do not load or reference assets from reference/ or .playwright-mcp/ (the user's saved copy of the original page and raw measurement dumps); they are excluded from this repo entirely."
+  ],
+  "roles": {
+    "brand.wordmark": {
+      "generationPolicy": "must-reuse-exact",
+      "description": "Northstar wordmark and footer watermark (logo-header, logo-footer, wordmark-footer).",
+      "exampleSlots": [
+        "logo-header",
+        "logo-footer",
+        "wordmark-footer"
+      ],
+      "chromeOnly": "Rendered by shell.header / shell.footer from global data; never a PageSpec media field.",
+      "forbids": [
+        "the original company's wordmark",
+        "restyled Northstar marks"
+      ]
+    },
+    "brand.product-lockup": {
+      "generationPolicy": "must-reuse-exact",
+      "description": "Product lockups registered in src/illustrations (lockup-inbox, lockup-pages, lockup-agent, lockup-assistant).",
+      "exampleSlots": [
+        "lockup-inbox",
+        "lockup-pages",
+        "lockup-assistant"
+      ]
+    },
+    "brand.product-glyph": {
+      "generationPolicy": "must-reuse-exact",
+      "description": "Product glyph tiles (glyph-*, signin-tile-*, hero-nav-icon-*).",
+      "exampleSlots": [
+        "glyph-inbox",
+        "glyph-agents",
+        "signin-tile-1"
+      ]
+    },
+    "product.ui-illustration": {
+      "generationPolicy": "may-generate-new-original",
+      "description": "Invented Northstar product UI drawn as original SVG/CSS (feature images, aside/bento art, grid images).",
+      "exampleSlots": [
+        "mail-feature-ai",
+        "media-agent-wide",
+        "ent-feature-assistant"
+      ]
+    },
+    "product.demo-animation": {
+      "generationPolicy": "may-generate-new-original",
+      "description": "Looping illustrated product demo standing in for a video (hero/demo/feature-row slots).",
+      "exampleSlots": [
+        "hero-video-1",
+        "mail-hero-video",
+        "go-hero-video"
+      ]
+    },
+    "editorial.illustration": {
+      "generationPolicy": "may-generate-new-original",
+      "description": "Abstract editorial artwork for reports, resources and the enterprise hero.",
+      "exampleSlots": [
+        "ent-report",
+        "ent-resource-1",
+        "ent-hero"
+      ]
+    },
+    "decor.background-art": {
+      "generationPolicy": "may-generate-new-original",
+      "description": "Abstract background washes, watermarks and CTA art.",
+      "exampleSlots": [
+        "docs-hero-bg",
+        "mail-stat-bg",
+        "bg-cta",
+        "cta-band-bg"
+      ]
+    },
+    "icon.feature-tile": {
+      "generationPolicy": "may-generate-new-original",
+      "description": "Original gradient/line icon tiles for feature grids and cards.",
+      "exampleSlots": [
+        "mail-pillar-icon-1",
+        "tab-icon-1",
+        "ent-security-1",
+        "agent-icon-1"
+      ]
+    },
+    "media.integration-strip": {
+      "generationPolicy": "invented-marks-only",
+      "description": "Rows of app tiles representing 'works with your tools'. Tiles must be invented generic marks.",
+      "exampleSlots": [
+        "mail-compat-icons",
+        "connectors-strip"
+      ],
+      "forbids": [
+        "real third-party app icons"
+      ]
+    },
+    "logo.customer-wordmark": {
+      "generationPolicy": "reuse-registry-or-placeholder",
+      "description": "Customer proof wordmarks. Only the invented companies already in src/illustrations (logo-1..11, Brightway, Larkin, Halcyo, Kite ...) or a neutral grey placeholder.",
+      "exampleSlots": [
+        "logo-1",
+        "mail-logo-1",
+        "ent-quote-logo-1"
+      ],
+      "forbids": [
+        "real company logos or names",
+        "new AI-generated wordmarks"
+      ]
+    },
+    "badge.compliance-placeholder": {
+      "generationPolicy": "placeholder-only",
+      "description": "Compliance badge cells: neutral circle emblem + 'Standard An' label only.",
+      "exampleSlots": [
+        "ent-badge-1"
+      ],
+      "forbids": [
+        "real certification marks",
+        "realistic seals"
+      ]
+    },
+    "person.avatar": {
+      "generationPolicy": "illustrated-person-only",
+      "description": "Testimonial avatars/portraits: invented illustrated people only.",
+      "exampleSlots": [
+        "mail-quote-avatar-1",
+        "testimonial-portrait-1"
+      ],
+      "forbids": [
+        "photographs",
+        "real people's likeness"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "path": "src/illustrations/README.md",
+      "lines": "3-4",
+      "expect": "Original, code-drawn art"
+    },
+    {
+      "path": "src/illustrations/index.js",
+      "lines": "84-84",
+      "expect": "// 4 customer logo strip (fictional companies)"
+    },
+    {
+      "path": "asset-manifest.json",
+      "lines": "3-3",
+      "expect": "Placeholder slots only"
+    }
+  ]
+}

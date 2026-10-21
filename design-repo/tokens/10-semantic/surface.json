@@ -1,0 +1,96 @@
+{
+  "$description": "Closed set of section surfaces. A PageSpec node's `background` must be one of these ids, and its `context` must equal the surface's context (rule CONTEXT_MATCHES_SURFACE). Usage notes list where each surface appears in the snapshot.",
+  "surface": {
+    "white": {
+      "$type": "color",
+      "$value": "{color.white}",
+      "$description": "Page default; /mail group B; /docs D2, D6, D12; /agents builder, quotes, FAQ; /enterprise G2, FAQ.",
+      "context": "light"
+    },
+    "neutral-5": {
+      "$type": "color",
+      "$value": "{color.neutral.5}",
+      "$description": "Homepage default section; /mail M6-M9; /docs D9-D11; all /go sections; /plans comparison.",
+      "context": "light"
+    },
+    "neutral-10": {
+      "$type": "color",
+      "$value": "{color.neutral.10}",
+      "$description": "/mail group A; /docs D1, D5; /agents cards and where groups; /enterprise CTA band.",
+      "context": "light"
+    },
+    "neutral-20": {
+      "$type": "color",
+      "$value": "{color.neutral.20}",
+      "$description": "Light footer tone (/go only).",
+      "context": "light"
+    },
+    "purple-0": {
+      "$type": "color",
+      "$value": "{color.purple.0}",
+      "$description": "/agents hero group and trust.",
+      "context": "light"
+    },
+    "purple-10": {
+      "$type": "color",
+      "$value": "{color.purple.10}",
+      "$description": "Banner, homepage testimonial, /docs D8, /go CTA band, /enterprise resources.",
+      "context": "light"
+    },
+    "purple-100": {
+      "$type": "color",
+      "$value": "{color.purple.100}",
+      "$description": "Homepage enterprise + final CTA; /mail stat band, grid, quotes; /docs hubs; /agents assistant split; /enterprise G1 and quotes.",
+      "context": "dark"
+    },
+    "mulberry-100": {
+      "$type": "color",
+      "$value": "{color.mulberry.100}",
+      "$description": "Dark footer; closing CTA bands; /docs AI group; /agents tools split.",
+      "context": "dark"
+    },
+    "green-90": {
+      "$type": "color",
+      "$value": "{color.green.90}",
+      "$description": "/go final CTA; /enterprise security group.",
+      "context": "dark"
+    },
+    "blue-90": {
+      "$type": "color",
+      "$value": "{color.blue.90}",
+      "$description": "/plans testimonial trio.",
+      "context": "dark"
+    },
+    "plans-gradient": {
+      "$type": "color",
+      "$value": "linear-gradient(0deg, #ffffff 70%, #dedbd5 153%)",
+      "$description": "/plans gradient wrapper (suite intro, plan cards, logo strip).",
+      "context": "light"
+    },
+    "hero-gradient": {
+      "$type": "color",
+      "$value": "linear-gradient(to right, var(--hero-start) 50%, var(--hero-end) 50%)",
+      "$description": "Homepage carousel; --hero-end swaps per slide.",
+      "context": "dark"
+    }
+  },
+  "$extensions": {
+    "measuredFrom": [
+      {
+        "path": "CLONE_SPEC.md",
+        "lines": "57-66",
+        "expect": "Section/background colors used on the page:"
+      },
+      {
+        "path": "tailwind.config.js",
+        "lines": "197-197",
+        "expect": "#dedbd5 153%"
+      },
+      {
+        "path": "src/index.css",
+        "lines": "123-125",
+        "expect": "var(--hero-start)"
+      }
+    ]
+  }
+}

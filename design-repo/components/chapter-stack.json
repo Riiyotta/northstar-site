@@ -1,0 +1,30 @@
+{
+  "id": "chapter-stack",
+  "kind": "component",
+  "purpose": "Mono eyebrow + h2 + lede + optional link, in an 8/4 split (ChapterIntro).",
+  "implementedBy": [
+    {
+      "path": "src/components/go/ChapterIntro.jsx",
+      "lines": "5-22",
+      "expect": "export function ChapterStack"
+    },
+    {
+      "path": "src/components/go/ChapterIntro.jsx",
+      "lines": "27-36",
+      "expect": "export default function ChapterIntro"
+    }
+  ],
+  "props": {
+    "reversed": "boolean"
+  },
+  "tokens": [
+    "fontFamily.mono",
+    "fontSize.eyebrow",
+    "fontSize.heading-lg"
+  ],
+  "accessibility": [],
+  "usedBy": [
+    "chapter.intro",
+    "chapter.split-media"
+  ]
+}

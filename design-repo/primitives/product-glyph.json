@@ -1,0 +1,35 @@
+{
+  "id": "product-glyph",
+  "kind": "primitive",
+  "purpose": "Mulberry product glyph tile (inbox/agents/pages/assistant) on /plans.",
+  "implementedBy": [
+    {
+      "path": "src/components/plans/ProductGlyph.jsx",
+      "lines": "16-36",
+      "expect": "export default function ProductGlyph"
+    }
+  ],
+  "props": {
+    "product": [
+      "inbox",
+      "agents",
+      "pages",
+      "assistant"
+    ],
+    "size": [
+      20,
+      24
+    ]
+  },
+  "tokens": [
+    "color.mulberry.100",
+    "radius.6"
+  ],
+  "accessibility": [
+    "aria-hidden."
+  ],
+  "usedBy": [
+    "pricing.suite-intro",
+    "pricing.plan-cards"
+  ]
+}

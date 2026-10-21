@@ -1,0 +1,25 @@
+{
+  "id": "bullet-list",
+  "kind": "primitive",
+  "purpose": "Grid bullet list (bullet column + text-medium text-sub).",
+  "implementedBy": [
+    {
+      "path": "src/components/ui/BulletList.jsx",
+      "lines": "5-18",
+      "expect": "export default function BulletList"
+    }
+  ],
+  "props": {
+    "items": "string[] (<= 3 in use)"
+  },
+  "tokens": [
+    "fontSize.medium",
+    "semantic.fg-sub"
+  ],
+  "accessibility": [
+    "Native ul/li."
+  ],
+  "usedBy": [
+    "split.feature"
+  ]
+}

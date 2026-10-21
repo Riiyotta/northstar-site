@@ -1,0 +1,166 @@
+{
+  "id": "grid.icon-features",
+  "category": "feature",
+  "purpose": "Multi-column grid of icon tiles with titles and short descriptions (optionally an intro and caret links).",
+  "implementedBy": [
+    {
+      "path": "src/components/ui/IconFeatureGrid.jsx",
+      "lines": "13-39",
+      "expect": "export default function IconFeatureGrid"
+    }
+  ],
+  "usedOn": [
+    "/mail",
+    "/docs",
+    "/agents",
+    "/enterprise"
+  ],
+  "variants": {
+    "default": "icon, heading-sm title, text-medium body, optional caret link.",
+    "centered": "centred icon + heading-xs text with brand span (mail pillars)."
+  },
+  "content": {
+    "intro": {
+      "kind": "items",
+      "required": false,
+      "minItems": 1,
+      "maxItems": 1,
+      "fields": {
+        "title": {
+          "kind": "text",
+          "required": true,
+          "maxChars": 48,
+          "maxWords": 11,
+          "budgetSource": "specs/docs.md §15 hubs.h2 (orig 43 ch)"
+        },
+        "body": {
+          "kind": "text",
+          "required": false,
+          "maxChars": 143,
+          "maxWords": 32,
+          "budgetSource": "specs/agents.md §14 trust.p (orig 130 ch)"
+        }
+      }
+    },
+    "columns": {
+      "kind": "enum",
+      "required": true,
+      "values": [
+        2,
+        3,
+        4
+      ]
+    },
+    "items": {
+      "kind": "items",
+      "required": true,
+      "minItems": 2,
+      "maxItems": 6,
+      "fields": {
+        "title": {
+          "kind": "text",
+          "required": false,
+          "maxChars": 61,
+          "maxWords": 14,
+          "budgetSource": "specs/docs.md §15 suite.c3.h (orig 55 ch)",
+          "onlyForVariants": [
+            "default"
+          ],
+          "requiredForVariants": [
+            "default"
+          ]
+        },
+        "body": {
+          "kind": "text",
+          "required": false,
+          "maxChars": 145,
+          "maxWords": 33,
+          "budgetSource": "specs/docs.md §15 suite.c4.p (orig 131 ch)",
+          "onlyForVariants": [
+            "default"
+          ],
+          "requiredForVariants": [
+            "default"
+          ]
+        },
+        "text": {
+          "kind": "richText",
+          "required": false,
+          "maxChars": 52,
+          "maxWords": 12,
+          "budgetSource": "specs/mail.md §14 pillar1 a+b+c (orig 23 + 13 + 11 ch)",
+          "onlyForVariants": [
+            "centered"
+          ],
+          "requiredForVariants": [
+            "centered"
+          ]
+        },
+        "link": {
+          "kind": "text",
+          "required": false,
+          "maxChars": 21,
+          "maxWords": 5,
+          "budgetSource": "specs/docs.md §15 hubs.c4.l (orig 19 ch)"
+        },
+        "icon": {
+          "kind": "media",
+          "required": true,
+          "assetRoles": [
+            "icon.feature-tile"
+          ]
+        }
+      }
+    }
+  },
+  "allowedBackgrounds": [
+    "white",
+    "mulberry-100",
+    "purple-100",
+    "purple-0",
+    "green-90"
+  ],
+  "constraints": {},
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "default": "none"
+  },
+  "responsive": [
+    {
+      "minWidth": "base",
+      "change": "1 column, gap 16."
+    },
+    {
+      "minWidth": "640.02px",
+      "change": "Container query: `columns` columns once the container is >=640px wide; gap = vp.",
+      "measuredFrom": {
+        "path": "src/index.css",
+        "lines": "178-181",
+        "expect": "@container (min-width: 640px)"
+      }
+    },
+    {
+      "minWidth": "1440.02px",
+      "change": "Content wrapper max width grows from 1280 to 1440 (--content-max); layout otherwise unchanged. Viewports above 1440 were not measured (CLONE_SPEC.md 14).",
+      "measuredFrom": {
+        "path": "src/index.css",
+        "lines": "44-48",
+        "expect": "--content-max: 1440px;"
+      }
+    }
+  ],
+  "measuredFrom": [
+    {
+      "path": "specs/enterprise.md",
+      "lines": "115-118",
+      "expect": "**11 Icon feature grid**"
+    },
+    {
+      "path": "specs/mail.md",
+      "lines": "163-179",
+      "expect": "## 6. M5 Pillars"
+    }
+  ]
+}

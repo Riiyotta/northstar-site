@@ -1,0 +1,136 @@
+{
+  "id": "hero.carousel",
+  "category": "hero",
+  "purpose": "Homepage product switcher: three auto-advancing product slides (name + tagline, CTAs, tall product animation) that introduce the whole suite.",
+  "implementedBy": [
+    {
+      "path": "src/components/Hero.jsx",
+      "lines": "69-103",
+      "expect": "export default function Hero"
+    },
+    {
+      "path": "src/components/Hero.jsx",
+      "lines": "10-11",
+      "expect": "10000"
+    }
+  ],
+  "usedOn": [
+    "/"
+  ],
+  "variants": {},
+  "content": {
+    "navHeading": {
+      "kind": "text",
+      "required": true,
+      "maxChars": 35,
+      "maxWords": 8,
+      "budgetSource": "CLONE_SPEC.md §3.2 hero nav heading (orig 31 ch)"
+    },
+    "slides": {
+      "kind": "items",
+      "required": true,
+      "minItems": 2,
+      "maxItems": 3,
+      "fields": {
+        "name": {
+          "kind": "text",
+          "required": true,
+          "maxChars": 17,
+          "maxWords": 4,
+          "budgetSource": "CLONE_SPEC.md §3.2 slide name (orig 13-15 ch)"
+        },
+        "tagline": {
+          "kind": "text",
+          "required": true,
+          "maxChars": 42,
+          "maxWords": 10,
+          "budgetSource": "CLONE_SPEC.md §3.2 tagline (orig 28-38 ch)"
+        },
+        "ctaLabel": {
+          "kind": "text",
+          "required": true,
+          "maxChars": 10,
+          "maxWords": 3,
+          "budgetSource": "CLONE_SPEC.md §3.2 lists only placeholder CTA labels (9 ch); original CTA length not recorded"
+        },
+        "navTitle": {
+          "kind": "text",
+          "required": true,
+          "maxChars": 6,
+          "maxWords": 2,
+          "budgetSource": "CLONE_SPEC.md §3.2 nav title (orig 2-4 ch; Northstar product names up to 5)"
+        },
+        "navDescription": {
+          "kind": "text",
+          "required": true,
+          "maxChars": 53,
+          "maxWords": 12,
+          "budgetSource": "CLONE_SPEC.md §3.2 nav description (orig 39-48 ch)"
+        },
+        "endColor": {
+          "kind": "enum",
+          "required": true,
+          "values": [
+            "purple-100",
+            "green-90",
+            "mulberry-100"
+          ]
+        },
+        "media": {
+          "kind": "media",
+          "required": true,
+          "assetRoles": [
+            "product.demo-animation"
+          ]
+        }
+      }
+    }
+  },
+  "allowedBackgrounds": [
+    "hero-gradient"
+  ],
+  "constraints": {
+    "onePerPage": true,
+    "homeRouteOnly": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "carousel-crossfade"
+    ],
+    "default": "carousel-crossfade"
+  },
+  "responsive": [
+    {
+      "minWidth": "base",
+      "change": "Single column: copy, 358x448 asset, sticky bottom nav row with next button; vertical gradient."
+    },
+    {
+      "minWidth": "640.02px",
+      "change": "1fr/1fr grid: copy + one-row nav left, asset right; 50% split gradient.",
+      "measuredFrom": {
+        "path": "src/index.css",
+        "lines": "136-152",
+        "expect": "grid-template-columns: 1fr 1fr;"
+      }
+    },
+    {
+      "minWidth": "1080.02px",
+      "change": "Desktop: 650px tall clipped grid, full 3-row product nav with progress bar.",
+      "measuredFrom": {
+        "path": "src/index.css",
+        "lines": "153-160",
+        "expect": "height: 650px;"
+      }
+    }
+  ],
+  "measuredFrom": [
+    {
+      "path": "CLONE_SPEC.md",
+      "lines": "178-225",
+      "expect": "## 3. Hero carousel"
+    }
+  ],
+  "notes": [
+    "Hero h2 is not an h1: the homepage has no h1 in the clone (the carousel copy uses h2). Keep that structure."
+  ]
+}

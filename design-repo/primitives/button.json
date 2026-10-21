@@ -1,0 +1,60 @@
+{
+  "id": "button",
+  "kind": "primitive",
+  "purpose": "Every clickable CTA, link-button and icon button. Colours are semantic so one variant works in light and dark contexts.",
+  "implementedBy": [
+    {
+      "path": "src/components/ui/Button.jsx",
+      "lines": "44-59",
+      "expect": "export default function Button"
+    },
+    {
+      "path": "src/components/ui/Button.jsx",
+      "lines": "8-41",
+      "expect": "primaryCompact:"
+    }
+  ],
+  "props": {
+    "variant": [
+      "primary",
+      "primaryCompact",
+      "primaryMid",
+      "primaryOutline",
+      "primaryOutlineMid",
+      "primaryGhost",
+      "secondaryFilled",
+      "secondaryOutline",
+      "secondaryOutlineCompact",
+      "signIn",
+      "link",
+      "linkCompact",
+      "ghostIcon",
+      "text"
+    ],
+    "trailingIcon": [
+      "none",
+      "arrow",
+      "caret-right",
+      "caret-down"
+    ],
+    "as": [
+      "a",
+      "button"
+    ]
+  },
+  "tokens": [
+    "tokens/20-component/button.json",
+    "tokens/10-semantic/color.json"
+  ],
+  "accessibility": [
+    "Renders <a> when href is set, else <button type=button>.",
+    "Global focus ring 2px #005fcc offset 2px.",
+    "Trailing icons are aria-hidden."
+  ],
+  "usedBy": [
+    "every section with a CTA"
+  ],
+  "notes": [
+    "Homepage links use the arrow icon; product pages use the 20px caret-right (specs/mail.md §0.5)."
+  ]
+}

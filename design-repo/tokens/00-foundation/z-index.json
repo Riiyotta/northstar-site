@@ -1,0 +1,30 @@
+{
+  "$description": "Stacking order (tailwind zIndex).",
+  "zIndex": {
+    "dropdown": {
+      "$type": "number",
+      "$value": 100
+    },
+    "header": {
+      "$type": "number",
+      "$value": 201
+    },
+    "floating-header": {
+      "$type": "number",
+      "$value": 300
+    },
+    "tooltip": {
+      "$type": "number",
+      "$value": 301
+    }
+  },
+  "$extensions": {
+    "measuredFrom": [
+      {
+        "path": "tailwind.config.js",
+        "lines": "219-224",
+        "expect": "header: '201'"
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "mobile-drawer",
+  "kind": "component",
+  "purpose": "Native <dialog> drawer (<1080.02): slide-in/out .3s ease-out, backdrop fade, product-page CTA rows.",
+  "implementedBy": [
+    {
+      "path": "src/components/MobileDrawer.jsx",
+      "lines": "33-47",
+      "expect": "export default function MobileDrawer"
+    }
+  ],
+  "props": {
+    "open": "boolean",
+    "cta": "string|undefined",
+    "bg": "string|undefined"
+  },
+  "tokens": [
+    "easing.ease-out",
+    "elevation.drawer"
+  ],
+  "accessibility": [
+    "showModal() focus trap; Esc closes natively."
+  ],
+  "usedBy": [
+    "shell.header"
+  ]
+}

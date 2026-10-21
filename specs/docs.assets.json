@@ -1,0 +1,1225 @@
+{
+ "source": "https://superhuman.com/docs",
+ "measured": "2026-10-21",
+ "note": "Placeholders only. Do not download or hotlink originals. sizes = rendered CSS px per viewport width; posInSection = x (viewport) , y (offset from section top). dominantColors = 4-bit-quantised top colours of the rendered slot at 1440; cornerColors = sampled corner pixels (tells you if the art is transparent over the section bg).",
+ "slots": [
+  {
+   "id": "docs-hero-bg",
+   "section": "D1 hero",
+   "kind": "background",
+   "element": "img",
+   "format": "svg 2560x639",
+   "natural": "2560x639",
+   "aspect": 4.0063,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "390x425.8",
+     "posInSection": "0,0"
+    },
+    "768": {
+     "size": "768x480",
+     "posInSection": "0,0"
+    },
+    "1024": {
+     "size": "1024x497.6",
+     "posInSection": "0,0"
+    },
+    "1440": {
+     "size": "1440x526.2",
+     "posInSection": "0,0"
+    }
+   },
+   "dominantColors": [
+    "#f8f8e8",
+    "#e8e8e8",
+    "#f8e8e8",
+    "#e8e8d8"
+   ],
+   "cornerColors": [
+    "#f2f0eb",
+    "#f2f0eb",
+    "#f2f0eb",
+    "#f2f0eb"
+   ],
+   "description": "Full-bleed backdrop (#f2f0eb) with small floating UI chips scattered left and right of the copy: status pills (grey a short label, blue a short label, green a short label), tag chips with tiny avatars (sky, orange, pink, mint outlines), a short label / a short label toggle pills. Centre stays empty for the text. Cropped by object-fit cover, so on mobile only the centre (mostly empty) shows. Art and in-art labels should be redrawn to fit the new Northstar copy for this slot. Do not reuse the original UI text."
+  },
+  {
+   "id": "lockup-pages",
+   "section": "D1 hero",
+   "kind": "lockup",
+   "element": "img",
+   "format": "svg",
+   "natural": "217x25",
+   "aspect": 8.68,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "217x25",
+     "posInSection": "86.5,40"
+    },
+    "768": {
+     "size": "217x25",
+     "posInSection": "275.5,96"
+    },
+    "1024": {
+     "size": "217x25",
+     "posInSection": "403.5,96"
+    },
+    "1440": {
+     "size": "217x25",
+     "posInSection": "611.5,96"
+    }
+   },
+   "dominantColors": null,
+   "cornerColors": null,
+   "description": "Product lockup: 25px app tile (dark doc glyph on lilac) + uppercase brand wordmark + product name. Reuse Lockup (lockup-pages) at 217 wide."
+  },
+  {
+   "id": "docs-video-bg",
+   "section": "D2 video + logos",
+   "kind": "background",
+   "element": "img",
+   "format": "avif from jpg, 1440x616",
+   "natural": "1440x616",
+   "aspect": 2.3377,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "390x536.4",
+     "posInSection": "0,0"
+    },
+    "768": {
+     "size": "768x769",
+     "posInSection": "0,0"
+    },
+    "1024": {
+     "size": "1024x913",
+     "posInSection": "0,0"
+    },
+    "1440": {
+     "size": "1440x1007",
+     "posInSection": "0,0"
+    }
+   },
+   "dominantColors": [
+    "#f8f8f8",
+    "#f8e8e8",
+    "#e8e8e8",
+    "#f8f8e8"
+   ],
+   "cornerColors": [
+    "#f2f0ea",
+    "#f2f0ea",
+    "#ded9de",
+    "#fffafc"
+   ],
+   "description": "Very soft pastel blur: warm off-white (#f2f0ea) at top fading into blotchy pink/lilac/peach bokeh (#f8e8e8, #f8d8f8, #ded9de) toward the bottom. Pure gradient, no objects: render with CSS radial gradients. Art and in-art labels should be redrawn to fit the new Northstar copy for this slot. Do not reuse the original UI text."
+  },
+  {
+   "id": "docs-hero-video",
+   "section": "D2 video + logos",
+   "kind": "video",
+   "element": "video",
+   "format": "webm (VP9) + mp4 hvc1 alt, 1280x720, 28.29s, no audio",
+   "natural": "1280x720",
+   "aspect": 1.7778,
+   "objectFit": "contain",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "358x201.4",
+     "posInSection": "16,0"
+    },
+    "768": {
+     "size": "720x405",
+     "posInSection": "24,0"
+    },
+    "1024": {
+     "size": "976x549",
+     "posInSection": "24,0"
+    },
+    "1440": {
+     "size": "1280x720",
+     "posInSection": "80,0"
+    }
+   },
+   "dominantColors": [
+    "#f8f8f8",
+    "#f8f8e8",
+    "#f8e8e8",
+    "#e8e8e8"
+   ],
+   "cornerColors": [
+    "#f2f0ea",
+    "#f2f0ea",
+    "#f6f0f6",
+    "#dbd0ec"
+   ],
+   "description": "Product demo of a doc editor: left a page with breadcrumb, avatars + share, big title, a callout a short label box, bullet list, and a table of topics with avatar chips; right an AI side panel with a prompt box being typed into; a round avatar of a person pops in beside the prompt. Light UI on transparent/pastel bg. Art and in-art labels should be redrawn to fit the new Northstar copy for this slot. Do not reuse the original UI text.",
+   "video": {
+    "durationSec": 28.292,
+    "autoplay": true,
+    "muted": true,
+    "playsInline": true,
+    "loopAttr": false,
+    "effectiveLoop": true,
+    "preload": "metadata",
+    "poster": null
+   }
+  },
+  {
+   "id": "docs-logo-1",
+   "section": "D2 video + logos",
+   "kind": "logo",
+   "element": "img",
+   "format": "svg 213x80",
+   "natural": "213x80",
+   "aspect": 2.6625,
+   "objectFit": "contain",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "118x80",
+     "posInSection": "17,334"
+    },
+    "768": {
+     "size": "213x80",
+     "posInSection": "63.5,511"
+    },
+    "1024": {
+     "size": "213x80",
+     "posInSection": "191.5,655"
+    },
+    "1440": {
+     "size": "212.2x80",
+     "posInSection": "81,830"
+    }
+   },
+   "dominantColors": [
+    "#f8e8e8",
+    "#f8d8f8",
+    "#f8d8e8",
+    "#f8e8f8"
+   ],
+   "cornerColors": [
+    "#faddf4",
+    "#fee3ea",
+    "#fde1ef",
+    "#fde5e4"
+   ],
+   "description": "Customer wordmark, dark (#292827) on transparent, centred in a 213x80 cell. Use invented neutral wordmarks."
+  },
+  {
+   "id": "docs-logo-2",
+   "section": "D2 video + logos",
+   "kind": "logo",
+   "element": "img",
+   "format": "svg 213x80",
+   "natural": "213x80",
+   "aspect": 2.6625,
+   "objectFit": "contain",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "118x80",
+     "posInSection": "136,334"
+    },
+    "768": {
+     "size": "213x80",
+     "posInSection": "277.5,511"
+    },
+    "1024": {
+     "size": "213x80",
+     "posInSection": "405.5,655"
+    },
+    "1440": {
+     "size": "212.2x80",
+     "posInSection": "294.2,830"
+    }
+   },
+   "dominantColors": [
+    "#f8e8e8",
+    "#b8a8a8",
+    "#a89898",
+    "#e8d8d8"
+   ],
+   "cornerColors": [
+    "#fee3eb",
+    "#fee3e8",
+    "#fde5e4",
+    "#fee3e5"
+   ],
+   "description": "Customer wordmark (blackletter-style newspaper mark). Use invented neutral wordmark."
+  },
+  {
+   "id": "docs-logo-3",
+   "section": "D2 video + logos",
+   "kind": "logo",
+   "element": "img",
+   "format": "svg 213x80",
+   "natural": "213x80",
+   "aspect": 2.6625,
+   "objectFit": "contain",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "118x80",
+     "posInSection": "255,334"
+    },
+    "768": {
+     "size": "213x80",
+     "posInSection": "491.5,511"
+    },
+    "1024": {
+     "size": "213x80",
+     "posInSection": "619.5,655"
+    },
+    "1440": {
+     "size": "212.2x80",
+     "posInSection": "507.3,830"
+    }
+   },
+   "dominantColors": [
+    "#f8d8f8",
+    "#f8e8e8",
+    "#f8e8f8",
+    "#f8d8e8"
+   ],
+   "cornerColors": [
+    "#fee3eb",
+    "#fbe2eb",
+    "#fee3e9",
+    "#fde1ef"
+   ],
+   "description": "Customer wordmark (lowercase bold). Use invented neutral wordmark."
+  },
+  {
+   "id": "docs-logo-4",
+   "section": "D2 video + logos",
+   "kind": "logo",
+   "element": "img",
+   "format": "svg 213x80",
+   "natural": "213x80",
+   "aspect": 2.6625,
+   "objectFit": "contain",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "118x80",
+     "posInSection": "17,415"
+    },
+    "768": {
+     "size": "213x80",
+     "posInSection": "63.5,592"
+    },
+    "1024": {
+     "size": "213x80",
+     "posInSection": "191.5,736"
+    },
+    "1440": {
+     "size": "212.2x80",
+     "posInSection": "720.5,830"
+    }
+   },
+   "dominantColors": [
+    "#f8e8e8",
+    "#f8d8f8",
+    "#f8e8f8",
+    "#f8d8e8"
+   ],
+   "cornerColors": [
+    "#fce3e9",
+    "#fce0ef",
+    "#fde1ee",
+    "#fcdfef"
+   ],
+   "description": "Customer wordmark (icon + uppercase). Use invented neutral wordmark."
+  },
+  {
+   "id": "docs-logo-5",
+   "section": "D2 video + logos",
+   "kind": "logo",
+   "element": "img",
+   "format": "svg 213x80",
+   "natural": "213x80",
+   "aspect": 2.6625,
+   "objectFit": "contain",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "118x80",
+     "posInSection": "136,415"
+    },
+    "768": {
+     "size": "213x80",
+     "posInSection": "277.5,592"
+    },
+    "1024": {
+     "size": "213x80",
+     "posInSection": "405.5,736"
+    },
+    "1440": {
+     "size": "212.2x80",
+     "posInSection": "933.7,830"
+    }
+   },
+   "dominantColors": [
+    "#f8e8e8",
+    "#f8d8f8",
+    "#f8d8e8",
+    "#f8e8f8"
+   ],
+   "cornerColors": [
+    "#fce0ee",
+    "#fbdff3",
+    "#fce0ee",
+    "#f6d9f4"
+   ],
+   "description": "Customer wordmark (short heavy caps). Use invented neutral wordmark."
+  },
+  {
+   "id": "docs-logo-6",
+   "section": "D2 video + logos",
+   "kind": "logo",
+   "element": "img",
+   "format": "svg 213x80",
+   "natural": "213x80",
+   "aspect": 2.6625,
+   "objectFit": "contain",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "118x80",
+     "posInSection": "255,415"
+    },
+    "768": {
+     "size": "213x80",
+     "posInSection": "491.5,592"
+    },
+    "1024": {
+     "size": "213x80",
+     "posInSection": "619.5,736"
+    },
+    "1440": {
+     "size": "212.2x80",
+     "posInSection": "1146.8,830"
+    }
+   },
+   "dominantColors": [
+    "#f8e8e8",
+    "#f8d8f8",
+    "#f8e8f8",
+    "#c8b8b8"
+   ],
+   "cornerColors": [
+    "#fbdff3",
+    "#fde2ea",
+    "#f7daf3",
+    "#fde5e3"
+   ],
+   "description": "Customer wordmark (rounded lowercase). Use invented neutral wordmark."
+  },
+  {
+   "id": "docs-ai-tracker",
+   "section": "D3 AI split",
+   "kind": "feature-image",
+   "element": "img",
+   "format": "avif, 720x513",
+   "natural": "720x513",
+   "aspect": 1.4035,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "358x255.1",
+     "posInSection": "16,234"
+    },
+    "768": {
+     "size": "340x242.6",
+     "posInSection": "404,96"
+    },
+    "1024": {
+     "size": "468x333.7",
+     "posInSection": "532,96"
+    },
+    "1440": {
+     "size": "608x433.2",
+     "posInSection": "752,96"
+    }
+   },
+   "dominantColors": [
+    "#f8f8f8",
+    "#481828",
+    "#e8e8e8",
+    "#d8d8d8"
+   ],
+   "cornerColors": [
+    "#431e25",
+    "#421d24",
+    "#421d24",
+    "#431e25"
+   ],
+   "description": "On mulberry bg: a small AI prompt card top-left (a short label with highlighted words), overlapping a white a short label table card (columns: task, workstream tag chips green/orange, owner avatar, date, status pill) with a lilac/peach gradient panel offset behind bottom-right. Art and in-art labels should be redrawn to fit the new Northstar copy for this slot. Do not reuse the original UI text."
+  },
+  {
+   "id": "docs-ai-icon-1",
+   "section": "D4 AI cards",
+   "kind": "icon",
+   "element": "img",
+   "format": "svg",
+   "natural": "74x74",
+   "aspect": 1,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "74x74",
+     "posInSection": "16,0"
+    },
+    "768": {
+     "size": "74x74",
+     "posInSection": "24,0"
+    },
+    "1024": {
+     "size": "74x74",
+     "posInSection": "24,0"
+    },
+    "1440": {
+     "size": "74x74",
+     "posInSection": "80,0"
+    }
+   },
+   "dominantColors": [
+    "#e8d8e8",
+    "#e8c8d8",
+    "#e8d8d8",
+    "#e8c8e8"
+   ],
+   "cornerColors": [
+    "#421d24",
+    "#421d24",
+    "#421d24",
+    "#421d24"
+   ],
+   "description": "74px rounded-square tile, pale pink-lilac gradient (#e8d8e8 to #e8c8d8) with a dark mulberry (#481828) line glyph of a document with lines."
+  },
+  {
+   "id": "docs-ai-icon-2",
+   "section": "D4 AI cards",
+   "kind": "icon",
+   "element": "img",
+   "format": "svg",
+   "natural": "74x74",
+   "aspect": 1,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "74x74",
+     "posInSection": "16,277"
+    },
+    "768": {
+     "size": "74x74",
+     "posInSection": "272,0"
+    },
+    "1024": {
+     "size": "74x74",
+     "posInSection": "357.3,0"
+    },
+    "1440": {
+     "size": "74x74",
+     "posInSection": "517.3,0"
+    }
+   },
+   "dominantColors": [
+    "#e8d8e8",
+    "#e8c8d8",
+    "#e8d8d8",
+    "#481828"
+   ],
+   "cornerColors": [
+    "#421d24",
+    "#421d24",
+    "#421d24",
+    "#421d24"
+   ],
+   "description": "Same tile, glyph of a table/grid."
+  },
+  {
+   "id": "docs-ai-icon-3",
+   "section": "D4 AI cards",
+   "kind": "icon",
+   "element": "img",
+   "format": "svg",
+   "natural": "74x74",
+   "aspect": 1,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "74x74",
+     "posInSection": "16,553"
+    },
+    "768": {
+     "size": "74x74",
+     "posInSection": "520,0"
+    },
+    "1024": {
+     "size": "74x74",
+     "posInSection": "690.7,0"
+    },
+    "1440": {
+     "size": "74x74",
+     "posInSection": "954.7,0"
+    }
+   },
+   "dominantColors": [
+    "#e8d8e8",
+    "#e8c8d8",
+    "#e8d8d8",
+    "#e8d8f8"
+   ],
+   "cornerColors": [
+    "#421d24",
+    "#421d24",
+    "#421d24",
+    "#421d24"
+   ],
+   "description": "Same tile, glyph of connected nodes (share/branch)."
+  },
+  {
+   "id": "docs-surface-docs",
+   "section": "D6 surface grid 1",
+   "kind": "feature-image",
+   "element": "img",
+   "format": "avif, 720x480",
+   "natural": "720x480",
+   "aspect": 1.5,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "358x238.8",
+     "posInSection": "16,302"
+    },
+    "768": {
+     "size": "348x232",
+     "posInSection": "24,296"
+    },
+    "1024": {
+     "size": "476x317.3",
+     "posInSection": "24,275"
+    },
+    "1440": {
+     "size": "624x416",
+     "posInSection": "80,286"
+    }
+   },
+   "dominantColors": [
+    "#f8f8e8",
+    "#f8f8f8",
+    "#e8e8e8",
+    "#f8e8e8"
+   ],
+   "cornerColors": [
+    "#f2f0ea",
+    "#f2f0ea",
+    "#f2f0ea",
+    "#f2f0ea"
+   ],
+   "description": "Beige panel (#f2f0ea) with a white doc page (breadcrumb, title, overview paragraph with yellow highlights, comment markers) and a floating comment card with avatar. Art and in-art labels should be redrawn to fit the new Northstar copy for this slot. Do not reuse the original UI text."
+  },
+  {
+   "id": "docs-surface-projects",
+   "section": "D6 surface grid 2",
+   "kind": "feature-image",
+   "element": "img",
+   "format": "avif, 720x480",
+   "natural": "720x480",
+   "aspect": 1.5,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "358x238.8",
+     "posInSection": "16,770"
+    },
+    "768": {
+     "size": "348x232",
+     "posInSection": "396,296"
+    },
+    "1024": {
+     "size": "476x317.3",
+     "posInSection": "524,275"
+    },
+    "1440": {
+     "size": "624x416",
+     "posInSection": "736,286"
+    }
+   },
+   "dominantColors": [
+    "#f8f8f8",
+    "#f8f8e8",
+    "#f8e8e8",
+    "#e8e8e8"
+   ],
+   "cornerColors": [
+    "#f2f0ea",
+    "#f1efe9",
+    "#f2f0ea",
+    "#f2f0ea"
+   ],
+   "description": "Beige panel with a kanban a short label board (4 columns with coloured status headers and small cards) and a floating AI prompt card (purple outline, send button) top-right. Art and in-art labels should be redrawn to fit the new Northstar copy for this slot. Do not reuse the original UI text."
+  },
+  {
+   "id": "docs-surface-hub",
+   "section": "D6 surface grid 3",
+   "kind": "feature-image",
+   "element": "img",
+   "format": "avif, 720x480",
+   "natural": "720x480",
+   "aspect": 1.5,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "358x238.8",
+     "posInSection": "16,1266"
+    },
+    "768": {
+     "size": "348x232",
+     "posInSection": "24,794"
+    },
+    "1024": {
+     "size": "476x317.3",
+     "posInSection": "24,834"
+    },
+    "1440": {
+     "size": "624x416",
+     "posInSection": "80,929"
+    }
+   },
+   "dominantColors": [
+    "#f8f8f8",
+    "#f8f8e8",
+    "#e8e8e8",
+    "#f8e8e8"
+   ],
+   "cornerColors": [
+    "#f2f0ea",
+    "#f2f0ea",
+    "#f2f0ea",
+    "#f2f0ea"
+   ],
+   "description": "Beige panel with a wiki a short label page: left sidebar tree, member grid with avatars, quick links and updates lists, plus floating AI question card top-right. Art and in-art labels should be redrawn to fit the new Northstar copy for this slot. Do not reuse the original UI text."
+  },
+  {
+   "id": "docs-surface-workflows",
+   "section": "D6 surface grid 4",
+   "kind": "feature-image",
+   "element": "img",
+   "format": "avif, 720x480",
+   "natural": "720x480",
+   "aspect": 1.5,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "358x238.8",
+     "posInSection": "16,1762"
+    },
+    "768": {
+     "size": "348x232",
+     "posInSection": "396,794"
+    },
+    "1024": {
+     "size": "476x317.3",
+     "posInSection": "524,834"
+    },
+    "1440": {
+     "size": "624x416",
+     "posInSection": "736,929"
+    }
+   },
+   "dominantColors": [
+    "#f8f8f8",
+    "#f8f8e8",
+    "#e8e8e8",
+    "#f8e8e8"
+   ],
+   "cornerColors": [
+    "#f2f0ea",
+    "#f2f0ea",
+    "#f2f0ea",
+    "#f2f0ea"
+   ],
+   "description": "Beige panel with a a short label table (priority and team tag chips) and an overlapping request form card (name field, two selects, date, budget, purple submit button). Art and in-art labels should be redrawn to fit the new Northstar copy for this slot. Do not reuse the original UI text."
+  },
+  {
+   "id": "docs-hub-icon-1",
+   "section": "D7 hubs",
+   "kind": "icon",
+   "element": "img",
+   "format": "svg",
+   "natural": "74x74",
+   "aspect": 1,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "74x74",
+     "posInSection": "16,275"
+    },
+    "768": {
+     "size": "74x74",
+     "posInSection": "24,269"
+    },
+    "1024": {
+     "size": "74x74",
+     "posInSection": "24,275"
+    },
+    "1440": {
+     "size": "74x74",
+     "posInSection": "80,345"
+    }
+   },
+   "dominantColors": [
+    "#e8d8e8",
+    "#e8c8d8",
+    "#e8d8d8",
+    "#e8d8f8"
+   ],
+   "cornerColors": [
+    "#281647",
+    "#281647",
+    "#281647",
+    "#281647"
+   ],
+   "description": "74px pale pink tile with dark glyph: code/screen with gear."
+  },
+  {
+   "id": "docs-hub-icon-2",
+   "section": "D7 hubs",
+   "kind": "icon",
+   "element": "img",
+   "format": "svg",
+   "natural": "74x74",
+   "aspect": 1,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "74x74",
+     "posInSection": "16,552"
+    },
+    "768": {
+     "size": "74x74",
+     "posInSection": "210,269"
+    },
+    "1024": {
+     "size": "74x74",
+     "posInSection": "274,275"
+    },
+    "1440": {
+     "size": "74x74",
+     "posInSection": "408,345"
+    }
+   },
+   "dominantColors": [
+    "#e8d8e8",
+    "#e8c8d8",
+    "#e8d8d8",
+    "#e8c8e8"
+   ],
+   "cornerColors": [
+    "#281647",
+    "#281647",
+    "#281647",
+    "#281647"
+   ],
+   "description": "Same tile, megaphone glyph."
+  },
+  {
+   "id": "docs-hub-icon-3",
+   "section": "D7 hubs",
+   "kind": "icon",
+   "element": "img",
+   "format": "svg",
+   "natural": "74x74",
+   "aspect": 1,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "74x74",
+     "posInSection": "16,828"
+    },
+    "768": {
+     "size": "74x74",
+     "posInSection": "396,269"
+    },
+    "1024": {
+     "size": "74x74",
+     "posInSection": "524,275"
+    },
+    "1440": {
+     "size": "74x74",
+     "posInSection": "736,345"
+    }
+   },
+   "dominantColors": [
+    "#e8d8e8",
+    "#e8c8d8",
+    "#e8d8d8",
+    "#e8c8e8"
+   ],
+   "cornerColors": [
+    "#281647",
+    "#281647",
+    "#281647",
+    "#281647"
+   ],
+   "description": "Same tile, stacked coins/currency glyph."
+  },
+  {
+   "id": "docs-hub-icon-4",
+   "section": "D7 hubs",
+   "kind": "icon",
+   "element": "img",
+   "format": "svg",
+   "natural": "74x74",
+   "aspect": 1,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "74x74",
+     "posInSection": "16,1105"
+    },
+    "768": {
+     "size": "74x74",
+     "posInSection": "582,269"
+    },
+    "1024": {
+     "size": "74x74",
+     "posInSection": "774,275"
+    },
+    "1440": {
+     "size": "74x74",
+     "posInSection": "1064,345"
+    }
+   },
+   "dominantColors": [
+    "#e8d8e8",
+    "#e8c8d8",
+    "#e8d8d8",
+    "#e8c8e8"
+   ],
+   "cornerColors": [
+    "#281647",
+    "#281647",
+    "#281647",
+    "#281647"
+   ],
+   "description": "Same tile, gear/cog glyph."
+  },
+  {
+   "id": "docs-quote-logo",
+   "section": "D8 quote",
+   "kind": "logo",
+   "element": "img",
+   "format": "svg",
+   "natural": "226x51",
+   "aspect": 4.4314,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "226x51",
+     "posInSection": "82,40"
+    },
+    "768": {
+     "size": "226x51",
+     "posInSection": "271,96"
+    },
+    "1024": {
+     "size": "226x51",
+     "posInSection": "399,96"
+    },
+    "1440": {
+     "size": "226x51",
+     "posInSection": "607,96"
+    }
+   },
+   "dominantColors": [
+    "#e8e8f8",
+    "#282828",
+    "#e8d8f8",
+    "#383838"
+   ],
+   "cornerColors": [
+    "#e8e0ff",
+    "#e8e0ff",
+    "#e8e0ff",
+    "#e8e0ff"
+   ],
+   "description": "Customer wordmark in a serif display face, #292827, 226x51. Use an invented serif wordmark."
+  },
+  {
+   "id": "docs-integrations",
+   "section": "D10 integrations",
+   "kind": "feature-image",
+   "element": "img",
+   "format": "avif, 720x582",
+   "natural": "720x582",
+   "aspect": 1.2371,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "358x289.8",
+     "posInSection": "16,275"
+    },
+    "768": {
+     "size": "340x274.9",
+     "posInSection": "404,0"
+    },
+    "1024": {
+     "size": "468x378.3",
+     "posInSection": "532,0"
+    },
+    "1440": {
+     "size": "608x491.5",
+     "posInSection": "752,0"
+    }
+   },
+   "dominantColors": [
+    "#f8f8f8",
+    "#e8e8e8",
+    "#f8f8e8",
+    "#d8d8d8"
+   ],
+   "cornerColors": [
+    "#f7f5f1",
+    "#f7f5f1",
+    "#f7f5f2",
+    "#f7f5f2"
+   ],
+   "description": "Light page with a a short label table (status pills) overlapped on the right by a a short label list card (4 rows: generic app icon, name, subtitle, green a short label dot), pink/lilac gradient edge behind. Art and in-art labels should be redrawn to fit the new Northstar copy for this slot. Do not reuse the original UI text."
+  },
+  {
+   "id": "docs-connector",
+   "section": "D11 connector",
+   "kind": "feature-image",
+   "element": "img",
+   "format": "avif, 720x563",
+   "natural": "720x563",
+   "aspect": 1.2789,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "358x280.2",
+     "posInSection": "16,343"
+    },
+    "768": {
+     "size": "340x266.1",
+     "posInSection": "404,30"
+    },
+    "1024": {
+     "size": "468x366.2",
+     "posInSection": "532,0"
+    },
+    "1440": {
+     "size": "608x475.4",
+     "posInSection": "752,0"
+    }
+   },
+   "dominantColors": [
+    "#f8f8f8",
+    "#f8e8e8",
+    "#e8a8d8",
+    "#f8f8e8"
+   ],
+   "cornerColors": [
+    "#f7f5f1",
+    "#f7f5f1",
+    "#f7f5f1",
+    "#f7f5f1"
+   ],
+   "description": "Pastel pink-to-lilac gradient panel behind a white card titled a short label with one line of text and a dark purple a short label dropdown button whose open menu lists 5 AI tools with small icons (draw generic assistant icons). Art and in-art labels should be redrawn to fit the new Northstar copy for this slot. Do not reuse the original UI text."
+  },
+  {
+   "id": "docs-suite-icon-assistant",
+   "section": "D12 suite",
+   "kind": "icon",
+   "element": "img",
+   "format": "svg",
+   "natural": "74x74",
+   "aspect": 1,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "74x74",
+     "posInSection": "16,275"
+    },
+    "768": {
+     "size": "74x74",
+     "posInSection": "24,269"
+    },
+    "1024": {
+     "size": "74x74",
+     "posInSection": "24,275"
+    },
+    "1440": {
+     "size": "74x74",
+     "posInSection": "80,286"
+    }
+   },
+   "dominantColors": [
+    "#f8e8e8",
+    "#f8f8f8",
+    "#f8d8d8",
+    "#e8d8e8"
+   ],
+   "cornerColors": [
+    "#ffffff",
+    "#ffffff",
+    "#ffffff",
+    "#ffffff"
+   ],
+   "description": "74px soft pink/rose gradient tile with dark mulberry glyph (stylised walking figure / assistant mark)."
+  },
+  {
+   "id": "docs-suite-icon-agents",
+   "section": "D12 suite",
+   "kind": "icon",
+   "element": "img",
+   "format": "svg",
+   "natural": "74x74",
+   "aspect": 1,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "74x74",
+     "posInSection": "16,551"
+    },
+    "768": {
+     "size": "74x74",
+     "posInSection": "396,269"
+    },
+    "1024": {
+     "size": "74x74",
+     "posInSection": "524,275"
+    },
+    "1440": {
+     "size": "74x74",
+     "posInSection": "736,286"
+    }
+   },
+   "dominantColors": [
+    "#f8e8e8",
+    "#f8f8f8",
+    "#f8d8d8",
+    "#e8d8e8"
+   ],
+   "cornerColors": [
+    "#ffffff",
+    "#ffffff",
+    "#ffffff",
+    "#ffffff"
+   ],
+   "description": "Same tile, circular a short label-like glyph; draw a generic agent glyph (bot/sparkle)."
+  },
+  {
+   "id": "docs-suite-icon-pages",
+   "section": "D12 suite",
+   "kind": "icon",
+   "element": "img",
+   "format": "svg",
+   "natural": "74x74",
+   "aspect": 1,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "74x74",
+     "posInSection": "16,828"
+    },
+    "768": {
+     "size": "74x74",
+     "posInSection": "24,556"
+    },
+    "1024": {
+     "size": "74x74",
+     "posInSection": "24,568"
+    },
+    "1440": {
+     "size": "74x74",
+     "posInSection": "80,568"
+    }
+   },
+   "dominantColors": [
+    "#f8e8e8",
+    "#f8f8f8",
+    "#f8d8d8",
+    "#e8d8e8"
+   ],
+   "cornerColors": [
+    "#ffffff",
+    "#ffffff",
+    "#ffffff",
+    "#ffffff"
+   ],
+   "description": "Same tile, document-with-lines glyph."
+  },
+  {
+   "id": "docs-suite-icon-inbox",
+   "section": "D12 suite",
+   "kind": "icon",
+   "element": "img",
+   "format": "svg 85x85",
+   "natural": "85x85",
+   "aspect": 1,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "85x85",
+     "posInSection": "16,1105"
+    },
+    "768": {
+     "size": "85x85",
+     "posInSection": "396,556"
+    },
+    "1024": {
+     "size": "85x85",
+     "posInSection": "524,568"
+    },
+    "1440": {
+     "size": "85x85",
+     "posInSection": "736,568"
+    }
+   },
+   "dominantColors": [
+    "#f8f8f8",
+    "#f8e8e8",
+    "#e8d8e8",
+    "#e8d8d8"
+   ],
+   "cornerColors": [
+    "#ffffff",
+    "#ffffff",
+    "#ffffff",
+    "#ffffff"
+   ],
+   "description": "Same tile drawn on an 85px artboard (tile ~74 + shadow), envelope glyph."
+  }
+ ]
+}

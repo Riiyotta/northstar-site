@@ -1,0 +1,32 @@
+{
+  "id": "page-section",
+  "kind": "component",
+  "purpose": "PageSection (content wrapper + section padding) and SectionGroup (one surface; later sections drop padding-top).",
+  "implementedBy": [
+    {
+      "path": "src/components/ui/PageSection.jsx",
+      "lines": "4-8",
+      "expect": "export function SectionGroup"
+    },
+    {
+      "path": "src/components/ui/PageSection.jsx",
+      "lines": "10-16",
+      "expect": "export default function PageSection"
+    }
+  ],
+  "props": {
+    "dark": "boolean -> ctx-dark",
+    "className": "surface class"
+  },
+  "tokens": [
+    "layout.contentWrapper",
+    "sectionPadding",
+    "layout.sectionGroup"
+  ],
+  "accessibility": [
+    "Each PageSection is a <section>."
+  ],
+  "usedBy": [
+    "almost every section"
+  ]
+}

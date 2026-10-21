@@ -1,0 +1,34 @@
+{
+  "id": "intro-block",
+  "kind": "component",
+  "purpose": "Centred title-description block with optional lockup/media, paragraphs and CTA group.",
+  "implementedBy": [
+    {
+      "path": "src/components/ui/Intro.jsx",
+      "lines": "13-66",
+      "expect": "export default function Intro"
+    }
+  ],
+  "props": {
+    "titleAs": [
+      "h1",
+      "h2"
+    ],
+    "body": "string | string[]",
+    "cta": "label (primary + Learn more)",
+    "ctas": "[{label, variant}]"
+  },
+  "tokens": [
+    "fontSize.heading-lg",
+    "fontSize.medium",
+    "layout.textMax"
+  ],
+  "accessibility": [
+    "One heading per block."
+  ],
+  "usedBy": [
+    "intro.section",
+    "hero.centered",
+    "bento.inbox"
+  ]
+}

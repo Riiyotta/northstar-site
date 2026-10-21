@@ -1,0 +1,106 @@
+{
+  "id": "feature.tabs",
+  "category": "feature",
+  "purpose": "Tabbed feature cards: up to 5 tabs, each revealing 3 cards (gradient icon tile, bold lead-in title, body).",
+  "implementedBy": [
+    {
+      "path": "src/components/FeatureTabs.jsx",
+      "lines": "53-143",
+      "expect": "export default function FeatureTabs"
+    }
+  ],
+  "usedOn": [
+    "/"
+  ],
+  "variants": {},
+  "content": {
+    "tabs": {
+      "kind": "items",
+      "required": true,
+      "minItems": 2,
+      "maxItems": 5,
+      "fields": {
+        "label": {
+          "kind": "text",
+          "required": true,
+          "maxChars": 22,
+          "maxWords": 5,
+          "budgetSource": "CLONE_SPEC.md §5.4 tab labels (orig 8-20 ch)"
+        },
+        "cards": {
+          "kind": "items",
+          "required": true,
+          "minItems": 3,
+          "maxItems": 3,
+          "fields": {
+            "leadIn": {
+              "kind": "text",
+              "required": true,
+              "maxChars": 27,
+              "maxWords": 6,
+              "budgetSource": "CLONE_SPEC.md §5.4 bold lead-in (panel 5 bold-only titles 16-24 ch)"
+            },
+            "rest": {
+              "kind": "text",
+              "required": false,
+              "maxChars": 38,
+              "maxWords": 9,
+              "budgetSource": "CLONE_SPEC.md §5.4 h3 total (orig 14-34 ch)"
+            },
+            "body": {
+              "kind": "text",
+              "required": true,
+              "maxChars": 111,
+              "maxWords": 25,
+              "budgetSource": "CLONE_SPEC.md §5.4 card p (orig 76-100 ch)"
+            },
+            "icon": {
+              "kind": "media",
+              "required": true,
+              "assetRoles": [
+                "icon.feature-tile"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "allowedBackgrounds": [
+    "neutral-5"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "default": "none"
+  },
+  "responsive": [
+    {
+      "minWidth": "base",
+      "change": "Tabs scroll horizontally with edge fade; 1 card column."
+    },
+    {
+      "minWidth": "640.02px",
+      "change": "3 card columns.",
+      "measuredFrom": {
+        "path": "src/components/FeatureTabs.jsx",
+        "lines": "99-99",
+        "expect": "sm:grid-cols-3"
+      }
+    }
+  ],
+  "measuredFrom": [
+    {
+      "path": "CLONE_SPEC.md",
+      "lines": "270-285",
+      "expect": "### 5.4 Tabbed feature cards"
+    }
+  ],
+  "notes": [
+    "Tab switching is instant (no motion, no autoplay) per CLONE_SPEC 5.4."
+  ]
+}

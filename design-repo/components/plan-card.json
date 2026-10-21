@@ -1,0 +1,25 @@
+{
+  "id": "plan-card",
+  "kind": "component",
+  "purpose": "Plan card with highlight box, prices, CTA, product rows and check list; joined seams >=640.02.",
+  "implementedBy": [
+    {
+      "path": "src/components/plans/PlanCards.jsx",
+      "lines": "18-75",
+      "expect": "function PlanCard"
+    }
+  ],
+  "props": {
+    "plan": "plan object",
+    "index": "number"
+  },
+  "tokens": [
+    "tokens/20-component/card.json#card.planCard",
+    "fontSize.plan-name",
+    "fontSize.plan-price"
+  ],
+  "accessibility": [],
+  "usedBy": [
+    "pricing.plan-cards"
+  ]
+}

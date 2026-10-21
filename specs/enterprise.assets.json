@@ -1,0 +1,325 @@
+{
+  "source": "https://superhuman.com/enterprise",
+  "measured": "2026-10-21, Playwright Chrome, widths 1440/1024/768/390",
+  "note": "Placeholders only. Nothing was downloaded. Draw original artwork per 'depicts'. Sizes are rendered CSS px; 'natural' is the original file's intrinsic size, given for aspect reference.",
+  "slots": [
+    {
+      "id": "ent-hero",
+      "section": "1 SplitHero (media column)",
+      "kind": "illustration/photo",
+      "sizes": {
+        "390": "358x328.3",
+        "768": "720x660",
+        "1024": "976x894.7",
+        "1440": "608x557.3"
+      },
+      "aspect": "1080:990",
+      "fit": "cover",
+      "radius": 0,
+      "dominant": [
+        "#281647",
+        "#301848",
+        "#7878a8",
+        "#483060",
+        "#510529"
+      ],
+      "depicts": "portrait of a person in profile, lit pink/magenta, on deep purple, with ~9 floating lavender app-glyph icons and a translucent rounded panel behind",
+      "format_original": "PNG served as AVIF (natural 720x660)"
+    },
+    {
+      "id": "ent-logo-1..6",
+      "section": "2 customer logos (static)",
+      "kind": "logo",
+      "sizes": {
+        "390": "119x81 cell",
+        "768": "216x81 cell",
+        "1024": "216x81 cell",
+        "1440": "213.2x81 cell, logo 197x72 or 212x80"
+      },
+      "radius": 0,
+      "dominant": [
+        "white on #281647"
+      ],
+      "depicts": "white monochrome company wordmarks",
+      "format_original": "SVG"
+    },
+    {
+      "id": "ent-feature-assistant",
+      "section": "4 SplitFeature",
+      "kind": "product UI illustration",
+      "sizes": {
+        "390": "358x268.5",
+        "768": "340x255",
+        "1024": "468x351",
+        "1440": "608x456"
+      },
+      "aspect": "4:3 (1080:810)",
+      "fit": "cover",
+      "radius": 0,
+      "dominant": [
+        "#f0f0f0",
+        "#ffffff",
+        "#f0d8f0",
+        "#f0d8d8"
+      ],
+      "depicts": "pastel hatched gradient; caption with highlighted phrase; assistant avatar bubble; prompt input card with a 4-row action menu",
+      "format_original": "PNG->AVIF 720x540"
+    },
+    {
+      "id": "ent-feature-agents",
+      "section": "5 SplitFeature",
+      "kind": "product UI illustration",
+      "sizes": {
+        "390": "358x268.5",
+        "768": "340x255",
+        "1024": "468x351",
+        "1440": "608x456"
+      },
+      "aspect": "4:3",
+      "fit": "cover",
+      "radius": 0,
+      "dominant": [
+        "#d8f0f0",
+        "#ffffff",
+        "#60c0d8",
+        "#78c0d8"
+      ],
+      "depicts": "teal gradient; document paragraph with underlined suggestion; floating suggestion card with strikethrough correction, purple Accept + Dismiss, hand cursor",
+      "format_original": "PNG->AVIF 720x540"
+    },
+    {
+      "id": "ent-feature-pages",
+      "section": "6 SplitFeature",
+      "kind": "product UI illustration",
+      "sizes": {
+        "390": "358x268.5",
+        "768": "340x255",
+        "1024": "468x351",
+        "1440": "608x456"
+      },
+      "aspect": "4:3",
+      "fit": "cover",
+      "radius": 0,
+      "dominant": [
+        "#ffffff",
+        "#f0a8c0",
+        "#d8a8d8",
+        "#f0a8d8"
+      ],
+      "depicts": "iridescent pink/orange gradient; AI prompt card; project tracker table with pills, avatars, dates, status chips",
+      "format_original": "PNG->AVIF 720x540"
+    },
+    {
+      "id": "ent-feature-inbox",
+      "section": "7 SplitFeature",
+      "kind": "product UI illustration",
+      "sizes": {
+        "390": "358x268.5",
+        "768": "340x255",
+        "1024": "468x351",
+        "1440": "608x456"
+      },
+      "aspect": "4:3",
+      "fit": "cover",
+      "radius": 0,
+      "dominant": [
+        "#ffffff",
+        "#f0f0ff",
+        "#7890f0",
+        "#c0d8f0"
+      ],
+      "depicts": "blue-violet gradient with dashed arc; three stacked status chips with checkboxes; split-inbox email list (4 tabs with counts, 4 rows with colored label pills)",
+      "format_original": "PNG->AVIF 720x540"
+    },
+    {
+      "id": "ent-feature-builder",
+      "section": "9 SplitFeature",
+      "kind": "product UI illustration",
+      "sizes": {
+        "390": "358x358",
+        "768": "340x340",
+        "1024": "468x468",
+        "1440": "608x608"
+      },
+      "aspect": "1:1 (1061:1061)",
+      "fit": "cover",
+      "radius": 0,
+      "dominant": [
+        "#ffffff",
+        "#fff0f0",
+        "#60a8f0",
+        "#cbd2ff"
+      ],
+      "depicts": "blue/pink gradient frame; floating agent name card with pink icon tile; agent builder form with Run/Update buttons, Instructions, Triggers, Tools sections",
+      "format_original": "PNG->AVIF 720x720"
+    },
+    {
+      "id": "ent-security-1..6",
+      "section": "11 IconFeatureGrid",
+      "kind": "icon tile",
+      "sizes": {
+        "all": "69x71"
+      },
+      "radius": "baked ~12 (white tile)",
+      "dominant": [
+        "#ffffff tile",
+        "#0c4243 surround",
+        "dark glyph"
+      ],
+      "depicts": "white rounded-square tiles with a centered 20px dark line icon: key, report page with bars, admin grid+gear, fingerprint, user+gear, folder+lock",
+      "format_original": "SVG"
+    },
+    {
+      "id": "ent-badge-1..12",
+      "section": "12 compliance grids (2 x 6)",
+      "kind": "badge",
+      "sizes": {
+        "390": "119x81 cell",
+        "768": "215x81 cell",
+        "1024": "215x81 cell",
+        "1440": "213.2x81 cell, badge 212x80 contain"
+      },
+      "radius": 0,
+      "dominant": [
+        "white/grey on #0c4243"
+      ],
+      "depicts": "circular certification-style emblem (~34px) + short white label; monochrome",
+      "format_original": "SVG"
+    },
+    {
+      "id": "ent-report",
+      "section": "14 featured report (media left)",
+      "kind": "editorial illustration",
+      "sizes": {
+        "390": "358x280",
+        "768": "340x265.9",
+        "1024": "468x366",
+        "1440": "608x475.5"
+      },
+      "aspect": "624:488",
+      "fit": "cover",
+      "radius": "8 (picture, overflow hidden)",
+      "dominant": [
+        "#301860",
+        "#303060",
+        "#48a8d8",
+        "#f0d8ff"
+      ],
+      "depicts": "dark purple abstract collage: handwriting-textured circle, violet square, translucent card with large serif text, bright blue folder shape",
+      "format_original": "PNG->AVIF (natural 720x563)"
+    },
+    {
+      "id": "ent-resource-1",
+      "section": "15 CardGrid",
+      "kind": "editorial illustration",
+      "sizes": {
+        "390": "296x198 (does not stretch)",
+        "768": "162x108.4",
+        "1024": "226x151.2",
+        "1440": "296x198"
+      },
+      "aspect": "3:2 (natural 360x240)",
+      "fit": "cover",
+      "radius": "baked ~12",
+      "dominant": [
+        "#481818",
+        "#481830",
+        "#60c0d8",
+        "#d8d8ff"
+      ],
+      "depicts": "maroon bg with line art; teal card with serif text; magenta gradient square; white check-badge tile",
+      "format_original": "PNG->AVIF"
+    },
+    {
+      "id": "ent-resource-2",
+      "section": "15 CardGrid",
+      "kind": "editorial illustration",
+      "sizes": {
+        "1440": "296x198"
+      },
+      "aspect": "3:2",
+      "fit": "cover",
+      "radius": "baked ~12",
+      "dominant": [
+        "#481818",
+        "#78c0d8",
+        "#60c0d8"
+      ],
+      "depicts": "maroon bg; white app-icon tile with brand mark; magenta-to-teal gradient card with serif text",
+      "format_original": "PNG->AVIF"
+    },
+    {
+      "id": "ent-resource-3",
+      "section": "15 CardGrid",
+      "kind": "editorial illustration",
+      "sizes": {
+        "1440": "296x197.3"
+      },
+      "aspect": "592:395",
+      "fit": "cover",
+      "radius": "baked ~12",
+      "dominant": [
+        "#301860",
+        "#481860",
+        "#ff4860",
+        "#f0d8ff"
+      ],
+      "depicts": "deep purple bg; coral/red painterly square; lilac card with small diagram",
+      "format_original": "PNG->AVIF"
+    },
+    {
+      "id": "ent-resource-4",
+      "section": "15 CardGrid",
+      "kind": "editorial illustration",
+      "sizes": {
+        "1440": "296x198"
+      },
+      "aspect": "3:2",
+      "fit": "cover",
+      "radius": "baked ~12",
+      "dominant": [
+        "#481818",
+        "#481830",
+        "#f0d8ff"
+      ],
+      "depicts": "maroon bg with line-art circles; reaching orange hand; white circle; cyan/violet gem; iridescent card",
+      "format_original": "PNG->AVIF"
+    },
+    {
+      "id": "ent-quote-logo-1..2",
+      "section": "16 QuoteGrid",
+      "kind": "logo",
+      "sizes": {
+        "all": "237x53"
+      },
+      "radius": 0,
+      "dominant": [
+        "white on #281647"
+      ],
+      "depicts": "white customer wordmarks, left-aligned above each quote",
+      "format_original": "SVG"
+    },
+    {
+      "id": "icon-caret-right",
+      "section": "primaryLink CTAs (4-7, 9, 12, 14, 15)",
+      "kind": "icon",
+      "sizes": {
+        "all": "20x20"
+      },
+      "color": "currentColor (#714cb6 / #d4c7ff)",
+      "depicts": "chevron right",
+      "format_original": "SVG symbol"
+    },
+    {
+      "id": "icon-caret-small-down",
+      "section": "17 FAQ",
+      "kind": "icon",
+      "sizes": {
+        "all": "20x20"
+      },
+      "color": "#000 (button default)",
+      "depicts": "small rounded chevron down, rotates -180deg when open",
+      "format_original": "SVG symbol"
+    }
+  ]
+}

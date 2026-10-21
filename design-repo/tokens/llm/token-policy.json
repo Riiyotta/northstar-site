@@ -1,0 +1,34 @@
+{
+  "version": "1.0.0",
+  "rawValueRestrictions": {
+    "breakpoint": "forbidden: reference a catalog path",
+    "color": "forbidden: reference a catalog path",
+    "elevation": "forbidden: reference a catalog path",
+    "iconSize": "forbidden: reference a catalog path",
+    "duration": "forbidden: reference a catalog path",
+    "easing": "forbidden: reference a catalog path",
+    "radius": "forbidden: reference a catalog path",
+    "space": "forbidden: reference a catalog path",
+    "viewportPadding": "forbidden: reference a catalog path",
+    "sectionPadding": "forbidden: reference a catalog path",
+    "fontFamily": "forbidden: reference a catalog path",
+    "fontWeight": "forbidden: reference a catalog path",
+    "letterSpacingCompensation": "forbidden: reference a catalog path",
+    "fontSize": "forbidden: reference a catalog path",
+    "zIndex": "forbidden: reference a catalog path",
+    "semantic": "forbidden: reference a catalog path",
+    "surface": "forbidden: reference a catalog path"
+  },
+  "pageSpecStyleFields": {
+    "background": "closed enum of surface ids (tokens/10-semantic/surface.json)",
+    "context": "light | dark, must equal the surface's context"
+  },
+  "overrides": "PageSpecs carry NO per-instance token override field. Styling is owned by the section, component and primitive contracts; the only style-bearing PageSpec fields are `background` and `context`. There is therefore nothing at the PageSpec layer to mutate for token overrides; drift is guarded at the catalog/policy layer by verify_all.py (TOKEN_POLICY_KEYS, TOKEN_REFERENCES).",
+  "resolutionOrder": [
+    "00-foundation",
+    "themes (ctx-light / ctx-dark)",
+    "10-semantic",
+    "20-component",
+    "30-layout"
+  ]
+}

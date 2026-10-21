@@ -1,0 +1,25 @@
+{
+  "id": "helper-card",
+  "kind": "component",
+  "purpose": "Icon + h3 + body (+ caret link) card, bordered or white.",
+  "implementedBy": [
+    {
+      "path": "src/components/ui/HelperCard.jsx",
+      "lines": "12-49",
+      "expect": "export default function HelperCard"
+    }
+  ],
+  "props": {
+    "variant": [
+      "bordered",
+      "white"
+    ]
+  },
+  "tokens": [
+    "tokens/20-component/card.json#card.helper"
+  ],
+  "accessibility": [],
+  "usedBy": [
+    "grid.helper-cards"
+  ]
+}

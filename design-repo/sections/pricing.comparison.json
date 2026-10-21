@@ -1,0 +1,168 @@
+{
+  "id": "pricing.comparison",
+  "category": "pricing",
+  "purpose": "Desktop-only plan comparison: accordion groups of feature tables with check/text values, beta tags, info tooltips and a floating plan header.",
+  "implementedBy": [
+    {
+      "path": "src/components/plans/PlanComparison.jsx",
+      "lines": "127-142",
+      "expect": "export default function PlanComparison"
+    },
+    {
+      "path": "src/components/plans/FloatingPlanHeader.jsx",
+      "lines": "12-21",
+      "expect": "export default function FloatingPlanHeader"
+    },
+    {
+      "path": "src/components/ui/Tooltip.jsx",
+      "lines": "14-31",
+      "expect": "export default function Tooltip"
+    }
+  ],
+  "usedOn": [
+    "/plans"
+  ],
+  "variants": {},
+  "content": {
+    "title": {
+      "kind": "text",
+      "required": true,
+      "maxChars": 20,
+      "maxWords": 5,
+      "budgetSource": "specs/plans.md §3.1 title (orig 18 ch)"
+    },
+    "groups": {
+      "kind": "items",
+      "required": true,
+      "minItems": 1,
+      "maxItems": 5,
+      "fields": {
+        "title": {
+          "kind": "text",
+          "required": true,
+          "maxChars": 18,
+          "maxWords": 4,
+          "budgetSource": "specs/plans.md §3.3 group triggers (orig 2-16 ch)"
+        },
+        "sections": {
+          "kind": "items",
+          "required": true,
+          "minItems": 1,
+          "maxItems": 6,
+          "fields": {
+            "title": {
+              "kind": "text",
+              "required": true,
+              "maxChars": 33,
+              "maxWords": 8,
+              "budgetSource": "specs/plans.md §3.5 section rows (placeholders up to ~30 ch)"
+            },
+            "rows": {
+              "kind": "items",
+              "required": true,
+              "minItems": 1,
+              "maxItems": 20,
+              "fields": {
+                "label": {
+                  "kind": "text",
+                  "required": true,
+                  "maxChars": 56,
+                  "maxWords": 13,
+                  "budgetSource": "specs/plans.md §3.5 row labels (orig up to 49/50 ch)"
+                },
+                "beta": {
+                  "kind": "boolean",
+                  "required": false
+                },
+                "info": {
+                  "kind": "text",
+                  "required": false,
+                  "maxChars": 88,
+                  "maxWords": 20,
+                  "budgetSource": "specs/plans.md §3.4 tooltip copy (40-80 ch)"
+                },
+                "values": {
+                  "kind": "items",
+                  "required": true,
+                  "minItems": 4,
+                  "maxItems": 4,
+                  "fields": {
+                    "type": {
+                      "kind": "enum",
+                      "required": true,
+                      "values": [
+                        "check",
+                        "text",
+                        "empty"
+                      ]
+                    },
+                    "text": {
+                      "kind": "text",
+                      "required": false,
+                      "maxChars": 54,
+                      "maxWords": 12,
+                      "budgetSource": "specs/plans.md §3.5 text values (orig up to 49 ch)"
+                    },
+                    "info": {
+                      "kind": "text",
+                      "required": false,
+                      "maxChars": 88,
+                      "maxWords": 20,
+                      "budgetSource": "specs/plans.md §3.4 tooltip copy (40-80 ch)"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "allowedBackgrounds": [
+    "neutral-5"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "accordion-expand"
+    ],
+    "default": "accordion-expand",
+    "additional": [
+      "floating-header-slide",
+      "tooltip-fade"
+    ]
+  },
+  "responsive": [
+    {
+      "minWidth": "base",
+      "change": "Not rendered (display none below 1080.02, nothing replaces it)."
+    },
+    {
+      "minWidth": "1080.02px",
+      "change": "Rendered: fixed 1080 table, floating header enabled.",
+      "measuredFrom": {
+        "path": "src/components/plans/PlanComparison.jsx",
+        "lines": "131-131",
+        "expect": "hidden justify-center bg-neutral-5 lg:flex"
+      }
+    }
+  ],
+  "measuredFrom": [
+    {
+      "path": "specs/plans.md",
+      "lines": "139-142",
+      "expect": "## 3. Plans & features comparison"
+    },
+    {
+      "path": "specs/plans.md",
+      "lines": "388-399",
+      "expect": "### 3.6 Floating plan header"
+    }
+  ],
+  "notes": [
+    "Source gap: FloatingPlanHeader applies its 300ms transform transition unconditionally (no motion-safe gate); the contract's locked reduced-motion fallback ('instant-show-hide') is the recommended behaviour, not what the snapshot does."
+  ]
+}

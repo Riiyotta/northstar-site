@@ -1,0 +1,84 @@
+{
+  "id": "chapter.intro",
+  "category": "intro",
+  "purpose": "Numbered chapter opener: mono eyebrow ('NN / NN · LABEL'), h2, lede and optional caret link in the left 8 of 12 columns, with a dashed chapter rule.",
+  "implementedBy": [
+    {
+      "path": "src/components/go/ChapterIntro.jsx",
+      "lines": "5-22",
+      "expect": "export function ChapterStack"
+    },
+    {
+      "path": "src/components/go/ChapterIntro.jsx",
+      "lines": "27-36",
+      "expect": "export default function ChapterIntro"
+    }
+  ],
+  "usedOn": [
+    "/go"
+  ],
+  "variants": {},
+  "content": {
+    "eyebrow": {
+      "kind": "text",
+      "required": true,
+      "maxChars": 29,
+      "maxWords": 7,
+      "budgetSource": "specs/go.md §15 ch*.eyebrow (orig 16-26 ch)",
+      "pattern": "^[0-9]{2} / [0-9]{2} · [A-Z0-9 &]+$"
+    },
+    "title": {
+      "kind": "text",
+      "required": true,
+      "maxChars": 35,
+      "maxWords": 8,
+      "budgetSource": "specs/go.md §15 ch1.h2 (orig 31 ch)"
+    },
+    "lede": {
+      "kind": "text",
+      "required": true,
+      "maxChars": 206,
+      "maxWords": 46,
+      "budgetSource": "specs/go.md §15 ch3.lede (orig 187 ch)"
+    },
+    "link": {
+      "kind": "text",
+      "required": false,
+      "maxChars": 20,
+      "maxWords": 5,
+      "budgetSource": "specs/go.md §15 ch3.link (orig 18 ch)"
+    }
+  },
+  "allowedBackgrounds": [
+    "neutral-5"
+  ],
+  "constraints": {},
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "default": "none"
+  },
+  "responsive": [
+    {
+      "minWidth": "base",
+      "change": "Single column (the empty span-4 column still adds the 16px gap)."
+    },
+    {
+      "minWidth": "640.02px",
+      "change": "8/4 split, gap vp.",
+      "measuredFrom": {
+        "path": "src/components/go/ChapterIntro.jsx",
+        "lines": "30-30",
+        "expect": "sm:flex-[2_1_0%]"
+      }
+    }
+  ],
+  "measuredFrom": [
+    {
+      "path": "specs/go.md",
+      "lines": "37-44",
+      "expect": "### 0.3 Chapter intro block"
+    }
+  ]
+}

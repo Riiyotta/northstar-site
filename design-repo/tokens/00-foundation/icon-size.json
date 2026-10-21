@@ -1,0 +1,44 @@
+{
+  "$description": "Icon box sizes as used in src (lucide size props and inline SVG boxes).",
+  "iconSize": {
+    "14": {
+      "$type": "dimension",
+      "$value": "14px",
+      "$description": "Nav chevron, info icon, mobile hero next."
+    },
+    "16": {
+      "$type": "dimension",
+      "$value": "16px",
+      "$description": "Compact-button arrow, hamburger, close, sign-in chevron."
+    },
+    "20": {
+      "$type": "dimension",
+      "$value": "20px",
+      "$description": "Button arrow/caret, accordion caret, footer social glyphs."
+    },
+    "24": {
+      "$type": "dimension",
+      "$value": "24px",
+      "$description": "Hero nav product icons, /plans product glyphs."
+    },
+    "32": {
+      "$type": "dimension",
+      "$value": "32px",
+      "$description": "Video play/pause control."
+    }
+  },
+  "$extensions": {
+    "measuredFrom": [
+      {
+        "path": "src/components/ui/Button.jsx",
+        "lines": "54-56",
+        "expect": "size={compact ? 16 : 20}"
+      },
+      {
+        "path": "src/components/ui/VideoSlot.jsx",
+        "lines": "16-18",
+        "expect": "width=\"32\""
+      }
+    ]
+  }
+}

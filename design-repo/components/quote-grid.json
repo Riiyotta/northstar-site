@@ -1,0 +1,24 @@
+{
+  "id": "quote-grid",
+  "kind": "component",
+  "purpose": "Two-column quote cards with logo, quote, attribution, optional avatar.",
+  "implementedBy": [
+    {
+      "path": "src/components/ui/QuoteGrid.jsx",
+      "lines": "6-36",
+      "expect": "export default function QuoteGrid"
+    }
+  ],
+  "props": {
+    "items": "[{logo, quote, name, role, avatar?}]"
+  },
+  "tokens": [
+    "fontSize.medium"
+  ],
+  "accessibility": [
+    "Quotes are plain paragraphs (no blockquote)."
+  ],
+  "usedBy": [
+    "quotes.grid"
+  ]
+}

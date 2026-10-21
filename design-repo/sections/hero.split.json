@@ -1,0 +1,132 @@
+{
+  "id": "hero.split",
+  "category": "hero",
+  "purpose": "Two-column hero: optional eyebrow, display title, lede and 1-2 CTAs beside a large product/editorial illustration.",
+  "implementedBy": [
+    {
+      "path": "src/components/enterprise/SplitHero.jsx",
+      "lines": "14-49",
+      "expect": "export default function SplitHero"
+    },
+    {
+      "path": "src/pages/Agents.jsx",
+      "lines": "55-64",
+      "expect": "<SplitHero"
+    },
+    {
+      "path": "src/pages/Enterprise.jsx",
+      "lines": "50-50",
+      "expect": "<SplitHero />"
+    }
+  ],
+  "usedOn": [
+    "/agents",
+    "/enterprise"
+  ],
+  "variants": {},
+  "content": {
+    "eyebrow": {
+      "kind": "text",
+      "required": false,
+      "maxChars": 28,
+      "maxWords": 7,
+      "budgetSource": "specs/enterprise.md §1 eyebrow (orig 25 ch)"
+    },
+    "title": {
+      "kind": "text",
+      "required": true,
+      "maxChars": 57,
+      "maxWords": 13,
+      "budgetSource": "specs/enterprise.md §1 title (orig 51); specs/agents.md §14 hero.h1 (orig 42)"
+    },
+    "lede": {
+      "kind": "text",
+      "required": true,
+      "maxChars": 236,
+      "maxWords": 53,
+      "budgetSource": "specs/enterprise.md §1 lede (orig 214); specs/agents.md §14 hero.lede (orig 129)"
+    },
+    "ctas": {
+      "kind": "ctaList",
+      "required": true,
+      "variants": [
+        "primary",
+        "primaryOutline"
+      ],
+      "minItems": 1,
+      "maxItems": 2,
+      "maxChars": 19,
+      "maxWords": 5,
+      "budgetSource": "specs/agents.md §14 hero.cta1/cta2 (orig 14 / 17 ch)"
+    },
+    "media": {
+      "kind": "media",
+      "required": true,
+      "assetRoles": [
+        "product.ui-illustration",
+        "editorial.illustration"
+      ]
+    }
+  },
+  "allowedBackgrounds": [
+    "purple-0",
+    "purple-100"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "default": "none"
+  },
+  "responsive": [
+    {
+      "minWidth": "base",
+      "change": "Stacked, text first; CTAs full width in a column; header gap 12."
+    },
+    {
+      "minWidth": "640.02px",
+      "change": "CTAs become a wrapping row; header gap 24.",
+      "measuredFrom": {
+        "path": "src/components/enterprise/SplitHero.jsx",
+        "lines": "32-32",
+        "expect": "sm:flex-row sm:flex-wrap"
+      }
+    },
+    {
+      "minWidth": "1080.02px",
+      "change": "Two columns (TwoColumn from='lg', gap M).",
+      "measuredFrom": {
+        "path": "src/components/enterprise/SplitHero.jsx",
+        "lines": "24-24",
+        "expect": "<TwoColumn from=\"lg\">"
+      }
+    },
+    {
+      "minWidth": "1280.02px",
+      "change": "Column gap grows to 64 (gap M).",
+      "measuredFrom": {
+        "path": "src/components/ui/TwoColumn.jsx",
+        "lines": "9-9",
+        "expect": "M: 'gap-6 sm:gap-10 xl:gap-16'"
+      }
+    }
+  ],
+  "measuredFrom": [
+    {
+      "path": "specs/enterprise.md",
+      "lines": "71-79",
+      "expect": "## 1. Hero (G1, `SplitHero`)"
+    },
+    {
+      "path": "specs/agents.md",
+      "lines": "61-71",
+      "expect": "### 3a. `SplitHero` (new)"
+    }
+  ],
+  "notes": [
+    "With an eyebrow the eyebrow is the h1 and the title an h2 (enterprise); without one the title is the h1 (agents)."
+  ]
+}

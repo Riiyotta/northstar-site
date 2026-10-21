@@ -1,0 +1,57 @@
+{
+  "id": "media.strip",
+  "category": "media",
+  "purpose": "Static full-width strip of invented integration app tiles.",
+  "implementedBy": [
+    {
+      "path": "src/pages/Go.jsx",
+      "lines": "97-97",
+      "expect": "<MediaSlot id=\"connectors-strip\""
+    }
+  ],
+  "usedOn": [
+    "/go"
+  ],
+  "variants": {},
+  "content": {
+    "image": {
+      "kind": "media",
+      "required": true,
+      "assetRoles": [
+        "media.integration-strip"
+      ]
+    }
+  },
+  "allowedBackgrounds": [
+    "neutral-5"
+  ],
+  "constraints": {},
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "default": "none"
+  },
+  "responsive": [
+    {
+      "minWidth": "base",
+      "change": "Aspect 390:198 (two rows of tiles)."
+    },
+    {
+      "minWidth": "640.02px",
+      "change": "Aspect 1440:195 (one row).",
+      "measuredFrom": {
+        "path": "src/pages/Go.jsx",
+        "lines": "97-97",
+        "expect": "sm:aspect-[1440/195]"
+      }
+    }
+  ],
+  "measuredFrom": [
+    {
+      "path": "specs/go.md",
+      "lines": "131-134",
+      "expect": "## 7. Chapter 03: connectors"
+    }
+  ]
+}

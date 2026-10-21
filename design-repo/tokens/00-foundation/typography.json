@@ -1,0 +1,529 @@
+{
+  "$description": "Type families, weights and roles. Copied from tailwind.config.js fontFamily/fontWeight/fontSize. Letter-spacing compensation (--ls-comp: -0.0035em) offsets Hanken Grotesk's +0.8% width vs the original face (CLONE_SPEC.md 0.5).",
+  "fontFamily": {
+    "sans": {
+      "$type": "fontFamily",
+      "$value": [
+        "Hanken Grotesk",
+        "system-ui",
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "Segoe UI",
+        "Roboto",
+        "Oxygen",
+        "Ubuntu",
+        "Cantarell",
+        "Fira Sans",
+        "Droid Sans",
+        "Helvetica Neue",
+        "sans-serif"
+      ],
+      "$description": "OFL substitute for the original's proprietary sans."
+    },
+    "serif": {
+      "$type": "fontFamily",
+      "$value": [
+        "Source Serif 4",
+        "Georgia",
+        "Times",
+        "serif"
+      ],
+      "$description": "OFL substitute for the original's proprietary serif (/plans quotes only)."
+    },
+    "mono": {
+      "$type": "fontFamily",
+      "$value": [
+        "JetBrains Mono",
+        "ui-monospace",
+        "SFMono-Regular",
+        "Menlo",
+        "monospace"
+      ],
+      "$description": "OFL substitute for the original's proprietary mono (/go eyebrows)."
+    }
+  },
+  "fontWeight": {
+    "regular": {
+      "$type": "fontWeight",
+      "$value": 460
+    },
+    "medium": {
+      "$type": "fontWeight",
+      "$value": 540
+    },
+    "semibold": {
+      "$type": "fontWeight",
+      "$value": 600
+    },
+    "bold": {
+      "$type": "fontWeight",
+      "$value": 700
+    }
+  },
+  "letterSpacingCompensation": {
+    "$type": "dimension",
+    "$value": "-0.0035em",
+    "$description": "--ls-comp; added to every sans role."
+  },
+  "fontSize": {
+    "display-sm": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "clamp(36px, 16px + 3.125vw, 61px)",
+        "lineHeight": "1.1",
+        "letterSpacing": "calc(-0.0275em + var(--ls-comp))",
+        "fontWeight": 460
+      },
+      "$description": "Page h1 (product heroes, split heroes, plans title)."
+    },
+    "heading-lg": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "clamp(32px, 18.4px + 2.125vw, 49px)",
+        "lineHeight": "1.2",
+        "letterSpacing": "calc(-0.0275em + var(--ls-comp))",
+        "fontWeight": 460
+      },
+      "$description": "Section h2."
+    },
+    "heading-md": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "clamp(28px, 19.2px + 1.375vw, 39px)",
+        "lineHeight": "1.2",
+        "letterSpacing": "calc(-0.0275em + var(--ls-comp))",
+        "fontWeight": 460
+      },
+      "$description": "Feature-row h2, quote h2, CTA band h2 (md)."
+    },
+    "heading-sm": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "clamp(24px, 18.4px + 0.875vw, 31px)",
+        "lineHeight": "1.2",
+        "letterSpacing": "calc(-0.0275em + var(--ls-comp))",
+        "fontWeight": 460
+      },
+      "$description": "Grid item titles, feature subheads."
+    },
+    "heading-xs": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "clamp(20px, 16px + 0.625vw, 25px)",
+        "lineHeight": "1.2",
+        "letterSpacing": "calc(-0.0275em + var(--ls-comp))",
+        "fontWeight": 460
+      },
+      "$description": "Card and aside titles, captions."
+    },
+    "large": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "clamp(18px, 16.4px + 0.25vw, 20px)",
+        "lineHeight": "1.5",
+        "letterSpacing": "calc(-0.0075em + var(--ls-comp))",
+        "fontWeight": 540
+      },
+      "$description": "Hero ledes, eyebrows."
+    },
+    "medium": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "18px",
+        "lineHeight": "1.5",
+        "letterSpacing": "calc(-0.0075em + var(--ls-comp))",
+        "fontWeight": 540
+      },
+      "$description": "Body copy, ledes, quotes, FAQ questions (at 460)."
+    },
+    "small": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "16px",
+        "lineHeight": "1.5",
+        "letterSpacing": "calc(-0.0075em + var(--ls-comp))",
+        "fontWeight": 540
+      },
+      "$description": "Card body, FAQ answers."
+    },
+    "xsmall": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "14px",
+        "lineHeight": "1.2",
+        "letterSpacing": "var(--ls-comp)",
+        "fontWeight": 540
+      },
+      "$description": "Labels."
+    },
+    "body": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "16px",
+        "lineHeight": "1.2",
+        "letterSpacing": "var(--ls-comp)",
+        "fontWeight": 460
+      },
+      "$description": "Document default."
+    },
+    "nav": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "16px",
+        "lineHeight": "24px",
+        "letterSpacing": "var(--ls-comp)",
+        "fontWeight": 460
+      },
+      "$description": "Header nav, text CTAs."
+    },
+    "button": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "16px",
+        "lineHeight": "16px",
+        "letterSpacing": "var(--ls-comp)",
+        "fontWeight": 600
+      },
+      "$description": "52px and 48px buttons, links."
+    },
+    "button-compact": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "14px",
+        "lineHeight": "18px",
+        "letterSpacing": "var(--ls-comp)",
+        "fontWeight": 600
+      },
+      "$description": "36px buttons."
+    },
+    "menu-title": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "16px",
+        "lineHeight": "24px",
+        "letterSpacing": "var(--ls-comp)",
+        "fontWeight": 700
+      },
+      "$description": "Menu group labels, sign-in rows."
+    },
+    "menu-desc": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "14px",
+        "lineHeight": "16.8px",
+        "letterSpacing": "var(--ls-comp)",
+        "fontWeight": 540
+      },
+      "$description": "Sign-in row descriptions."
+    },
+    "banner": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "16px",
+        "lineHeight": "1.2",
+        "letterSpacing": "var(--ls-comp)",
+        "fontWeight": 460
+      },
+      "$description": "Announcement banner >=640.02."
+    },
+    "banner-sm": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "14px",
+        "lineHeight": "1.2",
+        "letterSpacing": "var(--ls-comp)",
+        "fontWeight": 460
+      },
+      "$description": "Announcement banner <640.02."
+    },
+    "footer-brand": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "28px",
+        "lineHeight": "32px",
+        "letterSpacing": "calc(-0.63px + var(--ls-comp))",
+        "fontWeight": 540
+      },
+      "$description": "Footer brand line >=1080.02."
+    },
+    "footer-brand-sm": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "18px",
+        "lineHeight": "20px",
+        "letterSpacing": "var(--ls-comp)",
+        "fontWeight": 540
+      },
+      "$description": "Footer brand line <1080.02."
+    },
+    "footer-title": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "18.72px",
+        "lineHeight": "28.08px",
+        "letterSpacing": "var(--ls-comp)",
+        "fontWeight": 700
+      },
+      "$description": "Footer column titles."
+    },
+    "footer-link": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "16px",
+        "lineHeight": "24px",
+        "letterSpacing": "var(--ls-comp)",
+        "fontWeight": 460
+      },
+      "$description": "Footer links."
+    },
+    "trusted-heading": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "20px",
+        "lineHeight": "24px",
+        "letterSpacing": "var(--ls-comp)",
+        "fontWeight": 460
+      },
+      "$description": "/plans logo strip intro."
+    },
+    "plan-name": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "36px",
+        "lineHeight": "40px",
+        "letterSpacing": "calc(-0.99px + var(--ls-comp))",
+        "fontWeight": 600
+      },
+      "$description": "Plan card name."
+    },
+    "plan-name-md": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "24px",
+        "lineHeight": "40px",
+        "letterSpacing": "calc(-0.66px + var(--ls-comp))",
+        "fontWeight": 600
+      },
+      "$description": "Plan card name 640.02-1080.02."
+    },
+    "plan-desc": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "18px",
+        "lineHeight": "26px",
+        "letterSpacing": "calc(-0.135px + var(--ls-comp))",
+        "fontWeight": 540
+      },
+      "$description": "Plan description >=1280.02."
+    },
+    "plan-desc-sm": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "16px",
+        "lineHeight": "26px",
+        "letterSpacing": "calc(-0.12px + var(--ls-comp))",
+        "fontWeight": 540
+      },
+      "$description": "Plan description <1280.02."
+    },
+    "plan-price": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "32px",
+        "lineHeight": "48px",
+        "letterSpacing": "calc(-0.88px + var(--ls-comp))",
+        "fontWeight": 600
+      },
+      "$description": "Plan price."
+    },
+    "plan-price-md": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "18px",
+        "lineHeight": "48px",
+        "letterSpacing": "calc(-0.495px + var(--ls-comp))",
+        "fontWeight": 600
+      },
+      "$description": "Plan price 640.02-1080.02."
+    },
+    "caption": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "14px",
+        "lineHeight": "22px",
+        "letterSpacing": "var(--ls-comp)",
+        "fontWeight": 540
+      },
+      "$description": "Plan cadence, highlight label."
+    },
+    "micro": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "12px",
+        "lineHeight": "18px",
+        "letterSpacing": "calc(-0.09px + var(--ls-comp))",
+        "fontWeight": 540
+      },
+      "$description": "Comparison table cells."
+    },
+    "product-name": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "14px",
+        "lineHeight": "20px",
+        "letterSpacing": "calc(-0.385px + var(--ls-comp))",
+        "fontWeight": 540
+      },
+      "$description": "Plan card product rows."
+    },
+    "includes": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "16px",
+        "lineHeight": "28px",
+        "letterSpacing": "var(--ls-comp)",
+        "fontWeight": 600
+      },
+      "$description": "Plan card includes header."
+    },
+    "table-head": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "18px",
+        "lineHeight": "27px",
+        "letterSpacing": "var(--ls-comp)",
+        "fontWeight": 700
+      },
+      "$description": "Comparison header row."
+    },
+    "group-title": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "32px",
+        "lineHeight": "40px",
+        "letterSpacing": "calc(-0.24px + var(--ls-comp))",
+        "fontWeight": 540
+      },
+      "$description": "Comparison accordion trigger."
+    },
+    "section-title": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "16px",
+        "lineHeight": "24px",
+        "letterSpacing": "var(--ls-comp)",
+        "fontWeight": 700
+      },
+      "$description": "Comparison section rows."
+    },
+    "tag": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "12px",
+        "lineHeight": "14.4px",
+        "letterSpacing": "calc(-0.12px + var(--ls-comp))",
+        "fontWeight": 600
+      },
+      "$description": "Beta tag."
+    },
+    "tooltip": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "12px",
+        "lineHeight": "18px",
+        "letterSpacing": "var(--ls-comp)",
+        "fontWeight": 400
+      },
+      "$description": "Tooltip body."
+    },
+    "float-name": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "20px",
+        "lineHeight": "30px",
+        "letterSpacing": "var(--ls-comp)",
+        "fontWeight": 700
+      },
+      "$description": "Floating plan header names."
+    },
+    "button-mid": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "14px",
+        "lineHeight": "16px",
+        "letterSpacing": "var(--ls-comp)",
+        "fontWeight": 600
+      },
+      "$description": "Declared in config; no current usage found in src (see measured-values spotChecks)."
+    },
+    "serif-quote": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "18px",
+        "lineHeight": "27px",
+        "letterSpacing": "-0.135px",
+        "fontWeight": 460
+      },
+      "$description": "Serif testimonial quotes (no Hanken compensation)."
+    },
+    "serif-small": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "16px",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "fontWeight": 460
+      },
+      "$description": "Serif testimonial roles."
+    },
+    "eyebrow": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "16px",
+        "lineHeight": "24px",
+        "letterSpacing": "0",
+        "fontWeight": 540
+      },
+      "$description": "Mono chapter eyebrows (/go)."
+    },
+    "wordmark": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "22px",
+        "lineHeight": "24px",
+        "letterSpacing": "-0.02em",
+        "fontWeight": 700
+      },
+      "$description": "Placeholder text wordmark (original is an SVG; no spec value)."
+    },
+    "lockup": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "18px",
+        "lineHeight": "25px",
+        "letterSpacing": "-0.01em",
+        "fontWeight": 700
+      },
+      "$description": "Product lockup text."
+    }
+  },
+  "$extensions": {
+    "measuredFrom": [
+      {
+        "path": "tailwind.config.js",
+        "lines": "75-77",
+        "expect": "Hanken Grotesk"
+      },
+      {
+        "path": "tailwind.config.js",
+        "lines": "103-152",
+        "expect": "'display-sm'"
+      },
+      {
+        "path": "src/index.css",
+        "lines": "13-13",
+        "expect": "--ls-comp: -0.0035em"
+      }
+    ]
+  }
+}

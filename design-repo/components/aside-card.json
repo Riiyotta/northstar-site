@@ -1,0 +1,32 @@
+{
+  "id": "aside-card",
+  "kind": "component",
+  "purpose": "Rounded aside card: label/title + statement beside a MediaSlot.",
+  "implementedBy": [
+    {
+      "path": "src/components/ui/Aside.jsx",
+      "lines": "9-31",
+      "expect": "export default function Aside"
+    }
+  ],
+  "props": {
+    "tone": [
+      "dark",
+      "light"
+    ],
+    "variant": [
+      "default",
+      "title"
+    ]
+  },
+  "tokens": [
+    "tokens/20-component/card.json#card.aside"
+  ],
+  "accessibility": [
+    "<aside> element."
+  ],
+  "usedBy": [
+    "aside.wide",
+    "aside.pair"
+  ]
+}

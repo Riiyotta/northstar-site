@@ -1,0 +1,160 @@
+{
+  "id": "split.feature",
+  "category": "feature",
+  "purpose": "Two-column feature: h2 (optional brand span), optional subhead, paragraphs, optional bullets and caret link, beside a product illustration.",
+  "implementedBy": [
+    {
+      "path": "src/components/ui/SplitFeature.jsx",
+      "lines": "19-72",
+      "expect": "export default function SplitFeature"
+    },
+    {
+      "path": "src/components/ui/TwoColumn.jsx",
+      "lines": "14-16",
+      "expect": "export default function TwoColumn"
+    }
+  ],
+  "usedOn": [
+    "/mail",
+    "/docs",
+    "/agents",
+    "/enterprise"
+  ],
+  "variants": {},
+  "content": {
+    "title": {
+      "kind": "richText",
+      "required": true,
+      "maxChars": 71,
+      "maxWords": 16,
+      "budgetSource": "specs/enterprise.md §14 report h2 (orig 64); agents.md §14 assist.h2 (52)"
+    },
+    "subtitle": {
+      "kind": "text",
+      "required": false,
+      "maxChars": 41,
+      "maxWords": 10,
+      "budgetSource": "specs/mail.md §14 f*.sub (orig 25-37 ch)"
+    },
+    "body": {
+      "kind": "paragraphs",
+      "required": true,
+      "minItems": 1,
+      "maxItems": 3,
+      "maxChars": 314,
+      "maxWords": 70,
+      "budgetSource": "specs/mail.md §14 f1.p1 (orig 285); docs.md §15 int.p (262)"
+    },
+    "bullets": {
+      "kind": "paragraphs",
+      "required": false,
+      "minItems": 0,
+      "maxItems": 3,
+      "maxChars": 68,
+      "maxWords": 16,
+      "budgetSource": "specs/enterprise.md §4-7 bullets (orig 42-61 ch)"
+    },
+    "link": {
+      "kind": "text",
+      "required": false,
+      "maxChars": 25,
+      "maxWords": 6,
+      "budgetSource": "specs/agents.md §14 tools.link (orig 22); enterprise.md §9 (20)"
+    },
+    "titleSize": {
+      "kind": "enum",
+      "required": true,
+      "values": [
+        "md",
+        "lg"
+      ]
+    },
+    "mediaSide": {
+      "kind": "enum",
+      "required": true,
+      "values": [
+        "left",
+        "right"
+      ]
+    },
+    "gap": {
+      "kind": "enum",
+      "required": true,
+      "values": [
+        "M",
+        "L"
+      ]
+    },
+    "media": {
+      "kind": "media",
+      "required": true,
+      "assetRoles": [
+        "product.ui-illustration",
+        "editorial.illustration"
+      ]
+    }
+  },
+  "allowedBackgrounds": [
+    "neutral-5",
+    "mulberry-100",
+    "purple-100",
+    "white",
+    "purple-10"
+  ],
+  "constraints": {},
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "default": "none"
+  },
+  "responsive": [
+    {
+      "minWidth": "base",
+      "change": "Stacked: text first (mediaLeft rows) or DOM order (mediaFirst rows); gap 24 (M) / 32 (L)."
+    },
+    {
+      "minWidth": "640.02px",
+      "change": "Row of two equal columns; gap 40 (M) / 64 (L).",
+      "measuredFrom": {
+        "path": "src/components/ui/TwoColumn.jsx",
+        "lines": "7-7",
+        "expect": "sm:flex-row"
+      }
+    },
+    {
+      "minWidth": "1280.02px",
+      "change": "Gap 64 (M) / 128 (L).",
+      "measuredFrom": {
+        "path": "src/components/ui/TwoColumn.jsx",
+        "lines": "10-10",
+        "expect": "L: 'gap-8 sm:gap-16 xl:gap-32'"
+      }
+    },
+    {
+      "minWidth": "1440.02px",
+      "change": "Content wrapper max width grows from 1280 to 1440 (--content-max); layout otherwise unchanged. Viewports above 1440 were not measured (CLONE_SPEC.md 14).",
+      "measuredFrom": {
+        "path": "src/index.css",
+        "lines": "44-48",
+        "expect": "--content-max: 1440px;"
+      }
+    }
+  ],
+  "measuredFrom": [
+    {
+      "path": "specs/mail.md",
+      "lines": "187-230",
+      "expect": "## 8. M7 / M9 Split feature rows"
+    },
+    {
+      "path": "specs/enterprise.md",
+      "lines": "93-105",
+      "expect": "## 4–7, 9. Feature rows"
+    }
+  ],
+  "notes": [
+    "/mail group C (f1-f5) alternates media L,R,L,R,L and group D (f6-f10) R,L,R,L,R from 640.02 up (FeatureRows firstLeft); below 640.02 text always stacks first (mediaLeft -> sm:order-first).",
+    "Source-only layout props (`spacer`, `bodyClass`) are pixel-fidelity details owned by the component, not PageSpec content."
+  ]
+}

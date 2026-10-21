@@ -1,0 +1,93 @@
+{
+  "id": "shell.footer",
+  "category": "shell",
+  "purpose": "Global footer: wordmark, brand line, four link columns and the giant watermark wordmark.",
+  "implementedBy": [
+    {
+      "path": "src/components/Footer.jsx",
+      "lines": "38-110",
+      "expect": "export default function Footer"
+    },
+    {
+      "path": "src/components/Footer.jsx",
+      "lines": "22-35",
+      "expect": "const TONES = {"
+    }
+  ],
+  "usedOn": [
+    "/",
+    "/mail",
+    "/docs",
+    "/go",
+    "/agents",
+    "/plans",
+    "/enterprise"
+  ],
+  "variants": {
+    "dark": "Mulberry #421d24 (every route except /go).",
+    "light": "#dedbd5 light tone (/go only, route footer: 'light')."
+  },
+  "content": {},
+  "allowedBackgrounds": [
+    "mulberry-100",
+    "neutral-20"
+  ],
+  "constraints": {
+    "onePerPage": true,
+    "mustBeLast": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "default": "none"
+  },
+  "responsive": [
+    {
+      "minWidth": "base",
+      "change": "Single column, gap 16, padding 36/16/16; brand line 18px."
+    },
+    {
+      "minWidth": "640.02px",
+      "change": "Grid auto/1fr, gap 32, padding 64/48; link nav 2 columns.",
+      "measuredFrom": {
+        "path": "src/components/Footer.jsx",
+        "lines": "43-43",
+        "expect": "sm:grid-cols-[auto_1fr]"
+      }
+    },
+    {
+      "minWidth": "1080.02px",
+      "change": "Link nav 4 columns; brand line 28/32 (footer-brand).",
+      "measuredFrom": {
+        "path": "src/components/Footer.jsx",
+        "lines": "53-53",
+        "expect": "lg:grid-cols-4"
+      }
+    },
+    {
+      "minWidth": "1440.02px",
+      "change": "Content wrapper max width grows from 1280 to 1440 (--content-max); layout otherwise unchanged. Viewports above 1440 were not measured (CLONE_SPEC.md 14).",
+      "measuredFrom": {
+        "path": "src/index.css",
+        "lines": "44-48",
+        "expect": "--content-max: 1440px;"
+      }
+    }
+  ],
+  "measuredFrom": [
+    {
+      "path": "CLONE_SPEC.md",
+      "lines": "347-360",
+      "expect": "## 11. Footer"
+    },
+    {
+      "path": "specs/go.md",
+      "lines": "164-173",
+      "expect": "## 12. Footer"
+    }
+  ],
+  "notes": [
+    "Footer copy is global (src/data/content.js); the PageSpec only chooses the tone."
+  ]
+}

@@ -1,0 +1,1399 @@
+{
+ "source": "https://superhuman.com/mail",
+ "measured": "2026-10-21",
+ "note": "Placeholders only. Do not download or hotlink originals. sizes = rendered CSS px per viewport width; posInSection = x (viewport) , y (offset from section top). dominantColors = 4-bit-quantised top colours of the rendered slot at 1440; cornerColors = sampled corner pixels (tells you if the art is transparent over the section bg).",
+ "slots": [
+  {
+   "id": "lockup-inbox",
+   "section": "M1 hero",
+   "kind": "lockup",
+   "element": "img",
+   "format": "svg",
+   "natural": "208x25",
+   "aspect": 8.32,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "208x25",
+     "posInSection": "91,47"
+    },
+    "768": {
+     "size": "208x25",
+     "posInSection": "280,107"
+    },
+    "1024": {
+     "size": "208x25",
+     "posInSection": "408,114"
+    },
+    "1440": {
+     "size": "208x25",
+     "posInSection": "616,126"
+    }
+   },
+   "dominantColors": null,
+   "cornerColors": null,
+   "description": "Product lockup: small 25px rounded app-icon tile (purple envelope glyph on lilac) + uppercase brand wordmark + product name. Reuse existing Lockup (lockup-inbox, 208 wide). Sits inline as the first line of the h1."
+  },
+  {
+   "id": "mail-hero-video",
+   "section": "M1 hero",
+   "kind": "video",
+   "element": "video",
+   "format": "mp4 (H.264), 1920x1280, 35.93s, no audio",
+   "natural": "1920x1280",
+   "aspect": 1.5,
+   "objectFit": "contain",
+   "radius": "16px",
+   "sizes": {
+    "390": {
+     "size": "358x238.7",
+     "posInSection": "16,434"
+    },
+    "768": {
+     "size": "720x480",
+     "posInSection": "24,439"
+    },
+    "1024": {
+     "size": "960x640",
+     "posInSection": "32,467"
+    },
+    "1440": {
+     "size": "960x640",
+     "posInSection": "240,513"
+    }
+   },
+   "dominantColors": [
+    "#f8f8f8",
+    "#8888f8",
+    "#5898e8",
+    "#e8e8f8"
+   ],
+   "cornerColors": [
+    "#aecef0",
+    "#bea7d6",
+    "#e6f8ff",
+    "#fbf2fd"
+   ],
+   "description": "Product demo animation of an inbox app: left a blue-to-violet gradient panel with dashed guide lines and floating pill labels with check marks; top right a pastel pink/blue cloud-sky backdrop; a white inbox window slides over it with a split-tab header (5 tabs with counts) and rows of sender name, small coloured tag chip, subject and preview. Draw original art: same palette, generic names, Northstar UI. Art and in-art labels should be redrawn to fit the new Northstar copy for this slot. Do not reuse the original UI text.",
+   "video": {
+    "durationSec": 35.933333,
+    "autoplay": true,
+    "muted": true,
+    "playsInline": true,
+    "loopAttr": false,
+    "effectiveLoop": true,
+    "preload": "metadata",
+    "poster": null
+   }
+  },
+  {
+   "id": "mail-logo-2",
+   "section": "M2 logo strip",
+   "kind": "logo",
+   "element": "img",
+   "format": "svg",
+   "natural": "198x72",
+   "aspect": 2.75,
+   "objectFit": "contain",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "118x72",
+     "posInSection": "17,64"
+    },
+    "768": {
+     "size": "198x72",
+     "posInSection": "285,145"
+    },
+    "1024": {
+     "size": "198x72",
+     "posInSection": "413,145"
+    },
+    "1440": {
+     "size": "198x72",
+     "posInSection": "88.1,68"
+    }
+   },
+   "dominantColors": [
+    "#f8f8e8",
+    "#383838",
+    "#e8e8e8",
+    "#585858"
+   ],
+   "cornerColors": [
+    "#f2f0eb",
+    "#f2f0eb",
+    "#f2f0eb",
+    "#f2f0eb"
+   ],
+   "description": "Rotating customer wordmark (pool member 2), dark #292827 on transparent, natural 198x72; object-fit contain inside an 81px-tall cell. Use invented neutral wordmarks (reuse homepage logo-N placeholders)."
+  },
+  {
+   "id": "mail-logo-5",
+   "section": "M2 logo strip",
+   "kind": "logo",
+   "element": "img",
+   "format": "svg",
+   "natural": "214x80",
+   "aspect": 2.675,
+   "objectFit": "contain",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "118x80",
+     "posInSection": "255,145"
+    },
+    "768": {
+     "size": "214x80",
+     "posInSection": "508,64"
+    },
+    "1024": {
+     "size": "214x80",
+     "posInSection": "635,145"
+    },
+    "1440": {
+     "size": "212.2x80",
+     "posInSection": "294.2,68"
+    }
+   },
+   "dominantColors": [
+    "#f8f8e8",
+    "#e8e8e8",
+    "#282828",
+    "#f8e8e8"
+   ],
+   "cornerColors": [
+    "#f2f0eb",
+    "#f2f0eb",
+    "#f2f0eb",
+    "#f2f0eb"
+   ],
+   "description": "Rotating customer wordmark (pool member 5), dark #292827 on transparent, natural 214x80; object-fit contain inside an 81px-tall cell. Use invented neutral wordmarks (reuse homepage logo-N placeholders)."
+  },
+  {
+   "id": "mail-logo-1",
+   "section": "M2 logo strip",
+   "kind": "logo",
+   "element": "img",
+   "format": "svg",
+   "natural": "229x80",
+   "aspect": 2.8625,
+   "objectFit": "contain",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "118x80",
+     "posInSection": "136,64"
+    },
+    "768": {
+     "size": "229x80",
+     "posInSection": "500.5,145"
+    },
+    "1024": {
+     "size": "229x80",
+     "posInSection": "167.5,145"
+    },
+    "1440": {
+     "size": "212.2x80",
+     "posInSection": "507.3,68"
+    }
+   },
+   "dominantColors": [
+    "#f8f8e8",
+    "#d8d8d8",
+    "#e8e8e8",
+    "#585858"
+   ],
+   "cornerColors": [
+    "#f2f0eb",
+    "#f2f0eb",
+    "#f2f0eb",
+    "#f2f0eb"
+   ],
+   "description": "Rotating customer wordmark (pool member 1), dark #292827 on transparent, natural 229x80; object-fit contain inside an 81px-tall cell. Use invented neutral wordmarks (reuse homepage logo-N placeholders)."
+  },
+  {
+   "id": "mail-logo-4",
+   "section": "M2 logo strip",
+   "kind": "logo",
+   "element": "img",
+   "format": "svg",
+   "natural": "230x80",
+   "aspect": 2.875,
+   "objectFit": "contain",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "118x80",
+     "posInSection": "255,64"
+    },
+    "768": {
+     "size": "230x80",
+     "posInSection": "38,145"
+    },
+    "1440": {
+     "size": "212.2x80",
+     "posInSection": "720.5,68"
+    }
+   },
+   "dominantColors": null,
+   "cornerColors": null,
+   "description": "Rotating customer wordmark (pool member 4), dark #292827 on transparent, natural 230x80; object-fit contain inside an 81px-tall cell. Use invented neutral wordmarks (reuse homepage logo-N placeholders)."
+  },
+  {
+   "id": "mail-logo-6",
+   "section": "M2 logo strip",
+   "kind": "logo",
+   "element": "img",
+   "format": "svg",
+   "natural": "198x72",
+   "aspect": 2.75,
+   "objectFit": "contain",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "118x72",
+     "posInSection": "136,145"
+    },
+    "1024": {
+     "size": "198x72",
+     "posInSection": "643,64"
+    },
+    "1440": {
+     "size": "198x72",
+     "posInSection": "940.7,68"
+    }
+   },
+   "dominantColors": null,
+   "cornerColors": null,
+   "description": "Rotating customer wordmark (pool member 6), dark #292827 on transparent, natural 198x72; object-fit contain inside an 81px-tall cell. Use invented neutral wordmarks (reuse homepage logo-N placeholders)."
+  },
+  {
+   "id": "mail-logo-3",
+   "section": "M2 logo strip",
+   "kind": "logo",
+   "element": "img",
+   "format": "svg",
+   "natural": "229x80",
+   "aspect": 2.8625,
+   "objectFit": "contain",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "118x80",
+     "posInSection": "17,145"
+    },
+    "768": {
+     "size": "229x80",
+     "posInSection": "269.5,64"
+    },
+    "1024": {
+     "size": "229x80",
+     "posInSection": "397.5,64"
+    },
+    "1440": {
+     "size": "212.2x80",
+     "posInSection": "1146.8,68"
+    }
+   },
+   "dominantColors": [
+    "#f8f8e8",
+    "#e8e8e8",
+    "#787878",
+    "#b8b8b8"
+   ],
+   "cornerColors": [
+    "#f2f0eb",
+    "#f2f0eb",
+    "#f2f0eb",
+    "#f2f0eb"
+   ],
+   "description": "Rotating customer wordmark (pool member 3), dark #292827 on transparent, natural 229x80; object-fit contain inside an 81px-tall cell. Use invented neutral wordmarks (reuse homepage logo-N placeholders)."
+  },
+  {
+   "id": "mail-stat-bg",
+   "section": "M3 stat band",
+   "kind": "background",
+   "element": "img",
+   "format": "avif (from png), natural 1440x464",
+   "natural": "1440x464",
+   "aspect": 3.1034,
+   "objectFit": "contain",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "390x308.7",
+     "posInSection": "0,0"
+    },
+    "768": {
+     "size": "768x304.3",
+     "posInSection": "0,0"
+    },
+    "1024": {
+     "size": "1024x336.9",
+     "posInSection": "0,0"
+    },
+    "1440": {
+     "size": "1440x390",
+     "posInSection": "0,0"
+    }
+   },
+   "dominantColors": [
+    "#281848",
+    "#382858",
+    "#685878",
+    "#483868"
+   ],
+   "cornerColors": [
+    "#281647",
+    "#281647",
+    "#281647",
+    "#281647"
+   ],
+   "description": "Huge low-contrast numerals (about 20% lighter than the bg) centred behind the heading, a watermark of the statistic. Original: draw a short label in the display font at ~5-8% white over #281647. Art and in-art labels should be redrawn to fit the new Northstar copy for this slot. Do not reuse the original UI text."
+  },
+  {
+   "id": "mail-pillar-icon-1",
+   "section": "M5 pillars",
+   "kind": "icon",
+   "element": "img",
+   "format": "svg",
+   "natural": "78x81",
+   "aspect": 0.963,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "78x81",
+     "posInSection": "156,0"
+    },
+    "768": {
+     "size": "78x81",
+     "posInSection": "97,0"
+    },
+    "1024": {
+     "size": "78x81",
+     "posInSection": "139.7,0"
+    },
+    "1440": {
+     "size": "78x81",
+     "posInSection": "243.7,0"
+    }
+   },
+   "dominantColors": [
+    "#f8f8f8",
+    "#a8a8f8",
+    "#78a8f8",
+    "#98a8f8"
+   ],
+   "cornerColors": [
+    "#ffffff",
+    "#ffffff",
+    "#ffffff",
+    "#ffffff"
+   ],
+   "description": "Rounded-square gradient tile (lilac #a8a8f8 to sky #78a8f8) with a white outline lightning-bolt glyph, soft drop shadow."
+  },
+  {
+   "id": "mail-pillar-icon-2",
+   "section": "M5 pillars",
+   "kind": "icon",
+   "element": "img",
+   "format": "svg",
+   "natural": "78x81",
+   "aspect": 0.963,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "78x81",
+     "posInSection": "156,169"
+    },
+    "768": {
+     "size": "78x81",
+     "posInSection": "345,0"
+    },
+    "1024": {
+     "size": "78x81",
+     "posInSection": "473,0"
+    },
+    "1440": {
+     "size": "78x81",
+     "posInSection": "681,0"
+    }
+   },
+   "dominantColors": [
+    "#f8f8f8",
+    "#98a8f8",
+    "#a8a8f8",
+    "#88a8f8"
+   ],
+   "cornerColors": [
+    "#ffffff",
+    "#ffffff",
+    "#ffffff",
+    "#ffffff"
+   ],
+   "description": "Same tile style, white outline glyph of a chat bubble with a reply arrow."
+  },
+  {
+   "id": "mail-pillar-icon-3",
+   "section": "M5 pillars",
+   "kind": "icon",
+   "element": "img",
+   "format": "svg",
+   "natural": "77x79",
+   "aspect": 0.9747,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "77x79",
+     "posInSection": "156.5,338"
+    },
+    "768": {
+     "size": "77x79",
+     "posInSection": "593.5,0"
+    },
+    "1024": {
+     "size": "77x79",
+     "posInSection": "806.8,0"
+    },
+    "1440": {
+     "size": "77x79",
+     "posInSection": "1118.8,0"
+    }
+   },
+   "dominantColors": [
+    "#f8f8f8",
+    "#a8a8f8",
+    "#78a8f8",
+    "#88a8f8"
+   ],
+   "cornerColors": [
+    "#ffffff",
+    "#ffffff",
+    "#ffffff",
+    "#ffffff"
+   ],
+   "description": "Same tile style, white outline glyph of two people (team)."
+  },
+  {
+   "id": "mail-compat-icons",
+   "section": "M6 compatibility",
+   "kind": "illustration",
+   "element": "img",
+   "format": "svg, 922x168",
+   "natural": "922x168",
+   "aspect": 5.4881,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "358x168",
+     "posInSection": "16,40"
+    },
+    "768": {
+     "size": "720x168",
+     "posInSection": "24,96"
+    },
+    "1024": {
+     "size": "922x168",
+     "posInSection": "51,96"
+    },
+    "1440": {
+     "size": "922x168",
+     "posInSection": "259,96"
+    }
+   },
+   "dominantColors": [
+    "#f8f8f8",
+    "#f8f8e8",
+    "#e8e8e8",
+    "#f8e8e8"
+   ],
+   "cornerColors": [
+    "#f7f5f2",
+    "#f7f5f2",
+    "#f7f5f2",
+    "#f7f5f2"
+   ],
+   "description": "Two app-icon tiles side by side, centred: white rounded squares (~64px at 1x, radius ~14) with soft shadow, each holding a colourful generic mail-provider glyph (draw two original generic envelope marks: one multicolour M-style, one blue box-style). Do not reproduce third-party logos."
+  },
+  {
+   "id": "mail-feature-ai",
+   "section": "M7 feature 1",
+   "kind": "feature-image",
+   "element": "img",
+   "format": "avif, 720x627",
+   "natural": "720x627",
+   "aspect": 1.1483,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "358x311.6",
+     "posInSection": "16,505"
+    },
+    "768": {
+     "size": "328x285.3",
+     "posInSection": "24,200"
+    },
+    "1024": {
+     "size": "456x396.9",
+     "posInSection": "24,106"
+    },
+    "1440": {
+     "size": "576x501.6",
+     "posInSection": "80,96"
+    }
+   },
+   "dominantColors": [
+    "#f8f8f8",
+    "#e8e8e8",
+    "#a858b8",
+    "#8848a8"
+   ],
+   "cornerColors": [
+    "#f4f1f0",
+    "#f7f5f2",
+    "#f7f5f2",
+    "#f7f5f2"
+   ],
+   "description": "Stacked composition: a violet gradient rounded panel behind, a teal gradient panel offset bottom-right, and a white chat/email card in front showing two short message rows and an outlined a short label reply box plus a small reminder footer. Art and in-art labels should be redrawn to fit the new Northstar copy for this slot. Do not reuse the original UI text."
+  },
+  {
+   "id": "mail-feature-split",
+   "section": "M7 feature 2",
+   "kind": "feature-image",
+   "element": "img",
+   "format": "avif, 720x627",
+   "natural": "720x627",
+   "aspect": 1.1483,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "358x311.6",
+     "posInSection": "16,580"
+    },
+    "768": {
+     "size": "328x285.3",
+     "posInSection": "416,135"
+    },
+    "1024": {
+     "size": "456x396.9",
+     "posInSection": "544,29"
+    },
+    "1440": {
+     "size": "576x501.6",
+     "posInSection": "784,0"
+    }
+   },
+   "dominantColors": [
+    "#f8f8f8",
+    "#b8b8b8",
+    "#e8e8e8",
+    "#c8c8c8"
+   ],
+   "cornerColors": [
+    "#f7f5f2",
+    "#f7f5f2",
+    "#f7f5f2",
+    "#f7f5f2"
+   ],
+   "description": "White inbox list card with tab header (Important / Calendar / Docs / Other with counts) and 6 rows (name, coloured tag chip, subject), over a lilac/violet gradient panel top-right and a blue panel bottom-left. Art and in-art labels should be redrawn to fit the new Northstar copy for this slot. Do not reuse the original UI text."
+  },
+  {
+   "id": "mail-feature-reminder",
+   "section": "M7 feature 3",
+   "kind": "feature-image",
+   "element": "img",
+   "format": "avif, 720x626",
+   "natural": "720x626",
+   "aspect": 1.1502,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "358x311.6",
+     "posInSection": "16,463"
+    },
+    "768": {
+     "size": "328x285.3",
+     "posInSection": "24,120"
+    },
+    "1024": {
+     "size": "456x396.5",
+     "posInSection": "24,0"
+    },
+    "1440": {
+     "size": "576x500.8",
+     "posInSection": "80,0"
+    }
+   },
+   "dominantColors": [
+    "#f8f8f8",
+    "#b8c8f8",
+    "#58a8e8",
+    "#48a8e8"
+   ],
+   "cornerColors": [
+    "#79b4ef",
+    "#f7f5f2",
+    "#f7f5f2",
+    "#f7f5f2"
+   ],
+   "description": "Email compose card with a short message, a blue-violet gradient a short label pill bar with an UNDO chip, and a footer of three text actions; blue gradient panel behind top-left, pink-violet panel bottom. Art and in-art labels should be redrawn to fit the new Northstar copy for this slot. Do not reuse the original UI text."
+  },
+  {
+   "id": "mail-feature-comments",
+   "section": "M7 feature 4",
+   "kind": "feature-image",
+   "element": "img",
+   "format": "avif, 720x626",
+   "natural": "720x626",
+   "aspect": 1.1502,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "358x311.6",
+     "posInSection": "16,575"
+    },
+    "768": {
+     "size": "328x285.3",
+     "posInSection": "416,160"
+    },
+    "1024": {
+     "size": "456x396.5",
+     "posInSection": "544,41"
+    },
+    "1440": {
+     "size": "576x500.8",
+     "posInSection": "784,0"
+    }
+   },
+   "dominantColors": [
+    "#f8f8f8",
+    "#e8e8e8",
+    "#68c8d8",
+    "#68b8d8"
+   ],
+   "cornerColors": [
+    "#c7e0e7",
+    "#f7f5f2",
+    "#f7f5f2",
+    "#91c8e3"
+   ],
+   "description": "Comment-thread card: quoted message box, then two avatar + name + time rows each with an outlined comment bubble containing an @mention; teal diagonal-stripe panel top-left and sky/cloud panel bottom-right. Art and in-art labels should be redrawn to fit the new Northstar copy for this slot. Do not reuse the original UI text."
+  },
+  {
+   "id": "mail-feature-snippets",
+   "section": "M7 feature 5",
+   "kind": "feature-image",
+   "element": "img",
+   "format": "avif, 720x627",
+   "natural": "720x627",
+   "aspect": 1.1483,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "358x311.6",
+     "posInSection": "16,577"
+    },
+    "768": {
+     "size": "328x285.7",
+     "posInSection": "24,147"
+    },
+    "1024": {
+     "size": "456x396.9",
+     "posInSection": "24,41"
+    },
+    "1440": {
+     "size": "576x501.6",
+     "posInSection": "80,0"
+    }
+   },
+   "dominantColors": [
+    "#f8f8f8",
+    "#e8d8f8",
+    "#e8e8e8",
+    "#f8c8f8"
+   ],
+   "cornerColors": [
+    "#e6dffe",
+    "#f7f5f2",
+    "#f7f5f2",
+    "#afcff4"
+   ],
+   "description": "Snippet picker card: overlapping avatar trio + count, title a short label, 3 rows of label + template preview; small email card behind; pink sparkle panel top-left and blue gradient panel bottom-right. Art and in-art labels should be redrawn to fit the new Northstar copy for this slot. Do not reuse the original UI text."
+  },
+  {
+   "id": "mail-grid-send-later",
+   "section": "M8 grid 1",
+   "kind": "grid-image",
+   "element": "img",
+   "format": "avif, 480x308",
+   "natural": "480x308",
+   "aspect": 1.5584,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "358x229.7",
+     "posInSection": "16,40"
+    },
+    "768": {
+     "size": "224x143.8",
+     "posInSection": "24,96"
+    },
+    "1024": {
+     "size": "309.3x198.6",
+     "posInSection": "24,96"
+    },
+    "1440": {
+     "size": "405.3x260.1",
+     "posInSection": "80,96"
+    }
+   },
+   "dominantColors": [
+    "#f8f8f8",
+    "#a8c8f8",
+    "#d8d8d8",
+    "#f8f8e8"
+   ],
+   "cornerColors": [
+    "#5599ea",
+    "#f4f2ee",
+    "#a7cbf3",
+    "#aacbf4"
+   ],
+   "description": "Close-up crop of a message card with body text and a footer a short label chip with clock icon, over a blue gradient. Art and in-art labels should be redrawn to fit the new Northstar copy for this slot. Do not reuse the original UI text."
+  },
+  {
+   "id": "mail-grid-quick-reply",
+   "section": "M8 grid 2",
+   "kind": "grid-image",
+   "element": "img",
+   "format": "avif, 480x308",
+   "natural": "480x308",
+   "aspect": 1.5584,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "358x229.7",
+     "posInSection": "16,334"
+    },
+    "768": {
+     "size": "224x143.8",
+     "posInSection": "272,96"
+    },
+    "1024": {
+     "size": "309.3x198.5",
+     "posInSection": "357.3,96"
+    },
+    "1440": {
+     "size": "405.3x260.1",
+     "posInSection": "517.3,96"
+    }
+   },
+   "dominantColors": [
+    "#f8f8f8",
+    "#e8e8f8",
+    "#78b8e8",
+    "#d8c8f8"
+   ],
+   "cornerColors": [
+    "#86b5ee",
+    "#d5cefa",
+    "#54aae8",
+    "#fcfaf6"
+   ],
+   "description": "Row of three glassy suggestion chips (first selected) over a short reply draft card, blue/violet gradient bg. Art and in-art labels should be redrawn to fit the new Northstar copy for this slot. Do not reuse the original UI text."
+  },
+  {
+   "id": "mail-grid-snooze",
+   "section": "M8 grid 3",
+   "kind": "grid-image",
+   "element": "img",
+   "format": "avif, 480x308",
+   "natural": "480x308",
+   "aspect": 1.5584,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "358x229.7",
+     "posInSection": "16,627"
+    },
+    "768": {
+     "size": "224x143.8",
+     "posInSection": "520,96"
+    },
+    "1024": {
+     "size": "309.3x198.5",
+     "posInSection": "690.7,96"
+    },
+    "1440": {
+     "size": "405.3x260.1",
+     "posInSection": "954.7,96"
+    }
+   },
+   "dominantColors": [
+    "#6878e8",
+    "#f8f8f8",
+    "#5878d8",
+    "#6878d8"
+   ],
+   "cornerColors": [
+    "#6272dd",
+    "#5471d0",
+    "#6a74e9",
+    "#116a9a"
+   ],
+   "description": "Indigo gradient bg with a calendar icon button and a white a short label pill, faded alternative time labels above/below (picker wheel feel). Art and in-art labels should be redrawn to fit the new Northstar copy for this slot. Do not reuse the original UI text."
+  },
+  {
+   "id": "mail-grid-shortcuts",
+   "section": "M8 grid 4",
+   "kind": "grid-image",
+   "element": "img",
+   "format": "avif, 480x308",
+   "natural": "480x308",
+   "aspect": 1.5584,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "358x229.7",
+     "posInSection": "16,921"
+    },
+    "768": {
+     "size": "224x143.8",
+     "posInSection": "24,338"
+    },
+    "1024": {
+     "size": "309.3x198.5",
+     "posInSection": "24,370"
+    },
+    "1440": {
+     "size": "405.3x260.1",
+     "posInSection": "80,442"
+    }
+   },
+   "dominantColors": [
+    "#6878e8",
+    "#5878d8",
+    "#7878e8",
+    "#6878d8"
+   ],
+   "cornerColors": [
+    "#6e73e9",
+    "#5b72d4",
+    "#126ca5",
+    "#6b74e9"
+   ],
+   "description": "Grid of glassy keyboard-key chips (key letter tile + monospace action label) on an indigo gradient. Art and in-art labels should be redrawn to fit the new Northstar copy for this slot. Do not reuse the original UI text."
+  },
+  {
+   "id": "mail-grid-profile",
+   "section": "M8 grid 5",
+   "kind": "grid-image",
+   "element": "img",
+   "format": "avif, 480x308",
+   "natural": "480x308",
+   "aspect": 1.5584,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "358x229.7",
+     "posInSection": "16,1215"
+    },
+    "768": {
+     "size": "224x143.8",
+     "posInSection": "272,338"
+    },
+    "1024": {
+     "size": "309.3x198.6",
+     "posInSection": "357.3,370"
+    },
+    "1440": {
+     "size": "405.3x260.1",
+     "posInSection": "517.3,442"
+    }
+   },
+   "dominantColors": [
+    "#f8f8f8",
+    "#6878e8",
+    "#5878d8",
+    "#4878c8"
+   ],
+   "cornerColors": [
+    "#4270c5",
+    "#5772cf",
+    "#335e6b",
+    "#6a75e8"
+   ],
+   "description": "Contact profile card: round avatar, name + title, then three rows (social icon, website, email) on blue gradient. Art and in-art labels should be redrawn to fit the new Northstar copy for this slot. Do not reuse the original UI text."
+  },
+  {
+   "id": "mail-grid-unsubscribe",
+   "section": "M8 grid 6",
+   "kind": "grid-image",
+   "element": "img",
+   "format": "avif, 480x308",
+   "natural": "480x308",
+   "aspect": 1.5584,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "358x229.7",
+     "posInSection": "16,1509"
+    },
+    "768": {
+     "size": "224x143.8",
+     "posInSection": "520,338"
+    },
+    "1024": {
+     "size": "309.3x198.5",
+     "posInSection": "690.7,370"
+    },
+    "1440": {
+     "size": "405.3x260.1",
+     "posInSection": "954.7,442"
+    }
+   },
+   "dominantColors": [
+    "#f8f8f8",
+    "#e8e8e8",
+    "#a8c8f8",
+    "#b8d8f8"
+   ],
+   "cornerColors": [
+    "#d4dcfa",
+    "#569be8",
+    "#4e9de5",
+    "#bad2f7"
+   ],
+   "description": "Menu card with three icon + label options (middle one highlighted grey) on a light blue gradient. Art and in-art labels should be redrawn to fit the new Northstar copy for this slot. Do not reuse the original UI text."
+  },
+  {
+   "id": "mail-feature-opens",
+   "section": "M9 feature 6",
+   "kind": "feature-image",
+   "element": "img",
+   "format": "avif, 720x627",
+   "natural": "720x627",
+   "aspect": 1.1483,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "358x311.6",
+     "posInSection": "16,534"
+    },
+    "768": {
+     "size": "328x285.3",
+     "posInSection": "416,201"
+    },
+    "1024": {
+     "size": "456x396.9",
+     "posInSection": "544,110"
+    },
+    "1440": {
+     "size": "576x501.6",
+     "posInSection": "784,96"
+    }
+   },
+   "dominantColors": [
+    "#f8f8f8",
+    "#e8e8e8",
+    "#e8d8f8",
+    "#d8d8d8"
+   ],
+   "cornerColors": [
+    "#f7f5f2",
+    "#f7f5f2",
+    "#f7f5f2",
+    "#f7f5f2"
+   ],
+   "description": "Email card partly covered by a white a short label list card: rows of device icon, name, timestamp; blue gradient panel top-right, pink panel bottom-left. Art and in-art labels should be redrawn to fit the new Northstar copy for this slot. Do not reuse the original UI text."
+  },
+  {
+   "id": "mail-feature-autocorrect",
+   "section": "M9 feature 7",
+   "kind": "feature-image",
+   "element": "img",
+   "format": "avif, 720x627",
+   "natural": "720x627",
+   "aspect": 1.1483,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "358x311.6",
+     "posInSection": "16,409"
+    },
+    "768": {
+     "size": "328x285.3",
+     "posInSection": "24,90"
+    },
+    "1024": {
+     "size": "456x396.9",
+     "posInSection": "24,0"
+    },
+    "1440": {
+     "size": "576x501.6",
+     "posInSection": "80,0"
+    }
+   },
+   "dominantColors": [
+    "#f8f8f8",
+    "#68c8d8",
+    "#78c8e8",
+    "#e8e8e8"
+   ],
+   "cornerColors": [
+    "#f7f5f1",
+    "#f7f5f1",
+    "#f7f5f1",
+    "#f7f5f1"
+   ],
+   "description": "Compose card with a paragraph and an inline correction chip, plus a blue-violet gradient pill a short label; teal stripe panel top-left, sky/cloud panel bottom-right. Art and in-art labels should be redrawn to fit the new Northstar copy for this slot. Do not reuse the original UI text."
+  },
+  {
+   "id": "mail-feature-presence",
+   "section": "M9 feature 8",
+   "kind": "feature-image",
+   "element": "img",
+   "format": "avif, 720x627",
+   "natural": "720x627",
+   "aspect": 1.1483,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "358x311.6",
+     "posInSection": "16,443"
+    },
+    "768": {
+     "size": "328x285.3",
+     "posInSection": "416,79"
+    },
+    "1024": {
+     "size": "456x396.9",
+     "posInSection": "544,0"
+    },
+    "1440": {
+     "size": "576x501.6",
+     "posInSection": "784,0"
+    }
+   },
+   "dominantColors": [
+    "#f8f8f8",
+    "#e8e8e8",
+    "#b8b8f8",
+    "#b8c8f8"
+   ],
+   "cornerColors": [
+    "#f5f5f3",
+    "#f7f5f1",
+    "#f7f5f1",
+    "#f7f4f1"
+   ],
+   "description": "Thread card: two collapsed message rows, an outlined expanded message, and a a short label avatar row; lilac stripe panel top, indigo panel bottom-right. Art and in-art labels should be redrawn to fit the new Northstar copy for this slot. Do not reuse the original UI text."
+  },
+  {
+   "id": "mail-feature-calendar",
+   "section": "M9 feature 9",
+   "kind": "feature-image",
+   "element": "img",
+   "format": "avif, 720x627",
+   "natural": "720x627",
+   "aspect": 1.1483,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "358x311.6",
+     "posInSection": "16,474"
+    },
+    "768": {
+     "size": "328x285.3",
+     "posInSection": "24,82"
+    },
+    "1024": {
+     "size": "456x396.9",
+     "posInSection": "24,3"
+    },
+    "1440": {
+     "size": "576x501.6",
+     "posInSection": "80,0"
+    }
+   },
+   "dominantColors": [
+    "#f8f8f8",
+    "#88c8f8",
+    "#b8a8f8",
+    "#f8e8e8"
+   ],
+   "cornerColors": [
+    "#f7f5f2",
+    "#f7f5f2",
+    "#f7f5f2",
+    "#f7f5f2"
+   ],
+   "description": "Day-view calendar card (hour rail, purple and sky-blue event blocks) beside a small email card with a shortcut hint chip (blue gradient with key caps); pastel cloud and violet wave panels behind. Art and in-art labels should be redrawn to fit the new Northstar copy for this slot. Do not reuse the original UI text."
+  },
+  {
+   "id": "mail-feature-event",
+   "section": "M9 feature 10",
+   "kind": "feature-image",
+   "element": "img",
+   "format": "avif, 720x627",
+   "natural": "720x627",
+   "aspect": 1.1483,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "358x311.6",
+     "posInSection": "16,445"
+    },
+    "768": {
+     "size": "328x285.3",
+     "posInSection": "416,94"
+    },
+    "1024": {
+     "size": "456x396.9",
+     "posInSection": "544,0"
+    },
+    "1440": {
+     "size": "576x501.6",
+     "posInSection": "784,0"
+    }
+   },
+   "dominantColors": [
+    "#f8f8f8",
+    "#e8e8e8",
+    "#7848a8",
+    "#8848a8"
+   ],
+   "cornerColors": [
+    "#f7f5f2",
+    "#f7f5f2",
+    "#f7f5f2",
+    "#f7f5f2"
+   ],
+   "description": "Email card with a a short label link and pointer cursor, overlapped by an event details card (when / who / about rows + mini day view with a gradient event block); violet panel top, sky panel bottom. Art and in-art labels should be redrawn to fit the new Northstar copy for this slot. Do not reuse the original UI text."
+  },
+  {
+   "id": "mail-quote-logo-1",
+   "section": "M10 testimonials",
+   "kind": "logo",
+   "element": "img",
+   "format": "svg",
+   "natural": "237x53",
+   "aspect": 4.4717,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "237x53",
+     "posInSection": "16,197"
+    },
+    "768": {
+     "size": "237x53",
+     "posInSection": "24,218"
+    },
+    "1024": {
+     "size": "237x53",
+     "posInSection": "24,224"
+    },
+    "1440": {
+     "size": "237x53",
+     "posInSection": "80,235"
+    }
+   },
+   "dominantColors": [
+    "#281848",
+    "#f8f8f8",
+    "#c8c8d8",
+    "#786888"
+   ],
+   "cornerColors": [
+    "#281647",
+    "#281647",
+    "#281647",
+    "#281647"
+   ],
+   "description": "Customer wordmark slot, white on dark, 237x53 box (artwork is a small icon + uppercase wordmark ~24px tall, left aligned). Use a neutral invented wordmark."
+  },
+  {
+   "id": "mail-quote-avatar-1",
+   "section": "M10 testimonials",
+   "kind": "avatar",
+   "element": "img",
+   "format": "svg (embedded raster)",
+   "natural": "60x60",
+   "aspect": 1,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "60x60",
+     "posInSection": "16,554"
+    },
+    "768": {
+     "size": "60x60",
+     "posInSection": "24,583"
+    },
+    "1024": {
+     "size": "60x60",
+     "posInSection": "24,535"
+    },
+    "1440": {
+     "size": "60x60",
+     "posInSection": "80,527"
+    }
+   },
+   "dominantColors": [
+    "#588898",
+    "#281848",
+    "#587898",
+    "#a87868"
+   ],
+   "cornerColors": [
+    "#281647",
+    "#281647",
+    "#281647",
+    "#281647"
+   ],
+   "description": "Round 60px portrait photo (person, teal/grey tones). Use a generic illustrated avatar circle."
+  },
+  {
+   "id": "mail-quote-logo-2",
+   "section": "M10 testimonials",
+   "kind": "logo",
+   "element": "img",
+   "format": "svg",
+   "natural": "237x53",
+   "aspect": 4.4717,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "237x53",
+     "posInSection": "16,630"
+    },
+    "768": {
+     "size": "237x53",
+     "posInSection": "396,218"
+    },
+    "1024": {
+     "size": "237x53",
+     "posInSection": "524,224"
+    },
+    "1440": {
+     "size": "237x53",
+     "posInSection": "736,235"
+    }
+   },
+   "dominantColors": [
+    "#281848",
+    "#f8f8f8",
+    "#382858",
+    "#9898a8"
+   ],
+   "cornerColors": [
+    "#281647",
+    "#281647",
+    "#281647",
+    "#281647"
+   ],
+   "description": "Customer wordmark slot, white on dark, 237x53 box (square icon + short wordmark). Use an invented wordmark."
+  },
+  {
+   "id": "mail-quote-avatar-2",
+   "section": "M10 testimonials",
+   "kind": "avatar",
+   "element": "img",
+   "format": "svg (embedded raster)",
+   "natural": "60x60",
+   "aspect": 1,
+   "objectFit": "cover",
+   "radius": "0px",
+   "sizes": {
+    "390": {
+     "size": "60x60",
+     "posInSection": "16,960"
+    },
+    "768": {
+     "size": "60x60",
+     "posInSection": "396,583"
+    },
+    "1024": {
+     "size": "60x60",
+     "posInSection": "524,535"
+    },
+    "1440": {
+     "size": "60x60",
+     "posInSection": "736,527"
+    }
+   },
+   "dominantColors": [
+    "#281848",
+    "#887868",
+    "#786858",
+    "#987858"
+   ],
+   "cornerColors": [
+    "#281647",
+    "#281647",
+    "#281647",
+    "#281647"
+   ],
+   "description": "Round 60px portrait photo (warm brown tones). Use a generic illustrated avatar circle."
+  },
+  {
+   "id": "mail-logo-7",
+   "section": "M2 logo strip",
+   "kind": "logo",
+   "element": "img",
+   "format": "svg",
+   "natural": "198x72",
+   "aspect": 2.75,
+   "objectFit": "contain",
+   "radius": "0px",
+   "sizes": {
+    "768": {
+     "size": "198x72",
+     "posInSection": "54,64"
+    },
+    "1024": {
+     "size": "198x72",
+     "posInSection": "183,64"
+    }
+   },
+   "dominantColors": [
+    "#f8f8e8",
+    "#080808",
+    "#181818",
+    "#282828"
+   ],
+   "cornerColors": [
+    "#f2f0eb",
+    "#f2f0eb",
+    "#f2f0eb",
+    "#f2f0eb"
+   ],
+   "description": "Rotating customer wordmark (pool member 7), dark #292827 on transparent, natural 198x72; object-fit contain inside an 81px-tall cell. Use invented neutral wordmarks (reuse homepage logo-N placeholders)."
+  }
+ ]
+}

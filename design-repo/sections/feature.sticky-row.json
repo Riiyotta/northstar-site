@@ -1,0 +1,89 @@
+{
+  "id": "feature.sticky-row",
+  "category": "feature",
+  "purpose": "Feature row: short h2 + body pinned beside a looping 3:2 product demo; consecutive rows read as a scroll-linked caption crossfade.",
+  "implementedBy": [
+    {
+      "path": "src/components/go/StickyFeatureRow.jsx",
+      "lines": "70-94",
+      "expect": "export default function StickyFeatureRow"
+    },
+    {
+      "path": "src/components/go/StickyFeatureRow.jsx",
+      "lines": "17-29",
+      "expect": "function usePinnedText"
+    }
+  ],
+  "usedOn": [
+    "/go"
+  ],
+  "variants": {},
+  "content": {
+    "title": {
+      "kind": "text",
+      "required": true,
+      "maxChars": 50,
+      "maxWords": 12,
+      "budgetSource": "specs/go.md §15 f*.h2 (orig 5-45 ch)"
+    },
+    "body": {
+      "kind": "text",
+      "required": true,
+      "maxChars": 159,
+      "maxWords": 36,
+      "budgetSource": "specs/go.md §15 f*.p (orig 74-144 ch)"
+    },
+    "video": {
+      "kind": "media",
+      "required": true,
+      "assetRoles": [
+        "product.demo-animation"
+      ]
+    },
+    "controlTone": {
+      "kind": "enum",
+      "required": true,
+      "values": [
+        "light",
+        "dark"
+      ]
+    }
+  },
+  "allowedBackgrounds": [
+    "neutral-5"
+  ],
+  "constraints": {
+    "mustFollowWithinRun": "chapter.intro"
+  },
+  "motion": {
+    "allowedPatterns": [
+      "sticky-pinned-text"
+    ],
+    "default": "sticky-pinned-text",
+    "additional": [
+      "video-viewport-gated"
+    ]
+  },
+  "responsive": [
+    {
+      "minWidth": "base",
+      "change": "Video first, text below, static."
+    },
+    {
+      "minWidth": "640.02px",
+      "change": "Two columns 6/6; pinned-text effect active under no-preference.",
+      "measuredFrom": {
+        "path": "src/components/go/StickyFeatureRow.jsx",
+        "lines": "6-6",
+        "expect": "640.02px"
+      }
+    }
+  ],
+  "measuredFrom": [
+    {
+      "path": "specs/go.md",
+      "lines": "179-209",
+      "expect": "### 13.1 Pinned text in feature rows"
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "id": "grid.cards",
+  "category": "feature",
+  "purpose": "Grid of media cards: illustration + caption, or title/body/link cards.",
+  "implementedBy": [
+    {
+      "path": "src/components/ui/CardGrid.jsx",
+      "lines": "15-65",
+      "expect": "export default function CardGrid"
+    }
+  ],
+  "usedOn": [
+    "/mail",
+    "/docs",
+    "/enterprise"
+  ],
+  "variants": {
+    "caption": "media + heading-xs caption (mail M8, no heading).",
+    "detail": "media, heading-sm title, body, caret link (docs D6).",
+    "media": "3:2 image max 296 wide, heading-sm title, caret link (enterprise 15)."
+  },
+  "content": {
+    "intro": {
+      "kind": "items",
+      "required": false,
+      "minItems": 1,
+      "maxItems": 1,
+      "fields": {
+        "title": {
+          "kind": "text",
+          "required": true,
+          "maxChars": 38,
+          "maxWords": 9,
+          "budgetSource": "specs/docs.md §15 surface.h2 (orig 34 ch)"
+        },
+        "body": {
+          "kind": "text",
+          "required": false,
+          "maxChars": 104,
+          "maxWords": 24,
+          "budgetSource": "specs/docs.md §15 surface.p (orig 94 ch)"
+        }
+      }
+    },
+    "columns": {
+      "kind": "enum",
+      "required": true,
+      "values": [
+        2,
+        3,
+        4
+      ]
+    },
+    "items": {
+      "kind": "items",
+      "required": true,
+      "minItems": 3,
+      "maxItems": 6,
+      "fields": {
+        "title": {
+          "kind": "text",
+          "required": true,
+          "maxChars": 47,
+          "maxWords": 11,
+          "budgetSource": "specs/enterprise.md §15 titles (orig 23-42); mail.md §14 grid.c* (28-34)"
+        },
+        "body": {
+          "kind": "text",
+          "required": false,
+          "maxChars": 163,
+          "maxWords": 37,
+          "budgetSource": "specs/docs.md §15 surface.c3.p (orig 148 ch)",
+          "onlyForVariants": [
+            "detail"
+          ]
+        },
+        "cta": {
+          "kind": "text",
+          "required": false,
+          "maxChars": 11,
+          "maxWords": 3,
+          "budgetSource": "specs/docs.md §15 link / enterprise.md §15 (orig 10 ch)",
+          "onlyForVariants": [
+            "detail",
+            "media"
+          ],
+          "requiredForVariants": [
+            "media"
+          ]
+        },
+        "media": {
+          "kind": "media",
+          "required": true,
+          "assetRoles": [
+            "product.ui-illustration",
+            "editorial.illustration"
+          ]
+        }
+      }
+    }
+  },
+  "allowedBackgrounds": [
+    "purple-100",
+    "white",
+    "purple-10"
+  ],
+  "constraints": {},
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "default": "none"
+  },
+  "responsive": [
+    {
+      "minWidth": "base",
+      "change": "1 column; 'media' variant keeps its 296px image width."
+    },
+    {
+      "minWidth": "640.02px",
+      "change": "`columns` columns by container query.",
+      "measuredFrom": {
+        "path": "src/index.css",
+        "lines": "178-181",
+        "expect": "@container (min-width: 640px)"
+      }
+    },
+    {
+      "minWidth": "1440.02px",
+      "change": "Content wrapper max width grows from 1280 to 1440 (--content-max); layout otherwise unchanged. Viewports above 1440 were not measured (CLONE_SPEC.md 14).",
+      "measuredFrom": {
+        "path": "src/index.css",
+        "lines": "44-48",
+        "expect": "--content-max: 1440px;"
+      }
+    }
+  ],
+  "measuredFrom": [
+    {
+      "path": "specs/mail.md",
+      "lines": "231-239",
+      "expect": "## 9. M8 Media grid"
+    },
+    {
+      "path": "specs/enterprise.md",
+      "lines": "133-139",
+      "expect": "**15 Resource cards**"
+    }
+  ]
+}

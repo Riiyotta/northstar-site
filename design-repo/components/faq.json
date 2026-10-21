@@ -1,0 +1,29 @@
+{
+  "id": "faq",
+  "kind": "component",
+  "purpose": "Centred FAQ title + Accordion with structured answers (text / link / list / bold lead).",
+  "implementedBy": [
+    {
+      "path": "src/components/ui/Faq.jsx",
+      "lines": "46-77",
+      "expect": "export default function Faq"
+    },
+    {
+      "path": "src/components/ui/Faq.jsx",
+      "lines": "11-44",
+      "expect": "function Part"
+    }
+  ],
+  "props": {
+    "single": "boolean",
+    "items": "[{q, a: Part[]}]"
+  },
+  "tokens": [
+    "fontSize.small",
+    "semantic.fg-sub"
+  ],
+  "accessibility": [],
+  "usedBy": [
+    "faq.accordion"
+  ]
+}

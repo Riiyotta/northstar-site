@@ -1,0 +1,60 @@
+{
+  "id": "cta.button-row",
+  "category": "conversion",
+  "purpose": "Single centred primary button closing a card group.",
+  "implementedBy": [
+    {
+      "path": "src/pages/Agents.jsx",
+      "lines": "97-101",
+      "expect": "<PageSection className=\"flex justify-center\">"
+    }
+  ],
+  "usedOn": [
+    "/agents"
+  ],
+  "variants": {},
+  "content": {
+    "cta": {
+      "kind": "cta",
+      "required": true,
+      "variants": [
+        "primary"
+      ],
+      "maxChars": 20,
+      "maxWords": 5,
+      "budgetSource": "specs/agents.md §14 cards.cta (orig 18 ch)"
+    }
+  },
+  "allowedBackgrounds": [
+    "neutral-10"
+  ],
+  "constraints": {},
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "default": "none"
+  },
+  "responsive": [
+    {
+      "minWidth": "base",
+      "change": "Button full width."
+    },
+    {
+      "minWidth": "640.02px",
+      "change": "Button auto width, centred.",
+      "measuredFrom": {
+        "path": "src/pages/Agents.jsx",
+        "lines": "98-98",
+        "expect": "max-sm:w-full"
+      }
+    }
+  ],
+  "measuredFrom": [
+    {
+      "path": "specs/agents.md",
+      "lines": "93-94",
+      "expect": "### 5c. Centered button"
+    }
+  ]
+}

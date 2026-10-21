@@ -1,0 +1,443 @@
+{
+  "$comment": "Derived from the code itself, in src/routes.js, src/App.jsx and src/pages/*.jsx. A section is one PageSection-level block (or a self-contained top-level component); its order is the render order on that page. implementedBy paths are relative to src/. The `*` catch-all (pages/ComingSoon.jsx), which stands in for links to unbuilt pages, is not counted as a route.",
+  "meta": {
+    "source": "Northstar marketing site (Vite + React clone of a live SaaS site's layout/motion, under a fictional brand with independently written copy), at http://localhost:5288",
+    "status": "derived-from-codebase",
+    "totalRoutes": 7,
+    "totalTemplates": 7
+  },
+  "categories": {
+    "SHELL": "Site chrome rendered by the Layout or per-route options: header variants, announcement banner, footer variants.",
+    "HERO": "The first content block of a page, carrying the H1 and primary CTA.",
+    "PROOF": "Social proof and trust signals: logos, stats, testimonials, quotes, compliance badges.",
+    "FEATURES": "Blocks that explain the product: intros, split rows, grids, bentos, cards, composite homepage groups.",
+    "PRICING": "Plan presentation and comparison.",
+    "SUPPORT": "Question/answer content.",
+    "CTA": "Conversion bands placed mid-page or as the closing block."
+  },
+  "sections": {
+    "shell.header-signin": {
+      "category": "SHELL",
+      "description": "A sticky 67px white header: wordmark, six click-open dropdown nav items, 'Contact sales', and an outline 'Sign in' button that opens the animated three-product menu. Below 1080px it collapses into a slide-in drawer.",
+      "scope": "Routes with no `header` option in routes.js: the homepage, /plans and /enterprise.",
+      "implementedBy": "components/Header.jsx + components/SignInMenu.jsx + components/MobileDrawer.jsx"
+    },
+    "shell.header-product": {
+      "category": "SHELL",
+      "description": "The same header shell with the Sign in menu replaced by 'Contact sales', a 'Log in' text link and a filled compact CTA whose label is set per route. An optional background colour also paints the drawer and main.",
+      "scope": "Product pages whose route has a `header: { cta }` option: /mail, /docs, /go and /agents.",
+      "implementedBy": "components/Header.jsx (cta, bg props) + components/MobileDrawer.jsx"
+    },
+    "shell.announcement-banner": {
+      "category": "SHELL",
+      "description": "A 56px lavender strip under the header holding one line of copy and a 'Learn more' link whose arrow nudges on hover.",
+      "scope": "Homepage only; it is rendered inside pages/Home.jsx, not the Layout.",
+      "implementedBy": "components/Banner.jsx"
+    },
+    "shell.footer-dark": {
+      "category": "SHELL",
+      "description": "A mulberry (#421d24) footer: brand title, four link columns (Products, Company, Legal with a cookie button, Connect with social icons) and a giant 5%-white wordmark.",
+      "scope": "Every route except /go.",
+      "implementedBy": "components/Footer.jsx"
+    },
+    "shell.footer-light": {
+      "category": "SHELL",
+      "description": "The same footer layout in a light tone: #dedbd5 background, dark text, 80%-opacity links that underline on hover.",
+      "scope": "/go only, via `footer: 'light'` in routes.js.",
+      "implementedBy": "components/Footer.jsx (tone=\"light\")"
+    },
+    "hero.product-carousel": {
+      "category": "HERO",
+      "description": "A three-slide product switcher: a split-gradient grid with a nav list, a 10s autoplay progress bar, and 500ms cross-fades of copy and illustration. Below 1080px it becomes a single-slide layout with a next button.",
+      "scope": "Homepage only.",
+      "implementedBy": "components/Hero.jsx"
+    },
+    "hero.product-centered": {
+      "category": "HERO",
+      "description": "A centred hero: a product lockup inside the H1, then a lede and a single filled CTA, then a full-width demo VideoSlot with a play/pause control.",
+      "scope": "Two product pages: /mail and /go.",
+      "implementedBy": "components/ui/ProductHero.jsx"
+    },
+    "hero.centered-over-art": {
+      "category": "HERO",
+      "description": "A centred Intro-based hero (lockup, H1, filled and outline buttons) laid over full-bleed decorative chip artwork.",
+      "scope": "/docs only.",
+      "implementedBy": "pages/Docs.jsx (BgArt + components/ui/Intro.jsx)"
+    },
+    "hero.split": {
+      "category": "HERO",
+      "description": "A two-column hero with the H1, lede and buttons beside a large illustration. It stacks below 1080px.",
+      "scope": "Two pages: /agents (light) and /enterprise (dark purple).",
+      "implementedBy": "components/enterprise/SplitHero.jsx"
+    },
+    "hero.pricing-intro": {
+      "category": "HERO",
+      "description": "A pricing-page title block: the H1 over a four-cell product glyph grid, on a beige-to-white gradient.",
+      "scope": "/plans only.",
+      "implementedBy": "components/plans/SuiteIntro.jsx"
+    },
+    "proof.logo-strip-rotating": {
+      "category": "PROOF",
+      "description": "A hairline-bordered grid of six customer wordmarks (six columns on desktop, 3×2 below 1080px). It fades in, then every 2s swaps one random cell to another logo from an 11-logo pool.",
+      "scope": "Three routes: the homepage, /mail and /plans.",
+      "implementedBy": "components/LogoStrip.jsx (variant home/mail/plans)"
+    },
+    "proof.logo-strip-static": {
+      "category": "PROOF",
+      "description": "The same logo grid, faded in once and never rotating, with variant-specific heading and colour (white on dark for enterprise).",
+      "scope": "Two routes: /agents and /enterprise.",
+      "implementedBy": "components/LogoStrip.jsx (variant agents/enterprise)"
+    },
+    "proof.stat-band": {
+      "category": "PROOF",
+      "description": "A dark band with a single large statistic headline (highlighted span) over a watermark numeral illustration.",
+      "scope": "/mail only.",
+      "implementedBy": "pages/Mail.jsx (inline PageSection)"
+    },
+    "proof.video-showcase": {
+      "category": "PROOF",
+      "description": "A 16:9 demo VideoSlot with a pause button, followed by a proof line and a static six-logo grid, all over a pastel blurred background.",
+      "scope": "/docs only.",
+      "implementedBy": "pages/Docs.jsx (BgArt + components/ui/VideoSlot.jsx + LogoStrip variant docs)"
+    },
+    "proof.testimonial-feature": {
+      "category": "PROOF",
+      "description": "One large testimonial quote on lavender (#e8e0ff) with attribution and an optional company logo and link.",
+      "scope": "Two routes: the homepage and /docs.",
+      "implementedBy": "components/Testimonial.jsx"
+    },
+    "proof.testimonial-trio": {
+      "category": "PROOF",
+      "description": "Three testimonials on dark blue (#0a476d), each with a round illustrated portrait, a serif quote and a company wordmark.",
+      "scope": "/plans only.",
+      "implementedBy": "components/plans/TestimonialTrio.jsx"
+    },
+    "proof.quote-grid": {
+      "category": "PROOF",
+      "description": "An Intro heading followed by a two-column grid of customer quotes: a logo figure, the quote, and the name and role, with an optional avatar.",
+      "scope": "Two routes: /mail (with avatars) and /enterprise.",
+      "implementedBy": "components/ui/QuoteGrid.jsx"
+    },
+    "proof.quote-pair": {
+      "category": "PROOF",
+      "description": "An Intro heading followed by two testimonials laid out with TwoColumn rather than QuoteGrid. It is visually close to proof.quote-grid but built separately.",
+      "scope": "/agents only.",
+      "implementedBy": "pages/Agents.jsx (inline TwoColumn)"
+    },
+    "proof.compliance-badges": {
+      "category": "PROOF",
+      "description": "Two six-cell grids of invented compliance-style seal badges, followed by a link.",
+      "scope": "/enterprise only.",
+      "implementedBy": "pages/Enterprise.jsx (LogoGrid + components/enterprise/BadgePlaceholder.jsx)"
+    },
+    "features.home-agent-group": {
+      "category": "FEATURES",
+      "description": "The homepage's Agent product group: a centred intro, a wide media aside, two side-by-side asides, then five tabs of three feature cards each.",
+      "scope": "Homepage only.",
+      "implementedBy": "components/AgentSection.jsx + components/FeatureTabs.jsx"
+    },
+    "features.home-inbox-bento": {
+      "category": "FEATURES",
+      "description": "The homepage's Inbox product intro with a three-card bento (one large card, two stacked).",
+      "scope": "Homepage only.",
+      "implementedBy": "components/InboxBento.jsx"
+    },
+    "features.home-pages-group": {
+      "category": "FEATURES",
+      "description": "The homepage's Pages product group: an intro, a wide media card and two media cards.",
+      "scope": "Homepage only.",
+      "implementedBy": "components/PagesSection.jsx"
+    },
+    "features.home-enterprise-block": {
+      "category": "FEATURES",
+      "description": "A dark (#281647) two-column enterprise teaser with copy and buttons beside a console illustration.",
+      "scope": "Homepage only.",
+      "implementedBy": "components/Enterprise.jsx"
+    },
+    "features.section-intro": {
+      "category": "FEATURES",
+      "description": "A standalone heading block (H2, optional body, optional lockup, optional CTAs) that opens a group. Used on its own as a PageSection.",
+      "scope": "Four product pages: /mail, /docs, /agents and /enterprise.",
+      "implementedBy": "components/ui/Intro.jsx"
+    },
+    "features.chapter-intro": {
+      "category": "FEATURES",
+      "description": "A left-aligned chapter opener: a monospace '0N / 05 · LABEL' eyebrow, an H2 and a lede, on dashed side rails with a dashed top line.",
+      "scope": "/go only (chapters 01–04).",
+      "implementedBy": "components/go/ChapterIntro.jsx"
+    },
+    "features.split-feature": {
+      "category": "FEATURES",
+      "description": "A single two-column row of a heading and body (optional subtitle and link) beside an illustration, with the media on either side.",
+      "scope": "Three routes: /docs, /agents and /enterprise.",
+      "implementedBy": "components/ui/SplitFeature.jsx"
+    },
+    "features.split-feature-rows": {
+      "category": "FEATURES",
+      "description": "A run of consecutive split-feature rows, each its own PageSection, alternating which side the media sits on.",
+      "scope": "Two routes: /mail (two runs of five) and /enterprise (one run of four).",
+      "implementedBy": "pages/Mail.jsx FeatureRows + pages/Enterprise.jsx (map over components/ui/SplitFeature.jsx)"
+    },
+    "features.sticky-feature-rows": {
+      "category": "FEATURES",
+      "description": "A run of rows where the text sits pinned mid-viewport beside a looping VideoSlot, fading in and out over 200px of scroll at 640px and above. On mobile they are plain stacked rows.",
+      "scope": "/go only (chapters 01 and 04).",
+      "implementedBy": "components/go/StickyFeatureRow.jsx"
+    },
+    "features.chapter-split": {
+      "category": "FEATURES",
+      "description": "The chapter 05 trust block: the chapter eyebrow/H2/lede stack beside a single illustration.",
+      "scope": "/go only.",
+      "implementedBy": "pages/Go.jsx (components/go/ChapterIntro.jsx ChapterStack + MediaSlot)"
+    },
+    "features.icon-grid": {
+      "category": "FEATURES",
+      "description": "A grid of icon tiles, each with a title, body and optional link. It comes in 2, 3, 4 and 6 column layouts, plus a centred variant.",
+      "scope": "Four routes: /mail, /docs, /agents and /enterprise.",
+      "implementedBy": "components/ui/IconFeatureGrid.jsx"
+    },
+    "features.card-grid": {
+      "category": "FEATURES",
+      "description": "A grid of image cards with a caption or a title, detail and link.",
+      "scope": "Three routes: /mail, /docs and /enterprise.",
+      "implementedBy": "components/ui/CardGrid.jsx"
+    },
+    "features.helper-cards": {
+      "category": "FEATURES",
+      "description": "Rows of agent/helper cards with an icon tile, a title and body (bordered with a tinted top band on /go, white rounded on /agents), optionally followed by an 'all agents' button.",
+      "scope": "Two routes: /go and /agents.",
+      "implementedBy": "components/ui/HelperCard.jsx"
+    },
+    "features.bento": {
+      "category": "FEATURES",
+      "description": "A 7/5-column bento: one large card beside two stacked cards, each with copy and an illustration.",
+      "scope": "/agents only.",
+      "implementedBy": "components/ui/Bento.jsx"
+    },
+    "features.aside-row": {
+      "category": "FEATURES",
+      "description": "A wide aside card followed by two side-by-side aside cards, each with the heading first and small body text below.",
+      "scope": "/agents only.",
+      "implementedBy": "components/ui/Aside.jsx (variant=\"title\")"
+    },
+    "features.connectors-strip": {
+      "category": "FEATURES",
+      "description": "A static strip of invented app glyphs illustrating integrations: one row at 640px and up, two rows below.",
+      "scope": "/go only (chapter 03).",
+      "implementedBy": "pages/Go.jsx (MediaSlot connectors-strip)"
+    },
+    "pricing.plan-cards": {
+      "category": "PRICING",
+      "description": "Four plan cards (name, price, description, CTA, feature list). The third is highlighted with a 'Top choice' tab, a lavender background and a large elevation, followed by a 'compare plans' button at 1080px and up. On mobile the order is highlighted, Pro tier, Enterprise tier, Free.",
+      "scope": "/plans only.",
+      "implementedBy": "components/plans/PlanCards.jsx"
+    },
+    "pricing.plan-comparison": {
+      "category": "PRICING",
+      "description": "Feature comparison at 1080px and up: five accordion groups of fourteen section tables and 115 rows, holding check, text or empty cells, with Beta tags and info tooltips. The highlighted plan's column is shaded.",
+      "scope": "/plans only; it is hidden below 1080px.",
+      "implementedBy": "components/plans/PlanComparison.jsx"
+    },
+    "pricing.floating-plan-header": {
+      "category": "PRICING",
+      "description": "A fixed bar of plan names and CTAs that slides in over the site header (0.3s) while the comparison table is in view.",
+      "scope": "/plans only, tied to pricing.plan-comparison.",
+      "implementedBy": "components/plans/FloatingPlanHeader.jsx"
+    },
+    "support.faq": {
+      "category": "SUPPORT",
+      "description": "A centred FAQ title and a list of accordion items with 0.2s height/opacity transitions and a rotating caret. It can be set so only one item opens at a time.",
+      "scope": "Three routes: /go, /agents and /enterprise.",
+      "implementedBy": "components/ui/Faq.jsx (enterprise via components/enterprise/FaqAccordion.jsx)"
+    },
+    "cta.cta-band": {
+      "category": "CTA",
+      "description": "A mid-page conversion band: a heading and a button, split or centred, on a tinted background, with optional background art.",
+      "scope": "Two routes: /go (lavender) and /enterprise (#f2f0eb).",
+      "implementedBy": "components/ui/CtaBand.jsx"
+    },
+    "cta.cta-final": {
+      "category": "CTA",
+      "description": "The closing conversion band directly above the footer: a heading and one or two buttons, stacked or split, usually the same mulberry as the footer.",
+      "scope": "Five routes: /mail, /docs, /go, /agents and /enterprise.",
+      "implementedBy": "components/ui/CtaBand.jsx"
+    },
+    "cta.cta-final-home": {
+      "category": "CTA",
+      "description": "The homepage's closing band: a heading and an outline button on #281647 over an animated gradient background illustration.",
+      "scope": "Homepage only.",
+      "implementedBy": "components/FinalCta.jsx"
+    }
+  },
+  "templates": [
+    {
+      "id": "template.home",
+      "name": "Homepage",
+      "routeCount": 1,
+      "routes": ["/"],
+      "routePattern": null,
+      "chrome": "signin+banner",
+      "sections": [
+        "shell.header-signin",
+        "shell.announcement-banner",
+        "hero.product-carousel",
+        "proof.logo-strip-rotating",
+        "features.home-agent-group",
+        "proof.testimonial-feature",
+        "features.home-inbox-bento",
+        "features.home-pages-group",
+        "features.home-enterprise-block",
+        "cta.cta-final-home",
+        "shell.footer-dark"
+      ]
+    },
+    {
+      "id": "template.product-mail",
+      "name": "Product page: Inbox",
+      "routeCount": 1,
+      "routes": ["/mail"],
+      "routePattern": null,
+      "chrome": "product-cta",
+      "sections": [
+        "shell.header-product",
+        "hero.product-centered",
+        "proof.logo-strip-rotating",
+        "proof.stat-band",
+        "features.section-intro",
+        "features.icon-grid",
+        "features.section-intro",
+        "features.split-feature-rows",
+        "features.card-grid",
+        "features.split-feature-rows",
+        "proof.quote-grid",
+        "cta.cta-final",
+        "shell.footer-dark"
+      ]
+    },
+    {
+      "id": "template.product-docs",
+      "name": "Product page: Pages",
+      "routeCount": 1,
+      "routes": ["/docs"],
+      "routePattern": null,
+      "chrome": "product-cta",
+      "sections": [
+        "shell.header-product",
+        "hero.centered-over-art",
+        "proof.video-showcase",
+        "features.split-feature",
+        "features.icon-grid",
+        "features.section-intro",
+        "features.section-intro",
+        "features.card-grid",
+        "features.section-intro",
+        "features.icon-grid",
+        "proof.testimonial-feature",
+        "features.section-intro",
+        "features.split-feature",
+        "features.split-feature",
+        "features.section-intro",
+        "features.icon-grid",
+        "cta.cta-final",
+        "shell.footer-dark"
+      ]
+    },
+    {
+      "id": "template.product-go",
+      "name": "Product page: Assistant (chaptered)",
+      "routeCount": 1,
+      "routes": ["/go"],
+      "routePattern": null,
+      "chrome": "product-cta+light-footer",
+      "sections": [
+        "shell.header-product",
+        "hero.product-centered",
+        "features.chapter-intro",
+        "features.sticky-feature-rows",
+        "features.chapter-intro",
+        "features.helper-cards",
+        "cta.cta-band",
+        "features.chapter-intro",
+        "features.connectors-strip",
+        "features.chapter-intro",
+        "features.sticky-feature-rows",
+        "features.chapter-split",
+        "support.faq",
+        "cta.cta-final",
+        "shell.footer-light"
+      ]
+    },
+    {
+      "id": "template.product-agents",
+      "name": "Product page: Agents",
+      "routeCount": 1,
+      "routes": ["/agents"],
+      "routePattern": null,
+      "chrome": "product-cta",
+      "sections": [
+        "shell.header-product",
+        "hero.split",
+        "proof.logo-strip-static",
+        "features.split-feature",
+        "features.section-intro",
+        "features.helper-cards",
+        "features.split-feature",
+        "features.split-feature",
+        "features.section-intro",
+        "features.bento",
+        "features.aside-row",
+        "proof.quote-pair",
+        "features.section-intro",
+        "features.icon-grid",
+        "support.faq",
+        "cta.cta-final",
+        "shell.footer-dark"
+      ]
+    },
+    {
+      "id": "template.pricing",
+      "name": "Pricing",
+      "routeCount": 1,
+      "routes": ["/plans"],
+      "routePattern": null,
+      "chrome": "signin",
+      "sections": [
+        "shell.header-signin",
+        "hero.pricing-intro",
+        "pricing.plan-cards",
+        "proof.logo-strip-rotating",
+        "proof.testimonial-trio",
+        "pricing.plan-comparison",
+        "pricing.floating-plan-header",
+        "shell.footer-dark"
+      ]
+    },
+    {
+      "id": "template.enterprise",
+      "name": "Enterprise",
+      "routeCount": 1,
+      "routes": ["/enterprise"],
+      "routePattern": null,
+      "chrome": "signin",
+      "sections": [
+        "shell.header-signin",
+        "hero.split",
+        "proof.logo-strip-static",
+        "features.section-intro",
+        "features.split-feature-rows",
+        "cta.cta-band",
+        "features.split-feature",
+        "features.section-intro",
+        "features.icon-grid",
+        "proof.compliance-badges",
+        "features.section-intro",
+        "features.split-feature",
+        "features.card-grid",
+        "proof.quote-grid",
+        "support.faq",
+        "cta.cta-final",
+        "shell.footer-dark"
+      ]
+    }
+  ]
+}

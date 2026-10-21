@@ -1,0 +1,26 @@
+{
+  "id": "split-hero",
+  "kind": "component",
+  "purpose": "Two-column hero (row from 1080.02) with optional eyebrow, display title, lede, CTA row and media.",
+  "implementedBy": [
+    {
+      "path": "src/components/enterprise/SplitHero.jsx",
+      "lines": "14-49",
+      "expect": "export default function SplitHero"
+    }
+  ],
+  "props": {
+    "eyebrow": "string|null",
+    "ctas": "[{label, variant}]"
+  },
+  "tokens": [
+    "fontSize.display-sm",
+    "fontSize.large"
+  ],
+  "accessibility": [
+    "Eyebrow becomes the h1 when present."
+  ],
+  "usedBy": [
+    "hero.split"
+  ]
+}
