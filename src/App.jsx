@@ -10,8 +10,9 @@ function ScrollToTop() {
   const { pathname } = useLocation()
   // Braces: newer Chromium returns a Promise from scrollTo, which React would
   // treat as an effect clean-up ("destroy is not a function").
+  // 'instant' overrides html { scroll-behavior: smooth } so route changes jump.
   useEffect(() => {
-    window.scrollTo(0, 0)
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
   }, [pathname])
   return null
 }

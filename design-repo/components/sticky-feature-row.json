@@ -1,12 +1,22 @@
 {
   "id": "sticky-feature-row",
   "kind": "component",
-  "purpose": "Text column pinned by a scroll-linked transform/opacity (>=640.02 and no-preference only) beside an inside-control VideoSlot.",
+  "purpose": "Text column pinned by a scroll-linked transform/opacity (>=640.02 and no-preference only) beside an inside-control VideoSlot. CSS view-timeline (.pin-row / .pin-text) where animation-timeline: view() is supported; JS scroll/rAF fallback otherwise.",
   "implementedBy": [
     {
       "path": "src/components/go/StickyFeatureRow.jsx",
-      "lines": "70-94",
+      "lines": "75-99",
       "expect": "export default function StickyFeatureRow"
+    },
+    {
+      "path": "src/index.css",
+      "lines": "276-279",
+      "expect": "view-timeline-name: --pin-row;"
+    },
+    {
+      "path": "src/components/go/StickyFeatureRow.jsx",
+      "lines": "10-11",
+      "expect": "CSS.supports('animation-timeline: view()')"
     }
   ],
   "props": {

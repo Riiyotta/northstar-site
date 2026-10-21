@@ -140,6 +140,10 @@ def long_words(n):
     return " ".join(["go"] * n)
 
 
+LOOP = {"pattern": "hero-video-loop", "reducedMotionFallback": CTX["patterns"]["hero-video-loop"]["reducedMotionFallback"]}
+ONESHOT = {"pattern": "hero-video-oneshot", "reducedMotionFallback": CTX["patterns"]["hero-video-oneshot"]["reducedMotionFallback"], "durationMs": 7000}
+
+
 MUTATIONS = [
     # --- schema layer
     ("bad-template-enum", "schema", "example", m(lambda s: s.update(template="landing-page")), "TEMPLATE_KNOWN"),
@@ -185,6 +189,18 @@ MUTATIONS = [
     ("motion-not-allowed", "structural", "example", m(lambda s: node(s, "split.feature").update(motion={"pattern": "logo-fade-in", "reducedMotionFallback": "no-animation", "durationMs": 500, "easing": "in-out", "trigger": "mount"})), "MOTION_PATTERN_ALLOWED"),
     ("motion-variant-mismatch", "structural", "example", m(lambda s: node(s, "proof.logo-strip").update(motion={"pattern": "logo-fade-in", "reducedMotionFallback": "no-animation"})), "MOTION_PATTERN_ALLOWED"),
     ("motion-budget", "structural", "example", m(lambda s: s["nodes"].insert(idx(s, "proof.logo-strip"), copy.deepcopy(node(s, "proof.logo-strip")))), "MOTION_BUDGET"),
+    # --- hero loop vs homepage one-shot (1.2.0)
+    ("looping-hero-on-home-carousel", "structural", "home-carousel", m(lambda s: node(s, "hero.carousel").update(motion=dict(LOOP))), "MOTION_PATTERN_ALLOWED"),
+    ("looping-hero-as-carousel-additional", "structural", "home-carousel", m(lambda s: node(s, "hero.carousel")["motion"].update(additional=[dict(LOOP)])), "MOTION_PATTERN_ALLOWED"),
+    ("oneshot-on-product-hero", "structural", "example", m(lambda s: node(s, "hero.product-video").update(motion=dict(ONESHOT))), "MOTION_PATTERN_ALLOWED"),
+    ("generic-demo-loop-on-product-hero", "structural", "example", m(lambda s: node(s, "hero.product-video").update(motion={"pattern": "video-viewport-gated", "reducedMotionFallback": "static-frame"})), "MOTION_PATTERN_ALLOWED"),
+    ("oneshot-on-docs-demo-video", "structural", "product-capability-grids", m(lambda s: node(s, "media.demo-video").update(motion=dict(ONESHOT))), "MOTION_PATTERN_ALLOWED"),
+    ("hero-loop-wrong-fallback", "schema", "example", m(lambda s: node(s, "hero.product-video")["motion"].update(reducedMotionFallback="static-frame")), "REDUCED_MOTION_FALLBACK"),
+    ("tampered-oneshot-duration", "schema", "home-carousel", m(lambda s: node(s, "hero.carousel")["motion"].update(additional=[dict(ONESHOT, durationMs=10000)])), "SCHEMA"),
+    # --- single-open FAQ (1.2.0): every real FAQ is single-open
+    ("multi-open-faq-go", "schema", "product-chapters", m(lambda s: node(s, "faq.accordion")["content"].update(mode="multi")), "SCHEMA"),
+    ("multi-open-faq-agents", "schema", "split-hero-showcase", m(lambda s: node(s, "faq.accordion")["content"].update(mode="multi")), "SCHEMA"),
+    ("multi-open-faq-enterprise", "schema", "split-hero-solutions", m(lambda s: node(s, "faq.accordion")["content"].update(mode="multi")), "SCHEMA"),
     # --- runtime budgets
     ("max-words-overflow", "runtime", "example", m(lambda s: node(s, "split.feature")["content"]["body"].__setitem__(0, long_words(80))), "MAX_WORDS"),
     ("rich-text-total-overflow", "runtime", "example", m(lambda s: node(s, "intro.section")["content"]["title"][1].update(text="a to-do list other people keep editing, forwarding, snoozing and resending")), "MAX_CHARS"),

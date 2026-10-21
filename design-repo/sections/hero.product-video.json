@@ -78,9 +78,9 @@
   },
   "motion": {
     "allowedPatterns": [
-      "video-viewport-gated"
+      "hero-video-loop"
     ],
-    "default": "video-viewport-gated"
+    "default": "hero-video-loop"
   },
   "responsive": [
     {
@@ -107,6 +107,24 @@
       "path": "specs/go.md",
       "lines": "87-94",
       "expect": "## 3. Hero (`CenteredVideoHero`"
+    },
+    {
+      "path": "src/illustrations/registry-mailDocs.js",
+      "lines": "84-84",
+      "expect": "'mail-hero-video': MailHeroLoop,"
+    },
+    {
+      "path": "src/pages/Mail.jsx",
+      "lines": "92-92",
+      "expect": "id: 'mail-hero-video',"
+    },
+    {
+      "path": "src/pages/Go.jsx",
+      "lines": "38-38",
+      "expect": "id: 'go-hero-video',"
     }
+  ],
+  "notes": [
+    "The hero demo loops continuously (pattern hero-video-loop): /mail runs a seamless 35.9s cycle (MailHeroLoop, registered under the slot id, which wins over the art fallback hero-video-1), /go a 10s loop (GoHeroLoop). The homepage one-shot (hero-video-oneshot) is not allowed here."
   ]
 }

@@ -3,7 +3,7 @@
   "name": "Northstar marketing site: design-repo",
   "status": "design-review-pending",
   "productionApproved": false,
-  "repositoryVersion": "1.1.0",
+  "repositoryVersion": "1.2.0",
   "pageSpecVersion": "1.0.0",
   "allowlistVersion": "1.0.0",
   "versionFieldNote": "allowlistVersion is machine-checked: verify_all.py ALLOWLIST_VERSION fails unless it equals tokens/llm/component-allowlist.json `version`. repositoryVersion is machine-checked too: verify_all.py REPOSITORY_VERSION fails unless it equals the newest CHANGELOG.md entry. pageSpecVersion is a documentation marker (the schema pins pageSpecVersion const '1.0.0' for instances).",
@@ -13,8 +13,8 @@
     "note": "Layout and motion clone of a real, live commercial site (superhuman.com) rebuilt under a fictional brand. All copy is independently written placeholder copy; all logos, mockups, avatars and badges are original invented SVG illustrations; fonts are OFL substitutes. See assets/asset-roles.json globalProhibitions."
   },
   "snapshot": {
-    "takenAt": "2026-10-21T12:30:14Z",
-    "finalRecheckAt": "2026-10-21T12:30:14Z",
+    "takenAt": "2026-10-21T13:05:40Z",
+    "finalRecheckAt": "2026-10-21T13:05:40Z",
     "sourceProject": "The parent directory of this folder (the Vite site project). Read-only; never edited by this repo.",
     "stack": {
       "react": "^18.3.1",
@@ -43,9 +43,9 @@
     "templates": 7,
     "routes": 7,
     "graphRules": 31,
-    "motionPatterns": 12,
+    "motionPatterns": 14,
     "assetRoles": 12,
-    "adversarialMutations": 46,
+    "adversarialMutations": 56,
     "adversarialWarnCases": 2,
     "adversarialControls": 8
   },

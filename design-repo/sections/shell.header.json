@@ -10,7 +10,7 @@
     },
     {
       "path": "src/App.jsx",
-      "lines": "19-33",
+      "lines": "20-34",
       "expect": "function Layout()"
     },
     {

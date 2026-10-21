@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "snapshotTakenAt": "2026-10-21T12:30:14Z",
+  "snapshotTakenAt": "2026-10-21T13:05:40Z",
   "sourceRoot": "The site project root, i.e. the parent directory of design-repo/. Every `path` below is relative to it. When that directory (identified by src/routes.js) is absent, verify_all.py prints a warning and skips citation checks instead of failing.",
   "excludedSources": {
     "note": "Never used as content, never cited, never packaged.",
@@ -59,12 +59,12 @@
     },
     {
       "path": "src/App.jsx",
-      "lines": "40-40",
+      "lines": "41-41",
       "expect": "<Route index element={<Home />} />"
     },
     {
       "path": "src/App.jsx",
-      "lines": "44-44",
+      "lines": "45-45",
       "expect": "<Route path=\"*\" element={<ComingSoon title=\"Page not found\" />} />"
     }
   ],
@@ -152,8 +152,8 @@
     {
       "id": "reduced-motion-video",
       "status": "noted",
-      "finding": "go.md §13.2 says demo videos should show a static frame under reduced motion; mail.md/docs.md measured the original autoplaying anyway. VideoSlot itself does not read the media query, but illustrations.css stops every illustration animation under reduce.",
-      "resolution": "video-viewport-gated locks reducedMotionFallback to 'static-frame' (what the snapshot renders).",
+      "finding": "go.md §13.2 says demo videos should show a static frame under reduced motion; mail.md/docs.md measured the original autoplaying anyway. VideoSlot itself does not read the media query, but illustrations.css stops every illustration animation under reduce, and the /mail and /docs hero loops declare their keyframes only under no-preference.",
+      "resolution": "video-viewport-gated locks reducedMotionFallback to 'static-frame'; hero-video-loop locks 'static-complete-frame' (the complete scene that is also the loop's first and last frame); hero-video-oneshot locks 'static-final-frame'. All three are what the snapshot renders.",
       "evidence": [
         {
           "path": "specs/go.md",
@@ -164,6 +164,108 @@
           "path": "src/illustrations/illustrations.css",
           "lines": "229-235",
           "expect": "@media (prefers-reduced-motion: reduce)"
+        },
+        {
+          "path": "src/illustrations/mailDocs-hero-loops.css",
+          "lines": "10-10",
+          "expect": "@media (prefers-reduced-motion: no-preference) {"
+        }
+      ]
+    },
+    {
+      "id": "product-hero-loops",
+      "status": "verified",
+      "finding": "The /mail and /docs hero slots now render dedicated looping art (MailHeroLoop, DocsHeroLoop) registered under their slot ids, which win over the art fallbacks hero-video-1 / hero-video-3. Cycles: mail 35.9s, docs 28.3s (docs cursor 14.15s = half a cycle, so twice per cycle); infinite iterations; identical first and last keyframes; static under reduced motion. VideoSlot still pauses when fully out of view and resumes at >=20% visible. The homepage carousel art hero-video-1..3 is unchanged: 7s, one iteration, fill forwards.",
+      "resolution": "New pattern hero-video-loop (hero.product-video, media.demo-video) with cycleMsBySlot; new pattern hero-video-oneshot (additional on hero.carousel, durationMs 7000). The contracts make them mutually exclusive.",
+      "evidence": [
+        {
+          "path": "src/illustrations/mailDocs-hero-loops.css",
+          "lines": "12-12",
+          "expect": ".ns-loop-mail { --ns-loop: 35.9s; }"
+        },
+        {
+          "path": "src/illustrations/mailDocs-hero-loops.css",
+          "lines": "68-68",
+          "expect": ".ns-loop-docs { --ns-loop: 28.3s; }"
+        },
+        {
+          "path": "src/illustrations/mailDocs-hero-loops.css",
+          "lines": "87-87",
+          "expect": "calc(var(--ns-loop) / 2)"
+        },
+        {
+          "path": "src/illustrations/mailDocs-hero-loops.jsx",
+          "lines": "10-14",
+          "expect": "ns-loop-mail"
+        },
+        {
+          "path": "src/components/ui/Media.jsx",
+          "lines": "9-9",
+          "expect": "const Art = illustrations[id] ?? illustrations[art]"
+        },
+        {
+          "path": "src/illustrations/illustrations.css",
+          "lines": "4-6",
+          "expect": "iteration-count 1, fill forwards"
+        }
+      ]
+    },
+    {
+      "id": "sticky-row-view-timeline",
+      "status": "verified",
+      "finding": "The /go pinned feature text is now a CSS scroll-driven animation: .pin-row names a view-timeline (--pin-row); .pin-text runs pin-slide (translateY -50% -> 50%, i.e. +-h/2), pin-fade-in (first 200px) and pin-fade-out (last 200px) over animation-range cover calc(50vh - 33.5px) -> cover calc(100% - 50vh - 33.5px), base opacity 0. Gated by @supports (animation-timeline: view()), min-width 640.02px and prefers-reduced-motion: no-preference. The JS scroll/rAF hook returns early when CSS.supports('animation-timeline: view()') is true.",
+      "resolution": "sticky-pinned-text keeps its trigger (scroll-view-timeline), easing (linear) and fallback, and now records the mechanism (primary + JS fallback).",
+      "evidence": [
+        {
+          "path": "src/index.css",
+          "lines": "281-292",
+          "expect": "cover calc(50vh - 33.5px) cover calc(50vh + 166.5px),"
+        },
+        {
+          "path": "src/components/go/StickyFeatureRow.jsx",
+          "lines": "26-26",
+          "expect": "if (!row || !text || SUPPORTS_VIEW_TIMELINE) return"
+        }
+      ]
+    },
+    {
+      "id": "faq-single-open",
+      "status": "verified",
+      "finding": "Every FAQ is single-open: /go and /agents already passed `single`; /enterprise's FaqAccordion now does too.",
+      "resolution": "faq.accordion `mode` is pinned to the single value 'single'.",
+      "evidence": [
+        {
+          "path": "src/components/enterprise/FaqAccordion.jsx",
+          "lines": "9-9",
+          "expect": "single />"
+        },
+        {
+          "path": "src/pages/Agents.jsx",
+          "lines": "197-197",
+          "expect": "<Faq title={faq.title} items={faq.items} single"
+        },
+        {
+          "path": "src/pages/Go.jsx",
+          "lines": "123-127",
+          "expect": "single"
+        }
+      ]
+    },
+    {
+      "id": "smooth-scroll-site-wide",
+      "status": "verified",
+      "finding": "html has scroll-behavior: smooth under prefers-reduced-motion: no-preference; ScrollToTop passes behavior 'instant' so route changes still jump. The /plans compare button's smooth scroll to the table took about 0.79s when observed; that duration is browser-chosen.",
+      "resolution": "Recorded as compatibility/motion-patterns.json siteWide.smoothScroll; no duration is pinned.",
+      "evidence": [
+        {
+          "path": "src/index.css",
+          "lines": "97-101",
+          "expect": "scroll-behavior: smooth;"
+        },
+        {
+          "path": "src/App.jsx",
+          "lines": "15-15",
+          "expect": "window.scrollTo({ top: 0, left: 0, behavior: 'instant' })"
         }
       ]
     },

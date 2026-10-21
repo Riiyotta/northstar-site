@@ -4,8 +4,13 @@ import VideoSlot from '../ui/VideoSlot'
 const HEADER_H = 67
 const FADE_PX = 200
 const QUERY = '(min-width: 640.02px) and (prefers-reduced-motion: no-preference)'
+// Browsers with scroll-driven animations run the CSS version (.pin-row /
+// .pin-text in index.css, a named view-timeline like the original); the JS
+// below is only the fallback for browsers without them.
+const SUPPORTS_VIEW_TIMELINE =
+  typeof CSS !== 'undefined' && typeof CSS.supports === 'function' && CSS.supports('animation-timeline: view()')
 
-// go.md 13.1 pinned text, JS version of the view-timeline effect. For a row of
+// go.md 13.1 pinned text, JS fallback of the view-timeline effect. For a row of
 // height h (the video height) in a viewport of height H:
 //   T = H + h; center = (hdr + H) / 2; p = (H - rowTop) / T
 //   winStart = (H - center) / T, winEnd = (H - center + h) / T
@@ -18,7 +23,7 @@ function usePinnedText(rowRef, textRef) {
   useEffect(() => {
     const row = rowRef.current
     const text = textRef.current
-    if (!row || !text) return
+    if (!row || !text || SUPPORTS_VIEW_TIMELINE) return
     const mq = window.matchMedia(QUERY)
     let raf = 0
 
@@ -72,8 +77,8 @@ export default function StickyFeatureRow({ title, body, media }) {
   const textRef = useRef(null)
   usePinnedText(rowRef, textRef)
   return (
-    <div ref={rowRef} className="flex flex-col gap-vp sm:flex-row">
-      <div ref={textRef} className="flex min-w-0 flex-[1_1_0%] flex-col items-start justify-center gap-6">
+    <div ref={rowRef} data-pin-row className="pin-row flex flex-col gap-vp sm:flex-row">
+      <div ref={textRef} data-pin-text className="pin-text flex min-w-0 flex-[1_1_0%] flex-col items-start justify-center gap-6">
         <h2 className="text-heading-md text-fg">{title}</h2>
         <p className="text-pretty text-medium text-fg-sub">{body}</p>
       </div>

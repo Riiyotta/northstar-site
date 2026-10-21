@@ -5,12 +5,17 @@
   "implementedBy": [
     {
       "path": "src/components/go/StickyFeatureRow.jsx",
-      "lines": "70-94",
+      "lines": "75-99",
       "expect": "export default function StickyFeatureRow"
     },
     {
+      "path": "src/index.css",
+      "lines": "281-292",
+      "expect": "animation-timeline: --pin-row;"
+    },
+    {
       "path": "src/components/go/StickyFeatureRow.jsx",
-      "lines": "17-29",
+      "lines": "22-34",
       "expect": "function usePinnedText"
     }
   ],
@@ -71,11 +76,11 @@
     },
     {
       "minWidth": "640.02px",
-      "change": "Two columns 6/6; pinned-text effect active under no-preference.",
+      "change": "Two columns 6/6; pinned-text effect active under no-preference (CSS view-timeline where supported, JS fallback otherwise).",
       "measuredFrom": {
-        "path": "src/components/go/StickyFeatureRow.jsx",
-        "lines": "6-6",
-        "expect": "640.02px"
+        "path": "src/index.css",
+        "lines": "277-277",
+        "expect": "@media (prefers-reduced-motion: no-preference) and (min-width: 640.02px) {"
       }
     }
   ],
@@ -85,5 +90,8 @@
       "lines": "179-209",
       "expect": "### 13.1 Pinned text in feature rows"
     }
+  ],
+  "notes": [
+    "Pinned text runs as a CSS scroll-driven animation on a named view-timeline (.pin-row / .pin-text in src/index.css) when animation-timeline: view() is supported; StickyFeatureRow.jsx's scroll/rAF hook is only the fallback. Both use the same window, 200px fades and 67px header offset (pattern sticky-pinned-text)."
   ]
 }

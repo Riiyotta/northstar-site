@@ -121,7 +121,7 @@
       "change": "`columns` columns by container query.",
       "measuredFrom": {
         "path": "src/index.css",
-        "lines": "178-181",
+        "lines": "185-188",
         "expect": "@container (min-width: 640px)"
       }
     },

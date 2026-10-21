@@ -7,7 +7,7 @@ three things: **what can be used** (tokens, primitives, components, section cont
 copy budgets). Every value cites real evidence; nothing is invented.
 
 Status: `design-review-pending`, `productionApproved: false`.
-Snapshot taken 2026-10-21T12:30:14Z; final re-check against current source 2026-10-21T12:30:14Z.
+Snapshot taken 2026-10-21T13:05:40Z; final re-check against current source 2026-10-21T13:05:40Z.
 
 ## Read this first: what the source is (and is not)
 
@@ -86,9 +86,9 @@ design-repo/
 | templates | 7 |
 | routes | 7 |
 | graphRules | 31 |
-| motionPatterns | 12 |
+| motionPatterns | 14 |
 | assetRoles | 12 |
-| adversarialMutations | 46 |
+| adversarialMutations | 56 |
 | adversarialWarnCases | 2 |
 | adversarialControls | 8 |
 
@@ -97,11 +97,11 @@ design-repo/
 | template | route | shape |
 |---|---|---|
 | home-carousel | / | banner, product carousel, product intros with asides/tabs/bento, testimonial, promo, animated CTA |
-| product-feature-rows | /mail | video hero, rotating logos, stat band, two runs of split feature rows, media grid, quotes |
-| product-capability-grids | /docs | art hero, demo video + logos, grids and split rows, quote, suite grid |
-| product-chapters | /go | five numbered chapters, scroll-pinned rows, helper cards, split CTA bands, FAQ, light footer |
-| split-hero-showcase | /agents | split hero, split rows, card bench, bento + asides, quotes, trust grid, FAQ |
-| split-hero-solutions | /enterprise | dark split hero, split rows, security group with badge placeholders, resources, quotes, FAQ |
+| product-feature-rows | /mail | looping video hero, rotating logos, stat band, two runs of split feature rows, media grid, quotes |
+| product-capability-grids | /docs | art hero, looping demo video + logos, grids and split rows, quote, suite grid |
+| product-chapters | /go | five numbered chapters, scroll-pinned rows, helper cards, split CTA bands, single-open FAQ, light footer |
+| split-hero-showcase | /agents | split hero, split rows, card bench, bento + asides, quotes, trust grid, single-open FAQ |
+| split-hero-solutions | /enterprise | dark split hero, split rows, security group with badge placeholders, resources, quotes, single-open FAQ |
 | pricing | /plans | h1 + product grid, plan cards, rotating logos, testimonial trio, desktop comparison |
 
 Template nodes are structured (`section`, `variants`, `required`, `repeatable`, `min`, `max`,
@@ -118,6 +118,21 @@ PageSpec against its declared template's node list in order (`TEMPLATE_SEQUENCE`
    (with its locked `reducedMotionFallback`).
 3. Media fields take `{slotId, assetRole}`; the role decides what may be drawn (`assets/asset-roles.json`).
 4. Validate: `python3 -I schema/semantic_validate.py my.pagespec.json` (exit 0 = no errors).
+
+## Motion at a glance
+
+`compatibility/motion-patterns.json` is the closed list (14 patterns). Highlights:
+
+- **Hero demos.** Product-page heroes (/mail, /docs, /go) use `hero-video-loop`: infinite,
+  viewport-gated loops (cycles in `cycleMsBySlot`: 35.9s, 28.3s, 10s), static complete frame under
+  reduced motion. The homepage carousel art is `hero-video-oneshot`: one 7s timeline per slide,
+  never looping. Each is rejected where the other belongs.
+- **/go pinned text** (`sticky-pinned-text`) is a CSS scroll-driven animation on a named
+  view-timeline, with a JS scroll/rAF fallback where `animation-timeline: view()` is unsupported.
+  Only at ≥640.02px under no-preference.
+- **FAQs** are single-open everywhere (`faq.accordion` `mode` is pinned to `single`).
+- **Smooth scrolling** is site-wide under no-preference (`siteWide.smoothScroll`); route
+  changes still jump to the top.
 
 PageSpecs carry no per-instance token overrides; styling belongs to the contracts
 (`tokens/llm/token-policy.json` → `overrides`).
@@ -158,10 +173,16 @@ Details and citations in `extraction/measured-values.json` → `spotChecks`. In 
   in src/data/mail.js from names that could match real products.
 - The pixel audit flipped /mail rows 6–10 to start media-right; the example follows.
 - site/ia.json (a separate IA pass) independently arrives at the same 7 route-level templates.
+- 1.2.0 motion pass, verified against src: product-hero loops vs the homepage one-shot, the /go
+  view-timeline pinned text with its JS fallback, single-open FAQs everywhere, and site-wide smooth
+  scrolling (spot checks `product-hero-loops`, `sticky-row-view-timeline`, `faq-single-open`,
+  `smooth-scroll-site-wide`).
 
 ## Known gaps
 
 - The FloatingPlanHeader transition is not gated on reduced motion in src. The contract locks
   the recommended `instant-show-hide` fallback and records the gap.
 - Viewports above 1440 were never measured.
+- In-page smooth-scroll durations (about 0.79s for the /plans compare jump) are chosen by the
+  browser, so no duration is pinned for `smooth-scroll-anchor` or `siteWide.smoothScroll`.
 - Homepage copy uses h2 for the carousel (no h1). The structure is kept as-is.

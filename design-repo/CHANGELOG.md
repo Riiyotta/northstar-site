@@ -1,5 +1,40 @@
 # Changelog
 
+## 1.2.0 (snapshot 2026-10-21T13:05:40Z, re-checked 2026-10-21T13:05:40Z)
+
+Motion-fix pass: the contracts follow the motion changes now in site/src.
+
+- /go pinned feature text: pattern `sticky-pinned-text` now describes the CSS scroll-driven
+  version (named view-timeline `--pin-row` on `.pin-row`; `.pin-text` runs pin-slide, pin-fade-in
+  and pin-fade-out over `cover calc(50vh - 33.5px)` → `cover calc(100% - 50vh - 33.5px)`, 200px
+  fades, translateY ±h/2, base opacity 0; only under `@supports (animation-timeline: view())`,
+  ≥640.02px and no-preference). The JS scroll/rAF hook is recorded as the fallback for browsers
+  without view timelines. The `feature.sticky-row` contract and the sticky-feature-row component cite src/index.css.
+- Product-hero loops: new pattern `hero-video-loop` (infinite iterations; cycles mail 35.9s,
+  docs 28.3s, go 10s in `cycleMsBySlot`; seamless first/last frame on /mail and /docs; viewport-gated;
+  locked fallback `static-complete-frame`). `hero.product-video` and `media.demo-video` now allow only
+  this pattern; the example PageSpec's /mail hero uses it.
+- Homepage one-shot: new pattern `hero-video-oneshot` (7000ms, one iteration, locked fallback
+  `static-final-frame`), allowed only as an `additional` pattern on `hero.carousel`. A looping hero
+  on the carousel is rejected.
+- FAQ: `faq.accordion` `mode` is pinned to `single`; /go, /agents and /enterprise are all single-open
+  (src/components/enterprise/FaqAccordion.jsx now passes `single`).
+- Smooth scrolling: `compatibility/motion-patterns.json` gains `siteWide.smoothScroll`
+  (`html { scroll-behavior: smooth }` under no-preference; ScrollToTop uses `behavior: 'instant'`
+  so route changes jump). `smooth-scroll-anchor` notes that the scroll duration is browser-chosen
+  (about 0.79s observed on /plans) and not pinned.
+- Motion patterns: 12 → 14 (motion-patterns.json version 1.1.0). PageSpec motion
+  properties are unchanged, so the schema stays closed with const-pinned values, and the allowlist
+  is unchanged (allowlistVersion stays 1.0.0).
+- Spot checks: `reduced-motion-video` updated; `product-hero-loops`, `sticky-row-view-timeline`,
+  `faq-single-open` and `smooth-scroll-site-wide` added.
+- Adversarial suite: 46 → 56 mutations (looping hero on the homepage carousel, as primary and as
+  additional; one-shot or generic demo loop on a product hero; multi-open FAQ on /go, /agents and
+  /enterprise).
+- Citations regenerated: src data re-dumped and every citation recomputed from its anchor text
+  (382 citations). This fixes the 14 citations that had drifted when lines moved in
+  src/index.css and src/App.jsx.
+
 ## 1.1.0 (snapshot 2026-10-21T12:30:14Z, re-checked 2026-10-21T12:30:14Z)
 
 - Spec copy replaced: every copy string in CLONE_SPEC.md, specs/plans.md and specs/enterprise.md

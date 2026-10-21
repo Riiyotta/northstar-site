@@ -88,7 +88,7 @@
       },
       {
         "path": "src/index.css",
-        "lines": "123-125",
+        "lines": "130-132",
         "expect": "var(--hero-start)"
       }
     ]

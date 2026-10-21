@@ -1,7 +1,7 @@
 {
   "id": "accordion",
   "kind": "component",
-  "purpose": "Shared accordion: grid-rows 0fr/1fr + opacity .2s ease and caret -180deg, motion-safe only; single or multi open.",
+  "purpose": "Shared accordion: grid-rows 0fr/1fr + opacity .2s ease and caret -180deg, motion-safe only; single or multi open (multi is the default; every FAQ passes single).",
   "implementedBy": [
     {
       "path": "src/components/ui/Accordion.jsx",

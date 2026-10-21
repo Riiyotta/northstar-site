@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "snapshotTakenAt": "2026-10-21T12:30:14Z",
+  "snapshotTakenAt": "2026-10-21T13:05:40Z",
   "routes": [
     {
       "route": "/",
@@ -128,7 +128,7 @@
     },
     "router": {
       "path": "src/App.jsx",
-      "lines": "44-44",
+      "lines": "45-45",
       "expect": "<Route path=\"*\""
     },
     "status": "placeholder",

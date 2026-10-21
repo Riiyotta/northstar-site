@@ -63,6 +63,7 @@ import {
   DocsSurfaceWorkflows,
   DocsVideoBg,
 } from './docs-art'
+import { DocsHeroLoop, MailHeroLoop } from './mailDocs-hero-loops'
 
 const MAIL_LOGOS = [
   LogoHalcyon,
@@ -80,6 +81,7 @@ const MAIL_LOGOS = [
 
 export const mailDocsArt = {
   // /mail
+  'mail-hero-video': MailHeroLoop,
   'mail-stat-bg': MailStatBg,
   'mail-pillar-icon-1': MailPillarIcon1,
   'mail-pillar-icon-2': MailPillarIcon2,
@@ -108,6 +110,7 @@ export const mailDocsArt = {
   ...Object.fromEntries(MAIL_LOGOS.map((L, i) => [`mail-logo-${i + 1}`, L])),
 
   // /docs
+  'docs-hero-video': DocsHeroLoop,
   'docs-hero-bg': DocsHeroBg,
   'docs-video-bg': DocsVideoBg,
   'docs-ai-icon-1': DocsAiIcon1,

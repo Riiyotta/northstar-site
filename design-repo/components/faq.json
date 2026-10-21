@@ -1,7 +1,7 @@
 {
   "id": "faq",
   "kind": "component",
-  "purpose": "Centred FAQ title + Accordion with structured answers (text / link / list / bold lead).",
+  "purpose": "Centred FAQ title + Accordion with structured answers (text / link / list / bold lead). All three real FAQs (/go, /agents, /enterprise) are single-open.",
   "implementedBy": [
     {
       "path": "src/components/ui/Faq.jsx",

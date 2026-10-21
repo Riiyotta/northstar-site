@@ -12,6 +12,21 @@
       "path": "src/components/ui/Accordion.jsx",
       "lines": "29-83",
       "expect": "export default function Accordion"
+    },
+    {
+      "path": "src/pages/Go.jsx",
+      "lines": "123-127",
+      "expect": "single"
+    },
+    {
+      "path": "src/pages/Agents.jsx",
+      "lines": "197-197",
+      "expect": "<Faq title={faq.title} items={faq.items} single"
+    },
+    {
+      "path": "src/components/enterprise/FaqAccordion.jsx",
+      "lines": "9-9",
+      "expect": "single />"
     }
   ],
   "usedOn": [
@@ -32,8 +47,7 @@
       "kind": "enum",
       "required": true,
       "values": [
-        "single",
-        "multi"
+        "single"
       ]
     },
     "items": {
@@ -116,6 +130,6 @@
     }
   ],
   "notes": [
-    "mode 'single' = opening one closes the others (/go, /agents); 'multi' = independent items (/enterprise)."
+    "mode is pinned to 'single' (opening one item closes the open one): every real FAQ (/go, /agents, /enterprise) passes `single` to the shared Faq. The shared Accordion still supports multi-open (its default), but no FAQ uses it, so a PageSpec may not set 'multi'."
   ]
 }

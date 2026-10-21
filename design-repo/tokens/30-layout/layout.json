@@ -88,7 +88,7 @@
     "measuredFrom": [
       {
         "path": "src/index.css",
-        "lines": "115-120",
+        "lines": "122-127",
         "expect": "var(--content-max)"
       },
       {
@@ -103,7 +103,7 @@
       },
       {
         "path": "src/index.css",
-        "lines": "170-178",
+        "lines": "177-185",
         "expect": "container-type: inline-size"
       },
       {

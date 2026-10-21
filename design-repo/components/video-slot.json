@@ -1,7 +1,7 @@
 {
   "id": "video-slot",
   "kind": "component",
-  "purpose": "Illustrated 'video': MediaSlot whose CSS animation is the playback, viewport-gated by IntersectionObserver [0, 0.2], with a 32px play/pause button.",
+  "purpose": "Illustrated 'video': MediaSlot whose CSS animation is the playback, viewport-gated by IntersectionObserver [0, 0.2] (pauses fully out of view, resumes at >=20% visible), with a 32px play/pause button. Hosts the looping product heroes (hero-video-loop) and the /go row demos.",
   "implementedBy": [
     {
       "path": "src/components/ui/VideoSlot.jsx",

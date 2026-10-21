@@ -92,6 +92,13 @@
   html {
     -webkit-text-size-adjust: 100%;
   }
+  /* Original: html { scroll-behavior: smooth }. Route changes still jump
+     (ScrollToTop passes behavior: 'instant'). */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
   body {
     @apply bg-white font-sans text-body text-fg antialiased;
   }
@@ -243,6 +250,48 @@
     transform: scaleX(0);
     transform-origin: left center;
     animation: site-progress-fill var(--dur-slide) var(--ease-progress) both;
+  }
+
+  /* go.md 13.1 pinned feature text (original: two-column sticky-slide /
+     sticky-fade-in / sticky-fade-out on a --section view-timeline). The row
+     is the timeline subject; the text column is stretched to the row height,
+     so translateY(+-50%) = +-h/2. With H = viewport, hdr = 67px header:
+       window   = cover (H - hdr)/2  ->  cover 100% - (H + hdr)/2   (length h)
+       fade-in  = first 200px of the window, fade-out = last 200px
+     Fade-out is listed last, so it wins once active. Static below 640 and
+     under reduced motion; browsers without view timelines use the JS
+     fallback in StickyFeatureRow.jsx. */
+  @keyframes pin-slide {
+    from { transform: translateY(-50%); }
+    to { transform: translateY(50%); }
+  }
+  @keyframes pin-fade-in {
+    from { opacity: 0; visibility: hidden; }
+    to { opacity: 1; visibility: visible; }
+  }
+  @keyframes pin-fade-out {
+    from { opacity: 1; visibility: visible; }
+    to { opacity: 0; visibility: hidden; }
+  }
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) and (min-width: 640.02px) {
+      .pin-row {
+        view-timeline-name: --pin-row;
+      }
+      .pin-text {
+        opacity: 0;
+        visibility: hidden;
+        animation-name: pin-slide, pin-fade-in, pin-fade-out;
+        animation-duration: auto;
+        animation-timing-function: linear;
+        animation-fill-mode: both, forwards, forwards;
+        animation-timeline: --pin-row;
+        animation-range:
+          cover calc(50vh - 33.5px) cover calc(100% - 50vh - 33.5px),
+          cover calc(50vh - 33.5px) cover calc(50vh + 166.5px),
+          cover calc(100% - 50vh - 233.5px) cover calc(100% - 50vh - 33.5px);
+      }
+    }
   }
 
   /* 1.2 sign-in menu: surface reveal (no fill) only >=640.02px; rows stagger

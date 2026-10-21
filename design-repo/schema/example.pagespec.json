@@ -24,8 +24,8 @@
       "background": "neutral-10",
       "context": "light",
       "motion": {
-        "pattern": "video-viewport-gated",
-        "reducedMotionFallback": "static-frame"
+        "pattern": "hero-video-loop",
+        "reducedMotionFallback": "static-complete-frame"
       },
       "content": {
         "lockup": {

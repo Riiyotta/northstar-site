@@ -1,7 +1,7 @@
 {
   "id": "media.demo-video",
   "category": "media",
-  "purpose": "Full-width looping product demo (illustrated animation) with an outside play/pause control.",
+  "purpose": "Full-width looping product demo (illustrated animation) with an outside play/pause control; on /docs it is the page's hero demo.",
   "implementedBy": [
     {
       "path": "src/components/ui/VideoSlot.jsx",
@@ -40,9 +40,9 @@
   "constraints": {},
   "motion": {
     "allowedPatterns": [
-      "video-viewport-gated"
+      "hero-video-loop"
     ],
-    "default": "video-viewport-gated"
+    "default": "hero-video-loop"
   },
   "responsive": [
     {
@@ -55,9 +55,15 @@
       "path": "specs/docs.md",
       "lines": "75-89",
       "expect": "## 3. D2 Video + proof + logos"
+    },
+    {
+      "path": "src/illustrations/registry-mailDocs.js",
+      "lines": "113-113",
+      "expect": "'docs-hero-video': DocsHeroLoop,"
     }
   ],
   "notes": [
-    "On /docs it shares one PageSection with the following proof.logo-strip (padding-top 0)."
+    "On /docs it shares one PageSection with the following proof.logo-strip (padding-top 0).",
+    "The slot (docs-hero-video) loops continuously (pattern hero-video-loop): a seamless 28.3s cycle (DocsHeroLoop) whose collaborator cursor completes twice per cycle; static complete scene under reduced motion."
   ]
 }
